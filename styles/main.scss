@@ -1,0 +1,21 @@
+// ==============================================
+// Main SCSS Entry Point
+// ==============================================
+// Import order: tokens → mixins → base → components → pages
+// ==============================================
+
+// 1) Tokens (variables only, no output)
+@use 'tokens' as *;
+
+// 2) Mixins / Functions
+@use 'mixins' as *;
+
+// 3) Base (reset, global styles)
+@use 'base/reset';
+@use 'base/global';
+
+// 4) Components
+// @use 'components/...';
+
+// 5) Pages
+// @use 'pages/...';

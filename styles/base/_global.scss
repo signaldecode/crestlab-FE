@@ -1,0 +1,19 @@
+// ==============================================
+// Base — Global Styles
+// ==============================================
+
+@use '../tokens/colors' as *;
+@use '../tokens/typography' as *;
+
+html {
+  font-size: 100%; // 16px base
+}
+
+body {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
+  color: $color-text-primary;
+  background-color: $color-background;
+}
