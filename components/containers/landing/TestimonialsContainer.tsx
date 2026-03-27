@@ -8,20 +8,20 @@ interface TestimonialItem {
   highlight: string;
 }
 
-interface TestimonialsData {
+interface TestimonialsMessages {
   title: string;
-  items: TestimonialItem[];
 }
 
 interface TestimonialsContainerProps {
-  data: TestimonialsData;
+  messages: TestimonialsMessages;
+  data: { items: TestimonialItem[] };
 }
 
-export default function TestimonialsContainer({ data }: TestimonialsContainerProps) {
+export default function TestimonialsContainer({ messages, data }: TestimonialsContainerProps) {
   return (
     <section className={styles.testimonials}>
       <div className={styles.inner}>
-        <SectionTitle title={data.title} />
+        <SectionTitle title={messages.title} />
         <ul className={styles.grid}>
           {data.items.map((item, index) => (
             <li key={index} className={styles.card}>

@@ -6,26 +6,26 @@ interface PhilosophyStat {
   note: string;
 }
 
-interface PhilosophyData {
+interface PhilosophyMessages {
   title: string;
   subtitle: string;
-  stats: PhilosophyStat[];
 }
 
 interface PhilosophyContainerProps {
-  data: PhilosophyData;
+  messages: PhilosophyMessages;
+  data: { stats: PhilosophyStat[] };
 }
 
-export default function PhilosophyContainer({ data }: PhilosophyContainerProps) {
+export default function PhilosophyContainer({ messages, data }: PhilosophyContainerProps) {
   return (
     <section id="philosophy" className={styles.philosophy}>
       <div className={styles.inner}>
-        <h2 className={styles.title}>{data.title}</h2>
+        <h2 className={styles.title}>{messages.title}</h2>
         <p className={styles.subtitle}>
-          {data.subtitle.split('\n').map((line, i) => (
+          {messages.subtitle.split('\n').map((line, i) => (
             <span key={i}>
               {line}
-              {i < data.subtitle.split('\n').length - 1 && <br />}
+              {i < messages.subtitle.split('\n').length - 1 && <br />}
             </span>
           ))}
         </p>

@@ -7,21 +7,21 @@ interface FaqItem {
   answer: string;
 }
 
-interface FaqData {
+interface FaqMessages {
   title: string;
   subtitle: string;
-  items: FaqItem[];
 }
 
 interface FaqContainerProps {
-  data: FaqData;
+  messages: FaqMessages;
+  data: { items: FaqItem[] };
 }
 
-export default function FaqContainer({ data }: FaqContainerProps) {
+export default function FaqContainer({ messages, data }: FaqContainerProps) {
   return (
     <section className={styles.faq}>
       <div className={styles.inner}>
-        <SectionTitle title={data.title} subtitle={data.subtitle} />
+        <SectionTitle title={messages.title} subtitle={messages.subtitle} />
         <Accordion items={data.items} />
       </div>
     </section>

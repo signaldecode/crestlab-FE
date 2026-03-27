@@ -9,26 +9,31 @@ import TestimonialsContainer from '@/components/containers/landing/TestimonialsC
 import FaqContainer from '@/components/containers/landing/FaqContainer';
 import CtaContainer from '@/components/containers/landing/CtaContainer';
 
-import commonData from '@/messages/ko/common.json';
-import landingData from '@/messages/ko/landing.json';
+// messages: UI 라벨, 버튼 텍스트, 번역 대상
+import commonMsg from '@/messages/ko/common.json';
+import landingMsg from '@/messages/ko/landing.json';
+
+// data: 콘텐츠 데이터 (통계, 피쳐, 후기, FAQ 등)
+import commonData from '@/data/commonData.json';
+import landingData from '@/data/landingData.json';
 
 export default function HomePage() {
   return (
     <>
-      <SkipToContent label={commonData.skipToContent} />
-      <AppHeader data={commonData.header} />
+      <SkipToContent label={commonMsg.skipToContent} />
+      <AppHeader data={commonMsg.header} />
 
       <main id="main-content">
-        <HeroContainer data={landingData.hero} />
-        <StatsContainer data={landingData.stats} />
-        <FeaturesContainer data={landingData.features} />
-        <PhilosophyContainer data={landingData.philosophy} />
-        <TestimonialsContainer data={landingData.testimonials} />
-        <FaqContainer data={landingData.faq} />
-        <CtaContainer data={landingData.cta} />
+        <HeroContainer data={landingMsg.hero} />
+        <StatsContainer messages={landingMsg.stats} data={landingData.stats} />
+        <FeaturesContainer messages={landingMsg.features} data={landingData.features} />
+        <PhilosophyContainer messages={landingMsg.philosophy} data={landingData.philosophy} />
+        <TestimonialsContainer messages={landingMsg.testimonials} data={landingData.testimonials} />
+        <FaqContainer messages={landingMsg.faq} data={landingData.faq} />
+        <CtaContainer data={landingMsg.cta} />
       </main>
 
-      <AppFooter data={commonData.footer} />
+      <AppFooter company={commonData.company} messages={commonMsg.footer} />
     </>
   );
 }

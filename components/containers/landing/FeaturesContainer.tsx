@@ -7,14 +7,14 @@ interface FeatureItem {
   icon: string;
 }
 
-interface FeaturesData {
+interface FeaturesMessages {
   title: string;
   subtitle: string;
-  items: FeatureItem[];
 }
 
 interface FeaturesContainerProps {
-  data: FeaturesData;
+  messages: FeaturesMessages;
+  data: { items: FeatureItem[] };
 }
 
 const iconMap: Record<string, string> = {
@@ -24,11 +24,11 @@ const iconMap: Record<string, string> = {
   report: '📋',
 };
 
-export default function FeaturesContainer({ data }: FeaturesContainerProps) {
+export default function FeaturesContainer({ messages, data }: FeaturesContainerProps) {
   return (
     <section className={styles.features}>
       <div className={styles.inner}>
-        <SectionTitle title={data.title} subtitle={data.subtitle} theme="dark" />
+        <SectionTitle title={messages.title} subtitle={messages.subtitle} theme="dark" />
         <ul className={styles.grid}>
           {data.items.map((item, index) => (
             <li key={index} className={styles.card}>
