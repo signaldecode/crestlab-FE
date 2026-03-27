@@ -1,0 +1,50 @@
+@use '../../../assets/styles/tokens/colors' as *;
+@use '../../../assets/styles/tokens/typography' as *;
+@use '../../../assets/styles/tokens/spacing' as *;
+@use '../../../assets/styles/tokens/breakpoints' as *;
+
+.cta {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background-accent;
+  text-align: center;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-2xl;
+}
+
+.button {
+  display: inline-block;
+  padding: $spacing-md $spacing-3xl;
+  background-color: $color-primary;
+  color: $color-text-on-dark;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  border-radius: 3rem;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background-color: $color-primary-dark;
+    transform: translateY(-0.125rem);
+  }
+}

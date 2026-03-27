@@ -24,7 +24,7 @@
 - **Next.js 16 (App Router)** — `app/[locale]/...` 구조
 - **React 19 + TypeScript**
 - **State: Zustand**
-- **SCSS + Design Token System** (`styles/tokens/`)
+- **SCSS + Design Token System** (`assets/styles/tokens/`)
 - **i18n: next-intl** (URL 기반 locale 라우팅)
 - Backend: **Java (Spring REST `/api/...`)** — locale은 `Accept-Language` 헤더로 전달
 - SEO/AEO: **Next Metadata API + JSON-LD 구조화 데이터 + hreflang**

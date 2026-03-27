@@ -1,0 +1,22 @@
+@use '../../assets/styles/tokens/colors' as *;
+@use '../../assets/styles/tokens/typography' as *;
+@use '../../assets/styles/tokens/spacing' as *;
+@use '../../assets/styles/tokens/z-index' as *;
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: $spacing-md;
+  z-index: $z-index-toast;
+  padding: $spacing-sm $spacing-md;
+  background-color: $color-primary;
+  color: $color-text-on-dark;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  border-radius: 0 0 0.5rem 0.5rem;
+  text-decoration: none;
+
+  &:focus {
+    top: 0;
+  }
+}

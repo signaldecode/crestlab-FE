@@ -1,0 +1,25 @@
+{
+  "header": {
+    "logo": "CrestLab",
+    "nav": {
+      "home": "홈",
+      "about": "회사소개",
+      "news": "뉴스",
+      "board": "게시판",
+      "lectures": "투자교육",
+      "contact": "문의하기"
+    },
+    "cta": "회원가입",
+    "login": "로그인"
+  },
+  "footer": {
+    "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+    "links": {
+      "terms": "이용약관",
+      "privacy": "개인정보처리방침",
+      "disclaimer": "투자 유의사항"
+    },
+    "disclaimer": "투자에는 원금 손실의 위험이 있으며, 과거의 수익률이 미래의 수익률을 보장하지 않습니다."
+  },
+  "skipToContent": "본문으로 건너뛰기"
+}

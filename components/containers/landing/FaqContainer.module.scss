@@ -1,0 +1,13 @@
+@use '../../../assets/styles/tokens/colors' as *;
+@use '../../../assets/styles/tokens/spacing' as *;
+@use '../../../assets/styles/tokens/breakpoints' as *;
+
+.faq {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}

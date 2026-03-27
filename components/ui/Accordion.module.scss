@@ -1,0 +1,52 @@
+@use '../../assets/styles/tokens/colors' as *;
+@use '../../assets/styles/tokens/typography' as *;
+@use '../../assets/styles/tokens/spacing' as *;
+
+.accordion {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.item {
+  border-bottom: 1px solid $color-border;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $spacing-lg 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: $spacing-md;
+}
+
+.question {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-snug;
+}
+
+.icon {
+  flex-shrink: 0;
+  font-size: $font-size-2xl;
+  color: $color-primary;
+  font-weight: $font-weight-light;
+  width: 2rem;
+  text-align: center;
+}
+
+.panel {
+  overflow: hidden;
+}
+
+.answer {
+  padding: 0 0 $spacing-lg;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+}

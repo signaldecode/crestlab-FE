@@ -1,0 +1,79 @@
+@use '../../assets/styles/tokens/colors' as *;
+@use '../../assets/styles/tokens/typography' as *;
+@use '../../assets/styles/tokens/spacing' as *;
+@use '../../assets/styles/tokens/breakpoints' as *;
+
+.footer {
+  background-color: $color-background-darker;
+  color: $color-text-on-dark-muted;
+  padding: $spacing-3xl 0 $spacing-xl;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  padding-bottom: $spacing-xl;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  @include respond-to(md) {
+    grid-template-columns: 2fr 2fr 1fr;
+  }
+}
+
+.company-name {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-on-dark;
+  margin-bottom: $spacing-sm;
+}
+
+.description {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+}
+
+.address {
+  font-style: normal;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  a {
+    font-size: $font-size-sm;
+    color: $color-text-on-dark-muted;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-text-on-dark;
+    }
+  }
+}
+
+.bottom {
+  padding-top: $spacing-lg;
+  text-align: center;
+}
+
+.disclaimer-text {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin-bottom: $spacing-sm;
+}
+
+.copyright-text {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}

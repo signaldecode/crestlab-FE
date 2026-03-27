@@ -1,0 +1,77 @@
+@use '../../../assets/styles/tokens/colors' as *;
+@use '../../../assets/styles/tokens/typography' as *;
+@use '../../../assets/styles/tokens/spacing' as *;
+@use '../../../assets/styles/tokens/breakpoints' as *;
+
+.stats {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  list-style: none;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: $color-background-light;
+  border-radius: 1rem;
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.06);
+  }
+}
+
+.value {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-lg;
+}
+
+.number {
+  font-size: $font-size-5xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: 1;
+
+  @include respond-to(lg) {
+    font-size: $font-size-6xl;
+  }
+}
+
+.unit {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}
+
+.label {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+}
+
+.description {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+}

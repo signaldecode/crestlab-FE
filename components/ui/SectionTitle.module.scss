@@ -1,0 +1,54 @@
+@use '../../assets/styles/tokens/colors' as *;
+@use '../../assets/styles/tokens/typography' as *;
+@use '../../assets/styles/tokens/spacing' as *;
+@use '../../assets/styles/tokens/breakpoints' as *;
+
+.wrap {
+  margin-bottom: $spacing-2xl;
+}
+
+.wrap--center {
+  text-align: center;
+}
+
+.wrap--left {
+  text-align: left;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-tight;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// Dark theme overrides
+.wrap--dark {
+  .title {
+    color: $color-text-on-dark;
+  }
+
+  .subtitle {
+    color: $color-text-on-dark-muted;
+  }
+}
