@@ -22,5 +22,12 @@ export default async function NoticeDetailPage({ params }: Props) {
 
   const messages = await getMessages();
   const board = messages.board as Record<string, unknown>;
-  return <NoticeDetailContainer messages={board.notices as never} data={notice} />;
+  const admin = board.admin as Record<string, string>;
+  return (
+    <NoticeDetailContainer
+      messages={board.notices as never}
+      data={notice}
+      adminMessages={{ editNotice: admin.editNotice, deleteNotice: admin.deleteNotice }}
+    />
+  );
 }

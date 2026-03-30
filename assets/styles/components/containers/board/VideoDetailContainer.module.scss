@@ -71,6 +71,12 @@
   }
 }
 
+.admin-bar {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
 .back {
   margin-top: $spacing-2xl;
   padding-top: $spacing-lg;

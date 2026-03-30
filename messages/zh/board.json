@@ -21,5 +21,15 @@
     "loginCta": "登录",
     "noItems": "暂无视频。",
     "backToList": "返回列表"
+  },
+  "admin": {
+    "writeNotice": "发布公告",
+    "editNotice": "编辑",
+    "deleteNotice": "删除",
+    "uploadVideo": "上传视频",
+    "editVideo": "编辑",
+    "deleteVideo": "删除",
+    "confirmDelete": "确定要删除吗？",
+    "cancel": "取消"
   }
 }

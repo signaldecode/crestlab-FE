@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import AdminActions from '@/components/ui/AdminActions';
 import styles from '@/assets/styles/components/containers/board/NoticeDetailContainer.module.scss';
 
 interface NoticeItem {
@@ -16,9 +17,13 @@ interface NoticeDetailMessages {
 interface NoticeDetailContainerProps {
   messages: NoticeDetailMessages;
   data: NoticeItem;
+  adminMessages?: {
+    editNotice: string;
+    deleteNotice: string;
+  };
 }
 
-export default function NoticeDetailContainer({ messages, data }: NoticeDetailContainerProps) {
+export default function NoticeDetailContainer({ messages, data, adminMessages }: NoticeDetailContainerProps) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -31,6 +36,13 @@ export default function NoticeDetailContainer({ messages, data }: NoticeDetailCo
           </header>
           <div className={styles.content}>{data.content}</div>
         </article>
+
+        <AdminActions>
+          <div className={styles['admin-bar']}>
+            <Button variant="primary" size="sm">{adminMessages?.editNotice}</Button>
+            <Button variant="danger" size="sm">{adminMessages?.deleteNotice}</Button>
+          </div>
+        </AdminActions>
 
         <div className={styles.back}>
           <Link href="/notices">

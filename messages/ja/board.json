@@ -21,5 +21,15 @@
     "loginCta": "ログインする",
     "noItems": "登録された動画はありません。",
     "backToList": "一覧へ"
+  },
+  "admin": {
+    "writeNotice": "お知らせ作成",
+    "editNotice": "編集",
+    "deleteNotice": "削除",
+    "uploadVideo": "動画アップロード",
+    "editVideo": "編集",
+    "deleteVideo": "削除",
+    "confirmDelete": "本当に削除しますか？",
+    "cancel": "キャンセル"
   }
 }

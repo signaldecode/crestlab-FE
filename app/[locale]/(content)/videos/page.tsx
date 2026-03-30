@@ -10,5 +10,13 @@ export async function generateMetadata() {
 export default async function VideosPage() {
   const messages = await getMessages();
   const board = messages.board as Record<string, unknown>;
-  return <VideoListContainer messages={board.videos as never} data={videosData} isLoggedIn={false} />;
+  const admin = board.admin as Record<string, string>;
+  return (
+    <VideoListContainer
+      messages={board.videos as never}
+      data={videosData}
+      isLoggedIn={false}
+      adminMessages={{ uploadVideo: admin.uploadVideo }}
+    />
+  );
 }

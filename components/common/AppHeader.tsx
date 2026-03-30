@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import useUIStore from '@/stores/useUIStore';
+import useAuthStore from '@/stores/useAuthStore';
+import { Link } from '@/i18n/navigation';
 
 interface NavItem {
   label: string;
@@ -15,6 +17,8 @@ interface HeaderData {
   nav: Record<string, string>;
   cta: string;
   login: string;
+  mypage: string;
+  logout: string;
 }
 
 interface AppHeaderProps {
@@ -24,6 +28,7 @@ interface AppHeaderProps {
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const openLoginModal = useUIStore((s) => s.openLoginModal);
+  const { isLoggedIn, logout } = useAuthStore();
 
   const navItems: NavItem[] = Object.entries(data.nav).map(([key, label]) => ({
     label,
@@ -35,12 +40,17 @@ export default function AppHeader({ data }: AppHeaderProps) {
     openLoginModal();
   };
 
+  const handleLogout = () => {
+    setMobileOpen(false);
+    logout();
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
+        <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
           {data.logo}
-        </a>
+        </Link>
 
         <nav className={styles.nav} aria-label="메인 내비게이션">
           <ul className={`${styles['nav-list']} ${mobileOpen ? styles['nav-list--open'] : ''}`}>
@@ -49,19 +59,35 @@ export default function AppHeader({ data }: AppHeaderProps) {
             </li>
             {navItems.map((item) => (
               <li key={item.href} className={styles['nav-item']}>
-                <a href={item.href} className={styles['nav-link']}>
+                <Link href={item.href} className={styles['nav-link']}>
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
-            <li className={styles['nav-item--mobile-only']}>
-              <button type="button" className={styles['nav-link']} onClick={handleLoginClick}>
-                {data.login}
-              </button>
-            </li>
-            <li className={styles['nav-item--mobile-only']}>
-              <a href="/register" className={styles['btn-cta']}>{data.cta}</a>
-            </li>
+
+            {isLoggedIn ? (
+              <>
+                <li className={styles['nav-item--mobile-only']}>
+                  <Link href="/mypage" className={styles['nav-link']}>{data.mypage}</Link>
+                </li>
+                <li className={styles['nav-item--mobile-only']}>
+                  <button type="button" className={styles['nav-link']} onClick={handleLogout}>
+                    {data.logout}
+                  </button>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className={styles['nav-item--mobile-only']}>
+                  <button type="button" className={styles['nav-link']} onClick={handleLoginClick}>
+                    {data.login}
+                  </button>
+                </li>
+                <li className={styles['nav-item--mobile-only']}>
+                  <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
+                </li>
+              </>
+            )}
           </ul>
         </nav>
 
@@ -70,10 +96,21 @@ export default function AppHeader({ data }: AppHeaderProps) {
         </div>
 
         <div className={styles.actions}>
-          <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
-            {data.login}
-          </button>
-          <a href="/register" className={styles['btn-cta']}>{data.cta}</a>
+          {isLoggedIn ? (
+            <>
+              <Link href="/mypage" className={styles['btn-login']}>{data.mypage}</Link>
+              <button type="button" className={styles['btn-cta']} onClick={handleLogout}>
+                {data.logout}
+              </button>
+            </>
+          ) : (
+            <>
+              <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
+                {data.login}
+              </button>
+              <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
+            </>
+          )}
         </div>
 
         <button

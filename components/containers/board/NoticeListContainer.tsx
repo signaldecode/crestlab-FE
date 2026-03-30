@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SectionTitle from '@/components/ui/SectionTitle';
+import Button from '@/components/ui/Button';
+import AdminActions from '@/components/ui/AdminActions';
 import styles from '@/assets/styles/components/containers/board/NoticeListContainer.module.scss';
 
 interface NoticeItem {
@@ -19,13 +21,24 @@ interface NoticeMessages {
 interface NoticeListContainerProps {
   messages: NoticeMessages;
   data: { items: NoticeItem[] };
+  adminMessages?: {
+    writeNotice: string;
+  };
 }
 
-export default function NoticeListContainer({ messages, data }: NoticeListContainerProps) {
+export default function NoticeListContainer({ messages, data, adminMessages }: NoticeListContainerProps) {
   return (
     <section className={styles.section} aria-label={messages.title}>
       <div className={styles.inner}>
         <SectionTitle title={messages.title} subtitle={messages.subtitle} align="left" />
+
+        <AdminActions>
+          <div className={styles['admin-bar']}>
+            <Link href="/notices/write">
+              <Button variant="primary" size="sm">{adminMessages?.writeNotice}</Button>
+            </Link>
+          </div>
+        </AdminActions>
 
         {data.items.length > 0 ? (
           <ul className={styles.list}>

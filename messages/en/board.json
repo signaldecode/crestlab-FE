@@ -21,5 +21,15 @@
     "loginCta": "Log In",
     "noItems": "No videos have been posted.",
     "backToList": "Back to List"
+  },
+  "admin": {
+    "writeNotice": "Write Notice",
+    "editNotice": "Edit",
+    "deleteNotice": "Delete",
+    "uploadVideo": "Upload Video",
+    "editVideo": "Edit",
+    "deleteVideo": "Delete",
+    "confirmDelete": "Are you sure you want to delete?",
+    "cancel": "Cancel"
   }
 }

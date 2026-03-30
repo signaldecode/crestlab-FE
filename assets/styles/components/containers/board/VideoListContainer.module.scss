@@ -125,6 +125,12 @@
   margin-bottom: $spacing-md;
 }
 
+.admin-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: $spacing-md;
+}
+
 .empty {
   text-align: center;
   padding: $spacing-3xl 0;

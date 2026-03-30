@@ -22,5 +22,12 @@ export default async function VideoDetailPage({ params }: Props) {
 
   const messages = await getMessages();
   const board = messages.board as Record<string, unknown>;
-  return <VideoDetailContainer messages={board.videos as never} data={video} />;
+  const admin = board.admin as Record<string, string>;
+  return (
+    <VideoDetailContainer
+      messages={board.videos as never}
+      data={video}
+      adminMessages={{ editVideo: admin.editVideo, deleteVideo: admin.deleteVideo }}
+    />
+  );
 }

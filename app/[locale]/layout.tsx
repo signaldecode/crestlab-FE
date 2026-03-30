@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getMessages, getLocale } from 'next-intl/server';
+import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import SkipToContent from '@/components/common/SkipToContent';
@@ -30,16 +30,12 @@ export default async function LocaleLayout({
   const loginModal = auth.loginModal as Record<string, string>;
 
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <SkipToContent label={common.skipToContent as string} />
-          <AppHeader data={header as never} />
-          <main id="main-content">{children}</main>
-          <AppFooter company={commonData.company} messages={footer as never} />
-          <LoginModal messages={login as never} closeAriaLabel={loginModal.closeAriaLabel} />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages} locale={locale}>
+      <SkipToContent label={common.skipToContent as string} />
+      <AppHeader data={header as never} />
+      <main id="main-content">{children}</main>
+      <AppFooter company={commonData.company} messages={footer as never} />
+      <LoginModal messages={login as never} closeAriaLabel={loginModal.closeAriaLabel} />
+    </NextIntlClientProvider>
   );
 }

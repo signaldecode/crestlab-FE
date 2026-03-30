@@ -10,5 +10,12 @@ export async function generateMetadata() {
 export default async function NoticesPage() {
   const messages = await getMessages();
   const board = messages.board as Record<string, unknown>;
-  return <NoticeListContainer messages={board.notices as never} data={noticesData} />;
+  const admin = board.admin as Record<string, string>;
+  return (
+    <NoticeListContainer
+      messages={board.notices as never}
+      data={noticesData}
+      adminMessages={{ writeNotice: admin.writeNotice }}
+    />
+  );
 }

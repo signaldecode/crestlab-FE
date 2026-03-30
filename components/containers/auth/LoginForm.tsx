@@ -5,7 +5,14 @@ import Link from 'next/link';
 import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
+import useAuthStore from '@/stores/useAuthStore'; // getState() for non-hook usage
 import styles from '@/assets/styles/components/containers/auth/AuthFormContainer.module.scss';
+
+// TODO: 백엔드 연동 시 제거
+const MOCK_ACCOUNTS = [
+  { userId: 'admin', password: 'admin1234', user: { id: '1', name: '관리자', role: 'admin' as const } },
+  { userId: 'user', password: 'user1234', user: { id: '2', name: '테스트유저', role: 'user' as const } },
+];
 
 export interface LoginMessages {
   title: string;
@@ -60,8 +67,17 @@ export default function LoginForm({ messages, onSuccess, idPrefix = 'login' }: L
 
     if (!validate()) return;
 
-    // TODO: API 연동 (POST /api/auth/login)
-    console.log('login', { userId, password });
+    // TODO: 백엔드 연동 시 API 호출로 교체 (POST /api/auth/login)
+    const account = MOCK_ACCOUNTS.find(
+      (a) => a.userId === userId && a.password === password,
+    );
+
+    if (!account) {
+      setServerError(messages.errors.loginFailed);
+      return;
+    }
+
+    useAuthStore.getState().login(account.user);
     onSuccess?.();
   };
 

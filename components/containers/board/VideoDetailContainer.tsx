@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import AdminActions from '@/components/ui/AdminActions';
 import styles from '@/assets/styles/components/containers/board/VideoDetailContainer.module.scss';
 
 interface VideoItem {
@@ -18,9 +19,13 @@ interface VideoDetailMessages {
 interface VideoDetailContainerProps {
   messages: VideoDetailMessages;
   data: VideoItem;
+  adminMessages?: {
+    editVideo: string;
+    deleteVideo: string;
+  };
 }
 
-export default function VideoDetailContainer({ messages, data }: VideoDetailContainerProps) {
+export default function VideoDetailContainer({ messages, data, adminMessages }: VideoDetailContainerProps) {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
@@ -36,6 +41,13 @@ export default function VideoDetailContainer({ messages, data }: VideoDetailCont
           <h1 className={styles.title}>{data.title}</h1>
           <p className={styles.description}>{data.description}</p>
         </div>
+
+        <AdminActions>
+          <div className={styles['admin-bar']}>
+            <Button variant="primary" size="sm">{adminMessages?.editVideo}</Button>
+            <Button variant="danger" size="sm">{adminMessages?.deleteVideo}</Button>
+          </div>
+        </AdminActions>
 
         <div className={styles.back}>
           <Link href="/videos">

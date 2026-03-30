@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
+import AdminActions from '@/components/ui/AdminActions';
 import SectionTitle from '@/components/ui/SectionTitle';
 import styles from '@/assets/styles/components/containers/board/VideoListContainer.module.scss';
 
@@ -24,13 +25,24 @@ interface VideoListContainerProps {
   messages: VideoMessages;
   data: { items: VideoItem[] };
   isLoggedIn: boolean;
+  adminMessages?: {
+    uploadVideo: string;
+  };
 }
 
-export default function VideoListContainer({ messages, data, isLoggedIn }: VideoListContainerProps) {
+export default function VideoListContainer({ messages, data, isLoggedIn, adminMessages }: VideoListContainerProps) {
   return (
     <section className={styles.section} aria-label={messages.title}>
       <div className={styles.inner}>
         <SectionTitle title={messages.title} subtitle={messages.subtitle} align="left" />
+
+        <AdminActions>
+          <div className={styles['admin-bar']}>
+            <Link href="/videos/upload">
+              <Button variant="primary" size="sm">{adminMessages?.uploadVideo}</Button>
+            </Link>
+          </div>
+        </AdminActions>
 
         {!isLoggedIn && (
           <div className={styles['login-message']}>
