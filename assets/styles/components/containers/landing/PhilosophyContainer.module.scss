@@ -2,11 +2,16 @@
 @use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
 
 .philosophy {
   padding: $spacing-4xl $spacing-lg;
   background-color: $color-background;
   text-align: center;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
 }
 
 .inner {
@@ -35,6 +40,9 @@
   color: $color-text-secondary;
   line-height: $line-height-relaxed;
   margin-bottom: $spacing-3xl;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
 
   @include respond-to(md) {
     font-size: $font-size-lg;
@@ -45,18 +53,63 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: $spacing-xl;
-  max-width: 40rem;
+  max-width: 48rem;
   margin: 0 auto;
+  position: relative;
 
   @include respond-to(sm) {
     grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-3xl;
+
+    // Gradient divider between cards
+    &::before {
+      content: '';
+      position: absolute;
+      top: $spacing-2xl;
+      bottom: $spacing-2xl;
+      left: 50%;
+      width: 0.0625rem;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        $color-border,
+        rgba($color-primary, 0.3),
+        $color-border,
+        transparent
+      );
+      transform: translateX(-50%);
+    }
   }
 }
 
 .stat {
   padding: $spacing-2xl;
-  border-radius: 1rem;
-  background-color: $color-background-light;
+  border-radius: $spacing-md;
+  transition: all 0.3s ease;
+
+  // First card — muted "before" style
+  &:first-child {
+    background-color: $color-background-light;
+
+    .stat-value {
+      color: $color-text-muted;
+    }
+  }
+
+  // Second card — vibrant "CrestLab" style
+  &:last-child {
+    background: linear-gradient(
+      135deg,
+      rgba($color-primary, 0.06) 0%,
+      rgba($color-primary, 0.02) 100%
+    );
+    border: 1px solid rgba($color-primary, 0.12);
+
+    &:hover {
+      box-shadow: $shadow-glow-sm;
+      border-color: rgba($color-primary, 0.25);
+    }
+  }
 }
 
 .stat-label {
@@ -64,6 +117,7 @@
   color: $color-text-muted;
   margin-bottom: $spacing-md;
   font-weight: $font-weight-medium;
+  letter-spacing: $letter-spacing-wide;
 }
 
 .stat-value {

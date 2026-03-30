@@ -2,14 +2,45 @@
 @use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
 
 .cta {
+  position: relative;
   padding: $spacing-4xl $spacing-lg;
-  background-color: $color-background-accent;
+  background: linear-gradient(
+    170deg,
+    $color-background-accent 0%,
+    $color-background 100%
+  );
   text-align: center;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
+
+  // Decorative gradient orb
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -10%;
+    width: 35rem;
+    height: 35rem;
+    background: radial-gradient(
+      circle,
+      rgba($color-primary, 0.08) 0%,
+      rgba($color-primary, 0.02) 40%,
+      transparent 65%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+  }
 }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: $container-max-width;
   margin: 0 auto;
 }
@@ -23,6 +54,10 @@
 
   @include respond-to(md) {
     font-size: $font-size-4xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
   }
 }
 
@@ -38,13 +73,20 @@
   background-color: $color-primary;
   color: $color-text-on-dark;
   font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
+  font-weight: $font-weight-bold;
   border-radius: 3rem;
   text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: $shadow-glow-md;
+  letter-spacing: $letter-spacing-wide;
+
+  @include respond-to(md) {
+    padding: $spacing-lg $spacing-3xl;
+  }
 
   &:hover {
     background-color: $color-primary-dark;
     transform: translateY(-0.125rem);
+    box-shadow: $shadow-glow-lg;
   }
 }

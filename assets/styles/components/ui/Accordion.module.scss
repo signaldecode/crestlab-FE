@@ -9,6 +9,11 @@
 
 .item {
   border-bottom: 1px solid $color-border;
+  transition: border-color 0.3s ease;
+}
+
+.item--open {
+  border-bottom-color: rgba($color-primary, 0.2);
 }
 
 .trigger {
@@ -22,6 +27,10 @@
   cursor: pointer;
   text-align: left;
   gap: $spacing-md;
+
+  &:hover .question {
+    color: $color-primary;
+  }
 }
 
 .question {
@@ -29,15 +38,45 @@
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
   line-height: $line-height-snug;
+  transition: color 0.2s ease;
 }
 
+// CSS chevron — hides the +/- text, shows a rotating arrow
 .icon {
   flex-shrink: 0;
-  font-size: $font-size-2xl;
-  color: $color-primary;
-  font-weight: $font-weight-light;
-  width: 2rem;
-  text-align: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba($color-primary, 0.06);
+  font-size: 0;
+  color: transparent;
+  overflow: hidden;
+  transition: background 0.3s ease;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 0.125rem solid $color-primary;
+    border-bottom: 0.125rem solid $color-primary;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    margin-top: -0.125rem;
+  }
+}
+
+.item--open .icon {
+  background: rgba($color-primary, 0.12);
+
+  &::after {
+    transform: rotate(-135deg);
+    margin-top: 0.125rem;
+  }
 }
 
 .panel {

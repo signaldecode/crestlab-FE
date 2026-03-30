@@ -2,10 +2,16 @@
 @use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
 
 .features {
   padding: $spacing-4xl $spacing-lg;
-  background-color: $color-background-dark;
+  background-color: $color-background-light;
+  position: relative;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
 }
 
 .inner {
@@ -29,31 +35,49 @@
 }
 
 .card {
-  background-color: $color-secondary-light;
-  border-radius: 1rem;
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: $spacing-md;
   padding: $spacing-xl;
-  transition: transform 0.2s;
+  transition: all 0.3s ease;
 
   &:hover {
-    transform: translateY(-0.25rem);
+    transform: translateY(-$spacing-sm);
+    border-color: rgba($color-primary, 0.25);
+    box-shadow: $shadow-lg;
   }
 }
 
 .icon {
-  display: block;
-  font-size: $font-size-4xl;
-  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba($color-primary, 0.12),
+    rgba($color-primary, 0.04)
+  );
+  margin-bottom: $spacing-lg;
+  color: $color-primary;
+
+  svg {
+    width: $spacing-lg;
+    height: $spacing-lg;
+  }
 }
 
 .title {
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   font-weight: $font-weight-bold;
-  color: $color-text-on-dark;
+  color: $color-text-primary;
   margin-bottom: $spacing-sm;
 }
 
 .description {
   font-size: $font-size-sm;
-  color: $color-text-on-dark-muted;
+  color: $color-text-secondary;
   line-height: $line-height-relaxed;
 }

@@ -5,6 +5,10 @@
 .faq {
   padding: $spacing-4xl $spacing-lg;
   background-color: $color-background;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
 }
 
 .inner {
