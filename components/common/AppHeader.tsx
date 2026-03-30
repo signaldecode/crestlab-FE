@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import useUIStore from '@/stores/useUIStore';
 
 interface NavItem {
   label: string;
@@ -22,11 +23,17 @@ interface AppHeaderProps {
 
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const openLoginModal = useUIStore((s) => s.openLoginModal);
 
   const navItems: NavItem[] = Object.entries(data.nav).map(([key, label]) => ({
     label,
     href: key === 'home' ? '/' : `/${key}`,
   }));
+
+  const handleLoginClick = () => {
+    setMobileOpen(false);
+    openLoginModal();
+  };
 
   return (
     <header className={styles.header}>
@@ -48,7 +55,9 @@ export default function AppHeader({ data }: AppHeaderProps) {
               </li>
             ))}
             <li className={styles['nav-item--mobile-only']}>
-              <a href="/login" className={styles['nav-link']}>{data.login}</a>
+              <button type="button" className={styles['nav-link']} onClick={handleLoginClick}>
+                {data.login}
+              </button>
             </li>
             <li className={styles['nav-item--mobile-only']}>
               <a href="/register" className={styles['btn-cta']}>{data.cta}</a>
@@ -61,7 +70,9 @@ export default function AppHeader({ data }: AppHeaderProps) {
         </div>
 
         <div className={styles.actions}>
-          <a href="/login" className={styles['btn-login']}>{data.login}</a>
+          <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
+            {data.login}
+          </button>
           <a href="/register" className={styles['btn-cta']}>{data.cta}</a>
         </div>
 

@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 import "../assets/styles/main.scss";
+import SkipToContent from "@/components/common/SkipToContent";
+import AppHeader from "@/components/common/AppHeader";
+import AppFooter from "@/components/common/AppFooter";
+import LoginModal from "@/components/common/LoginModal";
+import commonMsg from "@/messages/ko/common.json";
+import commonData from "@/data/commonData.json";
+import authMsg from "@/messages/ko/auth.json";
 
 export const metadata: Metadata = {
   title: "CrestLab Investment",
@@ -13,7 +20,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        <SkipToContent label={commonMsg.skipToContent} />
+        <AppHeader data={commonMsg.header} />
+        <main id="main-content">{children}</main>
+        <AppFooter company={commonData.company} messages={commonMsg.footer} />
+        <LoginModal
+          messages={authMsg.login}
+          closeAriaLabel={authMsg.loginModal.closeAriaLabel}
+        />
+      </body>
     </html>
   );
 }

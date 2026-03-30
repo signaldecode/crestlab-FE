@@ -16,4 +16,8 @@ body {
   line-height: $line-height-normal;
   color: $color-text-primary;
   background-color: $color-background;
+
+  &.modal-open {
+    overflow: hidden;
+  }
 }

@@ -1,0 +1,100 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/z-index' as *;
+@use '../../tokens/breakpoints' as *;
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  z-index: $z-index-modal;
+  border: none;
+  border-radius: 1rem;
+  padding: 0;
+  background-color: $color-background;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  max-width: 28rem;
+  width: calc(100% - $spacing-lg * 2);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &[open] {
+    animation: modal-in 0.2s ease-out;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY($spacing-md);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content {
+  padding: $spacing-xl $spacing-lg;
+
+  @include respond-to(sm) {
+    padding: $spacing-2xl;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: $spacing-lg;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+}
+
+.close-button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background: none;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: $color-text-muted;
+  font-size: $font-size-xl;
+  transition: background-color 0.2s, color 0.2s;
+  margin-top: calc(-1 * $spacing-xs);
+  margin-right: calc(-1 * $spacing-xs);
+
+  &:hover {
+    background-color: $color-background-alt;
+    color: $color-text-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
