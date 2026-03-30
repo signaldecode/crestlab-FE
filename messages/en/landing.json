@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "Data-Driven Investment Solutions",
+    "title": "Maximize your assets\nthrough systematic analysis",
+    "subtitle": "A professional investment firm specializing in global market analysis and risk management.\nExperience stable asset growth with CrestLab.",
+    "primaryCta": "Request a Consultation",
+    "secondaryCta": "Our Investment Philosophy",
+    "primaryCtaAriaLabel": "Go to investment consultation request page",
+    "secondaryCtaAriaLabel": "Go to investment philosophy section"
+  },
+  "stats": {
+    "title": "Proven Investment Performance",
+    "subtitle": "The numbers speak for CrestLab's competitive edge"
+  },
+  "features": {
+    "title": "Why CrestLab",
+    "subtitle": "Discover our differentiated investment process"
+  },
+  "philosophy": {
+    "title": "Your time invested matters just as much",
+    "subtitle": "While CrestLab manages your assets,\nfocus on what matters most to you."
+  },
+  "testimonials": {
+    "title": "What Our Clients Say"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions"
+  },
+  "cta": {
+    "title": "Let's design the future of your assets together",
+    "subtitle": "Get a free professional investment consultation",
+    "button": "Request Free Consultation",
+    "buttonAriaLabel": "Go to free investment consultation request page"
+  }
+}

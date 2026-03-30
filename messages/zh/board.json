@@ -1,0 +1,25 @@
+{
+  "notices": {
+    "title": "公告",
+    "subtitle": "查看CrestLab的最新动态",
+    "readMore": "查看详情",
+    "noItems": "暂无公告。",
+    "backToList": "返回列表"
+  },
+  "news": {
+    "title": "新闻",
+    "subtitle": "查看最新投资相关新闻",
+    "source": "来源",
+    "readOriginal": "查看原文",
+    "readOriginalAriaLabel": "前往原文（新窗口打开）",
+    "noItems": "暂无新闻。"
+  },
+  "videos": {
+    "title": "投资教育视频",
+    "subtitle": "观看CrestLab的投资教育内容",
+    "loginRequired": "观看视频需要登录。",
+    "loginCta": "登录",
+    "noItems": "暂无视频。",
+    "backToList": "返回列表"
+  }
+}

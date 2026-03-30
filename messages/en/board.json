@@ -1,0 +1,25 @@
+{
+  "notices": {
+    "title": "Notices",
+    "subtitle": "Stay up to date with the latest from CrestLab",
+    "readMore": "Read More",
+    "noItems": "No notices have been posted.",
+    "backToList": "Back to List"
+  },
+  "news": {
+    "title": "News",
+    "subtitle": "Stay informed with the latest investment news",
+    "source": "Source",
+    "readOriginal": "View Original",
+    "readOriginalAriaLabel": "Go to original article (opens in new tab)",
+    "noItems": "No news articles have been posted."
+  },
+  "videos": {
+    "title": "Investment Education Videos",
+    "subtitle": "Watch CrestLab's investment education content",
+    "loginRequired": "Login is required to watch videos.",
+    "loginCta": "Log In",
+    "noItems": "No videos have been posted.",
+    "backToList": "Back to List"
+  }
+}

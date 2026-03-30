@@ -1,5 +1,7 @@
 'use client';
 
+import { useLocale } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import styles from '@/assets/styles/components/ui/LanguageSwitcher.module.scss';
 
 const LOCALES = [
@@ -9,29 +11,24 @@ const LOCALES = [
   { code: 'ja', label: 'JA' },
 ] as const;
 
-interface LanguageSwitcherProps {
-  currentLocale?: string;
-  ariaLabel?: string;
-}
+export default function LanguageSwitcher() {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
-export default function LanguageSwitcher({
-  currentLocale = 'ko',
-  ariaLabel = '언어 선택',
-}: LanguageSwitcherProps) {
-  const handleChange = (locale: string) => {
-    // TODO: next-intl routing integration
-    console.log('switch locale:', locale);
+  const handleChange = (nextLocale: string) => {
+    router.replace(pathname, { locale: nextLocale });
   };
 
   return (
-    <nav className={styles.switcher} aria-label={ariaLabel}>
+    <nav className={styles.switcher} aria-label="Language">
       {LOCALES.map(({ code, label }) => (
         <button
           key={code}
           type="button"
-          className={`${styles.button} ${currentLocale === code ? styles['button--active'] : ''}`}
+          className={`${styles.button} ${locale === code ? styles['button--active'] : ''}`}
           onClick={() => handleChange(code)}
-          aria-current={currentLocale === code ? 'true' : undefined}
+          aria-current={locale === code ? 'true' : undefined}
         >
           {label}
         </button>

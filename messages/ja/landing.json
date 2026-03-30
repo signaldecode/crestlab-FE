@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "badge": "データ基盤の投資ソリューション",
+    "title": "体系的な分析で\n資産の価値を最大化します",
+    "subtitle": "グローバル市場分析とリスク管理を専門とする投資会社\nCrestLabと共に安定的な資産成長をご体験ください。",
+    "primaryCta": "投資相談のお申し込み",
+    "secondaryCta": "投資哲学を見る",
+    "primaryCtaAriaLabel": "投資相談お申し込みページへ移動",
+    "secondaryCtaAriaLabel": "投資哲学セクションへ移動"
+  },
+  "stats": {
+    "title": "信頼できる投資実績",
+    "subtitle": "数字が証明するCrestLabの競争力"
+  },
+  "features": {
+    "title": "なぜCrestLabなのか",
+    "subtitle": "差別化された投資プロセスをご確認ください"
+  },
+  "philosophy": {
+    "title": "投資に費やす時間も、結局は価値",
+    "subtitle": "CrestLabが資産を管理している間\nより大切なことに集中してください。"
+  },
+  "testimonials": {
+    "title": "お客様の声"
+  },
+  "faq": {
+    "title": "よくあるご質問",
+    "subtitle": "ご不明な点をご確認ください"
+  },
+  "cta": {
+    "title": "資産の未来を一緒に設計しましょう",
+    "subtitle": "専門の投資相談を無料でお受けいただけます",
+    "button": "無料相談のお申し込み",
+    "buttonAriaLabel": "無料投資相談お申し込みページへ移動"
+  }
+}

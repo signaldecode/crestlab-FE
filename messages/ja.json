@@ -1,0 +1,213 @@
+{
+  "common": {
+    "header": {
+      "logo": "CrestLab",
+      "nav": {
+        "home": "ホーム",
+        "about": "会社紹介",
+        "notices": "お知らせ",
+        "news": "ニュース",
+        "videos": "教育資料",
+        "contact": "お問い合わせ"
+      },
+      "cta": "会員登録",
+      "login": "ログイン"
+    },
+    "footer": {
+      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "links": {
+        "terms": "利用規約",
+        "privacy": "個人情報保護方針",
+        "disclaimer": "投資に関するご注意"
+      },
+      "disclaimer": "投資には元本損失のリスクがあり、過去の収益率が将来の収益率を保証するものではありません。"
+    },
+    "skipToContent": "本文へスキップ"
+  },
+  "landing": {
+    "hero": {
+      "badge": "データ基盤の投資ソリューション",
+      "title": "体系的な分析で\n資産の価値を最大化します",
+      "subtitle": "グローバル市場分析とリスク管理を専門とする投資会社\nCrestLabと共に安定的な資産成長をご体験ください。",
+      "primaryCta": "投資相談のお申し込み",
+      "secondaryCta": "投資哲学を見る",
+      "primaryCtaAriaLabel": "投資相談お申し込みページへ移動",
+      "secondaryCtaAriaLabel": "投資哲学セクションへ移動"
+    },
+    "stats": {
+      "title": "信頼できる投資実績",
+      "subtitle": "数字が証明するCrestLabの競争力"
+    },
+    "features": {
+      "title": "なぜCrestLabなのか",
+      "subtitle": "差別化された投資プロセスをご確認ください"
+    },
+    "philosophy": {
+      "title": "投資に費やす時間も、結局は価値",
+      "subtitle": "CrestLabが資産を管理している間\nより大切なことに集中してください。"
+    },
+    "testimonials": {
+      "title": "お客様の声"
+    },
+    "faq": {
+      "title": "よくあるご質問",
+      "subtitle": "ご不明な点をご確認ください"
+    },
+    "cta": {
+      "title": "資産の未来を一緒に設計しましょう",
+      "subtitle": "専門の投資相談を無料でお受けいただけます",
+      "button": "無料相談のお申し込み",
+      "buttonAriaLabel": "無料投資相談お申し込みページへ移動"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "ログイン",
+      "subtitle": "CrestLabアカウントでログインしてください",
+      "userId": "ユーザーID",
+      "userIdPlaceholder": "ユーザーIDを入力してください",
+      "password": "パスワード",
+      "passwordPlaceholder": "パスワードを入力してください",
+      "submit": "ログイン",
+      "submitAriaLabel": "アカウントにログイン",
+      "forgotPassword": "パスワードをお忘れですか？",
+      "findId": "ID検索",
+      "noAccount": "まだアカウントをお持ちでないですか？",
+      "goRegister": "会員登録",
+      "errors": {
+        "userIdRequired": "ユーザーIDを入力してください。",
+        "passwordRequired": "パスワードを入力してください。",
+        "loginFailed": "ユーザーIDまたはパスワードが正しくありません。"
+      }
+    },
+    "register": {
+      "title": "会員登録",
+      "subtitle": "CrestLabの投資教育を無料で始めましょう",
+      "name": "お名前",
+      "namePlaceholder": "山田太郎",
+      "userId": "ユーザーID",
+      "userIdPlaceholder": "英数字の組み合わせ4～20文字",
+      "phone": "携帯電話番号",
+      "phonePlaceholder": "01012345678",
+      "verificationCode": "認証番号",
+      "verificationCodePlaceholder": "認証番号6桁",
+      "sendCode": "認証番号を送信",
+      "resendCode": "再送信",
+      "verifyCode": "認証確認",
+      "phoneVerified": "認証完了",
+      "password": "パスワード",
+      "passwordPlaceholder": "8文字以上で入力してください",
+      "passwordConfirm": "パスワード確認",
+      "passwordConfirmPlaceholder": "パスワードを再度入力してください",
+      "termsAgree": "利用規約および個人情報保護方針に同意します。",
+      "submit": "登録する",
+      "submitAriaLabel": "会員登録を完了",
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "goLogin": "ログイン",
+      "errors": {
+        "nameRequired": "お名前を入力してください。",
+        "userIdRequired": "ユーザーIDを入力してください。",
+        "userIdInvalid": "ユーザーIDは英数字の組み合わせで4～20文字にしてください。",
+        "phoneRequired": "携帯電話番号を入力してください。",
+        "phoneInvalid": "正しい携帯電話番号の形式ではありません。",
+        "codeSendFailed": "認証番号の送信に失敗しました。もう一度お試しください。",
+        "codeRequired": "認証番号を入力してください。",
+        "codeInvalid": "認証番号が正しくありません。",
+        "phoneNotVerified": "携帯電話の認証を完了してください。",
+        "passwordRequired": "パスワードを入力してください。",
+        "passwordMin": "パスワードは8文字以上にしてください。",
+        "passwordMismatch": "パスワードが一致しません。",
+        "termsRequired": "利用規約に同意してください。"
+      }
+    },
+    "findAccount": {
+      "findId": {
+        "title": "ID検索",
+        "subtitle": "ご登録時の携帯電話番号でIDを検索できます",
+        "phone": "携帯電話番号",
+        "phonePlaceholder": "01012345678",
+        "verificationCode": "認証番号",
+        "verificationCodePlaceholder": "認証番号6桁",
+        "sendCode": "認証番号を送信",
+        "resendCode": "再送信",
+        "submit": "IDを検索",
+        "submitAriaLabel": "ID検索リクエスト",
+        "resultTitle": "ID検索結果",
+        "resultMessage": "お客様のIDは以下の通りです。",
+        "goLogin": "ログインへ",
+        "goResetPassword": "パスワード再設定",
+        "errors": {
+          "phoneRequired": "携帯電話番号を入力してください。",
+          "phoneInvalid": "正しい携帯電話番号の形式ではありません。",
+          "codeSendFailed": "認証番号の送信に失敗しました。もう一度お試しください。",
+          "codeRequired": "認証番号を入力してください。",
+          "codeInvalid": "認証番号が正しくありません。",
+          "notFound": "該当の番号で登録されたIDは見つかりませんでした。"
+        }
+      },
+      "resetPassword": {
+        "title": "パスワード再設定",
+        "subtitle": "携帯電話認証後に新しいパスワードを設定できます",
+        "phone": "携帯電話番号",
+        "phonePlaceholder": "01012345678",
+        "verificationCode": "認証番号",
+        "verificationCodePlaceholder": "認証番号6桁",
+        "sendCode": "認証番号を送信",
+        "resendCode": "再送信",
+        "verifyCode": "認証確認",
+        "phoneVerified": "認証完了",
+        "userId": "ユーザーID",
+        "userIdPlaceholder": "ユーザーIDを入力してください",
+        "newPassword": "新しいパスワード",
+        "newPasswordPlaceholder": "8文字以上で入力してください",
+        "confirmPassword": "新しいパスワード確認",
+        "confirmPasswordPlaceholder": "新しいパスワードを再度入力してください",
+        "submit": "パスワードを再設定",
+        "submitAriaLabel": "パスワード再設定リクエスト",
+        "successTitle": "パスワード再設定完了",
+        "successMessage": "新しいパスワードでログインしてください。",
+        "goLogin": "ログインへ",
+        "errors": {
+          "phoneRequired": "携帯電話番号を入力してください。",
+          "phoneInvalid": "正しい携帯電話番号の形式ではありません。",
+          "codeSendFailed": "認証番号の送信に失敗しました。もう一度お試しください。",
+          "codeRequired": "認証番号を入力してください。",
+          "codeInvalid": "認証番号が正しくありません。",
+          "userIdRequired": "ユーザーIDを入力してください。",
+          "passwordRequired": "新しいパスワードを入力してください。",
+          "passwordMin": "パスワードは8文字以上にしてください。",
+          "passwordMismatch": "パスワードが一致しません。",
+          "resetFailed": "パスワードの再設定に失敗しました。もう一度お試しください。"
+        }
+      }
+    },
+    "loginModal": {
+      "closeAriaLabel": "ログイン画面を閉じる"
+    }
+  },
+  "board": {
+    "notices": {
+      "title": "お知らせ",
+      "subtitle": "CrestLabの最新情報をご確認ください",
+      "readMore": "詳しく見る",
+      "noItems": "登録されたお知らせはありません。",
+      "backToList": "一覧へ"
+    },
+    "news": {
+      "title": "ニュース",
+      "subtitle": "投資関連の最新ニュースをご確認ください",
+      "source": "出典",
+      "readOriginal": "原文を見る",
+      "readOriginalAriaLabel": "原文記事へ移動（新しいウィンドウ）",
+      "noItems": "登録されたニュースはありません。"
+    },
+    "videos": {
+      "title": "投資教育動画",
+      "subtitle": "CrestLabの投資教育コンテンツをご視聴ください",
+      "loginRequired": "動画の視聴にはログインが必要です。",
+      "loginCta": "ログインする",
+      "noItems": "登録された動画はありません。",
+      "backToList": "一覧へ"
+    }
+  }
+}

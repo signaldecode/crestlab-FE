@@ -1,0 +1,25 @@
+{
+  "header": {
+    "logo": "CrestLab",
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "notices": "Notices",
+      "news": "News",
+      "videos": "Resources",
+      "contact": "Contact"
+    },
+    "cta": "Sign Up",
+    "login": "Log In"
+  },
+  "footer": {
+    "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+    "links": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "disclaimer": "Investment Disclaimer"
+    },
+    "disclaimer": "Investing involves risk of loss of principal, and past performance does not guarantee future results."
+  },
+  "skipToContent": "Skip to content"
+}

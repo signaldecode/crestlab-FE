@@ -1,0 +1,213 @@
+{
+  "common": {
+    "header": {
+      "logo": "CrestLab",
+      "nav": {
+        "home": "首页",
+        "about": "公司介绍",
+        "notices": "公告",
+        "news": "新闻",
+        "videos": "教育资料",
+        "contact": "联系我们"
+      },
+      "cta": "注册",
+      "login": "登录"
+    },
+    "footer": {
+      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "links": {
+        "terms": "使用条款",
+        "privacy": "隐私政策",
+        "disclaimer": "投资注意事项"
+      },
+      "disclaimer": "投资存在本金损失的风险，过去的收益率不保证未来的收益率。"
+    },
+    "skipToContent": "跳转至正文"
+  },
+  "landing": {
+    "hero": {
+      "badge": "数据驱动的投资解决方案",
+      "title": "通过系统化分析\n实现资产价值最大化",
+      "subtitle": "全球市场分析与风险管理专业投资公司\n与CrestLab一起体验稳健的资产增长。",
+      "primaryCta": "申请投资咨询",
+      "secondaryCta": "查看投资理念",
+      "primaryCtaAriaLabel": "前往投资咨询申请页面",
+      "secondaryCtaAriaLabel": "前往投资理念板块"
+    },
+    "stats": {
+      "title": "值得信赖的投资业绩",
+      "subtitle": "用数据证明CrestLab的竞争力"
+    },
+    "features": {
+      "title": "为什么选择CrestLab",
+      "subtitle": "了解差异化的投资流程"
+    },
+    "philosophy": {
+      "title": "投入投资的时间也是一种价值",
+      "subtitle": "在CrestLab管理您的资产期间\n请专注于更重要的事务。"
+    },
+    "testimonials": {
+      "title": "客户亲身分享的故事"
+    },
+    "faq": {
+      "title": "常见问题",
+      "subtitle": "查看您关心的问题"
+    },
+    "cta": {
+      "title": "共同规划资产的未来",
+      "subtitle": "免费获取专业投资咨询",
+      "button": "申请免费咨询",
+      "buttonAriaLabel": "前往免费投资咨询申请页面"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "登录",
+      "subtitle": "使用CrestLab账号登录",
+      "userId": "用户名",
+      "userIdPlaceholder": "请输入用户名",
+      "password": "密码",
+      "passwordPlaceholder": "请输入密码",
+      "submit": "登录",
+      "submitAriaLabel": "账号登录",
+      "forgotPassword": "忘记密码？",
+      "findId": "找回用户名",
+      "noAccount": "还没有账号？",
+      "goRegister": "注册",
+      "errors": {
+        "userIdRequired": "请输入用户名。",
+        "passwordRequired": "请输入密码。",
+        "loginFailed": "用户名或密码不正确。"
+      }
+    },
+    "register": {
+      "title": "注册",
+      "subtitle": "免费开始CrestLab的投资教育",
+      "name": "姓名",
+      "namePlaceholder": "张三",
+      "userId": "用户名",
+      "userIdPlaceholder": "英文、数字组合4~20位",
+      "phone": "手机号码",
+      "phonePlaceholder": "01012345678",
+      "verificationCode": "验证码",
+      "verificationCodePlaceholder": "6位验证码",
+      "sendCode": "发送验证码",
+      "resendCode": "重新发送",
+      "verifyCode": "验证确认",
+      "phoneVerified": "验证完成",
+      "password": "密码",
+      "passwordPlaceholder": "请输入8位以上密码",
+      "passwordConfirm": "确认密码",
+      "passwordConfirmPlaceholder": "请再次输入密码",
+      "termsAgree": "同意使用条款及隐私政策。",
+      "submit": "注册",
+      "submitAriaLabel": "完成注册",
+      "hasAccount": "已有账号？",
+      "goLogin": "登录",
+      "errors": {
+        "nameRequired": "请输入姓名。",
+        "userIdRequired": "请输入用户名。",
+        "userIdInvalid": "用户名必须为英文、数字组合，4~20位。",
+        "phoneRequired": "请输入手机号码。",
+        "phoneInvalid": "手机号码格式不正确。",
+        "codeSendFailed": "验证码发送失败，请重试。",
+        "codeRequired": "请输入验证码。",
+        "codeInvalid": "验证码不正确。",
+        "phoneNotVerified": "请完成手机验证。",
+        "passwordRequired": "请输入密码。",
+        "passwordMin": "密码长度不得少于8位。",
+        "passwordMismatch": "两次输入的密码不一致。",
+        "termsRequired": "请同意相关条款。"
+      }
+    },
+    "findAccount": {
+      "findId": {
+        "title": "找回用户名",
+        "subtitle": "可通过注册时填写的手机号码找回用户名",
+        "phone": "手机号码",
+        "phonePlaceholder": "01012345678",
+        "verificationCode": "验证码",
+        "verificationCodePlaceholder": "6位验证码",
+        "sendCode": "发送验证码",
+        "resendCode": "重新发送",
+        "submit": "找回用户名",
+        "submitAriaLabel": "提交找回用户名请求",
+        "resultTitle": "找回用户名结果",
+        "resultMessage": "您的用户名如下。",
+        "goLogin": "前往登录",
+        "goResetPassword": "重置密码",
+        "errors": {
+          "phoneRequired": "请输入手机号码。",
+          "phoneInvalid": "手机号码格式不正确。",
+          "codeSendFailed": "验证码发送失败，请重试。",
+          "codeRequired": "请输入验证码。",
+          "codeInvalid": "验证码不正确。",
+          "notFound": "未找到与该号码关联的用户名。"
+        }
+      },
+      "resetPassword": {
+        "title": "重置密码",
+        "subtitle": "完成手机验证后可设置新密码",
+        "phone": "手机号码",
+        "phonePlaceholder": "01012345678",
+        "verificationCode": "验证码",
+        "verificationCodePlaceholder": "6位验证码",
+        "sendCode": "发送验证码",
+        "resendCode": "重新发送",
+        "verifyCode": "验证确认",
+        "phoneVerified": "验证完成",
+        "userId": "用户名",
+        "userIdPlaceholder": "请输入用户名",
+        "newPassword": "新密码",
+        "newPasswordPlaceholder": "请输入8位以上密码",
+        "confirmPassword": "确认新密码",
+        "confirmPasswordPlaceholder": "请再次输入新密码",
+        "submit": "重置密码",
+        "submitAriaLabel": "提交重置密码请求",
+        "successTitle": "密码重置完成",
+        "successMessage": "请使用新密码登录。",
+        "goLogin": "前往登录",
+        "errors": {
+          "phoneRequired": "请输入手机号码。",
+          "phoneInvalid": "手机号码格式不正确。",
+          "codeSendFailed": "验证码发送失败，请重试。",
+          "codeRequired": "请输入验证码。",
+          "codeInvalid": "验证码不正确。",
+          "userIdRequired": "请输入用户名。",
+          "passwordRequired": "请输入新密码。",
+          "passwordMin": "密码长度不得少于8位。",
+          "passwordMismatch": "两次输入的密码不一致。",
+          "resetFailed": "密码重置失败，请重试。"
+        }
+      }
+    },
+    "loginModal": {
+      "closeAriaLabel": "关闭登录窗口"
+    }
+  },
+  "board": {
+    "notices": {
+      "title": "公告",
+      "subtitle": "查看CrestLab的最新动态",
+      "readMore": "查看详情",
+      "noItems": "暂无公告。",
+      "backToList": "返回列表"
+    },
+    "news": {
+      "title": "新闻",
+      "subtitle": "查看最新投资相关新闻",
+      "source": "来源",
+      "readOriginal": "查看原文",
+      "readOriginalAriaLabel": "前往原文（新窗口打开）",
+      "noItems": "暂无新闻。"
+    },
+    "videos": {
+      "title": "投资教育视频",
+      "subtitle": "观看CrestLab的投资教育内容",
+      "loginRequired": "观看视频需要登录。",
+      "loginCta": "登录",
+      "noItems": "暂无视频。",
+      "backToList": "返回列表"
+    }
+  }
+}

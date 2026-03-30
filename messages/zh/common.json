@@ -1,0 +1,25 @@
+{
+  "header": {
+    "logo": "CrestLab",
+    "nav": {
+      "home": "首页",
+      "about": "公司介绍",
+      "notices": "公告",
+      "news": "新闻",
+      "videos": "教育资料",
+      "contact": "联系我们"
+    },
+    "cta": "注册",
+    "login": "登录"
+  },
+  "footer": {
+    "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+    "links": {
+      "terms": "使用条款",
+      "privacy": "隐私政策",
+      "disclaimer": "投资注意事项"
+    },
+    "disclaimer": "投资存在本金损失的风险，过去的收益率不保证未来的收益率。"
+  },
+  "skipToContent": "跳转至正文"
+}
