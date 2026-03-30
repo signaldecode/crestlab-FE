@@ -1,5 +1,5 @@
 import SectionTitle from '@/components/ui/SectionTitle';
-import styles from './TestimonialsContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/TestimonialsContainer.module.scss';
 
 interface TestimonialItem {
   quote: string;

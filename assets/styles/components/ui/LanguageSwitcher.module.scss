@@ -1,0 +1,41 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/breakpoints' as *;
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.button {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  @include respond-to(sm) {
+    font-size: $font-size-sm;
+  }
+}
+
+.button--active {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+  border-color: $color-primary;
+}

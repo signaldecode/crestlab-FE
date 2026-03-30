@@ -1,0 +1,54 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+
+.input {
+  width: 100%;
+  padding: $spacing-sm $spacing-md;
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  color: $color-text-primary;
+  background-color: $color-background;
+  border: 1px solid $color-border;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 2.75rem;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+  }
+
+  &:disabled {
+    background-color: $color-background-light;
+    color: $color-text-muted;
+    cursor: not-allowed;
+  }
+
+  &[aria-invalid='true'] {
+    border-color: $color-error;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-error, 0.15);
+    }
+  }
+}
+
+// Size variants
+.input--sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  min-height: 2.25rem;
+}
+
+.input--lg {
+  padding: $spacing-md $spacing-md;
+  font-size: $font-size-lg;
+  min-height: 3.25rem;
+}

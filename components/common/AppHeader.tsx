@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import styles from './AppHeader.module.scss';
+import styles from '@/assets/styles/components/common/AppHeader.module.scss';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 interface NavItem {
   label: string;
@@ -36,6 +37,9 @@ export default function AppHeader({ data }: AppHeaderProps) {
 
         <nav className={styles.nav} aria-label="메인 내비게이션">
           <ul className={`${styles['nav-list']} ${mobileOpen ? styles['nav-list--open'] : ''}`}>
+            <li className={styles['nav-item--mobile-only']}>
+              <LanguageSwitcher />
+            </li>
             {navItems.map((item) => (
               <li key={item.href} className={styles['nav-item']}>
                 <a href={item.href} className={styles['nav-link']}>
@@ -51,6 +55,10 @@ export default function AppHeader({ data }: AppHeaderProps) {
             </li>
           </ul>
         </nav>
+
+        <div className={styles['desktop-lang']}>
+          <LanguageSwitcher />
+        </div>
 
         <div className={styles.actions}>
           <a href="/login" className={styles['btn-login']}>{data.login}</a>

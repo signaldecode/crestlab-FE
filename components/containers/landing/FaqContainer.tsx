@@ -1,6 +1,6 @@
 import SectionTitle from '@/components/ui/SectionTitle';
 import Accordion from '@/components/ui/Accordion';
-import styles from './FaqContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/FaqContainer.module.scss';
 
 interface FaqItem {
   question: string;

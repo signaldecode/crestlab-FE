@@ -1,4 +1,4 @@
-import styles from './SectionTitle.module.scss';
+import styles from '@/assets/styles/components/ui/SectionTitle.module.scss';
 
 interface SectionTitleProps {
   title: string;

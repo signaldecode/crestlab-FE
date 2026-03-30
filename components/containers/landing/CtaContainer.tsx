@@ -1,4 +1,4 @@
-import styles from './CtaContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/CtaContainer.module.scss';
 
 interface CtaData {
   title: string;

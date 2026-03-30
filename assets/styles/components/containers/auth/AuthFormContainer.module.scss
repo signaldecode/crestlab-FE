@@ -1,0 +1,146 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: $spacing-lg;
+  background-color: $color-background-alt;
+}
+
+.card {
+  width: 100%;
+  max-width: 28rem;
+  background-color: $color-background;
+  border-radius: 1rem;
+  padding: $spacing-xl $spacing-lg;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  @include respond-to(sm) {
+    padding: $spacing-2xl;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+
+  @include respond-to(sm) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.actions {
+  margin-top: $spacing-sm;
+}
+
+.link-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  margin-top: $spacing-lg;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.link {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.forgot-link {
+  display: block;
+  text-align: right;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-decoration: none;
+  margin-top: calc(-1 * $spacing-xs);
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.error-banner {
+  padding: $spacing-sm $spacing-md;
+  background-color: rgba($color-error, 0.08);
+  border: 1px solid rgba($color-error, 0.2);
+  border-radius: 0.5rem;
+  font-size: $font-size-sm;
+  color: $color-error;
+  text-align: center;
+}
+
+.field-error {
+  font-size: $font-size-xs;
+  color: $color-error;
+  margin-top: $spacing-xs;
+}
+
+.verify-row {
+  display: flex;
+  gap: $spacing-sm;
+  align-items: flex-end;
+}
+
+.verify-row > :first-child {
+  flex: 1;
+}
+
+.forgot-link-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: $spacing-md;
+  margin-top: calc(-1 * $spacing-xs);
+}
+
+.success-text {
+  font-size: $font-size-sm;
+  color: $color-success;
+  font-weight: $font-weight-semibold;
+}
+
+.result-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+  background-color: $color-background-alt;
+  border-radius: 0.5rem;
+}
+
+.result-value {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+}

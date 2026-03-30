@@ -1,5 +1,5 @@
 import SectionTitle from '@/components/ui/SectionTitle';
-import styles from './FeaturesContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/FeaturesContainer.module.scss';
 
 interface FeatureItem {
   title: string;

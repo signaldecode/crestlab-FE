@@ -1,0 +1,33 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+}
+
+.required {
+  color: $color-error;
+  margin-left: $spacing-xs;
+}
+
+.hint {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  line-height: $line-height-normal;
+}
+
+.error {
+  font-size: $font-size-xs;
+  color: $color-error;
+  line-height: $line-height-normal;
+}

@@ -1,0 +1,78 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.section {
+  padding: $spacing-2xl $container-padding;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: $spacing-xl 0 0;
+  border-top: 0.125rem solid $color-text-primary;
+}
+
+.item {
+  border-bottom: 0.0625rem solid $color-border;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+  padding: $spacing-md 0;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &:hover {
+    background-color: $color-background-alt;
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid $color-primary;
+    outline-offset: -0.125rem;
+  }
+}
+
+.item-date {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    min-width: 7rem;
+  }
+}
+
+.item-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  line-height: $line-height-normal;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: $spacing-3xl 0;
+  color: $color-text-muted;
+  font-size: $font-size-base;
+}

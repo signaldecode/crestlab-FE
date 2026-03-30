@@ -1,0 +1,25 @@
+{
+  "notices": {
+    "title": "공지사항",
+    "subtitle": "CrestLab의 최신 소식을 확인하세요",
+    "readMore": "자세히 보기",
+    "noItems": "등록된 공지사항이 없습니다.",
+    "backToList": "목록으로"
+  },
+  "news": {
+    "title": "뉴스",
+    "subtitle": "투자 관련 최신 뉴스를 확인하세요",
+    "source": "출처",
+    "readOriginal": "원문 보기",
+    "readOriginalAriaLabel": "원문 기사로 이동 (새 창)",
+    "noItems": "등록된 뉴스가 없습니다."
+  },
+  "videos": {
+    "title": "투자 교육 영상",
+    "subtitle": "CrestLab의 투자 교육 콘텐츠를 시청하세요",
+    "loginRequired": "영상 시청은 로그인이 필요합니다.",
+    "loginCta": "로그인하기",
+    "noItems": "등록된 영상이 없습니다.",
+    "backToList": "목록으로"
+  }
+}

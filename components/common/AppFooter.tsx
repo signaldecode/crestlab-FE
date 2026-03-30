@@ -1,4 +1,4 @@
-import styles from './AppFooter.module.scss';
+import styles from '@/assets/styles/components/common/AppFooter.module.scss';
 
 interface CompanyData {
   name: string;

@@ -1,4 +1,4 @@
-import styles from './HeroContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/HeroContainer.module.scss';
 
 interface HeroData {
   badge: string;

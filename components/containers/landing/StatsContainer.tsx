@@ -1,5 +1,5 @@
 import SectionTitle from '@/components/ui/SectionTitle';
-import styles from './StatsContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/StatsContainer.module.scss';
 
 interface StatItem {
   value: string;

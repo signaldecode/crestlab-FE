@@ -4,9 +4,9 @@
     "nav": {
       "home": "홈",
       "about": "회사소개",
+      "notices": "공지사항",
       "news": "뉴스",
-      "board": "게시판",
-      "lectures": "투자교육",
+      "videos": "교육자료",
       "contact": "문의하기"
     },
     "cta": "회원가입",

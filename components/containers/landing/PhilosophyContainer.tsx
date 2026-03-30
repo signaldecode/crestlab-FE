@@ -1,4 +1,4 @@
-import styles from './PhilosophyContainer.module.scss';
+import styles from '@/assets/styles/components/containers/landing/PhilosophyContainer.module.scss';
 
 interface PhilosophyStat {
   label: string;

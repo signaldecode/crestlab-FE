@@ -1,8 +1,8 @@
-@use '../../assets/styles/tokens/colors' as *;
-@use '../../assets/styles/tokens/typography' as *;
-@use '../../assets/styles/tokens/spacing' as *;
-@use '../../assets/styles/tokens/z-index' as *;
-@use '../../assets/styles/tokens/breakpoints' as *;
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/z-index' as *;
+@use '../../tokens/breakpoints' as *;
 
 .header {
   position: sticky;
@@ -82,6 +82,16 @@
 
   &:hover {
     color: $color-primary;
+  }
+}
+
+// Desktop language switcher
+.desktop-lang {
+  display: none;
+
+  @include respond-to(lg) {
+    display: flex;
+    align-items: center;
   }
 }
 

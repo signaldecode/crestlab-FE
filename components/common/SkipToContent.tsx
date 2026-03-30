@@ -1,4 +1,4 @@
-import styles from './SkipToContent.module.scss';
+import styles from '@/assets/styles/components/common/SkipToContent.module.scss';
 
 interface SkipToContentProps {
   label: string;
