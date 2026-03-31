@@ -4,8 +4,8 @@
 @use '../../../tokens/breakpoints' as *;
 
 .testimonials {
-  padding: $spacing-4xl $spacing-lg;
-  background-color: $color-background-alt;
+  padding: $spacing-4xl $spacing-md;
+  background: linear-gradient(90deg, rgba(185, 199, 253, 1) 0%, rgba(165, 206, 254, 1) 100%);
 }
 
 .inner {
@@ -26,9 +26,9 @@
 
 .card {
   background-color: $color-background;
-  border-radius: 1rem;
-  padding: $spacing-xl;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.04);
+  border-radius: 0.75rem;
+  padding: $spacing-xl $spacing-lg;
+  box-shadow: 0 0.5rem 0.625rem rgba(34, 34, 34, 0.12);
 }
 
 .quote {
@@ -38,11 +38,12 @@
 }
 
 .text {
-  font-size: $font-size-base;
+  font-size: $font-size-lg;
   color: $color-text-secondary;
   line-height: $line-height-relaxed;
   flex-grow: 1;
   margin-bottom: $spacing-lg;
+  font-weight: $font-weight-medium;
 }
 
 .highlight {
@@ -53,18 +54,24 @@
 .author {
   display: flex;
   align-items: center;
-  gap: $spacing-sm;
-  padding-top: $spacing-md;
-  border-top: 1px solid $color-border-light;
+  gap: $spacing-md;
+}
+
+.avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: $color-background-light;
+  flex-shrink: 0;
 }
 
 .name {
-  font-size: $font-size-base;
-  font-weight: $font-weight-semibold;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
   color: $color-text-primary;
 }
 
 .role {
   font-size: $font-size-sm;
-  color: $color-text-muted;
+  color: $color-text-secondary;
 }

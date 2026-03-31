@@ -1,13 +1,9 @@
+import Image from 'next/image';
 import styles from '@/assets/styles/components/containers/landing/HeroContainer.module.scss';
 
 interface HeroData {
-  badge: string;
-  title: string;
-  subtitle: string;
-  primaryCta: string;
-  secondaryCta: string;
-  primaryCtaAriaLabel: string;
-  secondaryCtaAriaLabel: string;
+  headline: string;
+  ariaLabel: string;
 }
 
 interface HeroContainerProps {
@@ -16,33 +12,26 @@ interface HeroContainerProps {
 
 export default function HeroContainer({ data }: HeroContainerProps) {
   return (
-    <section className={styles.hero} aria-label={data.badge}>
+    <section className={styles.hero} aria-label={data.ariaLabel}>
+      <Image
+        src="/images/landing/hero-bg.png"
+        alt=""
+        fill
+        priority
+        className={styles['bg-image']}
+        sizes="100vw"
+      />
+      <div className={styles.overlay} />
       <div className={styles.inner}>
-        <span className={styles.badge}>{data.badge}</span>
-        <h1 className={styles.title}>
-          {data.title.split('\n').map((line, i) => (
+        <p className={styles.brand}>Crest Lab</p>
+        <h1 className={styles.headline}>
+          {data.headline.split('\n').map((line, i) => (
             <span key={i}>
               {line}
-              {i < data.title.split('\n').length - 1 && <br />}
+              {i < data.headline.split('\n').length - 1 && <br />}
             </span>
           ))}
         </h1>
-        <p className={styles.subtitle}>
-          {data.subtitle.split('\n').map((line, i) => (
-            <span key={i}>
-              {line}
-              {i < data.subtitle.split('\n').length - 1 && <br />}
-            </span>
-          ))}
-        </p>
-        <div className={styles.cta}>
-          <a href="/contact" className={styles['btn-primary']} aria-label={data.primaryCtaAriaLabel}>
-            {data.primaryCta}
-          </a>
-          <a href="#philosophy" className={styles['btn-secondary']} aria-label={data.secondaryCtaAriaLabel}>
-            {data.secondaryCta}
-          </a>
-        </div>
       </div>
     </section>
   );

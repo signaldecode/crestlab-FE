@@ -1,0 +1,151 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.marquee {
+  position: relative;
+  padding: $spacing-3xl 0;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xl;
+  padding-right: $spacing-xl;
+}
+
+.text {
+  font-family: $font-family-sans;
+  font-size: $font-size-6xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  opacity: 0.06;
+  white-space: nowrap;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+  user-select: none;
+
+  @include respond-to(md) {
+    font-size: 5rem;
+  }
+
+  @include respond-to(lg) {
+    font-size: 7rem;
+  }
+}
+
+.circles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+
+  &:nth-child(1) {
+    width: 5rem;
+    height: 5rem;
+    top: 10%;
+    left: 5%;
+  }
+
+  &:nth-child(2) {
+    width: 3rem;
+    height: 3rem;
+    top: 60%;
+    left: 20%;
+  }
+
+  &:nth-child(3) {
+    width: 4rem;
+    height: 4rem;
+    top: 15%;
+    left: 45%;
+  }
+
+  &:nth-child(4) {
+    width: 3.5rem;
+    height: 3.5rem;
+    top: 70%;
+    left: 65%;
+  }
+
+  &:nth-child(5) {
+    width: 4.5rem;
+    height: 4.5rem;
+    top: 20%;
+    left: 85%;
+  }
+}
+
+.illustrations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+  }
+}
+
+.illust-wrap {
+  position: absolute;
+
+  &:nth-child(1) {
+    top: -5%;
+    left: 3%;
+  }
+
+  &:nth-child(2) {
+    bottom: -5%;
+    left: 25%;
+  }
+
+  &:nth-child(3) {
+    top: -10%;
+    left: 50%;
+  }
+
+  &:nth-child(4) {
+    bottom: -10%;
+    right: 20%;
+  }
+
+  &:nth-child(5) {
+    top: -5%;
+    right: 3%;
+  }
+}
+
+.illust {
+  width: auto;
+  height: 8rem;
+  object-fit: contain;
+  opacity: 0.85;
+
+  @include respond-to(lg) {
+    height: 10rem;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

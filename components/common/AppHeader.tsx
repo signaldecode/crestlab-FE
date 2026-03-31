@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import useUIStore from '@/stores/useUIStore';
@@ -27,8 +27,17 @@ interface AppHeaderProps {
 
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const openLoginModal = useUIStore((s) => s.openLoginModal);
   const { isLoggedIn, logout } = useAuthStore();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems: NavItem[] = Object.entries(data.nav).map(([key, label]) => ({
     label,
@@ -46,7 +55,7 @@ export default function AppHeader({ data }: AppHeaderProps) {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
           {data.logo}
@@ -91,26 +100,28 @@ export default function AppHeader({ data }: AppHeaderProps) {
           </ul>
         </nav>
 
-        <div className={styles['desktop-lang']}>
-          <LanguageSwitcher />
-        </div>
+        <div className={styles.right}>
+          <div className={styles['desktop-lang']}>
+            <LanguageSwitcher />
+          </div>
 
-        <div className={styles.actions}>
-          {isLoggedIn ? (
-            <>
-              <Link href="/mypage" className={styles['btn-login']}>{data.mypage}</Link>
-              <button type="button" className={styles['btn-cta']} onClick={handleLogout}>
-                {data.logout}
-              </button>
-            </>
-          ) : (
-            <>
-              <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
-                {data.login}
-              </button>
-              <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
-            </>
-          )}
+          <div className={styles.actions}>
+            {isLoggedIn ? (
+              <>
+                <Link href="/mypage" className={styles['btn-login']}>{data.mypage}</Link>
+                <button type="button" className={styles['btn-cta']} onClick={handleLogout}>
+                  {data.logout}
+                </button>
+              </>
+            ) : (
+              <>
+                <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
+                  {data.login}
+                </button>
+                <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
+              </>
+            )}
+          </div>
         </div>
 
         <button

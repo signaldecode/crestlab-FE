@@ -37,8 +37,11 @@ export default function TestimonialsContainer({ messages, data }: TestimonialsCo
                   ))}
                 </p>
                 <footer className={styles.author}>
-                  <span className={styles.name}>{item.author}</span>
-                  <span className={styles.role}>{item.role}</span>
+                  <span className={styles.avatar} aria-hidden="true" />
+                  <div>
+                    <span className={styles.name}>{item.author}</span>
+                    <span className={styles.role}>{item.role}</span>
+                  </div>
                 </footer>
               </blockquote>
             </li>

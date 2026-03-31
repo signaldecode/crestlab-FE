@@ -4,103 +4,72 @@
 @use '../../../tokens/breakpoints' as *;
 
 .hero {
-  background-color: $color-background-accent;
-  padding: $spacing-4xl $spacing-lg;
-  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: $spacing-2xl $spacing-md;
   overflow: hidden;
+  text-align: center;
+}
 
-  @include respond-to(md) {
-    padding: 7.5rem $spacing-lg;
-  }
+.bg-image {
+  object-fit: cover;
+  object-position: center bottom;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
 }
 
 .inner {
-  max-width: $container-max-width;
-  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-.badge {
-  display: inline-block;
-  padding: $spacing-xs $spacing-md;
-  background-color: rgba($color-primary, 0.15);
-  color: $color-primary-dark;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  border-radius: 2rem;
-  margin-bottom: $spacing-xl;
+.brand {
+  font-family: 'Inter', $font-family-sans;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-on-dark;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-2xl;
+  }
 }
 
-.title {
+.headline {
+  font-family: 'Inter', $font-family-sans;
   font-size: $font-size-4xl;
-  font-weight: $font-weight-extrabold;
-  color: $color-text-primary;
-  letter-spacing: $letter-spacing-tight;
-  line-height: $line-height-tight;
-  margin-bottom: $spacing-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-on-dark;
+  line-height: 1.2;
+  margin-bottom: $spacing-7xl;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
 
   @include respond-to(md) {
     font-size: $font-size-5xl;
   }
 
   @include respond-to(lg) {
-    font-size: $font-size-6xl;
-  }
-}
-
-.subtitle {
-  font-size: $font-size-base;
-  color: $color-text-secondary;
-  line-height: $line-height-relaxed;
-  margin-bottom: $spacing-2xl;
-
-  @include respond-to(md) {
-    font-size: $font-size-lg;
-  }
-}
-
-.cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $spacing-md;
-
-  @include respond-to(sm) {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: $spacing-md $spacing-2xl;
-  background-color: $color-primary;
-  color: $color-text-on-dark;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
-
-  &:hover {
-    background-color: $color-primary-dark;
-    transform: translateY(-0.125rem);
-  }
-}
-
-.btn-secondary {
-  display: inline-block;
-  padding: $spacing-md $spacing-2xl;
-  background-color: transparent;
-  color: $color-text-primary;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  border: 0.125rem solid $color-border;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
-
-  &:hover {
-    border-color: $color-primary;
-    color: $color-primary;
+    font-size: $font-size-7xl;
   }
 }

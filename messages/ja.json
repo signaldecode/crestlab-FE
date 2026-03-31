@@ -28,28 +28,35 @@
   },
   "landing": {
     "hero": {
-      "badge": "データ基盤の投資ソリューション",
-      "title": "体系的な分析で\n資産の価値を最大化します",
-      "subtitle": "グローバル市場分析とリスク管理を専門とする投資会社\nCrestLabと共に安定的な資産成長をご体験ください。",
-      "primaryCta": "投資相談のお申し込み",
-      "secondaryCta": "投資哲学を見る",
-      "primaryCtaAriaLabel": "投資相談お申し込みページへ移動",
-      "secondaryCtaAriaLabel": "投資哲学セクションへ移動"
+      "headline": "1,349,789人が選んだ\n投資、Crest Lab",
+      "ariaLabel": "Crest Lab メインヒーローセクション"
     },
-    "stats": {
-      "title": "信頼できる投資実績",
-      "subtitle": "数字が証明するCrestLabの競争力"
+    "portfolio": {
+      "title": "リアルタイムポートフォリオ管理",
+      "subtitle": "多様なデジタル資産を一か所で管理"
     },
-    "features": {
+    "trust": {
+      "title": "信頼できる市場シェアと運用資産規模",
+      "subtitle": "KOSCOMロボアドバイザーテストベッドを通過した\n検証済みの投資ソリューション"
+    },
+    "featureCards": {
       "title": "なぜCrestLabなのか",
       "subtitle": "差別化された投資プロセスをご確認ください"
     },
-    "philosophy": {
-      "title": "投資に費やす時間も、結局は価値",
-      "subtitle": "CrestLabが資産を管理している間\nより大切なことに集中してください。"
+    "points": {
+      "title": "Crest Labの投資ポイント"
     },
     "testimonials": {
       "title": "お客様の声"
+    },
+    "staking": {
+      "title": "ステーキングで収益最大化",
+      "subtitle": "保有資産で追加収益を得ましょう",
+      "rewardLabel": "年間報酬率"
+    },
+    "statsChart": {
+      "title": "検証済みの投資成果",
+      "subtitle": "年度別目標達成率"
     },
     "faq": {
       "title": "よくあるご質問",

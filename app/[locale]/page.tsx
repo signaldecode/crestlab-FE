@@ -1,9 +1,13 @@
 import { getTranslations } from 'next-intl/server';
 import HeroContainer from '@/components/containers/landing/HeroContainer';
-import StatsContainer from '@/components/containers/landing/StatsContainer';
-import FeaturesContainer from '@/components/containers/landing/FeaturesContainer';
-import PhilosophyContainer from '@/components/containers/landing/PhilosophyContainer';
+import PortfolioContainer from '@/components/containers/landing/PortfolioContainer';
+import MarqueeContainer from '@/components/containers/landing/MarqueeContainer';
+import FeatureCardsContainer from '@/components/containers/landing/FeatureCardsContainer';
+import PointsContainer from '@/components/containers/landing/PointsContainer';
+import TrustContainer from '@/components/containers/landing/TrustContainer';
 import TestimonialsContainer from '@/components/containers/landing/TestimonialsContainer';
+import StakingContainer from '@/components/containers/landing/StakingContainer';
+import StatsChartContainer from '@/components/containers/landing/StatsChartContainer';
 import FaqContainer from '@/components/containers/landing/FaqContainer';
 import CtaContainer from '@/components/containers/landing/CtaContainer';
 import landingData from '@/data/landingData.json';
@@ -12,19 +16,21 @@ export default async function HomePage() {
   const t = await getTranslations('landing');
 
   const heroMsg = {
-    badge: t('hero.badge'),
-    title: t('hero.title'),
-    subtitle: t('hero.subtitle'),
-    primaryCta: t('hero.primaryCta'),
-    secondaryCta: t('hero.secondaryCta'),
-    primaryCtaAriaLabel: t('hero.primaryCtaAriaLabel'),
-    secondaryCtaAriaLabel: t('hero.secondaryCtaAriaLabel'),
+    headline: t('hero.headline'),
+    ariaLabel: t('hero.ariaLabel'),
   };
 
-  const statsMsg = { title: t('stats.title'), subtitle: t('stats.subtitle') };
-  const featuresMsg = { title: t('features.title'), subtitle: t('features.subtitle') };
-  const philosophyMsg = { title: t('philosophy.title'), subtitle: t('philosophy.subtitle') };
+  const portfolioMsg = { title: t('portfolio.title'), subtitle: t('portfolio.subtitle') };
+  const featureCardsMsg = { title: t('featureCards.title'), subtitle: t('featureCards.subtitle') };
+  const pointsMsg = { title: t('points.title') };
+  const trustMsg = { title: t('trust.title'), subtitle: t('trust.subtitle') };
   const testimonialsMsg = { title: t('testimonials.title') };
+  const stakingMsg = {
+    title: t('staking.title'),
+    subtitle: t('staking.subtitle'),
+    rewardLabel: t('staking.rewardLabel'),
+  };
+  const statsChartMsg = { title: t('statsChart.title'), subtitle: t('statsChart.subtitle') };
   const faqMsg = { title: t('faq.title'), subtitle: t('faq.subtitle') };
   const ctaMsg = {
     title: t('cta.title'),
@@ -36,10 +42,14 @@ export default async function HomePage() {
   return (
     <>
       <HeroContainer data={heroMsg} />
-      <StatsContainer messages={statsMsg} data={landingData.stats} />
-      <FeaturesContainer messages={featuresMsg} data={landingData.features} />
-      <PhilosophyContainer messages={philosophyMsg} data={landingData.philosophy} />
+      <PortfolioContainer messages={portfolioMsg} data={landingData.portfolio} />
+      <MarqueeContainer />
+      <FeatureCardsContainer messages={featureCardsMsg} data={landingData.featureCards} />
+      <PointsContainer messages={pointsMsg} data={landingData.points} />
+      <TrustContainer messages={trustMsg} data={landingData.trust} />
       <TestimonialsContainer messages={testimonialsMsg} data={landingData.testimonials} />
+      <StakingContainer messages={stakingMsg} data={landingData.staking} />
+      <StatsChartContainer messages={statsChartMsg} data={landingData.statsChart} />
       <FaqContainer messages={faqMsg} data={landingData.faq} />
       <CtaContainer data={ctaMsg} />
     </>

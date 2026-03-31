@@ -28,28 +28,35 @@
   },
   "landing": {
     "hero": {
-      "badge": "Data-Driven Investment Solutions",
-      "title": "Maximize your assets\nthrough systematic analysis",
-      "subtitle": "A professional investment firm specializing in global market analysis and risk management.\nExperience stable asset growth with CrestLab.",
-      "primaryCta": "Request a Consultation",
-      "secondaryCta": "Our Investment Philosophy",
-      "primaryCtaAriaLabel": "Go to investment consultation request page",
-      "secondaryCtaAriaLabel": "Go to investment philosophy section"
+      "headline": "Chosen by 1,349,789 people\ninvestment, Crest Lab",
+      "ariaLabel": "Crest Lab main hero section"
     },
-    "stats": {
-      "title": "Proven Investment Performance",
-      "subtitle": "The numbers speak for CrestLab's competitive edge"
+    "portfolio": {
+      "title": "Real-time Portfolio Management",
+      "subtitle": "Manage all your digital assets in one place"
     },
-    "features": {
+    "trust": {
+      "title": "Trusted Market Share and AUM",
+      "subtitle": "Verified performance among investment solutions\nthat passed the KOSCOM Robo-Advisor Testbed"
+    },
+    "featureCards": {
       "title": "Why CrestLab",
       "subtitle": "Discover our differentiated investment process"
     },
-    "philosophy": {
-      "title": "Your time invested matters just as much",
-      "subtitle": "While CrestLab manages your assets,\nfocus on what matters most to you."
+    "points": {
+      "title": "Crest Lab Investment Points"
     },
     "testimonials": {
       "title": "What Our Clients Say"
+    },
+    "staking": {
+      "title": "Maximize Returns with Staking",
+      "subtitle": "Earn additional returns on your holdings",
+      "rewardLabel": "Annual Reward"
+    },
+    "statsChart": {
+      "title": "Proven Investment Results",
+      "subtitle": "Target achievement rate by year"
     },
     "faq": {
       "title": "Frequently Asked Questions",

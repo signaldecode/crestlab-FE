@@ -1,0 +1,109 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.trust {
+  position: relative;
+  padding: $spacing-4xl $spacing-md;
+  overflow: hidden;
+  min-height: 28rem;
+  display: flex;
+  align-items: center;
+}
+
+.bg-image {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(185, 199, 253, 0.85) 0%,
+    rgba(165, 206, 254, 0.85) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  @include respond-to(sm) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.stat-label {
+  display: block;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-md;
+}
+
+.stat-bar {
+  height: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, $color-primary 0%, #6366f1 100%);
+  border-radius: 0.625rem;
+}
