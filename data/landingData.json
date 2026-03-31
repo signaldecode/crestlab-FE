@@ -12,31 +12,16 @@
   "featureCards": {
     "items": [
       {
-        "title": "Add unlimited users",
-        "description": "Add unlimited usersAdd unlimited usersAdd unlimited users",
-        "assets": [
-          { "name": "이더리움", "amount": "-10,000,000 KRW" },
-          { "name": "비트코인", "amount": "-25,000,000 KRW" },
-          { "name": "솔라나", "amount": "-5,000,000 KRW" }
-        ]
+        "title": "실시간 자산 현황",
+        "description": "보유 자산의 변동을 실시간으로 추적하고 한눈에 확인하세요."
       },
       {
-        "title": "Add unlimited users",
-        "description": "Add unlimited usersAdd unlimited usersAdd unlimited users",
-        "assets": [
-          { "name": "이더리움", "amount": "-10,000,000 KRW" },
-          { "name": "비트코인", "amount": "-25,000,000 KRW" },
-          { "name": "솔라나", "amount": "-5,000,000 KRW" }
-        ]
+        "title": "스마트 시그널",
+        "description": "AI 기반 분석으로 최적의 매수·매도 타이밍을 제안합니다."
       },
       {
-        "title": "Add unlimited users",
-        "description": "Add unlimited usersAdd unlimited usersAdd unlimited users",
-        "assets": [
-          { "name": "이더리움", "amount": "-10,000,000 KRW" },
-          { "name": "비트코인", "amount": "-25,000,000 KRW" },
-          { "name": "솔라나", "amount": "-5,000,000 KRW" }
-        ]
+        "title": "포트폴리오 대시보드",
+        "description": "자산 배분과 수익률을 직관적인 대시보드로 관리하세요."
       }
     ]
   },

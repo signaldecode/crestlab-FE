@@ -13,20 +13,27 @@
   margin: 0 auto;
 }
 
+// ── Header ──
 .header {
   text-align: center;
   margin-bottom: $spacing-3xl;
 }
 
 .title {
+  font-family: 'Inter', $font-family-sans;
   font-size: $font-size-3xl;
   font-weight: $font-weight-bold;
   color: $color-text-primary;
   letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
   margin-bottom: $spacing-md;
 
   @include respond-to(md) {
     font-size: $font-size-4xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
   }
 }
 
@@ -40,6 +47,7 @@
   }
 }
 
+// ── Grid ──
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -51,75 +59,50 @@
   }
 }
 
+// ── Card ──
 .card {
   background-color: $color-background;
   border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.05);
   transition: transform 0.25s, box-shadow 0.25s;
 
   &:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.08);
   }
 }
 
-.card-bg {
-  height: 10rem;
-  background: linear-gradient(135deg, rgba(185, 199, 253, 0.4) 0%, rgba(165, 206, 254, 0.3) 100%);
-  border-radius: 0.75rem;
+.card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f7fb;
+  border-radius: 1rem;
   margin: $spacing-md $spacing-md 0;
+  padding: $spacing-xl $spacing-md;
+  min-height: 14rem;
+  overflow: hidden;
 
   @include respond-to(md) {
-    height: 12rem;
+    min-height: 16rem;
+  }
+}
+
+.card-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 13rem;
+  object-fit: contain;
+
+  @include respond-to(md) {
+    max-height: 15rem;
   }
 }
 
 .card-content {
-  padding: $spacing-lg $spacing-md $spacing-xl;
-}
-
-.asset-list {
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-xs;
-  margin-bottom: $spacing-lg;
-  list-style: none;
-}
-
-.asset-item {
-  display: flex;
-  align-items: center;
-  gap: $spacing-sm;
-  padding: $spacing-sm $spacing-md;
-  background-color: $color-background-light;
-  border-radius: 0.5rem;
-  font-size: $font-size-xs;
-
-  &--active {
-    background-color: $color-background;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
-  }
-}
-
-.asset-icon {
-  display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  background-color: $color-primary-light;
-  flex-shrink: 0;
-}
-
-.asset-name {
-  font-weight: $font-weight-medium;
-  color: $color-text-secondary;
-}
-
-.asset-amount {
-  margin-left: auto;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
+  padding: $spacing-lg $spacing-xl $spacing-xl;
 }
 
 .card-title {

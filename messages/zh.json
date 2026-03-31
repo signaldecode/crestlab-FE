@@ -40,8 +40,14 @@
       "subtitle": "通过KOSCOM机器人顾问测试台的\n经过验证的投资解决方案"
     },
     "featureCards": {
-      "title": "为什么选择CrestLab",
-      "subtitle": "了解差异化的投资流程"
+      "title": "你需要的不是更多数据\n而是信号",
+      "subtitle": "我们从数据中发现真正的投资机会",
+      "item1Title": "实时资产状况",
+      "item1Desc": "实时追踪并一目了然地查看资产变动。",
+      "item2Title": "智能信号",
+      "item2Desc": "基于AI分析，建议最佳买卖时机。",
+      "item3Title": "投资组合仪表板",
+      "item3Desc": "通过直观的仪表板管理资产配置和收益率。"
     },
     "points": {
       "title": "Crest Lab投资要点"

@@ -40,8 +40,14 @@
       "subtitle": "Verified performance among investment solutions\nthat passed the KOSCOM Robo-Advisor Testbed"
     },
     "featureCards": {
-      "title": "Why CrestLab",
-      "subtitle": "Discover our differentiated investment process"
+      "title": "You don't need more data\nYou need signals",
+      "subtitle": "We find real investment opportunities within the data",
+      "item1Title": "Real-time Asset Status",
+      "item1Desc": "Track and view your asset changes in real time at a glance.",
+      "item2Title": "Smart Signals",
+      "item2Desc": "AI-powered analysis suggests optimal buy and sell timing.",
+      "item3Title": "Portfolio Dashboard",
+      "item3Desc": "Manage asset allocation and returns with an intuitive dashboard."
     },
     "points": {
       "title": "Crest Lab Investment Points"

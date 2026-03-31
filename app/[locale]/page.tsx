@@ -1,7 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import HeroContainer from '@/components/containers/landing/HeroContainer';
-import PortfolioContainer from '@/components/containers/landing/PortfolioContainer';
-import MarqueeContainer from '@/components/containers/landing/MarqueeContainer';
+// import PortfolioContainer from '@/components/containers/landing/PortfolioContainer';
+// import MarqueeContainer from '@/components/containers/landing/MarqueeContainer';
 import FeatureCardsContainer from '@/components/containers/landing/FeatureCardsContainer';
 import PointsContainer from '@/components/containers/landing/PointsContainer';
 import TrustContainer from '@/components/containers/landing/TrustContainer';
@@ -20,8 +20,15 @@ export default async function HomePage() {
     ariaLabel: t('hero.ariaLabel'),
   };
 
-  const portfolioMsg = { title: t('portfolio.title'), subtitle: t('portfolio.subtitle') };
-  const featureCardsMsg = { title: t('featureCards.title'), subtitle: t('featureCards.subtitle') };
+  const featureCardsMsg = {
+    title: t('featureCards.title'),
+    subtitle: t('featureCards.subtitle'),
+    items: [
+      { title: t('featureCards.item1Title'), description: t('featureCards.item1Desc') },
+      { title: t('featureCards.item2Title'), description: t('featureCards.item2Desc') },
+      { title: t('featureCards.item3Title'), description: t('featureCards.item3Desc') },
+    ],
+  };
   const pointsMsg = { title: t('points.title') };
   const trustMsg = { title: t('trust.title'), subtitle: t('trust.subtitle') };
   const testimonialsMsg = { title: t('testimonials.title') };
@@ -42,9 +49,9 @@ export default async function HomePage() {
   return (
     <>
       <HeroContainer data={heroMsg} />
-      <PortfolioContainer messages={portfolioMsg} data={landingData.portfolio} />
-      <MarqueeContainer />
-      <FeatureCardsContainer messages={featureCardsMsg} data={landingData.featureCards} />
+      {/* <PortfolioContainer messages={portfolioMsg} data={landingData.portfolio} /> */}
+      {/* <MarqueeContainer /> */}
+      <FeatureCardsContainer messages={featureCardsMsg} />
       <PointsContainer messages={pointsMsg} data={landingData.points} />
       <TrustContainer messages={trustMsg} data={landingData.trust} />
       <TestimonialsContainer messages={testimonialsMsg} data={landingData.testimonials} />

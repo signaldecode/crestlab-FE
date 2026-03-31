@@ -1,42 +1,55 @@
+import Image from 'next/image';
 import styles from '@/assets/styles/components/containers/landing/FeatureCardsContainer.module.scss';
+
+const CARD_IMAGES = [
+  { src: '/images/landing/feature-card1-content.png', width: 375, height: 275 },
+  { src: '/images/landing/feature-card2-content.png', width: 255, height: 291 },
+  { src: '/images/landing/feature-card3-content.png', width: 350, height: 283 },
+];
 
 interface FeatureCardItem {
   title: string;
   description: string;
-  assets: { name: string; amount: string }[];
 }
 
 interface FeatureCardsContainerProps {
-  messages: { title: string; subtitle: string };
-  data: { items: FeatureCardItem[] };
+  messages: {
+    title: string;
+    subtitle: string;
+    items: FeatureCardItem[];
+  };
 }
 
-export default function FeatureCardsContainer({ messages, data }: FeatureCardsContainerProps) {
+export default function FeatureCardsContainer({ messages }: FeatureCardsContainerProps) {
   return (
     <section className={styles['feature-cards']}>
       <div className={styles.inner}>
         <div className={styles.header}>
-          <h2 className={styles.title}>{messages.title}</h2>
+          <h2 className={styles.title}>
+            {messages.title.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < messages.title.split('\n').length - 1 && <br />}
+              </span>
+            ))}
+          </h2>
           <p className={styles.subtitle}>{messages.subtitle}</p>
         </div>
 
         <ul className={styles.grid}>
-          {data.items.map((item, index) => (
+          {messages.items.map((item, index) => (
             <li key={index} className={styles.card}>
-              <div className={styles['card-bg']} />
+              <div className={styles['card-visual']}>
+                <Image
+                  src={CARD_IMAGES[index % CARD_IMAGES.length].src}
+                  alt=""
+                  width={CARD_IMAGES[index % CARD_IMAGES.length].width}
+                  height={CARD_IMAGES[index % CARD_IMAGES.length].height}
+                  className={styles['card-image']}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              </div>
               <div className={styles['card-content']}>
-                <ul className={styles['asset-list']} aria-hidden="true">
-                  {item.assets.map((asset, ai) => (
-                    <li
-                      key={ai}
-                      className={`${styles['asset-item']} ${ai === 0 ? styles['asset-item--active'] : ''}`}
-                    >
-                      <span className={styles['asset-icon']} />
-                      <span className={styles['asset-name']}>{asset.name}</span>
-                      <span className={styles['asset-amount']}>{asset.amount}</span>
-                    </li>
-                  ))}
-                </ul>
                 <h3 className={styles['card-title']}>{item.title}</h3>
                 <p className={styles['card-desc']}>{item.description}</p>
               </div>
