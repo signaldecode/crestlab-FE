@@ -1,0 +1,82 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.reviews {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.bubble-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: $spacing-3xl;
+  }
+}
+
+.bubble {
+  position: relative;
+  max-width: 22rem;
+}
+
+// Figma: BLUE bg speech bubble with white text, pill shape
+.bubble-body {
+  background-color: $color-primary;
+  border-radius: 999px;
+  padding: $spacing-md $spacing-xl;
+  box-shadow: $shadow-sm;
+}
+
+.bubble-text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-on-dark;
+  text-align: center;
+  white-space: nowrap;
+}
+
+// Figma: tail triangle in blue matching bubble
+.bubble-tail {
+  position: absolute;
+  bottom: -0.5rem;
+  left: $spacing-xl;
+  width: 1rem;
+  height: 1rem;
+  background-color: $color-primary;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.decor-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+}
+
+.decor-icon {
+  width: 5rem;
+  height: auto;
+
+  @include respond-to(md) {
+    width: 7.5rem;
+  }
+}

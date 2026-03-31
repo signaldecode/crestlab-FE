@@ -4,213 +4,165 @@
 @use '../../../tokens/breakpoints' as *;
 @use '../../../tokens/shadows' as *;
 
+// ==========================================================
+// Hero — 텍스트 위, 폰 중앙 (하단 잘림), 카드·대시보드 겹침
+// 폰: 문서 흐름 + margin-bottom 음수 → hero overflow:hidden으로 잘림
+// 카드·대시보드: .inner 기준 absolute → 잘리지 않음
+// ==========================================================
 .hero {
   position: relative;
-  background: linear-gradient(
-    170deg,
-    $color-background 0%,
-    $color-background-accent 100%
-  );
-  padding: $spacing-4xl $spacing-lg;
-  text-align: center;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  min-height: 100svh;
-
-  @include respond-to(md) {
-    padding: 10rem $spacing-lg;
-  }
-
-  // Floating gradient orb — top-right
-  &::before {
-    content: '';
-    position: absolute;
-    top: -10%;
-    right: -8%;
-    width: 30rem;
-    height: 30rem;
-    background: radial-gradient(
-      circle,
-      rgba($color-primary, 0.12) 0%,
-      rgba($color-primary, 0.04) 45%,
-      transparent 70%
-    );
-    border-radius: 50%;
-    animation: orb-drift 12s ease-in-out infinite;
-    pointer-events: none;
-
-    @include respond-to(lg) {
-      width: 45rem;
-      height: 45rem;
-    }
-  }
-
-  // Floating gradient orb — bottom-left
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -20%;
-    left: -12%;
-    width: 35rem;
-    height: 35rem;
-    background: radial-gradient(
-      circle,
-      rgba($color-primary, 0.08) 0%,
-      rgba($color-primary, 0.02) 40%,
-      transparent 65%
-    );
-    border-radius: 50%;
-    animation: orb-drift 16s ease-in-out infinite reverse;
-    pointer-events: none;
-
-    @include respond-to(lg) {
-      width: 50rem;
-      height: 50rem;
-    }
-  }
 }
+
+.hero-bg { object-fit: cover; z-index: 0; }
 
 .inner {
   position: relative;
   z-index: 1;
   max-width: $container-max-width;
   margin: 0 auto;
-}
-
-.badge {
-  display: inline-block;
-  padding: $spacing-sm $spacing-lg;
-  background: rgba($color-primary, 0.1);
-  backdrop-filter: blur(1rem);
-  border: 1px solid rgba($color-primary, 0.18);
-  color: $color-primary-dark;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  border-radius: 3rem;
-  margin-bottom: $spacing-2xl;
-  letter-spacing: $letter-spacing-wide;
-  animation: fade-up 0.8s ease-out 0.1s both;
-}
-
-.title {
-  font-size: $font-size-4xl;
-  font-weight: $font-weight-extrabold;
-  color: $color-text-primary;
-  letter-spacing: $letter-spacing-tight;
-  line-height: $line-height-tight;
-  margin-bottom: $spacing-lg;
-  animation: fade-up 0.8s ease-out 0.25s both;
-
-  @include respond-to(md) {
-    font-size: $font-size-5xl;
-  }
-
-  @include respond-to(lg) {
-    font-size: $font-size-6xl;
-  }
-}
-
-.subtitle {
-  font-size: $font-size-base;
-  color: $color-text-secondary;
-  line-height: $line-height-relaxed;
-  margin-bottom: $spacing-3xl;
-  max-width: 36rem;
-  margin-left: auto;
-  margin-right: auto;
-  animation: fade-up 0.8s ease-out 0.4s both;
-
-  @include respond-to(md) {
-    font-size: $font-size-lg;
-  }
-}
-
-.cta {
+  padding: 6rem $spacing-lg $spacing-3xl;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $spacing-md;
-  animation: fade-up 0.8s ease-out 0.55s both;
-
-  @include respond-to(sm) {
-    flex-direction: row;
-    justify-content: center;
-    gap: $spacing-lg;
-  }
+  @include respond-to(md) { padding-top: 8rem; padding-bottom: 0; }
+  @include respond-to(lg) { padding-top: 11.625rem; }
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: $spacing-md $spacing-2xl;
-  background-color: $color-primary;
-  color: $color-text-on-dark;
-  font-size: $font-size-base;
+// 텍스트
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  animation: fade-up 0.8s ease-out both;
+  @include respond-to(md) { gap: $spacing-xl; margin-bottom: $spacing-2xl; }
+}
+
+.title {
+  font-size: $font-size-2xl;
   font-weight: $font-weight-bold;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: $shadow-glow-md;
-  letter-spacing: $letter-spacing-wide;
-
-  @include respond-to(md) {
-    font-size: $font-size-lg;
-    padding: $spacing-lg $spacing-3xl;
-  }
-
-  &:hover {
-    background-color: $color-primary-dark;
-    transform: translateY(-0.125rem);
-    box-shadow: $shadow-glow-lg;
-  }
+  color: $color-text-on-dark;
+  letter-spacing: -0.025em;
+  line-height: 1.27;
+  @include respond-to(md) { font-size: $font-size-4xl; }
+  @include respond-to(lg) { font-size: 3.25rem; }
 }
 
-.btn-secondary {
-  display: inline-block;
+.subtitle {
+  font-size: $font-size-xs;
+  color: $color-white-80;
+  line-height: $line-height-normal;
+  @include respond-to(md) { font-size: $font-size-base; }
+  @include respond-to(lg) { font-size: $font-size-xl; }
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: $spacing-md $spacing-2xl;
-  background-color: transparent;
-  color: $color-text-secondary;
   font-size: $font-size-base;
-  font-weight: $font-weight-semibold;
-  border: 0.0625rem solid $color-border;
-  border-radius: 3rem;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  background-color: $color-background;
+  border: none;
+  border-radius: 0.25rem;
   text-decoration: none;
-  transition: all 0.3s ease;
-  letter-spacing: $letter-spacing-wide;
-
-  @include respond-to(md) {
-    font-size: $font-size-lg;
-    padding: $spacing-lg $spacing-3xl;
-  }
-
-  &:hover {
-    border-color: $color-primary;
-    color: $color-primary;
-    background: rgba($color-primary, 0.04);
-  }
+  letter-spacing: -0.025em;
+  transition: background-color 0.3s, transform 0.3s;
+  @include respond-to(md) { font-size: $font-size-lg; padding: $spacing-lg $spacing-3xl; }
+  &:hover { background-color: $color-background-light; transform: translateY(-0.125rem); }
 }
 
-@keyframes orb-drift {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
+// ==========================================================
+// Phone — 문서 흐름, 중앙 배치, 하단 잘림
+// ==========================================================
+.phone {
+  display: none;
+  @include respond-to(md) {
+    display: block;
+    z-index: 1;
+    margin-bottom: -5rem;
+    animation: fade-up 0.8s ease-out 0.2s both;
   }
-  33% {
-    transform: translate(1.5rem, -2rem) scale(1.03);
+  @include respond-to(lg) { margin-bottom: -7rem; }
+}
+
+.phone-img {
+  width: 14rem;
+  height: auto;
+  display: block;
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(sm) { width: 16rem; }
+  @include respond-to(md) { width: 20rem; }
+  @include respond-to(lg) { width: 28rem; }
+}
+
+// ==========================================================
+// Cards — .inner 기준 absolute → 폰과 별개로 잘리지 않음
+// 모바일 숨김
+// ==========================================================
+.cards {
+  display: none;
+  @include respond-to(md) {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    position: absolute;
+    left: 0;
+    bottom: $spacing-3xl;
+    z-index: 2;
   }
-  66% {
-    transform: translate(-1rem, 1rem) scale(0.97);
+  @include respond-to(lg) { left: 5%; gap: $spacing-lg; }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  background: $color-background;
+  border-radius: 0.75rem;
+  box-shadow: $shadow-lg;
+  width: 14rem;
+  @include respond-to(lg) { width: 20rem; padding: $spacing-md $spacing-lg; gap: $spacing-md; }
+}
+
+.card-left { display: flex; align-items: center; gap: $spacing-sm; }
+.card-icon { border-radius: 50%; flex-shrink: 0; width: 2rem; height: 2rem; @include respond-to(lg) { width: 2.5rem; height: 2.5rem; } }
+.card-info { display: flex; flex-direction: column; }
+.card-name { font-size: $font-size-xs; color: $color-text-muted; @include respond-to(lg) { font-size: $font-size-sm; } }
+.card-amount { font-size: $font-size-xs; color: $color-text-primary; @include respond-to(lg) { font-size: $font-size-sm; } }
+.card-value { font-size: $font-size-sm; font-weight: $font-weight-semibold; color: $color-text-primary; white-space: nowrap; @include respond-to(lg) { font-size: $font-size-base; } }
+
+// ==========================================================
+// Dashboard — .inner 기준 absolute, 모바일 숨김
+// ==========================================================
+.dashboard {
+  display: none;
+  @include respond-to(md) {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: $spacing-3xl;
+    z-index: 2;
   }
+  @include respond-to(lg) { right: 5%; }
+}
+
+.dashboard-img {
+  width: 11rem;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: $shadow-lg;
+  @include respond-to(lg) { width: 16rem; }
 }
 
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY($spacing-lg);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY($spacing-xl); }
+  to { opacity: 1; transform: translateY(0); }
 }

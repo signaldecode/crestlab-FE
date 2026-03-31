@@ -20,7 +20,7 @@
   grid-template-columns: 1fr;
   gap: $spacing-xl;
   padding-bottom: $spacing-xl;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $color-white-10;
 
   @include respond-to(md) {
     grid-template-columns: 2fr 2fr 1fr;

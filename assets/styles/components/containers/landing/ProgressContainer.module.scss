@@ -1,0 +1,233 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.progress {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// ─── Header: title + decorative icons ───
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: $spacing-3xl;
+}
+
+// Decorative 3D icons — positioned beside title
+.deco-heart,
+.deco-bell {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.deco-heart {
+  position: relative;
+  width: 5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+    width: 6rem;
+    height: 4.5rem;
+  }
+
+  @include respond-to(lg) {
+    width: 8rem;
+    height: 6rem;
+  }
+}
+
+.deco-bell {
+  position: relative;
+  width: 4rem;
+  height: 3rem;
+  flex-shrink: 0;
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+    width: 5rem;
+    height: 3.5rem;
+  }
+
+  @include respond-to(lg) {
+    width: 6.5rem;
+    height: 4.5rem;
+  }
+}
+
+.deco-img {
+  object-fit: contain;
+}
+
+// Title
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  text-align: center;
+  line-height: $line-height-snug;
+  letter-spacing: -0.025em;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+    margin: 0 $spacing-xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: 2.875rem;
+    margin: 0 $spacing-2xl;
+  }
+}
+
+.title-accent {
+  color: $color-primary;
+}
+
+// ─── Showcase: phone + bubbles ───
+.showcase {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 40rem;
+}
+
+// Phone mockup
+.phone-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-img {
+  width: 14rem;
+  height: auto;
+
+  @include respond-to(md) {
+    width: 18rem;
+  }
+
+  @include respond-to(lg) {
+    width: 20rem;
+  }
+}
+
+// ─── Chat bubbles ───
+.bubble {
+  position: absolute;
+  z-index: 2;
+  border-radius: 1.25rem;
+  padding: $spacing-sm $spacing-lg;
+  white-space: nowrap;
+  box-shadow: $shadow-md;
+
+  @include respond-to(md) {
+    padding: $spacing-md $spacing-xl;
+  }
+}
+
+// White/gray bubble — left side
+.bubble--white {
+  background-color: $color-background;
+  border: 0.0625rem solid $color-border;
+  top: 40%;
+  left: 0;
+  transform: translateX(-10%);
+  border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+
+  @include respond-to(md) {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .bubble-text {
+    color: $color-text-secondary;
+  }
+}
+
+// Blue bubbles — right side
+.bubble--blue {
+  background-color: $color-primary;
+  border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+
+  .bubble-text {
+    color: $color-text-on-dark;
+  }
+}
+
+.bubble--right-top {
+  top: 22%;
+  right: 0;
+  transform: translateX(10%);
+
+  @include respond-to(md) {
+    right: 0;
+    transform: translateX(0);
+  }
+}
+
+.bubble--right-bottom {
+  top: 58%;
+  right: 0;
+  transform: translateX(5%);
+
+  @include respond-to(md) {
+    right: 2rem;
+    transform: translateX(0);
+  }
+}
+
+.bubble-text {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-base;
+  }
+}
+
+// Logo text at bottom
+.logo-text {
+  margin-top: -$spacing-2xl;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  font-style: italic;
+  color: $color-text-primary;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 2;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+    margin-top: -$spacing-3xl;
+  }
+}

@@ -4,11 +4,10 @@
     "nav": {
       "home": "Home",
       "about": "About Us",
-      "notices": "Notices",
-      "news": "News",
-      "videos": "Resources",
-      "contact": "Contact"
+      "lectures": "Lectures",
+      "support": "Support"
     },
+    "language": "Language",
     "cta": "Sign Up",
     "login": "Log In"
   },

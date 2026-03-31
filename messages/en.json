@@ -5,11 +5,10 @@
       "nav": {
         "home": "Home",
         "about": "About Us",
-        "notices": "Notices",
-        "news": "News",
-        "videos": "Resources",
-        "contact": "Contact"
+        "lectures": "Lectures",
+        "support": "Support"
       },
+      "language": "Language",
       "cta": "Sign Up",
       "login": "Log In",
       "mypage": "My Page",
@@ -28,38 +27,44 @@
   },
   "landing": {
     "hero": {
-      "badge": "Data-Driven Investment Solutions",
-      "title": "Maximize your assets\nthrough systematic analysis",
-      "subtitle": "A professional investment firm specializing in global market analysis and risk management.\nExperience stable asset growth with CrestLab.",
-      "primaryCta": "Request a Consultation",
-      "secondaryCta": "Our Investment Philosophy",
-      "primaryCtaAriaLabel": "Go to investment consultation request page",
-      "secondaryCtaAriaLabel": "Go to investment philosophy section"
+      "title": "Chosen by 1,349,789 people\nEasy and convenient investing starts with CrestLab",
+      "subtitle": "Want to manage your precious assets more easily? Let AI trade stocks, ETFs, and more for you at CrestLab!",
+      "cta": "Download",
+      "ctaAriaLabel": "Download CrestLab App"
     },
-    "stats": {
-      "title": "Proven Investment Performance",
-      "subtitle": "The numbers speak for CrestLab's competitive edge"
+    "partners": {
+      "title": "Join over 500 companies already growing with their potential customers."
     },
-    "features": {
-      "title": "Why CrestLab",
-      "subtitle": "Discover our differentiated investment process"
+    "marketShare": {
+      "title": "Trusted market share\nand AUM to back it up",
+      "badgeLabel": "Korea's #1 most-used robo-advisor"
     },
-    "philosophy": {
-      "title": "Your time invested matters just as much",
-      "subtitle": "While CrestLab manages your assets,\nfocus on what matters most to you."
+    "performance": {
+      "title": "Proven investment solution performance,\ncheck the returns",
+      "subtitle": "Among the investment solutions that passed the KOSCOM robo-advisor testbed,\nCrestLab's stock solution boasts the longest-running algorithm in Korea",
+      "annualReturn": "Annual Return"
     },
-    "testimonials": {
-      "title": "What Our Clients Say"
+    "investmentTypes": {
+      "title": "What kind of investment\nare you looking for?",
+      "subtitle": "Among investment solutions that passed the KOSCOM robo-advisor testbed"
+    },
+    "plans": {
+      "title": "How much AI do you need?\nChoose by investment style"
+    },
+    "trust": {
+      "title": "Can I trust CrestLab\nwith my money and personal info?"
+    },
+    "points": {
+      "title": "Trusted market share\nand AUM to back it up"
+    },
+    "progress": {
+      "title": "Just check the progress\nCrestLab handles the rest"
+    },
+    "reviews": {
+      "cta": "Write your CrestLab review"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions"
-    },
-    "cta": {
-      "title": "Let's design the future of your assets together",
-      "subtitle": "Get a free professional investment consultation",
-      "button": "Request Free Consultation",
-      "buttonAriaLabel": "Go to free investment consultation request page"
+      "title": "Frequently asked questions,\nfind answers here"
     }
   },
   "auth": {

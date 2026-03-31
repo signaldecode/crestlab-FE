@@ -39,7 +39,7 @@
   transition: box-shadow 0.2s, transform 0.2s;
 
   &:hover {
-    box-shadow: 0 $spacing-xs $spacing-md rgba(0, 0, 0, 0.08);
+    box-shadow: 0 $spacing-xs $spacing-md $color-black-08;
     transform: translateY(-0.125rem);
   }
 
@@ -65,7 +65,7 @@
   position: absolute;
   bottom: $spacing-sm;
   right: $spacing-sm;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: $color-black-70;
   color: $color-text-on-dark;
   font-size: $font-size-xs;
   font-weight: $font-weight-medium;

@@ -1,36 +1,42 @@
 {
   "hero": {
-    "badge": "数据驱动的投资解决方案",
-    "title": "通过系统化分析\n实现资产价值最大化",
-    "subtitle": "全球市场分析与风险管理专业投资公司\n与CrestLab一起体验稳健的资产增长。",
-    "primaryCta": "申请投资咨询",
-    "secondaryCta": "查看投资理念",
-    "primaryCtaAriaLabel": "前往投资咨询申请页面",
-    "secondaryCtaAriaLabel": "前往投资理念板块"
+    "title": "1,349,789人选择的\n简单便捷投资的开始，CrestLab",
+    "subtitle": "想更轻松便捷地管理您的资产？让AI自动交易股票、ETF等，在CrestLab开始投资吧！",
+    "cta": "下载",
+    "ctaAriaLabel": "下载CrestLab应用"
   },
-  "stats": {
-    "title": "值得信赖的投资业绩",
-    "subtitle": "用数据证明CrestLab的竞争力"
+  "partners": {
+    "title": "已有500多家企业与潜在客户一起成长，欢迎加入。"
   },
-  "features": {
-    "title": "为什么选择CrestLab",
-    "subtitle": "了解差异化的投资流程"
+  "marketShare": {
+    "title": "值得信赖的市场份额\n和管理资产规模",
+    "badgeLabel": "韩国人最常使用的第一名智能投顾"
   },
-  "philosophy": {
-    "title": "投入投资的时间也是一种价值",
-    "subtitle": "在CrestLab管理您的资产期间\n请专注于更重要的事务。"
+  "performance": {
+    "title": "经过验证的投资解决方案运营业绩，\n请查看收益率",
+    "subtitle": "在通过KOSCOM智能投顾测试平台的投资解决方案中，\nCrestLab的股票解决方案拥有韩国最长运营时间的算法",
+    "annualReturn": "年回报率"
   },
-  "testimonials": {
-    "title": "客户亲身分享的故事"
+  "investmentTypes": {
+    "title": "您想进行\n什么样的投资？",
+    "subtitle": "在通过KOSCOM智能投顾测试平台的投资解决方案中"
+  },
+  "plans": {
+    "title": "AI需要到什么程度？\n按投资风格选择"
+  },
+  "trust": {
+    "title": "我的钱和个人信息\n可以放心交给CrestLab吗？"
+  },
+  "points": {
+    "title": "值得信赖的市场份额\n和管理资产规模"
+  },
+  "progress": {
+    "title": "只需查看进度\n其余交给CrestLab"
+  },
+  "reviews": {
+    "cta": "写下您的CrestLab评价"
   },
   "faq": {
-    "title": "常见问题",
-    "subtitle": "查看您关心的问题"
-  },
-  "cta": {
-    "title": "共同规划资产的未来",
-    "subtitle": "免费获取专业投资咨询",
-    "button": "申请免费咨询",
-    "buttonAriaLabel": "前往免费投资咨询申请页面"
+    "title": "客户常见问题，\n在这里确认"
   }
 }

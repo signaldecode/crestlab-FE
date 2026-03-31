@@ -4,11 +4,10 @@
     "nav": {
       "home": "홈",
       "about": "회사소개",
-      "notices": "공지사항",
-      "news": "뉴스",
-      "videos": "교육자료",
-      "contact": "문의하기"
+      "lectures": "강의 업로드",
+      "support": "고객지원"
     },
+    "language": "언어",
     "cta": "회원가입",
     "login": "로그인"
   },

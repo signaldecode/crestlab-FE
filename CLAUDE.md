@@ -148,12 +148,19 @@ CSS 클래스 (SCSS):
 
 ---
 
-## 스타일 규칙 (SCSS + Design Token)
+## 스타일 규칙 (SCSS + Design Token) — 모든 스타일은 SCSS로만 관리
 
-- inline style 금지
-- HEX / px 직접 사용 금지 — 반드시 토큰 변수 사용 (`$color-primary`, `$spacing-md` 등)
-- 컴포넌트 파일 내 스타일 선언 금지 (CSS-in-JS 금지)
-- 항상 토큰 파일에서 값 참조 (`_colors.scss`, `_spacing.scss`, `_typography.scss`, `_z-index.scss`, `_breakpoints.scss`)
+### 핵심 원칙
+- **모든 스타일은 SCSS Module 파일에서만 관리** — 예외 없음
+- inline style 금지 (`style={{ }}` 사용 금지)
+- CSS-in-JS 금지, 컴포넌트 파일 내 스타일 선언 금지
+- HEX / px / rgba 직접 사용 금지 — 반드시 토큰 변수 사용
+- `!important` 사용 금지 — 구조적으로 해결할 것
+
+### next/image 크기 제어 규칙
+- 크기 조절이 필요한 이미지 → `fill` 모드 사용 + **부모 div에서 SCSS로 width/height 제어**
+- 작은 아이콘 (50px 이하, 크기 변경 불필요) → `width`/`height` prop 사용 허용
+- CSS 커스텀 프로퍼티(`--var`) 대신 **SCSS 클래스 분기** 사용 (예: `.vbar--0`, `.vbar--1`)
 
 ### SCSS import 순서
 1) tokens
@@ -163,11 +170,17 @@ CSS 클래스 (SCSS):
 5) pages (페이지 전용 스타일)
 
 ### 토큰 파일 역할
-- `_colors.scss`: 브랜드 컬러, 시맨틱 컬러 (background, text, border 등)
+- `_colors.scss`: 브랜드 컬러, 시맨틱 컬러, **opacity variants** (`$color-white-80`, `$color-black-50` 등)
 - `_typography.scss`: font-family, font-size, font-weight, line-height
 - `_spacing.scss`: margin/padding/gap 단위 (`$spacing-xs` ~ `$spacing-3xl`)
 - `_z-index.scss`: z-index 레이어 관리
 - `_breakpoints.scss`: 반응형 브레이크포인트 변수 + mixin
+- `_shadows.scss`: box-shadow, drop-shadow, overlay 색상
+
+### 토큰 확장 규칙
+- SCSS에서 표현 불가능한 값이 필요하면 **토큰 파일을 확장**하여 해결
+- 예: `rgba(255,255,255,0.8)` 직접 쓰지 말고 → `_colors.scss`에 `$color-white-80` 추가 후 사용
+- 예: 새로운 그림자가 필요하면 → `_shadows.scss`에 토큰 추가 후 사용
 
 ---
 

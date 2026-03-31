@@ -1,0 +1,143 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.trust {
+  padding: $spacing-4xl $spacing-lg;
+  background-color: $color-background-darker;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: 7.5rem $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.lock-icon {
+  margin-bottom: $spacing-lg;
+  justify-self: center;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-on-dark;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+  }
+}
+
+.info-card {
+  background-color: $color-white-05;
+  border-radius: $spacing-md;
+  padding: $spacing-xl;
+  border: 1px solid $color-white-08;
+}
+
+.info-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-on-dark;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.info-desc {
+  font-size: $font-size-sm;
+  color: $color-text-on-dark-muted;
+  line-height: $line-height-relaxed;
+}
+
+.portfolio-row {
+  display: flex;
+  gap: $spacing-md;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-bottom: $spacing-sm;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.portfolio-card {
+  flex-shrink: 0;
+  background-color: $color-text-primary;
+  border-radius: 0.75rem;
+  padding: $spacing-md $spacing-lg;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-lg;
+  min-width: 16rem;
+}
+
+.portfolio-top {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.portfolio-dot {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: $color-white-15;
+  flex-shrink: 0;
+}
+
+.portfolio-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-name {
+  font-size: $font-size-sm;
+  color: $color-text-on-dark;
+  font-weight: $font-weight-medium;
+}
+
+.portfolio-amount {
+  font-size: $font-size-xs;
+  color: $color-text-on-dark-muted;
+}
+
+.portfolio-value {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: $color-text-on-dark;
+  white-space: nowrap;
+}

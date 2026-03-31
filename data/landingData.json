@@ -1,95 +1,181 @@
 {
-  "stats": {
-    "items": [
+  "hero": {
+    "backgroundImage": "/mainpage/section1.0.jpg",
+    "phoneImage": "/mainpage/front-side-view-photo-gray-smartphone-mobile-phone-without-background-template-mockup 1.png",
+    "dashboardImage": "/mainpage/section1.3.png",
+    "mockupCards": [
+      { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+      { "icon": "/mainpage/section1.2.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
+    ]
+  },
+  "partners": {
+    "logos": [
+      "/mainpage/section2.1.svg",
+      "/mainpage/section2.2.svg",
+      "/mainpage/section2.3.svg",
+      "/mainpage/section2.4.svg",
+      "/mainpage/section2.5.svg",
+      "/mainpage/section2.6.svg"
+    ]
+  },
+  "marketShare": {
+    "cards": [
       {
-        "value": "1.2",
-        "unit": "조원",
-        "label": "총 운용자산 규모",
-        "description": "고객 신뢰를 기반으로 꾸준히 성장하는 운용 자산"
+        "label": "Q1.",
+        "badgeVariant": "outlined",
+        "chartType": "pie",
+        "segments": [
+          { "label": "텍스트", "value": 48 },
+          { "label": "텍스트", "value": 32 },
+          { "label": "텍스트", "value": 20 }
+        ]
       },
       {
-        "value": "12.8",
-        "unit": "%",
-        "label": "연평균 수익률",
-        "description": "최근 5년간 안정적인 수익률 달성"
+        "label": "Q1.",
+        "badgeVariant": "outlined",
+        "chartType": "vbar",
+        "bars": [
+          { "value": 45, "label": "임시텍스트", "displayValue": "00%" },
+          { "value": 80, "label": "임시텍스트", "displayValue": "00%" },
+          { "value": 35, "label": "임시텍스트", "displayValue": "00%" }
+        ]
       },
       {
-        "value": "3,200",
-        "unit": "+",
-        "label": "투자 고객 수",
-        "description": "개인 및 기관 투자자가 선택한 파트너"
+        "label": "Q1.",
+        "badgeVariant": "filled",
+        "chartType": "hbar",
+        "bars": [
+          { "value": 90, "label": "임시텍스트", "displayValue": "00%" },
+          { "value": 60, "label": "임시텍스트", "displayValue": "00%" },
+          { "value": 40, "label": "임시텍스트", "displayValue": "00%" },
+          { "value": 30, "label": "임시텍스트", "displayValue": "00%" }
+        ]
       }
     ]
   },
-  "features": {
+  "performance": {
+    "cryptoCards": [
+      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
+      { "name": "리플", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
+      { "name": "비트코인", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (2).svg" },
+      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
+      { "name": "이더리움", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (3).svg" },
+      { "name": "도지코인", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (1).svg" },
+      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" }
+    ]
+  },
+  "investmentTypes": {
+    "items": [
+      { "category": "한국주식", "title": "월배당투자", "image": "/mainpage/576107c6ebc7434fa50be6ba608ca57a3abaf553.png", "bgColor": "blue" },
+      { "category": "ETF", "title": "미국 한국 테마투자", "image": "/mainpage/00b11f4143cb0ef6d654a040a3c79cb671888056.png", "bgColor": "green" },
+      { "category": "ETF", "title": "한국 비트코인", "image": "/mainpage/0ecd04fbdcf57536a4ec563834b6a08aced6d21a.png", "bgColor": "pink" },
+      { "category": "한국주식", "title": "글로벌 배당투자", "image": "/mainpage/576107c6ebc7434fa50be6ba608ca57a3abaf553.png", "bgColor": "green" },
+      { "category": "ETF", "title": "AI 테마투자", "image": "/mainpage/00b11f4143cb0ef6d654a040a3c79cb671888056.png", "bgColor": "blue" }
+    ]
+  },
+  "plans": {
+    "icon": "📦",
     "items": [
       {
-        "title": "데이터 기반 분석",
-        "description": "AI와 빅데이터를 활용한 글로벌 시장 분석으로 투자 기회를 포착합니다.",
-        "icon": "chart"
+        "tag": "일반계좌",
+        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
+        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
+        "image": "/mainpage/section1.3.png",
+        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
       },
       {
-        "title": "리스크 관리 시스템",
-        "description": "다층적 리스크 모니터링으로 시장 변동성에 체계적으로 대응합니다.",
-        "icon": "shield"
+        "tag": "일반계좌",
+        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
+        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
+        "image": "/mainpage/section1.3.png",
+        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
       },
       {
-        "title": "맞춤형 포트폴리오",
-        "description": "고객의 투자 성향과 목표에 최적화된 포트폴리오를 설계합니다.",
-        "icon": "portfolio"
-      },
-      {
-        "title": "투명한 운용 보고",
-        "description": "실시간 대시보드와 정기 보고서로 투자 현황을 투명하게 공개합니다.",
-        "icon": "report"
+        "tag": "일반계좌",
+        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
+        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
+        "image": "/mainpage/section1.3.png",
+        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
       }
     ]
   },
-  "philosophy": {
-    "stats": [
-      { "label": "평균 의사결정 시간", "value": "48시간", "note": "개인 투자자 평균" },
-      { "label": "CrestLab 분석 시간", "value": "0.3초", "note": "AI 기반 실시간 분석" }
+  "trust": {
+    "items": [
+      { "title": "개인정보 보호", "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요" },
+      { "title": "개인정보 보호", "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요" }
+    ],
+    "lockIcon": "/mainpage/material-symbols_lock.svg",
+    "portfolioCards": [
+      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
     ]
   },
-  "testimonials": {
+  "points": {
     "items": [
       {
-        "quote": "체계적인 리스크 관리 덕분에 변동성이 큰 시장에서도 안정적인 수익을 올릴 수 있었습니다.",
-        "author": "김**",
-        "role": "개인 투자자",
-        "highlight": "변동성이 큰 시장에서도 안정적인 수익"
+        "point": "Point 01",
+        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
+        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
+        "image": "/mainpage/d2b902950f1f0e226f9e0e59e4fb2083fd5afb7e.png"
       },
       {
-        "quote": "정기 보고서의 퀄리티가 매우 높습니다. 제 자산이 어떻게 운용되고 있는지 한눈에 파악됩니다.",
-        "author": "박**",
-        "role": "기업 대표",
-        "highlight": "자산이 어떻게 운용되고 있는지 한눈에"
+        "point": "Point 02",
+        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
+        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
+        "image": "/mainpage/section1.3.png"
       },
       {
-        "quote": "10년 넘게 여러 투자사를 경험했지만, CrestLab만큼 투명하고 신뢰가 가는 곳은 처음입니다.",
-        "author": "이**",
-        "role": "자산가",
-        "highlight": "투명하고 신뢰가 가는 곳은 처음"
+        "point": "Point 03",
+        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
+        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
+        "cryptoItems": [
+          { "icon": "/mainpage/Ellipse 2.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+          { "icon": "/mainpage/Ellipse 2 (1).svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
+          { "icon": "/mainpage/Ellipse 2 (2).svg", "name": "비트코인", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
+        ]
+      },
+      {
+        "point": "Point 04",
+        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
+        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
+        "image": "/mainpage/d2b902950f1f0e226f9e0e59e4fb2083fd5afb7e.png"
+      },
+      {
+        "point": "Point 05",
+        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
+        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
+        "image": "/mainpage/section1.3.png"
       }
     ]
+  },
+  "progress": {
+    "heartIcon": "/mainpage/38ddf1f3788dfaef3e6536ccace6a35706a7f9da.png",
+    "bellIcon": "/mainpage/3d-notification-bell-with-social-media-engagement-icons 1.png",
+    "phoneMockup": "/mainpage/section1.4.png"
   },
   "faq": {
     "items": [
       {
-        "question": "최소 투자 금액은 얼마인가요?",
-        "answer": "일반 투자 상품의 경우 최소 1,000만원부터 시작할 수 있으며, 프리미엄 자문 서비스는 1억원 이상의 자산을 보유한 고객을 대상으로 합니다."
+        "question": "기본 플랜과 프로페셔널 플랜의 가장 큰 차이점은 무엇인가요?",
+        "answer": "해당 제품은 건성·중성·복합성 피부를 중심으로 개발되었으며, 민감성 피부도 사용하실 수 있도록 저자극 테스트를 완료했습니다. 개인의 피부 상태에 따라 차이가 있을 수 있으니 사용 전 전성분을 확인해 주세요."
       },
       {
-        "question": "수수료 체계는 어떻게 되나요?",
-        "answer": "CrestLab은 투명한 수수료 정책을 운영합니다. 운용보수와 성과보수로 구성되며, 상세한 수수료 구조는 상담을 통해 안내드립니다."
+        "question": "SEO 효과는 언제부터 나타나나요?",
+        "answer": "임시 답변입니다."
       },
       {
-        "question": "투자 성과를 어떻게 확인할 수 있나요?",
-        "answer": "실시간 대시보드를 통해 언제든지 투자 현황을 확인할 수 있으며, 월간/분기 투자 보고서를 정기적으로 제공합니다."
+        "question": "광고(SEM)와 SEO의 차이는 무엇인가요?",
+        "answer": "임시 답변입니다."
       },
       {
-        "question": "해외 투자도 가능한가요?",
-        "answer": "네, 미국·유럽·아시아 등 글로벌 시장에 분산 투자를 진행하고 있으며, 환위험 관리 전략도 함께 운용합니다."
+        "question": "기본 플랜과 프로페셔널 플랜의 가장 큰 차이점은 무엇인가요?",
+        "answer": "임시 답변입니다."
+      },
+      {
+        "question": "기존 사이트를 유지한 채 SEO 개선이 가능한가요?",
+        "answer": "임시 답변입니다."
       }
     ]
   }

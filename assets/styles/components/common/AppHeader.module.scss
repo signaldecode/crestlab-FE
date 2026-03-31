@@ -3,140 +3,110 @@
 @use '../../tokens/spacing' as *;
 @use '../../tokens/z-index' as *;
 @use '../../tokens/breakpoints' as *;
+@use '../../tokens/shadows' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: $z-index-sticky;
-  background-color: $color-background;
-  border-bottom: 1px solid $color-border;
+  padding: $spacing-md $spacing-lg;
+  transition: padding 0.35s ease;
+}
+
+.header--scrolled {
+  padding: 0;
 }
 
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: $container-max-width;
+  gap: $spacing-xl;
+  max-width: 97.5rem;
   margin: 0 auto;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-lg;
+  background: $color-glass-light;
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
+  box-shadow: $shadow-md;
+  transition: max-width 0.35s ease, border-radius 0.35s ease, background 0.35s ease;
+
+  .header--scrolled & {
+    max-width: 100%;
+    border-radius: 0;
+    background: $color-glass-light-strong;
+    box-shadow: $shadow-md;
+    padding: $spacing-md $spacing-xl;
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-sm $spacing-2xl;
+
+    .header--scrolled & {
+      padding: $spacing-md $spacing-2xl;
+    }
+  }
 }
 
 .logo {
-  font-size: $font-size-2xl;
+  font-size: $font-size-lg;
   font-weight: $font-weight-extrabold;
-  color: $color-secondary-dark;
+  color: $color-text-primary;
   text-decoration: none;
   letter-spacing: $letter-spacing-tight;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
 }
 
-// Desktop nav
-.nav-list {
+// 데스크톱/태블릿 네비 — md 이상에서만 보임
+.desktop-nav {
   display: none;
+
+  @include respond-to(md) {
+    display: block;
+    flex: 1;
+  }
+}
+
+.nav-list {
+  display: flex;
   list-style: none;
   gap: $spacing-xl;
-
-  @include respond-to(lg) {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.nav-list--open {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 4.25rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $color-background;
-  padding: $spacing-xl $spacing-lg;
-  gap: $spacing-lg;
-  z-index: $z-index-modal;
-
-  @include respond-to(lg) {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-  }
+  align-items: center;
 }
 
 .nav-item {
   list-style: none;
 }
 
-.nav-item--mobile-only {
-  list-style: none;
-
-  @include respond-to(lg) {
-    display: none;
-  }
-}
-
 .nav-link {
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 
   &:hover {
-    color: $color-primary;
+    color: $color-text-primary;
   }
 }
 
-// Desktop language switcher
-.desktop-lang {
-  display: none;
-
-  @include respond-to(lg) {
-    display: flex;
-    align-items: center;
-  }
-}
-
-// CTA buttons
-.actions {
-  display: none;
+// 우측 그룹: [햄버거] [언어]
+.right-group {
+  display: flex;
   align-items: center;
   gap: $spacing-sm;
-
-  @include respond-to(lg) {
-    display: flex;
-  }
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
-.btn-login {
-  padding: $spacing-sm $spacing-md;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: $color-background-alt;
-  }
-}
-
-.btn-cta {
-  display: inline-block;
-  padding: $spacing-sm $spacing-lg;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-text-on-dark;
-  background-color: $color-primary;
-  text-decoration: none;
-  border-radius: 2rem;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: $color-primary-dark;
-  }
-}
-
-// Hamburger
+// Hamburger — 모바일에서만 보임
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -146,8 +116,22 @@
   border: none;
   cursor: pointer;
 
-  @include respond-to(lg) {
+  @include respond-to(md) {
     display: none;
+  }
+}
+
+.hamburger--open {
+  .hamburger-bar:nth-child(1) {
+    transform: translateY(0.4375rem) rotate(45deg);
+  }
+
+  .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-bar:nth-child(3) {
+    transform: translateY(-0.4375rem) rotate(-45deg);
   }
 }
 
@@ -157,5 +141,53 @@
   height: 0.125rem;
   background-color: $color-text-primary;
   border-radius: 0.0625rem;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+// =============================================
+// 모바일 메뉴 — header 직접 자식 (backdrop-filter 밖)
+// =============================================
+// 드롭다운 형태 — 헤더 바로 아래, 콘텐츠 높이만큼만
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: $spacing-lg;
+  right: $spacing-lg;
+  background-color: $color-background;
+  border-radius: 0 0 0.75rem 0.75rem;
+  box-shadow: $shadow-lg;
+  z-index: $z-index-modal;
+  padding: $spacing-md $spacing-lg;
+
+  @include respond-to(md) {
+    display: none;
+  }
+}
+
+.mobile-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.mobile-item {
+  list-style: none;
+
+  & + & {
+    border-top: 1px solid $color-border-light;
+  }
+}
+
+.mobile-link {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  text-decoration: none;
+  display: block;
+  padding: $spacing-md 0;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary;
+  }
 }
