@@ -1,0 +1,92 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+$counter-green: #3cd36c;
+
+.counter {
+  background-color: $counter-green;
+  padding: $spacing-3xl $spacing-md;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-3xl;
+  color: $color-text-on-dark;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+.display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-xs;
+
+  @include respond-to(md) {
+    gap: $spacing-sm;
+  }
+}
+
+.digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 5.75rem;
+  background-color: $color-background;
+  border-radius: 1.25rem;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-4xl;
+  color: $counter-green;
+
+  @include respond-to(md) {
+    width: 10.375rem;
+    height: 13.3125rem;
+    font-size: 7.5rem;
+  }
+}
+
+.comma {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-4xl;
+  color: $counter-green;
+  display: flex;
+  align-items: flex-end;
+
+  @include respond-to(md) {
+    font-size: 7.5rem;
+  }
+}
+
+.subtitle {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-lg;
+  color: $color-text-on-dark;
+  margin-top: $spacing-xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+    margin-top: $spacing-2xl;
+  }
+}

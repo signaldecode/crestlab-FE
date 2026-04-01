@@ -1,0 +1,106 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.bg-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bg-image {
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.brand {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-5xl;
+  color: $color-text-on-dark;
+  text-align: center;
+  letter-spacing: 0.08em;
+
+  @include respond-to(md) {
+    font-size: $font-size-6xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: 7.5rem;
+  }
+}
+
+.marquee {
+  position: absolute;
+  bottom: $spacing-2xl;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    bottom: $spacing-3xl;
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee-slide {
+  display: flex;
+  flex-shrink: 0;
+  gap: $spacing-2xl;
+  padding-right: $spacing-2xl;
+}
+
+.marquee-text {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-lg;
+  color: $color-text-on-dark;
+  white-space: nowrap;
+  opacity: 0.85;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

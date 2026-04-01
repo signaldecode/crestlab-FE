@@ -1,0 +1,102 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.portfolio {
+  padding: $spacing-4xl $spacing-md;
+  background-color: $color-background;
+}
+
+.inner {
+  max-width: 85rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: -0.025em;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// ── Category pills ──
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+  list-style: none;
+  margin-bottom: $spacing-3xl;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-lg $spacing-sm $spacing-sm;
+  background-color: $color-background;
+  border: 1px solid #e5e5ec;
+  border-radius: 62.4375rem;
+  cursor: default;
+}
+
+.pill-icon {
+  display: block;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background-color: #f6f7f8;
+  flex-shrink: 0;
+}
+
+.pill-label {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// ── Tablet mockup ──
+.mockup-wrap {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: url('/images/landing/portfolio-bg.png') center / cover no-repeat;
+  padding: $spacing-2xl;
+  min-height: 16rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to(md) {
+    min-height: 28rem;
+    padding: $spacing-3xl;
+  }
+}
+
+.mockup {
+  width: 100%;
+  max-width: 56rem;
+  height: auto;
+  filter: drop-shadow(0.75rem 0.25rem 1rem rgba(0, 0, 0, 0.16));
+}

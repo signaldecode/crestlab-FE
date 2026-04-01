@@ -28,32 +28,56 @@
   },
   "landing": {
     "hero": {
-      "badge": "Data-Driven Investment Solutions",
-      "title": "Maximize your assets\nthrough systematic analysis",
-      "subtitle": "A professional investment firm specializing in global market analysis and risk management.\nExperience stable asset growth with CrestLab.",
-      "primaryCta": "Request a Consultation",
-      "secondaryCta": "Our Investment Philosophy",
-      "primaryCtaAriaLabel": "Go to investment consultation request page",
-      "secondaryCtaAriaLabel": "Go to investment philosophy section"
+      "marqueeText": "You don't need more data You need signals",
+      "ariaLabel": "Crest Lab main hero section"
     },
-    "stats": {
-      "title": "Proven Investment Performance",
-      "subtitle": "The numbers speak for CrestLab's competitive edge"
+    "serviceCards": {
+      "title": "Trusted market share and managed asset scale",
+      "item1Title": "Foreign Bonds",
+      "item1Desc": "Making exclusive bonds accessible to everyone with equal investment opportunities.",
+      "item2Title": "Global ETFs",
+      "item2Desc": "Diversified investment across major global market ETFs for stable returns.",
+      "item3Title": "Digital Assets",
+      "item3Desc": "Systematic investment solutions for blockchain-based digital assets."
     },
-    "features": {
-      "title": "Why CrestLab",
-      "subtitle": "Discover our differentiated investment process"
+    "featureShowcase": {
+      "title": "Trusted market share and managed asset scale",
+      "item1Title": "Latest Bitcoin trends considering market dynamics",
+      "item1Desc": "Providing the most notable investment opportunities based on the latest market data.",
+      "item2Title": "AI-powered real-time portfolio analysis",
+      "item2Desc": "AI monitors the market 24/7 and suggests optimal asset allocation.",
+      "item3Title": "Risk management dashboard",
+      "item3Desc": "Systematic response to market volatility through multi-layered risk monitoring.",
+      "item4Title": "Customized investment reports",
+      "item4Desc": "Detailed analysis reports tailored to each client's investment style and goals."
     },
-    "philosophy": {
-      "title": "Your time invested matters just as much",
-      "subtitle": "While CrestLab manages your assets,\nfocus on what matters most to you."
+    "counter": {
+      "title": "Trusted market share and managed asset scale",
+      "subtitle": "You don't need more data You need signals"
     },
-    "testimonials": {
-      "title": "What Our Clients Say"
+    "tokenList": {
+      "title": "Trusted market share and managed asset scale",
+      "rewardLabel": "Annual Reward"
+    },
+    "appScreens": { "ariaLabel": "Crest Lab app screenshots" },
+    "portfolio": {
+      "title": "Trusted market share and managed asset scale",
+      "subtitle": "Investment solutions verified through the KOSCOM Robo-Advisor Testbed",
+      "cat1": "Monthly Dividend",
+      "cat2": "Korea Theme",
+      "cat3": "Global Diversified",
+      "cat4": "Stable Portfolio"
+    },
+    "chat": {
+      "title": "Real-time Investment Alerts",
+      "subtitle": "Never miss important investment signals"
+    },
+    "wallet": {
+      "title": "Trusted market share and managed asset scale",
+      "subtitle": "Verified performance among solutions that passed the KOSCOM Robo-Advisor Testbed"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions"
+      "title": "Frequently asked questions, answered here"
     },
     "cta": {
       "title": "Let's design the future of your assets together",

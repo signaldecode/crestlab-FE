@@ -27,40 +27,17 @@
     "skipToContent": "本文へスキップ"
   },
   "landing": {
-    "hero": {
-      "badge": "データ基盤の投資ソリューション",
-      "title": "体系的な分析で\n資産の価値を最大化します",
-      "subtitle": "グローバル市場分析とリスク管理を専門とする投資会社\nCrestLabと共に安定的な資産成長をご体験ください。",
-      "primaryCta": "投資相談のお申し込み",
-      "secondaryCta": "投資哲学を見る",
-      "primaryCtaAriaLabel": "投資相談お申し込みページへ移動",
-      "secondaryCtaAriaLabel": "投資哲学セクションへ移動"
-    },
-    "stats": {
-      "title": "信頼できる投資実績",
-      "subtitle": "数字が証明するCrestLabの競争力"
-    },
-    "features": {
-      "title": "なぜCrestLabなのか",
-      "subtitle": "差別化された投資プロセスをご確認ください"
-    },
-    "philosophy": {
-      "title": "投資に費やす時間も、結局は価値",
-      "subtitle": "CrestLabが資産を管理している間\nより大切なことに集中してください。"
-    },
-    "testimonials": {
-      "title": "お客様の声"
-    },
-    "faq": {
-      "title": "よくあるご質問",
-      "subtitle": "ご不明な点をご確認ください"
-    },
-    "cta": {
-      "title": "資産の未来を一緒に設計しましょう",
-      "subtitle": "専門の投資相談を無料でお受けいただけます",
-      "button": "無料相談のお申し込み",
-      "buttonAriaLabel": "無料投資相談お申し込みページへ移動"
-    }
+    "hero": { "marqueeText": "必要なのはデータではなくシグナルです", "ariaLabel": "Crest Lab メインヒーローセクション" },
+    "serviceCards": { "title": "信頼できる市場シェアと運用資産規模", "item1Title": "海外債券", "item1Desc": "少数の債券をすべての人の債券に。すべての人に平等な投資機会を提供します。", "item2Title": "グローバルETF", "item2Desc": "世界の主要市場のETFに分散投資し、安定した収益を追求します。", "item3Title": "デジタル資産", "item3Desc": "ブロックチェーンベースのデジタル資産に体系的に投資するソリューションを提供します。" },
+    "featureShowcase": { "title": "信頼できる市場シェアと運用資産規模", "item1Title": "市場動向を考慮した最新ビットコイントレンド", "item1Desc": "最新の市場データに基づき、最も注目すべき投資機会を提供します。", "item2Title": "AIベースのリアルタイムポートフォリオ分析", "item2Desc": "AIが24時間市場を監視し、最適な資産配分を提案します。", "item3Title": "リスク管理ダッシュボード", "item3Desc": "多層的リスクモニタリングで市場変動に体系的に対応します。", "item4Title": "カスタマイズ投資レポート", "item4Desc": "お客様の投資スタイルと目標に合わせた詳細な分析レポートを提供します。" },
+    "counter": { "title": "信頼できる市場シェアと運用資産規模", "subtitle": "必要なのはデータではなくシグナルです" },
+    "tokenList": { "title": "信頼できる市場シェアと運用資産規模", "rewardLabel": "年間報酬率" },
+    "appScreens": { "ariaLabel": "Crest Lab アプリスクリーンショット" },
+    "portfolio": { "title": "信頼できる市場シェアと運用資産規模", "subtitle": "KOSCOMテストベッドで検証された投資ソリューション", "cat1": "月配当投資", "cat2": "韓国テーマ投資", "cat3": "グローバル分散投資", "cat4": "安定型ポートフォリオ" },
+    "chat": { "title": "リアルタイム投資アラート", "subtitle": "重要な投資シグナルを見逃さないでください" },
+    "wallet": { "title": "信頼できる市場シェアと運用資産規模", "subtitle": "KOSCOMロボアドバイザーテストベッドを通過した検証済みの投資ソリューション" },
+    "faq": { "title": "お客様からよくいただく質問にお答えします" },
+    "cta": { "title": "資産の未来を一緒に設計しましょう", "subtitle": "専門の投資相談を無料でお受けいただけます", "button": "無料相談のお申し込み", "buttonAriaLabel": "無料投資相談お申し込みページへ移動" }
   },
   "auth": {
     "login": {

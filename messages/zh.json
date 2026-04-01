@@ -27,40 +27,17 @@
     "skipToContent": "跳转至正文"
   },
   "landing": {
-    "hero": {
-      "badge": "数据驱动的投资解决方案",
-      "title": "通过系统化分析\n实现资产价值最大化",
-      "subtitle": "全球市场分析与风险管理专业投资公司\n与CrestLab一起体验稳健的资产增长。",
-      "primaryCta": "申请投资咨询",
-      "secondaryCta": "查看投资理念",
-      "primaryCtaAriaLabel": "前往投资咨询申请页面",
-      "secondaryCtaAriaLabel": "前往投资理念板块"
-    },
-    "stats": {
-      "title": "值得信赖的投资业绩",
-      "subtitle": "用数据证明CrestLab的竞争力"
-    },
-    "features": {
-      "title": "为什么选择CrestLab",
-      "subtitle": "了解差异化的投资流程"
-    },
-    "philosophy": {
-      "title": "投入投资的时间也是一种价值",
-      "subtitle": "在CrestLab管理您的资产期间\n请专注于更重要的事务。"
-    },
-    "testimonials": {
-      "title": "客户亲身分享的故事"
-    },
-    "faq": {
-      "title": "常见问题",
-      "subtitle": "查看您关心的问题"
-    },
-    "cta": {
-      "title": "共同规划资产的未来",
-      "subtitle": "免费获取专业投资咨询",
-      "button": "申请免费咨询",
-      "buttonAriaLabel": "前往免费投资咨询申请页面"
-    }
+    "hero": { "marqueeText": "不需要更多数据，需要的是信号", "ariaLabel": "Crest Lab 主视觉区域" },
+    "serviceCards": { "title": "值得信赖的市场份额与管理资产规模", "item1Title": "海外债券", "item1Desc": "让少数人的债券成为所有人的债券，为每个人提供平等的投资机会。", "item2Title": "全球ETF", "item2Desc": "分散投资于全球主要市场的ETF，追求稳定的收益。", "item3Title": "数字资产", "item3Desc": "提供基于区块链的数字资产系统化投资解决方案。" },
+    "featureShowcase": { "title": "值得信赖的市场份额与管理资产规模", "item1Title": "考虑市场趋势的最新比特币动态", "item1Desc": "基于最新市场数据，提供当前最值得关注的投资机会。", "item2Title": "AI驱动的实时投资组合分析", "item2Desc": "人工智能24小时监控市场，建议最优资产配置。", "item3Title": "风险管理仪表板", "item3Desc": "通过多层风险监控系统地应对市场波动。", "item4Title": "定制化投资报告", "item4Desc": "根据客户的投资风格和目标提供详细的分析报告。" },
+    "counter": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "不需要更多数据，需要的是信号" },
+    "tokenList": { "title": "值得信赖的市场份额与管理资产规模", "rewardLabel": "年奖励率" },
+    "appScreens": { "ariaLabel": "Crest Lab 应用截图" },
+    "portfolio": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "通过KOSCOM测试台验证的投资解决方案", "cat1": "月配息投资", "cat2": "韩国主题投资", "cat3": "全球分散投资", "cat4": "稳定型投资组合" },
+    "chat": { "title": "实时投资提醒", "subtitle": "不要错过重要的投资信号" },
+    "wallet": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "通过KOSCOM机器人顾问测试台的经过验证的投资解决方案" },
+    "faq": { "title": "客户常见问题，在这里找到答案" },
+    "cta": { "title": "共同规划资产的未来", "subtitle": "免费获取专业投资咨询", "button": "申请免费咨询", "buttonAriaLabel": "前往免费投资咨询申请页面" }
   },
   "auth": {
     "login": {

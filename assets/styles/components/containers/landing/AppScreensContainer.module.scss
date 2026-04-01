@@ -1,0 +1,70 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.app-screens {
+  padding: $spacing-4xl $spacing-md;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+.fan {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: $spacing-md;
+  max-width: 75rem;
+  margin: 0 auto;
+
+  @include respond-to(md) {
+    gap: $spacing-lg;
+  }
+}
+
+.phone {
+  flex-shrink: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 1.25rem 1.25rem 1.875rem rgba(34, 34, 34, 0.06);
+
+  &--center {
+    box-shadow: 1.25rem 1.25rem 1.875rem rgba(34, 34, 34, 0.1);
+    z-index: 1;
+  }
+}
+
+.phone-image {
+  display: block;
+  width: 8rem;
+  height: auto;
+
+  @include respond-to(sm) {
+    width: 10rem;
+  }
+
+  @include respond-to(md) {
+    width: 15rem;
+  }
+
+  @include respond-to(lg) {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+.phone--center .phone-image {
+  width: 10rem;
+
+  @include respond-to(sm) {
+    width: 12rem;
+  }
+
+  @include respond-to(md) {
+    width: 18.75rem;
+  }
+
+  @include respond-to(lg) {
+    width: auto;
+  }
+}

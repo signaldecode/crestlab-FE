@@ -1,0 +1,148 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+$token-reward-red: #ec444b;
+
+.token-list {
+  background-color: $color-background;
+  padding: $spacing-3xl 0;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl 0;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @include respond-to(md) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-3xl;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+.scroll {
+  display: flex;
+  gap: $spacing-xl;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 $spacing-md $spacing-md;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include respond-to(md) {
+    padding: 0 $spacing-xl $spacing-lg;
+    gap: 1.875rem;
+  }
+}
+
+.card {
+  flex-shrink: 0;
+  width: 16rem;
+  height: 16rem;
+  background-color: $color-background-light;
+  border-radius: $spacing-md;
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: start;
+
+  @include respond-to(md) {
+    width: 19.75rem;
+    height: 19.75rem;
+    padding: $spacing-xl;
+  }
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+}
+
+.card-icon {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    width: 3.875rem;
+    height: 3.875rem;
+  }
+}
+
+.card-name {
+  display: block;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.card-amount {
+  display: block;
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  margin-top: $spacing-xs;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.card-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.card-reward-label {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.card-reward-value {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-2xl;
+  color: $token-reward-red;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}

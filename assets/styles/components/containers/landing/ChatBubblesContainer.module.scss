@@ -1,0 +1,105 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.chat-bubbles {
+  padding: $spacing-4xl $spacing-md;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 85rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: -0.025em;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.visual {
+  position: relative;
+  min-height: 16rem;
+
+  @include respond-to(md) {
+    min-height: 24rem;
+  }
+}
+
+.bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $spacing-md;
+}
+
+.bubble {
+  padding: $spacing-md $spacing-xl;
+  border-radius: 62.4375rem;
+  white-space: nowrap;
+}
+
+.bubble--green {
+  background-color: #3cd36c;
+}
+
+.bubble--blue {
+  background-color: #3086f5;
+}
+
+.bubble-text {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-on-dark;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+
+  @include respond-to(md) {
+    display: block;
+  }
+}
+
+.decor-bell {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: auto;
+  height: 6rem;
+}
+
+.decor-heart {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: auto;
+  height: 5rem;
+}

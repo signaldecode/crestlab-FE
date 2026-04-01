@@ -28,32 +28,58 @@
   },
   "landing": {
     "hero": {
-      "badge": "데이터 기반 투자 솔루션",
-      "title": "체계적 분석으로\n자산의 가치를 극대화합니다",
-      "subtitle": "글로벌 시장 분석과 리스크 관리 전문 투자회사\nCrestLab과 함께 안정적인 자산 성장을 경험하세요.",
-      "primaryCta": "투자 상담 신청",
-      "secondaryCta": "투자 철학 보기",
-      "primaryCtaAriaLabel": "투자 상담 신청 페이지로 이동",
-      "secondaryCtaAriaLabel": "투자 철학 섹션으로 이동"
+      "marqueeText": "더 많은 데이터가 아니라 시그널이 필요합니다",
+      "ariaLabel": "Crest Lab 메인 히어로 섹션"
     },
-    "stats": {
-      "title": "신뢰할 수 있는 투자 성과",
-      "subtitle": "숫자가 증명하는 CrestLab의 경쟁력"
+    "serviceCards": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "item1Title": "해외채권",
+      "item1Desc": "소수의 채권을 모두의 채권으로 모두에게 동일한 투자 기회를 제공합니다.",
+      "item2Title": "글로벌 ETF",
+      "item2Desc": "전 세계 주요 시장의 ETF에 분산 투자하여 안정적인 수익을 추구합니다.",
+      "item3Title": "디지털 자산",
+      "item3Desc": "블록체인 기반 디지털 자산에 체계적으로 투자하는 솔루션을 제공합니다."
     },
-    "features": {
-      "title": "왜 CrestLab인가",
-      "subtitle": "차별화된 투자 프로세스를 확인하세요"
+    "featureShowcase": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "item1Title": "시장 동향을 고려한 최신 트렌드 비트코인",
+      "item1Desc": "최신 시장 데이터를 기반으로 현재 가장 주목해야 할 투자 기회를 제공합니다.",
+      "item2Title": "AI 기반 실시간 포트폴리오 분석",
+      "item2Desc": "인공지능이 24시간 시장을 모니터링하며 최적의 자산 배분을 제안합니다.",
+      "item3Title": "리스크 관리 대시보드",
+      "item3Desc": "다층적 리스크 모니터링으로 시장 변동성에 체계적으로 대응합니다.",
+      "item4Title": "맞춤형 투자 리포트",
+      "item4Desc": "고객의 투자 성향과 목표에 맞는 상세한 분석 보고서를 제공합니다."
     },
-    "philosophy": {
-      "title": "투자에 쓰는 시간도 결국엔 가치",
-      "subtitle": "CrestLab이 자산을 관리하는 동안\n더 중요한 일에 집중하세요."
+    "counter": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "subtitle": "더 많은 데이터가 아니라 시그널이 필요합니다"
     },
-    "testimonials": {
-      "title": "고객이 직접 전하는 이야기"
+    "tokenList": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "rewardLabel": "연보상률"
+    },
+    "appScreens": {
+      "ariaLabel": "Crest Lab 앱 스크린샷"
+    },
+    "portfolio": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "subtitle": "코스콤 로보어드바이저 테스트베드를 통과한 투자 솔루션",
+      "cat1": "월배당투자",
+      "cat2": "한국 테마투자",
+      "cat3": "글로벌 분산투자",
+      "cat4": "안정형 포트폴리오"
+    },
+    "chat": {
+      "title": "실시간 투자 알림",
+      "subtitle": "중요한 투자 시그널을 놓치지 마세요"
+    },
+    "wallet": {
+      "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",
+      "subtitle": "코스콤 로보어드바이저 테스트베드를 통과한 투자 솔루션 중에서도 검증된 성과"
     },
     "faq": {
-      "title": "자주 묻는 질문",
-      "subtitle": "궁금한 점을 확인하세요"
+      "title": "고객들이 자주 묻는 질문, 여기서 확인하세요"
     },
     "cta": {
       "title": "자산의 미래를 함께 설계하세요",

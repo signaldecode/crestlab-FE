@@ -1,0 +1,164 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+$faq-q-color: #2c3d5b;
+$faq-text-color: #1d212c;
+$faq-answer-color: #2a2e3b;
+$faq-panel-bg: #f6f7fb;
+$faq-border: #e5e5ec;
+
+.faq {
+  background-color: $color-background;
+  padding: $spacing-3xl $spacing-md;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: 85rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-3xl;
+  color: $color-text-primary;
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-top: 1px solid $faq-border;
+
+  &:last-child {
+    border-bottom: 1px solid $faq-border;
+  }
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: $spacing-lg 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: $spacing-md;
+  min-height: 2.75rem;
+
+  @include respond-to(md) {
+    padding: $spacing-xl 0;
+  }
+}
+
+.trigger-left {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+
+  @include respond-to(md) {
+    gap: $spacing-md;
+  }
+}
+
+.q-label {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  color: $faq-q-color;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.question {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  color: $faq-text-color;
+  transition: color 0.2s ease;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.question--active {
+  color: $faq-q-color;
+}
+
+.arrow {
+  flex-shrink: 0;
+  color: $color-text-secondary;
+  transition: transform 0.2s ease;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  @include respond-to(md) {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+.arrow--open {
+  transform: rotate(180deg);
+}
+
+.panel {
+  display: flex;
+  gap: $spacing-sm;
+  background-color: $faq-panel-bg;
+  border-radius: 0.75rem;
+  padding: $spacing-lg $spacing-md;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    padding: 1.75rem 1.25rem;
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.a-label {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $faq-answer-color;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+.answer {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $faq-answer-color;
+  line-height: 1.625;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}

@@ -1,0 +1,56 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.wallets {
+  background: linear-gradient(90deg, rgba(240, 243, 255, 1) 0%, rgba(215, 229, 253, 1) 100%);
+  padding: $spacing-3xl $spacing-md;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl $spacing-lg;
+  }
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-3xl;
+  color: $color-text-primary;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+    margin-bottom: $spacing-md;
+  }
+}
+
+.subtitle {
+  font-family: $font-family-sans;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+.visual {
+  max-width: 31.25rem;
+  margin: 0 auto;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
