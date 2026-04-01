@@ -8,7 +8,7 @@
         "notices": "공지사항",
         "news": "뉴스",
         "videos": "교육자료",
-        "contact": "문의하기"
+        "board": "게시판"
       },
       "cta": "회원가입",
       "login": "로그인",
@@ -211,15 +211,130 @@
       "noItems": "등록된 영상이 없습니다.",
       "backToList": "목록으로"
     },
+    "community": {
+      "title": "게시판",
+      "subtitle": "자유롭게 의견을 나누는 공간입니다",
+      "write": "글쓰기",
+      "noItems": "등록된 게시글이 없습니다.",
+      "backToList": "목록으로",
+      "author": "작성자",
+      "date": "작성일",
+      "views": "조회수",
+      "loginRequired": "글쓰기는 로그인이 필요합니다.",
+      "loginCta": "로그인하기",
+      "deleteConfirm": "정말 삭제하시겠습니까?",
+      "edit": "수정",
+      "delete": "삭제",
+      "writeForm": {
+        "title": "글쓰기",
+        "subtitle": "게시판에 새 글을 작성합니다",
+        "postTitle": "제목",
+        "postTitlePlaceholder": "제목을 입력하세요",
+        "content": "내용",
+        "contentPlaceholder": "내용을 입력하세요",
+        "submit": "등록",
+        "submitAriaLabel": "게시글 등록 제출",
+        "backToList": "목록으로",
+        "errors": {
+          "titleRequired": "제목을 입력해주세요",
+          "contentRequired": "내용을 입력해주세요"
+        }
+      }
+    },
     "admin": {
       "writeNotice": "공지 작성",
       "editNotice": "수정",
       "deleteNotice": "삭제",
+      "noticeWriteForm": {
+        "title": "공지 작성",
+        "subtitle": "새로운 공지사항을 등록합니다",
+        "noticeTitle": "제목",
+        "noticeTitlePlaceholder": "공지사항 제목을 입력하세요",
+        "content": "내용",
+        "contentPlaceholder": "공지사항 내용을 입력하세요",
+        "submit": "등록",
+        "submitAriaLabel": "공지사항 등록 제출",
+        "backToList": "목록으로",
+        "errors": {
+          "titleRequired": "제목을 입력해주세요",
+          "contentRequired": "내용을 입력해주세요"
+        }
+      },
       "uploadVideo": "영상 업로드",
       "editVideo": "수정",
       "deleteVideo": "삭제",
+      "writeNews": "뉴스 게시",
+      "editNews": "수정",
+      "deleteNews": "삭제",
+      "newsUploadForm": {
+        "title": "뉴스 게시",
+        "subtitle": "투자 관련 뉴스를 등록합니다",
+        "modeUrl": "URL 스크랩",
+        "modeManual": "직접 작성",
+        "url": "기사 URL",
+        "urlPlaceholder": "https://example.com/article",
+        "scrapeButton": "기사 가져오기",
+        "scraping": "가져오는 중...",
+        "scrapeSuccess": "기사를 성공적으로 가져왔습니다",
+        "newsTitle": "제목",
+        "newsTitlePlaceholder": "뉴스 제목을 입력하세요",
+        "content": "본문",
+        "contentPlaceholder": "뉴스 본문을 입력하세요",
+        "source": "출처",
+        "sourcePlaceholder": "출처를 입력하세요 (예: 한국경제)",
+        "sourceUrl": "원문 링크",
+        "sourceUrlPlaceholder": "https://example.com/article",
+        "thumbnail": "썸네일 이미지",
+        "thumbnailHint": "JPG, PNG 형식 지원 (선택사항)",
+        "selectFile": "파일 선택",
+        "changeFile": "파일 변경",
+        "noFileSelected": "선택된 파일이 없습니다",
+        "submit": "게시",
+        "submitAriaLabel": "뉴스 게시 제출",
+        "backToList": "목록으로",
+        "errors": {
+          "urlRequired": "기사 URL을 입력해주세요",
+          "urlInvalid": "올바른 URL 형식이 아닙니다",
+          "scrapeFailed": "기사를 가져오지 못했습니다. URL을 확인해주세요",
+          "titleRequired": "제목을 입력해주세요",
+          "contentRequired": "본문을 입력해주세요",
+          "sourceRequired": "출처를 입력해주세요"
+        }
+      },
       "confirmDelete": "정말 삭제하시겠습니까?",
-      "cancel": "취소"
+      "cancel": "취소",
+      "uploadForm": {
+        "title": "영상 업로드",
+        "subtitle": "새로운 투자 교육 영상을 등록합니다",
+        "videoTitle": "영상 제목",
+        "videoTitlePlaceholder": "영상 제목을 입력하세요",
+        "description": "영상 설명",
+        "descriptionPlaceholder": "영상에 대한 설명을 입력하세요",
+        "category": "카테고리",
+        "categoryPlaceholder": "카테고리를 선택하세요",
+        "categories": {
+          "market": "시장 분석",
+          "strategy": "투자 전략",
+          "beginner": "입문",
+          "advanced": "심화"
+        },
+        "videoFile": "영상 파일",
+        "videoFileHint": "MP4, WebM 형식 지원",
+        "thumbnail": "썸네일 이미지",
+        "thumbnailHint": "JPG, PNG 형식 지원 (선택사항)",
+        "selectFile": "파일 선택",
+        "changeFile": "파일 변경",
+        "noFileSelected": "선택된 파일이 없습니다",
+        "submit": "업로드",
+        "submitAriaLabel": "영상 업로드 제출",
+        "backToList": "목록으로",
+        "errors": {
+          "titleRequired": "영상 제목을 입력해주세요",
+          "descriptionRequired": "영상 설명을 입력해주세요",
+          "categoryRequired": "카테고리를 선택해주세요",
+          "videoFileRequired": "영상 파일을 선택해주세요"
+        }
+      }
     }
   }
 }

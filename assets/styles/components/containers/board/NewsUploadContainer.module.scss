@@ -1,0 +1,128 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.section {
+  padding: $spacing-2xl $container-padding;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: $spacing-xl;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+}
+
+.tabs {
+  display: flex;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-xl;
+  border-bottom: 0.0625rem solid $color-border;
+}
+
+.tab {
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-sans;
+  color: $color-text-secondary;
+  background: none;
+  border: none;
+  border-bottom: 0.125rem solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  min-height: 2.75rem;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid $color-primary;
+    outline-offset: -0.125rem;
+  }
+
+  &--active {
+    color: $color-primary;
+    border-bottom-color: $color-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  max-width: 40rem;
+}
+
+.scrape-section {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.scrape-success {
+  font-size: $font-size-sm;
+  color: $color-success;
+  font-weight: $font-weight-medium;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.file-name {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-input {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.actions {
+  display: flex;
+  gap: $spacing-md;
+  padding-top: $spacing-md;
+  flex-wrap: wrap;
+}
