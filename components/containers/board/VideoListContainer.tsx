@@ -4,8 +4,6 @@ import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import AdminActions from '@/components/ui/AdminActions';
 import SectionTitle from '@/components/ui/SectionTitle';
-import useAuthStore from '@/stores/useAuthStore';
-import useUIStore from '@/stores/useUIStore';
 import styles from '@/assets/styles/components/containers/board/VideoListContainer.module.scss';
 
 interface VideoItem {
@@ -34,9 +32,6 @@ interface VideoListContainerProps {
 }
 
 export default function VideoListContainer({ messages, data, adminMessages }: VideoListContainerProps) {
-  const isLoggedIn = useAuthStore((s) => s.isLoggedIn);
-  const openLoginModal = useUIStore((s) => s.openLoginModal);
-
   return (
     <section className={styles.section} aria-label={messages.title}>
       <div className={styles.inner}>
@@ -49,13 +44,6 @@ export default function VideoListContainer({ messages, data, adminMessages }: Vi
             </Link>
           </div>
         </AdminActions>
-
-        {!isLoggedIn && (
-          <div className={styles['login-message']}>
-            <p className={styles['login-text']}>{messages.loginRequired}</p>
-            <Button variant="primary" onClick={openLoginModal}>{messages.loginCta}</Button>
-          </div>
-        )}
 
         {data.items.length > 0 ? (
           <div className={styles.grid}>
