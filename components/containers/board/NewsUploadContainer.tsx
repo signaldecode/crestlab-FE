@@ -4,7 +4,8 @@ import { useRef, useState } from 'react';
 import Link from 'next/link';
 import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
-import TextArea from '@/components/ui/TextArea';
+import TiptapEditor from '@/components/ui/TiptapEditor';
+import type { ToolbarMessages } from '@/components/ui/TiptapEditor';
 import Button from '@/components/ui/Button';
 import styles from '@/assets/styles/components/containers/board/NewsUploadContainer.module.scss';
 
@@ -48,11 +49,13 @@ interface NewsUploadMessages {
 
 interface NewsUploadContainerProps {
   messages: NewsUploadMessages;
+  editorMessages: ToolbarMessages;
   idPrefix?: string;
 }
 
 export default function NewsUploadContainer({
   messages,
+  editorMessages,
   idPrefix = 'news-upload',
 }: NewsUploadContainerProps) {
   const [mode, setMode] = useState<UploadMode>('url');
@@ -116,7 +119,8 @@ export default function NewsUploadContainer({
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!newsTitle.trim()) newErrors.newsTitle = messages.errors.titleRequired;
-    if (!content.trim()) newErrors.content = messages.errors.contentRequired;
+    const textOnly = content.replace(/<[^>]*>/g, '').trim();
+    if (!textOnly) newErrors.content = messages.errors.contentRequired;
     if (!source.trim()) newErrors.source = messages.errors.sourceRequired;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -217,11 +221,11 @@ export default function NewsUploadContainer({
                 required
                 error={errors.content}
               >
-                <TextArea
-                  value={content}
-                  onChange={(e) => setContent(e.target.value)}
+                <TiptapEditor
+                  content={content}
+                  onChange={setContent}
                   placeholder={messages.contentPlaceholder}
-                  rows={10}
+                  toolbarMessages={editorMessages}
                 />
               </FormField>
 

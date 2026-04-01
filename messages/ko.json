@@ -23,7 +23,21 @@
       },
       "disclaimer": "투자에는 원금 손실의 위험이 있으며, 과거의 수익률이 미래의 수익률을 보장하지 않습니다."
     },
-    "skipToContent": "본문으로 건너뛰기"
+    "skipToContent": "본문으로 건너뛰기",
+    "editor": {
+      "bold": "굵게",
+      "italic": "기울임",
+      "underline": "밑줄",
+      "strikethrough": "취소선",
+      "heading2": "제목 2",
+      "heading3": "제목 3",
+      "bulletList": "목록",
+      "orderedList": "번호 목록",
+      "blockquote": "인용",
+      "horizontalRule": "구분선",
+      "undo": "실행 취소",
+      "redo": "다시 실행"
+    }
   },
   "landing": {
     "hero": {
