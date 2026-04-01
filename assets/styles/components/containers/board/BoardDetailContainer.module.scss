@@ -1,0 +1,63 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.section {
+  padding: $spacing-2xl $container-padding;
+}
+
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.header {
+  border-bottom: 0.0625rem solid $color-border;
+  padding-bottom: $spacing-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.content {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  white-space: pre-line;
+  min-height: 12rem;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.action-bar {
+  display: flex;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.back {
+  margin-top: $spacing-2xl;
+  padding-top: $spacing-lg;
+  border-top: 0.0625rem solid $color-border;
+}

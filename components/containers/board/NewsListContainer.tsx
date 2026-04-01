@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import Button from '@/components/ui/Button';
+import AdminActions from '@/components/ui/AdminActions';
 import SectionTitle from '@/components/ui/SectionTitle';
 import styles from '@/assets/styles/components/containers/board/NewsListContainer.module.scss';
 
@@ -23,13 +26,24 @@ interface NewsMessages {
 interface NewsListContainerProps {
   messages: NewsMessages;
   data: { items: NewsItem[] };
+  adminMessages?: {
+    writeNews: string;
+  };
 }
 
-export default function NewsListContainer({ messages, data }: NewsListContainerProps) {
+export default function NewsListContainer({ messages, data, adminMessages }: NewsListContainerProps) {
   return (
     <section className={styles.section} aria-label={messages.title}>
       <div className={styles.inner}>
         <SectionTitle title={messages.title} subtitle={messages.subtitle} align="left" />
+
+        <AdminActions>
+          <div className={styles['admin-bar']}>
+            <Link href="/news/write">
+              <Button variant="primary" size="sm">{adminMessages?.writeNews}</Button>
+            </Link>
+          </div>
+        </AdminActions>
 
         {data.items.length > 0 ? (
           <div className={styles.grid}>

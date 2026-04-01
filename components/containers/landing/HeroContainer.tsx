@@ -36,7 +36,7 @@ export default function HeroContainer({ data }: HeroContainerProps) {
           ))}
         </p>
         <div className={styles.cta}>
-          <a href="/contact" className={styles['btn-primary']} aria-label={data.primaryCtaAriaLabel}>
+          <a href="/board" className={styles['btn-primary']} aria-label={data.primaryCtaAriaLabel}>
             {data.primaryCta}
           </a>
           <a href="#philosophy" className={styles['btn-secondary']} aria-label={data.secondaryCtaAriaLabel}>

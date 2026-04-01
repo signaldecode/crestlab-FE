@@ -17,7 +17,7 @@ export default function CtaContainer({ data }: CtaContainerProps) {
       <div className={styles.inner}>
         <h2 className={styles.title}>{data.title}</h2>
         <p className={styles.subtitle}>{data.subtitle}</p>
-        <a href="/contact" className={styles.button} aria-label={data.buttonAriaLabel}>
+        <a href="/board" className={styles.button} aria-label={data.buttonAriaLabel}>
           {data.button}
         </a>
       </div>

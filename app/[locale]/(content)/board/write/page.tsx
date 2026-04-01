@@ -1,19 +1,19 @@
 import { getTranslations } from 'next-intl/server';
-import NoticeWriteContainer from '@/components/containers/board/NoticeWriteContainer';
+import BoardWriteContainer from '@/components/containers/board/BoardWriteContainer';
 
 export async function generateMetadata() {
-  const t = await getTranslations('board.admin.noticeWriteForm');
+  const t = await getTranslations('board.community.writeForm');
   return { title: `${t('title')} | CrestLab` };
 }
 
-export default async function NoticeWritePage() {
-  const t = await getTranslations('board.admin.noticeWriteForm');
+export default async function BoardWritePage() {
+  const t = await getTranslations('board.community.writeForm');
 
   const messages = {
     title: t('title'),
     subtitle: t('subtitle'),
-    noticeTitle: t('noticeTitle'),
-    noticeTitlePlaceholder: t('noticeTitlePlaceholder'),
+    postTitle: t('postTitle'),
+    postTitlePlaceholder: t('postTitlePlaceholder'),
     content: t('content'),
     contentPlaceholder: t('contentPlaceholder'),
     submit: t('submit'),
@@ -25,5 +25,5 @@ export default async function NoticeWritePage() {
     },
   };
 
-  return <NoticeWriteContainer messages={messages} />;
+  return <BoardWriteContainer messages={messages} />;
 }

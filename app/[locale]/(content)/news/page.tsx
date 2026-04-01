@@ -10,5 +10,11 @@ export async function generateMetadata() {
 export default async function NewsPage() {
   const messages = await getMessages();
   const board = messages.board as Record<string, unknown>;
-  return <NewsListContainer messages={board.news as never} data={newsData} />;
+  return (
+    <NewsListContainer
+      messages={board.news as never}
+      data={newsData}
+      adminMessages={board.admin as never}
+    />
+  );
 }

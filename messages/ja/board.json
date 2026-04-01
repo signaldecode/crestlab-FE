@@ -30,6 +30,38 @@
     "editVideo": "編集",
     "deleteVideo": "削除",
     "confirmDelete": "本当に削除しますか？",
-    "cancel": "キャンセル"
+    "cancel": "キャンセル",
+    "uploadForm": {
+      "title": "動画アップロード",
+      "subtitle": "新しい投資教育動画を登録します",
+      "videoTitle": "動画タイトル",
+      "videoTitlePlaceholder": "動画タイトルを入力してください",
+      "description": "動画説明",
+      "descriptionPlaceholder": "動画の説明を入力してください",
+      "category": "カテゴリ",
+      "categoryPlaceholder": "カテゴリを選択してください",
+      "categories": {
+        "market": "市場分析",
+        "strategy": "投資戦略",
+        "beginner": "入門",
+        "advanced": "上級"
+      },
+      "videoFile": "動画ファイル",
+      "videoFileHint": "MP4、WebM形式対応",
+      "thumbnail": "サムネイル画像",
+      "thumbnailHint": "JPG、PNG形式対応（任意）",
+      "selectFile": "ファイルを選択",
+      "changeFile": "ファイルを変更",
+      "noFileSelected": "ファイルが選択されていません",
+      "submit": "アップロード",
+      "submitAriaLabel": "動画アップロードを送信",
+      "backToList": "一覧へ",
+      "errors": {
+        "titleRequired": "動画タイトルを入力してください",
+        "descriptionRequired": "動画の説明を入力してください",
+        "categoryRequired": "カテゴリを選択してください",
+        "videoFileRequired": "動画ファイルを選択してください"
+      }
+    }
   }
 }
