@@ -1,0 +1,111 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ── Section ──
+.chart-cards {
+  padding: $spacing-4xl 0;
+  background-color: #ecf1fe;
+}
+
+// ── Inner ──
+.inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// ── Header ──
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-light;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Grid ──
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ── Card ──
+.card {
+  background-color: $color-background;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+  }
+}
+
+// ── Chart area (블루 배경 박스) ──
+.chart-area {
+  background: linear-gradient(135deg, #e8edfb 0%, #dbe4fb 100%);
+  border-radius: 0.75rem;
+  margin: $spacing-md $spacing-md 0;
+  height: 14rem;
+  padding: $spacing-sm;
+
+  @include respond-to(md) {
+    height: 16rem;
+  }
+}
+
+// ── Card text ──
+.card-text {
+  padding: $spacing-lg $spacing-xl $spacing-xl;
+}
+
+.card-title {
+  font-family: $font-family-sans;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  margin-bottom: $spacing-sm;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.card-desc {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+}

@@ -3,12 +3,11 @@
 @use '../../tokens/spacing' as *;
 
 .accordion {
-  max-width: 50rem;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .item {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 0.0625rem solid $color-border;
 }
 
 .trigger {
@@ -25,19 +24,31 @@
 }
 
 .question {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
   color: $color-text-primary;
   line-height: $line-height-snug;
+  letter-spacing: $letter-spacing-tight;
 }
 
-.icon {
+.question-prefix {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
   flex-shrink: 0;
-  font-size: $font-size-2xl;
-  color: $color-primary;
-  font-weight: $font-weight-light;
-  width: 2rem;
-  text-align: center;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: $color-text-secondary;
+  transition: transform 0.25s;
+
+  .item--open & {
+    transform: rotate(180deg);
+  }
 }
 
 .panel {
@@ -45,8 +56,9 @@
 }
 
 .answer {
-  padding: 0 0 $spacing-lg;
-  font-size: $font-size-base;
+  padding: 0 0 $spacing-lg $spacing-xl;
+  font-size: $font-size-sm;
   color: $color-text-secondary;
   line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
 }

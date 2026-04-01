@@ -1,0 +1,68 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ── Section ──
+.showcase {
+  padding: $spacing-4xl 0;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+// ── Header ──
+.header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+  padding: 0 $spacing-md;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// ── Inner ──
+.inner {
+  max-width: 300rem;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// ── Tablet ──
+.tablet {
+  position: relative;
+  width: 100%;
+  max-width: 200rem;
+  margin: 0 auto;
+  aspect-ratio: 874 / 583;
+
+  @include respond-to(md) {
+    width: 80%;
+  }
+}
+
+.tablet-image {
+  object-fit: contain;
+}

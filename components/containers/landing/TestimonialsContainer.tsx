@@ -1,53 +1,65 @@
-import SectionTitle from '@/components/ui/SectionTitle';
 import styles from '@/assets/styles/components/containers/landing/TestimonialsContainer.module.scss';
 
 interface TestimonialItem {
   quote: string;
   author: string;
   role: string;
-  highlight: string;
-}
-
-interface TestimonialsMessages {
-  title: string;
 }
 
 interface TestimonialsContainerProps {
-  messages: TestimonialsMessages;
+  messages: { title: string };
   data: { items: TestimonialItem[] };
 }
 
-export default function TestimonialsContainer({ messages, data }: TestimonialsContainerProps) {
+function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <section className={styles.testimonials}>
-      <div className={styles.inner}>
-        <SectionTitle title={messages.title} />
-        <ul className={styles.grid}>
-          {data.items.map((item, index) => (
-            <li key={index} className={styles.card}>
-              <blockquote className={styles.quote}>
-                <p className={styles.text}>
-                  {item.quote.split(item.highlight).map((part, i, arr) => (
-                    <span key={i}>
-                      {part}
-                      {i < arr.length - 1 && (
-                        <strong className={styles.highlight}>{item.highlight}</strong>
-                      )}
-                    </span>
-                  ))}
-                </p>
-                <footer className={styles.author}>
-                  <span className={styles.avatar} aria-hidden="true" />
-                  <div>
-                    <span className={styles.name}>{item.author}</span>
-                    <span className={styles.role}>{item.role}</span>
-                  </div>
-                </footer>
-              </blockquote>
-            </li>
-          ))}
-        </ul>
+    <article className={styles.card}>
+      <div className={styles['card-header']}>
+        <span className={styles.avatar} aria-hidden="true" />
+        <div className={styles['card-meta']}>
+          <span className={styles.name}>{item.author}</span>
+          <span className={styles.role}>{item.role}</span>
+        </div>
       </div>
+      <blockquote className={styles.quote}>
+        <p className={styles.text}>&ldquo;{item.quote}&rdquo;</p>
+      </blockquote>
+    </article>
+  );
+}
+
+function MarqueeRow({
+  items,
+  direction,
+}: {
+  items: TestimonialItem[];
+  direction: 'left' | 'right';
+}) {
+  const className =
+    direction === 'left' ? styles['track-left'] : styles['track-right'];
+
+  return (
+    <div className={styles.row}>
+      <div className={className}>
+        {Array.from({ length: 4 }).map((_, setIdx) => (
+          <div key={setIdx} className={styles.slide}>
+            {items.map((item, i) => (
+              <TestimonialCard key={`${setIdx}-${i}`} item={item} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function TestimonialsContainer({
+  data,
+}: TestimonialsContainerProps) {
+  return (
+    <section className={styles.testimonials} aria-hidden="true">
+      <MarqueeRow items={data.items} direction="left" />
+      <MarqueeRow items={data.items} direction="right" />
     </section>
   );
 }

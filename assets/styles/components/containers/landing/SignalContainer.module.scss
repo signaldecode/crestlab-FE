@@ -1,0 +1,225 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ── Section ──
+.signal {
+  padding: $spacing-4xl 0;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+// ── Header ──
+.header {
+  text-align: center;
+  margin-bottom: $spacing-xl;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+// ── Subtitle ──
+.subtitle {
+  text-align: center;
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-light;
+  color: $color-text-secondary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Carousel ──
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-3xl;
+
+  @include respond-to(md) {
+    padding: 0 $spacing-4xl;
+  }
+}
+
+.track {
+  display: flex;
+  gap: $spacing-lg;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+  padding: $spacing-sm 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include respond-to(lg) {
+    gap: $spacing-xl;
+  }
+}
+
+// ── Navigation ──
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 0.0625rem solid $color-border;
+  background-color: $color-background;
+  color: $color-text-primary;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    background-color: $color-background-alt;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid $color-primary;
+    outline-offset: 0.125rem;
+  }
+}
+
+.nav-prev {
+  left: $spacing-sm;
+
+  @include respond-to(md) {
+    left: $spacing-lg;
+  }
+}
+
+.nav-next {
+  right: $spacing-sm;
+
+  @include respond-to(md) {
+    right: $spacing-lg;
+  }
+}
+
+// ── Card ──
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 14rem;
+  height: 14rem;
+  background-color: $color-background-light;
+  border-radius: $spacing-md;
+  padding: $spacing-xl;
+  scroll-snap-align: start;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-0.125rem);
+  }
+
+  @include respond-to(md) {
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.card-name {
+  font-family: $font-family-sans;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.card-amount {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// ── Reward ──
+.card-bottom {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-sm;
+}
+
+.reward-label {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.reward-value {
+  font-family: $font-family-sans;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-error;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-4xl;
+  }
+}

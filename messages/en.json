@@ -56,6 +56,39 @@
     "testimonials": {
       "title": "What Our Clients Say"
     },
+    "showcase": {
+      "title": "Trusted Market Share\nand AUM",
+      "subtitle": "Verified performance among investment solutions\nthat passed the KOSCOM Robo-Advisor Testbed"
+    },
+    "signal": {
+      "title": "You don't need more data\nYou need signals",
+      "marquee": "You don't need more data You need signals",
+      "rewardLabel": "Annual Reward",
+      "prevAriaLabel": "View previous coin",
+      "nextAriaLabel": "View next coin"
+    },
+    "chartCards": {
+      "title": "You don't need more data\nYou need signals",
+      "subtitle": "You don't need more data You need signals You don't need more data\nYou need signals You don't need more data",
+      "card1Title": "Add unlimited users",
+      "card1Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users",
+      "card2Title": "Add unlimited users",
+      "card2Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users",
+      "card3Title": "Add unlimited users",
+      "card3Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users"
+    },
+    "phoneFeature": {
+      "row1Title": "Trusted Market Share\nand AUM",
+      "row1Subtitle": "Verified performance among solutions that passed the KOSCOM Robo-Advisor Testbed",
+      "row1Item1": "Placeholder",
+      "row1Item2": "Placeholder",
+      "row1Item3": "Placeholder",
+      "row2Title": "Trusted Market Share\nand AUM",
+      "row2Subtitle": "Verified performance among solutions that passed the KOSCOM Robo-Advisor Testbed",
+      "row2Item1": "Placeholder",
+      "row2Item2": "Placeholder",
+      "row2Item3": "Placeholder"
+    },
     "staking": {
       "title": "Maximize Returns with Staking",
       "subtitle": "Earn additional returns on your holdings",
@@ -66,8 +99,9 @@
       "subtitle": "Target achievement rate by year"
     },
     "faq": {
+      "caption": "Faq",
       "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions"
+      "subtitle": "We've gathered the most common inquiries\nin one place for your convenience."
     },
     "cta": {
       "title": "Let's design the future of your assets together",

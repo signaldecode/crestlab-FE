@@ -21,6 +21,13 @@
   "testimonials": {
     "title": "고객이 직접 전하는 이야기"
   },
+  "signal": {
+    "title": "You don't need more data\nYou need signals",
+    "marquee": "You don't need more data You need signals",
+    "rewardLabel": "연보상률",
+    "prevAriaLabel": "이전 코인 보기",
+    "nextAriaLabel": "다음 코인 보기"
+  },
   "staking": {
     "title": "스테이킹으로 수익 극대화",
     "subtitle": "보유 자산으로 추가 수익을 얻으세요",

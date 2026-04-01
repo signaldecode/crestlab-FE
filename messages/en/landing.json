@@ -21,6 +21,13 @@
   "testimonials": {
     "title": "What Our Clients Say"
   },
+  "signal": {
+    "title": "You don't need more data\nYou need signals",
+    "marquee": "You don't need more data You need signals",
+    "rewardLabel": "Annual Reward",
+    "prevAriaLabel": "View previous coin",
+    "nextAriaLabel": "View next coin"
+  },
   "staking": {
     "title": "Maximize Returns with Staking",
     "subtitle": "Earn additional returns on your holdings",

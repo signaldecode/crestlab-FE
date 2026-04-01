@@ -1,0 +1,167 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ── Section ──
+.phone-feature {
+  padding: $spacing-4xl 0;
+  background-color: $color-background;
+  overflow: hidden;
+}
+
+// ── Row ──
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-3xl;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  & + & {
+    margin-top: $spacing-4xl;
+  }
+
+  @include respond-to(lg) {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-4xl;
+  }
+}
+
+.row-normal {
+  @include respond-to(lg) {
+    flex-direction: row;
+  }
+}
+
+.row-reverse {
+  @include respond-to(lg) {
+    flex-direction: row-reverse;
+  }
+}
+
+// ── Text block ──
+.text-block {
+  flex: 1;
+}
+
+.icon {
+  display: block;
+  font-size: $font-size-3xl;
+  margin-bottom: $spacing-lg;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-5xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// ── Item list (임시텍스트) ──
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.item-bar {
+  width: 0.1875rem;
+  height: 1.25rem;
+  background-color: $color-primary;
+  border-radius: 999rem;
+  flex-shrink: 0;
+}
+
+.item-text-accent {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: #3086f5;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.item-text {
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  color: #999999;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+// ── Phone block ──
+.phone-block {
+  flex-shrink: 0;
+  width: 70%;
+  max-width: 28rem;
+
+  @include respond-to(lg) {
+    width: 40%;
+  }
+}
+
+// 피그마: 폰 445×840
+.phone-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 445 / 840;
+}
+
+.phone-image {
+  object-fit: contain;
+}
+
+// 스크린 위치 (피그마 좌표 기반)
+// 프레임: 445×840, 스크린 offset: (54, 108), 스크린: 337×621
+.phone-screen {
+  position: absolute;
+  top: 12.86%;
+  left: 12.16%;
+  right: 18.16%;
+  bottom: 13.21%;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.screen-image {
+  object-fit: cover;
+  object-position: top center;
+}

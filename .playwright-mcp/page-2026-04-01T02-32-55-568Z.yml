@@ -1,0 +1,523 @@
+- generic [active] [ref=e1]:
+  - alert [ref=e2]
+  - generic [ref=e3]:
+    - generic [ref=e6]:
+      - link "Fint Logo" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - img "Fint Logo" [ref=e8]
+      - img "Menu" [ref=e10] [cursor=pointer]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - generic [ref=e15]:
+          - generic [ref=e17]:
+            - text: 1,079,863명이 선택한
+            - text: 쉽고 편한 투자의 시작, 핀트
+          - generic [ref=e18]:
+            - text: AI가 알아서 주식, ETF 등을
+            - text: 매매해주는 핀트에서 투자하세요!
+          - img "appStore" [ref=e20]
+          - generic [ref=e22]:
+            - generic [ref=e25]:
+              - img "rectangle" [ref=e27]
+              - img "rectangle" [ref=e29]
+              - img "rectangle" [ref=e31]
+              - img "rectangle" [ref=e33]
+              - img "rectangle" [ref=e35]
+              - img "rectangle" [ref=e37]
+            - generic [ref=e38]:
+              - img "rectangle" [ref=e40]
+              - img "rectangle" [ref=e42]
+              - img "rectangle" [ref=e44]
+              - img "rectangle" [ref=e46]
+              - img "rectangle" [ref=e48]
+              - img "rectangle" [ref=e50]
+          - generic [ref=e53]:
+            - generic [ref=e54]: "*2025년 3월말 테스트베드 통과 전체 RA사 일임서비스 기준 코스콤 RA 테스트베드 센터 RA시장 규모추이 & 금투협 공시"
+            - generic [ref=e55]: "**K-fintech 대표기업 30 - 2024. 8 선정"
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - text: 믿을 수 있는 시장 점유율에
+              - text: 관리자산 규모까지
+            - generic [ref=e60]:
+              - generic [ref=e63]:
+                - generic [ref=e64]:
+                  - generic [ref=e65]: 계약자 수
+                  - generic [ref=e66]:
+                    - img [ref=e67]
+                    - generic [ref=e71]: 55%
+                - generic [ref=e72]:
+                  - generic [ref=e73]:
+                    - text: 한국인이 가장 많이 쓰는
+                    - text: 1등 로보어드바이저 일임서비스
+                  - generic [ref=e74]:
+                    - text: 우리나라에서 일임투자 서비스를 이용하는
+                    - text: 사용자 중 81%는 핀트에서 투자해요.
+                  - generic [ref=e75]: RA 테스트베드 통과 RA사 일임 집계('25.03 기준), 코스콤 RA 시장 규모 추이자료 및 금투협 공시
+              - generic [ref=e79]:
+                - generic [ref=e81]:
+                  - generic [ref=e82]:
+                    - generic [ref=e84]: 2022년
+                    - generic [ref=e86]: 2025년
+                  - generic [ref=e93]: 1,151억원
+                  - generic [ref=e97]: 3,709억원
+                  - generic [ref=e100]: X3.2
+                - generic [ref=e102]:
+                  - generic [ref=e103]:
+                    - text: 핀트에 대한 믿음이 쌓여
+                    - text: 성장을 거듭하는 총 운용자산*
+                  - generic [ref=e104]: 일임 및 자문계좌 잔고(투자일임재산 + 투자자문재산 + 고객의 직접 투자 재산)
+                  - generic [ref=e105]: 디셈버앤컴퍼니 자체 집계, '25.03 기준
+              - generic [ref=e109]:
+                - generic [ref=e112]:
+                  - generic [ref=e113]:
+                    - generic [ref=e114]: 202만원
+                    - generic [ref=e115]: "2021"
+                  - generic [ref=e116]:
+                    - generic [ref=e117]: 351만원
+                    - generic [ref=e118]: "2023"
+                  - generic [ref=e119]:
+                    - generic [ref=e120]: 696만원
+                    - generic [ref=e121]: "2025"
+                - generic [ref=e122]:
+                  - generic [ref=e123]:
+                    - text: 늘어나는 가입자 수 만큼
+                    - text: 커져가는 1인당 평균 투자액
+                  - generic [ref=e124]: 가입자 수가 늘어나는 데서 그치지 않고 1인당 평균 투자액도 비례해서 커지고 있어요.
+                  - generic [ref=e125]: 디셈버앤컴퍼니 자체 집계, '25.03 기준
+        - generic [ref=e129]:
+          - img "appStore" [ref=e130]
+          - generic [ref=e131]:
+            - text: 진행 경과만 확인하세요.
+            - text: 나머진 핀트가 알아서 할게요
+          - generic [ref=e132]:
+            - generic [ref=e134]:
+              - generic [ref=e136]:
+                - generic [ref=e137]: 매매 주문을 실행했어요!
+                - generic [ref=e138]: AI투자 엔진이 시장가와 지정가 차이를 고려해 매매한 내역을 상세히 알려드려요.
+                - img "rectangle" [ref=e139]
+              - generic [ref=e141]:
+                - generic [ref=e142]: 하루 수익이 올랐어요!
+                - generic [ref=e143]: 운용 중 전략의 총 수익금 변동 상황을 날마다 체크해서 알려드려요.
+                - img "rectangle" [ref=e144]
+              - generic [ref=e146]:
+                - generic [ref=e147]: 개별 종목 주가가 올랐어요!
+                - generic [ref=e148]: 보유한 전략이 담고 있는 종목 중 일간 수익률이 가장 높은 종목을 알려드려요.
+                - img "rectangle" [ref=e149]
+              - generic [ref=e151]:
+                - generic [ref=e152]: 배당금이 입금되었어요!
+                - generic [ref=e153]: 배당 종목을 포함하는 전략을 운용하는 경우, 배당금이 발생할 때마다 알려드려요.
+                - img "rectangle" [ref=e154]
+              - generic [ref=e156]:
+                - generic [ref=e157]: 아이작노트가 나왔어요!
+                - generic [ref=e158]: 핀트 투자 전략의 월간 리밸런싱 내역에 애널리스트의 시각을 담아 매달 알려드려요.
+                - img "rectangle" [ref=e159]
+              - generic [ref=e161]:
+                - generic [ref=e162]: 투자보고서가 도착했어요!
+                - generic [ref=e163]: 분기별 투자보고서로 투자 성과를 이해하기 쉽게 알려드려요.
+                - img "rectangle" [ref=e164]
+              - generic [ref=e166]:
+                - generic [ref=e167]: 리밸런싱을 진행했어요!
+                - generic [ref=e168]: 리밸런싱이 이뤄진 경우, 어떤 자산군을 늘리고 줄였는지 알려드려요.
+                - img "rectangle" [ref=e169]
+            - generic [ref=e170]:
+              - generic [ref=e172]:
+                - generic [ref=e173]: 매매 주문을 실행했어요!
+                - generic [ref=e174]: AI투자 엔진이 시장가와 지정가 차이를 고려해 매매한 내역을 상세히 알려드려요.
+                - img "rectangle" [ref=e175]
+              - generic [ref=e177]:
+                - generic [ref=e178]: 하루 수익이 올랐어요!
+                - generic [ref=e179]: 운용 중 전략의 총 수익금 변동 상황을 날마다 체크해서 알려드려요.
+                - img "rectangle" [ref=e180]
+              - generic [ref=e182]:
+                - generic [ref=e183]: 개별 종목 주가가 올랐어요!
+                - generic [ref=e184]: 보유한 전략이 담고 있는 종목 중 일간 수익률이 가장 높은 종목을 알려드려요.
+                - img "rectangle" [ref=e185]
+              - generic [ref=e187]:
+                - generic [ref=e188]: 배당금이 입금되었어요!
+                - generic [ref=e189]: 배당 종목을 포함하는 전략을 운용하는 경우, 배당금이 발생할 때마다 알려드려요.
+                - img "rectangle" [ref=e190]
+              - generic [ref=e192]:
+                - generic [ref=e193]: 아이작노트가 나왔어요!
+                - generic [ref=e194]: 핀트 투자 전략의 월간 리밸런싱 내역에 애널리스트의 시각을 담아 매달 알려드려요.
+                - img "rectangle" [ref=e195]
+              - generic [ref=e197]:
+                - generic [ref=e198]: 투자보고서가 도착했어요!
+                - generic [ref=e199]: 분기별 투자보고서로 투자 성과를 이해하기 쉽게 알려드려요.
+                - img "rectangle" [ref=e200]
+              - generic [ref=e202]:
+                - generic [ref=e203]: 리밸런싱을 진행했어요!
+                - generic [ref=e204]: 리밸런싱이 이뤄진 경우, 어떤 자산군을 늘리고 줄였는지 알려드려요.
+                - img "rectangle" [ref=e205]
+        - generic [ref=e208]:
+          - img "how-it-works-1" [ref=e209]
+          - generic [ref=e210]:
+            - text: 투자에 쓰는 시간도 결국엔 돈.
+            - text: 핀트로 시간을 돌려받으세요
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - generic [ref=e214]:
+                - text: 직접 투자를 위해
+                - text: 소요되는 연 평균시간
+              - generic [ref=e215]: 153시간
+            - generic [ref=e217]:
+              - generic [ref=e218]:
+                - text: 핀트로 투자하면
+                - text: 소요되는 연 평균 시간
+              - generic [ref=e219]: 9시간
+            - generic [ref=e223]: 총 148시간 절약
+          - button "어떻게 계산되었나요?" [ref=e224] [cursor=pointer]:
+            - generic [ref=e225]: 어떻게 계산되었나요?
+          - generic [ref=e226]:
+            - generic [ref=e228]:
+              - generic [ref=e230]:
+                - generic [ref=e231]: 제가 직접 단타 치면서 시간 소모하는 것이 아닌 자동 매매가 있다는 것이 정말 좋은 것 같고 미국주식전략까지 추가되면서 선택의 폭도 넓어져 굉장히 편리한 것 같습니다.
+                - generic [ref=e232]: 주**우
+              - generic [ref=e234]:
+                - generic [ref=e235]: 일상생활에 지장을 줄 만큼 눈이 빠지게 장을 들여다봤던 저한테는 정말 최고의 앱인 것 같습니다.
+                - generic [ref=e236]: 이*영
+              - generic [ref=e238]:
+                - generic [ref=e239]: 일상 투자해서 돈 좀 모아볼까, 생각해서 가입했어요. 직접 하는 것보다는 AI로 하는 게 훨씬 더 안정적인 것 같다는 생각이 드네요. 그리고 생각보다 체계적으로 잘 운용되네요.
+                - generic [ref=e240]: toriy*****kira
+            - generic [ref=e241]:
+              - generic [ref=e242]:
+                - text: 이미 갖고 있는 계좌에
+                - text: 검증된 AI투자를 더해보세요
+              - generic [ref=e243]:
+                - text: 증권계좌에서 투자가 이루어지는 만큼
+                - text: 이 앱 저 앱 들락거리지 않고도 관리할 수 있어요.
+            - generic [ref=e244]:
+              - generic [ref=e246]:
+                - img "imgHPMainPhone" [ref=e248]
+                - img "imgHPMainPhone" [ref=e250]
+                - img "imgHPMainPhone" [ref=e252]
+                - img "imgHPMainPhone" [ref=e254]
+                - img "imgHPMainPhone" [ref=e256]
+                - img "imgHPMainPhone" [ref=e258]
+                - img "imgHPMainPhone" [ref=e260]
+              - generic [ref=e261]:
+                - img "imgHPMainPhone" [ref=e263]
+                - img "imgHPMainPhone" [ref=e265]
+                - img "imgHPMainPhone" [ref=e267]
+                - img "imgHPMainPhone" [ref=e269]
+                - img "imgHPMainPhone" [ref=e271]
+                - img "imgHPMainPhone" [ref=e273]
+                - img "imgHPMainPhone" [ref=e275]
+          - generic [ref=e277]:
+            - generic [ref=e278]:
+              - generic [ref=e279]:
+                - text: 어떤 투자를 하고 싶으신가요?
+                - text: 원하는 투자, 골라서 투자하세요
+              - generic [ref=e280]:
+                - text: 투자를 시작한 다음에도 자산시장 상황 따라
+                - text: 채권에서 ETF로, 다시 개별주식으로
+                - text: 마음대로 바꿀 수 있어요.
+            - img "imgHPMainPhone" [ref=e284]
+        - generic [ref=e287]:
+          - generic [ref=e288]:
+            - img "icoBarGraph" [ref=e289]
+            - generic [ref=e290]:
+              - text: 검증된 투자 솔루션 운용 성과,
+              - text: 수익률을 확인하세요
+            - generic [ref=e291]:
+              - text: 코스콤 로보어드바이저 테스트베드를
+              - text: 통과한 투자 솔루션 중에서도 핀트 미국 주식 솔루션은
+              - text: 국내 최장 기간 운용된 알고리즘을 자랑해요.
+          - generic [ref=e292]:
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - generic [ref=e295]:
+                  - generic [ref=e296]: 한국 주식
+                  - generic [ref=e297]: 3년 수익률(세전)
+                  - generic [ref=e299]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e300]
+              - generic [ref=e302]:
+                - generic [ref=e303]: "128"
+                - generic [ref=e304]: "%"
+            - generic [ref=e305]:
+              - generic [ref=e306]:
+                - generic [ref=e307]:
+                  - generic [ref=e308]: 미국 배당 주식
+                  - generic [ref=e309]: 3년 수익률(세전)
+                  - generic [ref=e311]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e312]
+              - generic [ref=e314]:
+                - generic [ref=e315]: "80"
+                - generic [ref=e316]: "%"
+            - generic [ref=e317]:
+              - generic [ref=e318]:
+                - generic [ref=e319]:
+                  - generic [ref=e320]: 미국 주식
+                  - generic [ref=e321]: 3년 수익률(세전)
+                  - generic [ref=e323]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e324]
+              - generic [ref=e326]:
+                - generic [ref=e327]: "52"
+                - generic [ref=e328]: "%"
+            - generic [ref=e329]:
+              - generic [ref=e330]:
+                - generic [ref=e331]:
+                  - generic [ref=e332]: 달러 ETF
+                  - generic [ref=e333]: 3년 수익률(세전)
+                  - generic [ref=e335]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e336]
+              - generic [ref=e338]:
+                - generic [ref=e339]: "64"
+                - generic [ref=e340]: "%"
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]: 원화 ETF
+                  - generic [ref=e345]: 3년 수익률(세전)
+                  - generic [ref=e347]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e348]
+              - generic [ref=e350]:
+                - generic [ref=e351]: "41"
+                - generic [ref=e352]: "%"
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - generic [ref=e355]:
+                  - generic [ref=e356]: 펀드 투자
+                  - generic [ref=e357]: 3년 수익률(세전)
+                  - generic [ref=e359]: 2026.03.31 기준
+                - img "icoBarGraph" [ref=e360]
+              - generic [ref=e362]:
+                - generic [ref=e363]: "22"
+                - generic [ref=e364]: "%"
+        - generic [ref=e367]:
+          - generic [ref=e368]:
+            - img "icoBarGraph" [ref=e369]
+            - generic [ref=e370]:
+              - text: AI, 어디까지 필요하세요?
+              - text: 투자 스타일 따라 고르세요
+            - generic [ref=e371]:
+              - text: 투자에서 AI의 도움을 받고 싶은 마음은 똑같아도
+              - text: AI가 필요한 범위나 단계가 조금씩 다를 수 있으니까요.
+          - generic [ref=e373]:
+            - generic [ref=e375]:
+              - generic [ref=e378] [cursor=pointer]: AI 일임투자
+              - generic [ref=e381] [cursor=pointer]: AI 자문투자
+              - generic [ref=e384] [cursor=pointer]: AI 테마투자
+            - generic [ref=e385]:
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - generic [ref=e389]:
+                    - text: 전략 구성부터 자산 매매까지,
+                    - text: 모두 알아서 해주는
+                  - text: AI 일임투자
+                - generic [ref=e390]:
+                  - text: 투자가 어렵거나, 신경쓸 시간이 부족하신가요?
+                  - text: 그렇다면 추천드려요.
+                - generic [ref=e391]:
+                  - generic [ref=e392]: 일반계좌
+                  - generic [ref=e393]: 연금저축
+                  - generic [ref=e394]: 퇴직연금 IRP
+                - img [ref=e397]
+                - button "일임 투자 보러가기" [ref=e407] [cursor=pointer]:
+                  - generic [ref=e408]: 일임 투자 보러가기
+              - generic [ref=e410]:
+                - generic [ref=e411]:
+                  - generic [ref=e412]:
+                    - text: 최적의 포트폴리오를
+                    - text: 제안하는
+                  - text: AI 자문투자
+                - generic [ref=e413]:
+                  - text: 포트폴리오 구성과 매매는 AI가 하지만,
+                  - text: 결정은 내가 직접 내리고 싶은 분들에게 추천해요.
+                - generic [ref=e414]:
+                  - generic [ref=e415]: 일반계좌
+                  - generic [ref=e416]: 퇴직연금 IRP
+                  - generic [ref=e417]: 중개형 ISA
+                - img [ref=e420]
+                - button "자문 투자 보러가기" [ref=e432] [cursor=pointer]:
+                  - generic [ref=e433]: 자문 투자 보러가기
+              - generic [ref=e435]:
+                - generic [ref=e436]:
+                  - generic [ref=e437]:
+                    - text: 요즘 뜨는 이슈, 뭐 있지?
+                    - text: 이슈에 투자하는
+                  - text: AI 테마투자
+                - generic [ref=e438]:
+                  - text: 종목을 직접 사고팔고 싶지만,
+                  - text: AI가 분석한 종목 정보가 필요한 분들에게 딱 맞아요.
+                - generic [ref=e439]:
+                  - generic [ref=e440]: 일반계좌
+                  - generic [ref=e441]: 중개형 ISA
+                - img [ref=e444]
+                - button "테마투자 보러가기" [ref=e451] [cursor=pointer]:
+                  - generic [ref=e452]: 테마투자 보러가기
+        - generic [ref=e455]:
+          - generic [ref=e456]:
+            - text: 내 돈이랑 개인정보
+            - text: 핀트에 믿고 맡길 수 있을까요?
+          - generic [ref=e457]:
+            - text: 고객님의 투자금은 증권사 계좌에 안전하게 보관돼요.
+            - text: 자산운용사와 비대면 투자일임 서비스 기업 중 최초로 ISMS 인증도 받았어요.
+          - generic [ref=e458]:
+            - generic [ref=e459]:
+              - img "ISMS" [ref=e460]
+              - generic [ref=e461]: ISMS
+            - generic [ref=e462]:
+              - img "PCI-DSS" [ref=e463]
+              - generic [ref=e464]: PCI-DSS
+          - img "investment-safety" [ref=e465]
+        - generic [ref=e468]:
+          - generic [ref=e469]:
+            - text: 핀트와 함께하는
+            - text: 제휴 관계 파트너예요
+          - generic [ref=e470]:
+            - generic [ref=e473]:
+              - img "파트너_KB증권" [ref=e475]
+              - img "파트너_비씨증권" [ref=e477]
+              - img "파트너_대신증권" [ref=e479]
+              - img "파트너_한투증권" [ref=e481]
+              - img "파트너_IBK" [ref=e483]
+              - img "파트너_하나증권" [ref=e485]
+              - img "파트너_국민은행" [ref=e487]
+              - img "파트너_농협은행" [ref=e489]
+              - img "파트너_삼성증권" [ref=e491]
+            - generic [ref=e492]:
+              - img "파트너_KB증권" [ref=e494]
+              - img "파트너_비씨증권" [ref=e496]
+              - img "파트너_대신증권" [ref=e498]
+              - img "파트너_한투증권" [ref=e500]
+              - img "파트너_IBK" [ref=e502]
+              - img "파트너_하나증권" [ref=e504]
+              - img "파트너_국민은행" [ref=e506]
+              - img "파트너_농협은행" [ref=e508]
+              - img "파트너_삼성증권" [ref=e510]
+        - generic [ref=e513]:
+          - generic [ref=e514]:
+            - text: 고객들이 자주 묻는 질문,
+            - text: 여기서 확인하세요
+          - generic [ref=e516]:
+            - generic [ref=e517]:
+              - generic [ref=e518] [cursor=pointer]:
+                - img "question" [ref=e519]
+                - generic [ref=e520]: 투자수익률의 출처는 어떻게 되나요?
+                - img "arrow" [ref=e521]
+              - generic [ref=e522]:
+                - text: 핀트의 투자 전략은 한국거래소 산하 코스콤에서 운영하는 로보어드바이저 테스트베드를 통해 일정 기간 공시를 마친 알고리즘을 적용*하고 있어요. 이중 미국주식전략은 국내 로보어드바이저 자산운용사 중 최장 기간 운용된 알고리즘으로 각 계좌 유형별 4,500만 원의 운용자금을 실제로 운용하면서 이에 따른 수익률을 표기하고 있어요.
+                - text: "*미국 넥스트 패러다임, 미국 거버넌스 전략 제외"
+                - generic [ref=e523]: 전략별 수익률
+            - generic [ref=e524]:
+              - generic [ref=e525] [cursor=pointer]:
+                - img "question" [ref=e526]
+                - generic [ref=e527]: 내게 맞는 투자, 어떻게 할 수 있나요?
+                - img "arrow" [ref=e528]
+              - generic [ref=e529]:
+                - text: 핀트에서는 개인투자자 각자가 추구하는 투자 성향에 따라 채권 및 펀드, ETF, 개별주식 등 상품이 서로 다른 전략으로 투자할 수 있어요.
+                - generic [ref=e530]: 투자성향별 투자전략
+            - generic [ref=e531]:
+              - generic [ref=e532] [cursor=pointer]:
+                - img "question" [ref=e533]
+                - generic [ref=e534]: 핀트의 투자 솔루션에는 무엇이 있나요?
+                - img "arrow" [ref=e535]
+              - generic [ref=e536]:
+                - text: (1) 미국 주식 투자
+                - text: 미국 주식에 투자하는 고수익 추구형 전략이에요. 핀트 AI투자 엔진이 3,000개 이상 종목의 금융 데이터와 다양한 경제 지표를 분석해 6개월 뒤 상승 확률이 높은 종목들을 선별합니다. 달러(USD)로 투자하므로 수익이 환율의 영향을 받아요.
+                - text: (2) 미국 배당 주식 투자
+                - text: 배당률과 배당성장률이 높은 미국 주식에 투자하는 전략이에요. 핀트 AI투자 엔진이 3,000개 이상 주식 종목의 금융 데이터를 분석해요. 배당수익에 유리한 종목에 집중해, 수익률에 영향을 미치는 데이터를 분석하고 상승 가능성이 높은 종목들을 선별합니다. 달러(USD)로 투자하므로 수익이 환율의 영향을 받아요.
+                - text: (3) 한국 주식 투자
+                - text: 한국 주식에 투자하는 고수익 추구형 전략이에요. 핀트 AI투자 엔진이 2,500개 이상 주식 종목의 금융 데이터와 다양한 경제 지표를 분석해 6개월 뒤 상승 확률이 높은 종목들을 선별합니다. 투자스타일과 투자금액에 따라 개인화된 포트폴리오를 구성하고 운용해요.
+                - text: (4) 파킹(채권) 투자
+                - text: 한국에 상장된 만기 채권형 ETF 종목으로 안정적으로 만기 기대수익률에 준하는 이자와 원금을 기대할 수 있는 전략이에요. 고금리 시대에 안전 자산으로 안정적 수익을 낼 수 있는 투자 전략이지만, 채권 특성상 단기 수익 창출 확률은 낮아요.
+                - text: (5)월배당(채권) 투자
+                - text: 미국에 상장된 단기 채권 ETF 종목에 투자하여 매월 배당을 받으며, 안정적인 수입을 기대할 수 있는 전략이에요. 월 배당금은 달러로 받아 예수금으로 계좌에 보관하거나, 재투자가 가능한 만큼 모이면 투자금으로 활용할 수 있어요.
+                - text: (6) 연금 저축 투자
+                - text: 한국에 상장된 글로벌 ETF 종목 또는 만기 채권형 ETF 종목으로 자산배분하여 낮은 변동성으로 장기간 안정적 수익을 추구하는 전략이에요. 노후 대비 목적의 상품이며, 최소 5년 이상 납입하고 만 55세 이후 연금으로 지급 받을 수 있습니다. 소득수준에 따라 매년 최대 99만원의 세액공제 혜택을 받을 수 있어요.
+                - text: (7) 달러 ETF 투자
+                - text: 미국에 상장된 글로벌 ETF 종목으로 자산배분하는 전략이에요. 낮은 변동성으로 장기간 안정적 수익을 추구해요. 달러 (USD)로 투자하므로 수익이 환율의 영향을 받아요.
+                - text: (8) 원화 ETF 투자
+                - text: 한국에 상장된 글로벌 ETF 종목으로 자산배분하는 전략이에요. 낮은 변동성으로 장기간 안정적 수익을 추구해요.
+                - text: (9) 펀드 투자
+                - text: 국내 공모펀드로 글로벌 자산배분하는 전략이에요. 세계 경제의 유망 자산 비중에 맞춰 10원 단위로 투자함으로써 철저히 계산된 포트폴리오의 분산 효과로 원금 손실 위험을 낮추고, 안정적인 수익을 기대할 수 있어요.
+            - generic [ref=e537]:
+              - generic [ref=e538] [cursor=pointer]:
+                - img "question" [ref=e539]
+                - generic [ref=e540]: ETF와 채권은 어떤 차이가 있나요?
+                - img "arrow" [ref=e541]
+              - generic [ref=e542]:
+                - text: ETF는 주식처럼 거래할 수 있는 펀드라고 생각하면 쉬워요. 채권은 만기 보유하면 정해진 이자를 받을 수 있는 금융상품이고요. ETF는 펀드를 구성하는 종목의 수익률에 따라 수익 여부가 결정되는 만큼 주식과 비슷하지만 변동성 측면에선 상대적으로 안정적인 상품이에요. 채권은 해당 채권을 발행한 기관이나 회사가 부도나지 않는 한 해당 이자만큼의 수익을 보장받는 투자이고요.
+                - generic [ref=e543]: 상품별 투자전략
+            - generic [ref=e544]:
+              - generic [ref=e545] [cursor=pointer]:
+                - img "question" [ref=e546]
+                - generic [ref=e547]: 주식 계좌가 있는데 또 만들어야 하나요?
+                - img "arrow" [ref=e548]
+              - generic [ref=e549]:
+                - text: 계좌를 이미 갖고 계신 경우 KB증권은 M-able 앱 에서 자율주행 신청을 통해 기존 계좌를 이용할 수 있어요.
+                - text: 대신증권, 하나증권, 한국투자증권은 핀트 앱에서 신규 계좌 개설을 통해서 이용해주세요.
+            - generic [ref=e550]:
+              - generic [ref=e551] [cursor=pointer]:
+                - img "question" [ref=e552]
+                - generic [ref=e553]: 아직 로보어드바이저 투자에 확신이 없어요.
+                - img "arrow" [ref=e554]
+              - generic [ref=e555]:
+                - text: 그렇다면 테마투자를 해보는 건 어떠세요? 핀트 테마투자는 핀트 AI투자 엔진 아이작이 제시하는 데이터를 바탕으로 개별주식에 직접 투자하는 투자 서비스예요.
+                - generic [ref=e556]: 테마투자
+      - button "앱 다운로드" [ref=e558] [cursor=pointer]:
+        - generic [ref=e559]: 앱 다운로드
+    - generic [ref=e561]:
+      - generic [ref=e562]:
+        - generic [ref=e563]:
+          - generic [ref=e564] [cursor=pointer]: 개인정보처리방침
+          - generic [ref=e565] [cursor=pointer]: 서비스 이용약관
+          - generic [ref=e566] [cursor=pointer]: 신용정보활용체제
+          - generic [ref=e567] [cursor=pointer]: 프라이버시센터
+        - generic [ref=e568]:
+          - generic [ref=e569] [cursor=pointer]: 회사 소개
+          - generic [ref=e570] [cursor=pointer]: 고객지원
+          - generic [ref=e571] [cursor=pointer]:
+            - text: 전자금융거래 이용에
+            - text: 관한 기본약관
+      - generic [ref=e572]:
+        - link "Instagram" [ref=e573] [cursor=pointer]:
+          - /url: https://www.instagram.com/fint.official/
+          - img "Instagram" [ref=e574]
+        - link "Youtube" [ref=e575] [cursor=pointer]:
+          - /url: https://www.youtube.com/@fint
+          - img "Youtube" [ref=e576]
+        - link "Kakao" [ref=e577] [cursor=pointer]:
+          - /url: https://pf.kakao.com/_ttUej
+          - img "Kakao" [ref=e578]
+      - generic [ref=e579]:
+        - generic [ref=e580]: 주식회사 디셈버앤컴퍼니
+        - generic [ref=e581]:
+          - text: 서울시 강남구 테헤란로 231 센터필드 WEST 19층 (우) 06142
+          - text: 고객지원
+          - link "1644-8880" [ref=e582] [cursor=pointer]:
+            - /url: tel:1644-8880
+          - text: (평일 09:00 - 17:00)
+          - text: 카카오톡 채널
+          - link "@fint" [ref=e583] [cursor=pointer]:
+            - /url: http://pf.kakao.com/_ttUej
+          - text: 제휴 문의
+          - link "inquiry@dco.com" [ref=e584] [cursor=pointer]:
+            - /url: mailto:inquiry@dco.com
+      - generic [ref=e585]:
+        - generic [ref=e586]: 디셈버앤컴퍼니 준법감시인 심사필 제2025-093호(2025.03.07 ~ 2028.03.06)
+        - generic [ref=e587]: • (비보호금융상품) 이 금융상품은 예금자보호법에 따라 보호되지 않습니다.
+        - generic [ref=e588]: • 투자계약은 자산가격 변동, 환율 변동 등에 따라 투자원금의 일부 또는 전액 손실이 발생할 수 있으며, 그 손실은 투자자에게 귀속됩니다.
+        - generic [ref=e589]: • 투자자는 투자계약(일임 및 자문)에 대하여 당사로부터 충분한 설명을 받을 권리가 있으며, 투자전 상품설명서 및 약관을 반드시 읽어보시기 바랍니다.
+        - generic [ref=e590]: • 투자일임계약의 수수료는 기본수수료를 부과합니다.
+        - generic [ref=e591]: • 투자일임계약의 기본수수료는 연 0.768%(월 0.064%)(디셈버 ISAAC 자산배분 국내형·해외형·펀드형)/연 1.176%(월 0.098%)(디셈버 미국 주식 솔루션, 디셈버 한국 주식 솔루션, 디셈버 미국 주식 모델W)로 매월 후취합니다.
+        - generic [ref=e592]: • 퇴직연금 투자일임계약의 수수료는 기본형수수료와 혼합형수수료 중 어느 하나를 선택할 수 있습니다.
+        - generic [ref=e593]: • (기본형수수료 선택시) 퇴직연금 투자일임계약의 기본형수수료는 기본수수료를 수취하며, 기본수수료는 월 0.064%(연 0.768%)로 매월 후취합니다.
+        - generic [ref=e594]: • (혼합형수수료 선택시) 퇴직연금 투자일임계약의 혼합형수수료는 기본수수료와 성과수수료를 혼합하여 수취하며 기본수수료는 월 0.042%(연 0.504%)로 매월 후취하고, 성과수수료는 고객과 합의에 의합니다.
+        - generic [ref=e595]: • AI 투자자문계약의 수수료는 기본수수료를 부과하며, 기본수수료는 연 0.768%(월 0.064%)(핀트 ETF 전략 투자자문)/연 1.176%(월 0.098%)(핀트 주식 전략 투자자문)로 매월 후취합니다.
+        - generic [ref=e596]: • 테마투자 투자자문계약의 수수료는 정액수수료를 부과하며, 정액 수수료액은 월 4,900원입니다.
+        - generic [ref=e597]: • 로보어드바이저가 고객에게 맞는 투자 또는 수익달성을 보장하지 않습니다.
+        - generic [ref=e598]: • 로보어드바이저 테스트베드를 통과하였습니다.
+        - generic [ref=e599]: • 로보어드바이저 테스트베드 심의결과가 해당 알고리즘의 품질이나 수익성을 보장하지 않습니다.
+        - generic [ref=e600]: • 고객 투자일임에 사용되는 로보어드바이저 알고리즘은 테스트베드 운용에 사용되는 알고리즘과 동일하나, 고객 계좌별 수익률은 계약자의 옵션 선택, 운용 개시시점 및 주문 체결시점 등에 따라 테스트베드 공시 수익률과는 일부 차이가 있을 수 있습니다.
+        - generic [ref=e601]: • 보수, 수수료, 증권거래비용, 기타비용이 추가로 발생할 수 있습니다.
+        - generic [ref=e602]: • (연금저축) 투자일임/자문수수료는 연금저축계좌에서 수취되며, 이로 인하여 세액공제액에 영향을 미치거나 기타소득세(16.5%)가 부과될 수 있습니다.
+        - generic [ref=e603]: • (IRP/연금) 연금저축 계약기간 만료 전 중도해지하거나 계약기간 종료 후 연금 이외의 형태로 수령하는 경우 세액공제 받은 납입원금 및 수익에 대해 기타소득세(16.5%)세율이 부과될 수 있습니다.
+        - generic [ref=e604]: • (ISA) 중도해지시 또는 국세청 부적격 통보시 과세특례를 적용받은 소득세액에 상당하는 세액이 추징됩니다.
+        - generic [ref=e605]: • (중개형) 중개형 ISA는 투자자가 운용대상 상품을 직접 선택하여 운용합니다.
+        - generic [ref=e606]: • (ISA) 국내 상장주식 매매차익은 비과세이므로 국내 주식형펀드에서 손실이 발생하더라도 ISA내 예금, 다른 펀드 등에서 발생한 이익과 통산되지 않습니다.
+        - generic [ref=e607]: • 핀트는 디셈버앤컴퍼니의 투자일임서비스입니다.
+        - generic [ref=e608]: • 핀트 퇴직연금(IRP) 투자일임은 디셈버앤컴퍼니의 투자일임서비스입니다.
+        - generic [ref=e609]: • 핀트 AI 투자자문은 디셈버앤컴퍼니의 투자자문서비스입니다.
+        - generic [ref=e610]: • 핀트 테마 투자자문은 디셈버앤컴퍼니의 투자자문서비스입니다.
+      - generic [ref=e612]: Copyright © December & Company Inc. All rights reserved.

@@ -21,6 +21,13 @@
   "testimonials": {
     "title": "お客様の声"
   },
+  "signal": {
+    "title": "You don't need more data\nYou need signals",
+    "marquee": "You don't need more data You need signals",
+    "rewardLabel": "年間報酬率",
+    "prevAriaLabel": "前のコインを見る",
+    "nextAriaLabel": "次のコインを見る"
+  },
   "staking": {
     "title": "ステーキングで収益最大化",
     "subtitle": "保有資産で追加収益を得ましょう",

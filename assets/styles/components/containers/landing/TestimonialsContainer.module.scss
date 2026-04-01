@@ -3,75 +3,130 @@
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
 
+// ── Section ──
 .testimonials {
-  padding: $spacing-4xl $spacing-md;
-  background: linear-gradient(90deg, rgba(185, 199, 253, 1) 0%, rgba(165, 206, 254, 1) 100%);
+  padding: $spacing-4xl 0;
+  background: linear-gradient(
+    180deg,
+    #ecf1fe 0%,
+    #b9c7fd 25%,
+    #a5cefe 50%,
+    #f0f3ff 75%,
+    #d7e5fd 100%
+  );
+  overflow: hidden;
 }
 
-.inner {
-  max-width: $container-max-width;
-  margin: 0 auto;
-}
+// ── Marquee row ──
+.row {
+  overflow: hidden;
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-lg;
-  list-style: none;
-
-  @include respond-to(md) {
-    grid-template-columns: repeat(3, 1fr);
+  & + & {
+    margin-top: $spacing-lg;
   }
 }
 
+.track-left,
+.track-right {
+  display: flex;
+  width: max-content;
+}
+
+.track-left {
+  animation: scroll-left 80s linear infinite;
+}
+
+.track-right {
+  animation: scroll-right 80s linear infinite;
+}
+
+.slide {
+  display: flex;
+  gap: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+
+// ── Card ──
 .card {
+  flex-shrink: 0;
+  width: 22rem;
   background-color: $color-background;
   border-radius: 0.75rem;
-  padding: $spacing-xl $spacing-lg;
-  box-shadow: 0 0.5rem 0.625rem rgba(34, 34, 34, 0.12);
+  padding: $spacing-xl;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06);
+
+  @include respond-to(md) {
+    width: 26rem;
+  }
 }
 
-.quote {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.text {
-  font-size: $font-size-lg;
-  color: $color-text-secondary;
-  line-height: $line-height-relaxed;
-  flex-grow: 1;
-  margin-bottom: $spacing-lg;
-  font-weight: $font-weight-medium;
-}
-
-.highlight {
-  color: $color-primary;
-  font-weight: $font-weight-semibold;
-}
-
-.author {
+.card-header {
   display: flex;
   align-items: center;
   gap: $spacing-md;
+  margin-bottom: $spacing-md;
 }
 
 .avatar {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  background-color: $color-background-light;
   flex-shrink: 0;
+  background-color: $color-background-light;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
-  font-size: $font-size-lg;
-  font-weight: $font-weight-medium;
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
   color: $color-text-primary;
 }
 
 .role {
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   color: $color-text-secondary;
+}
+
+// ── Quote ──
+.quote {
+  margin: 0;
+}
+
+.text {
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Animations ──
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }

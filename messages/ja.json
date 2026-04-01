@@ -56,6 +56,39 @@
     "testimonials": {
       "title": "お客様の声"
     },
+    "showcase": {
+      "title": "信頼できる市場シェアと\n運用資産規模",
+      "subtitle": "KOSCOMロボアドバイザーテストベッドを通過した\n検証済みの投資ソリューション"
+    },
+    "signal": {
+      "title": "You don't need more data\nYou need signals",
+      "marquee": "You don't need more data You need signals",
+      "rewardLabel": "年間報酬率",
+      "prevAriaLabel": "前のコインを見る",
+      "nextAriaLabel": "次のコインを見る"
+    },
+    "chartCards": {
+      "title": "You don't need more data\nYou need signals",
+      "subtitle": "You don't need more data You need signals You don't need more data\nYou need signals You don't need more data",
+      "card1Title": "Add unlimited users",
+      "card1Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users",
+      "card2Title": "Add unlimited users",
+      "card2Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users",
+      "card3Title": "Add unlimited users",
+      "card3Desc": "Add unlimited usersAdd unlimited usersAdd unlimited users"
+    },
+    "phoneFeature": {
+      "row1Title": "信頼できる市場シェアと\n運用資産規模",
+      "row1Subtitle": "KOSCOMロボアドバイザーテストベッドを通過した検証済みの投資ソリューション",
+      "row1Item1": "仮テキスト",
+      "row1Item2": "仮テキスト",
+      "row1Item3": "仮テキスト",
+      "row2Title": "信頼できる市場シェアと\n運用資産規模",
+      "row2Subtitle": "KOSCOMロボアドバイザーテストベッドを通過した検証済みの投資ソリューション",
+      "row2Item1": "仮テキスト",
+      "row2Item2": "仮テキスト",
+      "row2Item3": "仮テキスト"
+    },
     "staking": {
       "title": "ステーキングで収益最大化",
       "subtitle": "保有資産で追加収益を得ましょう",
@@ -66,8 +99,9 @@
       "subtitle": "年度別目標達成率"
     },
     "faq": {
+      "caption": "Faq",
       "title": "よくあるご質問",
-      "subtitle": "ご不明な点をご確認ください"
+      "subtitle": "サービスご利用中によくいただくお問い合わせを\nまとめてご案内いたします。"
     },
     "cta": {
       "title": "資産の未来を一緒に設計しましょう",

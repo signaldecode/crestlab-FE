@@ -36,10 +36,20 @@ export default function Accordion({ items }: AccordionProps) {
               aria-expanded={isOpen}
               aria-controls={panelId}
             >
-              <span className={styles.question}>{item.question}</span>
-              <span className={styles.icon} aria-hidden="true">
-                {isOpen ? '−' : '+'}
+              <span className={styles.question}>
+                <span className={styles['question-prefix']}>Q.</span>
+                {item.question}
               </span>
+              <svg
+                className={styles.chevron}
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
             <div
               id={panelId}

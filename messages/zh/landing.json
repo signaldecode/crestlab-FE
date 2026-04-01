@@ -21,6 +21,13 @@
   "testimonials": {
     "title": "客户亲身分享的故事"
   },
+  "signal": {
+    "title": "You don't need more data\nYou need signals",
+    "marquee": "You don't need more data You need signals",
+    "rewardLabel": "年奖励率",
+    "prevAriaLabel": "查看上一个币种",
+    "nextAriaLabel": "查看下一个币种"
+  },
   "staking": {
     "title": "通过质押最大化收益",
     "subtitle": "利用持有资产获取额外收益",

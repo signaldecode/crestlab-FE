@@ -1,13 +1,76 @@
 @use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
 
+// ── Section ──
 .faq {
-  padding: $spacing-4xl $spacing-lg;
+  padding: $spacing-4xl $spacing-md;
   background-color: $color-background;
 }
 
+// ── Inner (2열 레이아웃) ──
 .inner {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
   max-width: $container-max-width;
   margin: 0 auto;
+
+  @include respond-to(lg) {
+    flex-direction: row;
+    gap: $spacing-4xl;
+    align-items: flex-start;
+  }
+}
+
+// ── 좌측 텍스트 ──
+.text-block {
+  flex-shrink: 0;
+
+  @include respond-to(lg) {
+    width: 18rem;
+    position: sticky;
+    top: $spacing-4xl;
+  }
+}
+
+.caption {
+  display: block;
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: #2657f6;
+  letter-spacing: $letter-spacing-tight;
+  margin-bottom: $spacing-sm;
+}
+
+.title {
+  font-family: $font-family-sans;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-md;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  letter-spacing: $letter-spacing-tight;
+  max-width: 14rem;
+  word-break: keep-all;
+}
+
+// ── 우측 아코디언 ──
+.accordion-block {
+  flex: 1;
+  min-width: 0;
 }
