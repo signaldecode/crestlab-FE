@@ -2,11 +2,11 @@
 // Design Tokens — Breakpoints
 // ==============================================
 
-$bp-sm: 640px;
-$bp-md: 768px;
-$bp-lg: 1024px;
-$bp-xl: 1280px;
-$bp-2xl: 1536px;
+$bp-sm: 640px;  // Small devices (landscape phones)
+$bp-md: 768px;  // Mobile breakpoint
+$bp-lg: 1024px; // Tablet breakpoint
+$bp-xl: 1280px; // Desktop breakpoint
+$bp-2xl: 1536px; // Large desktop breakpoint
 
 // Respond-to mixin (mobile first)
 // Usage: @include respond-to(md) { ... }

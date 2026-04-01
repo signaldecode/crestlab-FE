@@ -41,7 +41,7 @@ function PieChartCard({ data }: { data: ChartDataItem[] }) {
       <PieChart>
         <Pie
           data={data}
-          cx="55%"
+          cx="50%"
           cy="50%"
           innerRadius={0}
           outerRadius="75%"
