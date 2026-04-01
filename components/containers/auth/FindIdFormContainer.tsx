@@ -5,6 +5,7 @@ import Link from 'next/link';
 import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
+import useUIStore from '@/stores/useUIStore';
 import styles from '@/assets/styles/components/containers/auth/AuthFormContainer.module.scss';
 
 interface FindIdMessages {
@@ -37,6 +38,7 @@ interface FindIdFormContainerProps {
 }
 
 export default function FindIdFormContainer({ messages }: FindIdFormContainerProps) {
+  const openLoginModal = useUIStore((s) => s.openLoginModal);
   const [phone, setPhone] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -104,16 +106,15 @@ export default function FindIdFormContainer({ messages }: FindIdFormContainerPro
           </div>
 
           <div className={styles.actions}>
-            <Link href="/login">
-              <Button
-                type="button"
-                variant="primary"
-                size="lg"
-                fullWidth
-              >
-                {messages.goLogin}
-              </Button>
-            </Link>
+            <Button
+              type="button"
+              variant="primary"
+              size="lg"
+              fullWidth
+              onClick={openLoginModal}
+            >
+              {messages.goLogin}
+            </Button>
           </div>
 
           <p className={styles['link-row']}>
@@ -193,7 +194,9 @@ export default function FindIdFormContainer({ messages }: FindIdFormContainerPro
         </form>
 
         <p className={styles['link-row']}>
-          <Link href="/login" className={styles.link}>{messages.goLogin}</Link>
+          <button type="button" className={styles.link} onClick={openLoginModal}>{messages.goLogin}</button>
+          <span className={styles.link}>　|　</span>
+          <Link href="/reset-password" className={styles.link}>{messages.goResetPassword}</Link>
         </p>
       </div>
     </section>

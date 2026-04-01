@@ -4,6 +4,7 @@ import Link from 'next/link';
 import SectionTitle from '@/components/ui/SectionTitle';
 import Button from '@/components/ui/Button';
 import useAuthStore from '@/stores/useAuthStore';
+import useUIStore from '@/stores/useUIStore';
 import styles from '@/assets/styles/components/containers/board/BoardListContainer.module.scss';
 
 interface BoardItem {
@@ -33,6 +34,7 @@ interface BoardListContainerProps {
 
 export default function BoardListContainer({ messages, data }: BoardListContainerProps) {
   const isLoggedIn = useAuthStore((s) => s.isLoggedIn);
+  const openLoginModal = useUIStore((s) => s.openLoginModal);
 
   return (
     <section className={styles.section} aria-label={messages.title}>
@@ -45,9 +47,7 @@ export default function BoardListContainer({ messages, data }: BoardListContaine
               <Button variant="primary" size="sm">{messages.write}</Button>
             </Link>
           ) : (
-            <Link href="/login">
-              <Button variant="secondary" size="sm">{messages.loginCta}</Button>
-            </Link>
+            <Button variant="secondary" size="sm" onClick={openLoginModal}>{messages.loginCta}</Button>
           )}
         </div>
 
