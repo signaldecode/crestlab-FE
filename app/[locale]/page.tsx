@@ -29,7 +29,7 @@ export default async function HomePage() {
       { title: t('featureCards.item3Title'), description: t('featureCards.item3Desc') },
     ],
   };
-  const pointsMsg = { title: t('points.title') };
+  const pointsMsg = { title: t('points.title'), subtitle: t('points.subtitle') };
   const trustMsg = { title: t('trust.title'), subtitle: t('trust.subtitle') };
   const testimonialsMsg = { title: t('testimonials.title') };
   const stakingMsg = {

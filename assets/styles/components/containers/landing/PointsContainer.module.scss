@@ -3,69 +3,89 @@
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
 
+// ── Blue background + horizontal marquee ──
+
 .points {
-  padding: $spacing-4xl $spacing-md;
-  background-color: $color-background-dark;
+  padding: $spacing-3xl 0;
+  background-color: #3086f5;
+  overflow: hidden;
 }
 
-.inner {
-  max-width: $container-max-width;
-  margin: 0 auto;
+// ── Header ──
+.header {
+  text-align: center;
+  padding: 0 $spacing-md $spacing-3xl;
 }
 
 .section-title {
+  font-family: 'Inter', $font-family-sans;
   font-size: $font-size-3xl;
   font-weight: $font-weight-bold;
   color: $color-text-on-dark;
-  text-align: center;
-  margin-bottom: $spacing-3xl;
   letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-md;
 
   @include respond-to(md) {
     font-size: $font-size-4xl;
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-lg;
-  list-style: none;
+.section-subtitle {
+  font-size: $font-size-base;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: $line-height-relaxed;
 
-  @include respond-to(sm) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include respond-to(lg) {
-    grid-template-columns: repeat(5, 1fr);
+  @include respond-to(md) {
+    font-size: $font-size-lg;
   }
 }
 
+// ── Marquee track ──
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+
+.slide {
+  display: flex;
+  gap: $spacing-lg;
+  padding-right: $spacing-lg;
+}
+
+// ── Card ──
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  flex-shrink: 0;
   background-color: $color-background;
   border-radius: 1.25rem;
-  padding: $spacing-xl;
-  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s;
+  overflow: hidden;
+  box-shadow: 0.5rem 0.5rem 0.75rem -0.0625rem rgba(35, 48, 59, 0.16);
 
-  @include respond-to(lg) {
-    min-height: 20rem;
+  @include respond-to(md) {
+    width: 25rem;
   }
+}
 
-  &:hover {
-    transform: translateY(-0.25rem);
-  }
+.card-text {
+  padding: $spacing-xl $spacing-xl 0;
 }
 
 .label {
   display: inline-block;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  color: $color-primary;
+  font-family: $font-family-sans;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-medium;
+  color: #3086f5;
+  letter-spacing: $letter-spacing-tight;
   margin-bottom: $spacing-lg;
 }
 
 .title {
+  font-family: $font-family-sans;
   font-size: $font-size-xl;
   font-weight: $font-weight-bold;
   color: $color-text-primary;
@@ -73,7 +93,7 @@
   margin-bottom: $spacing-md;
   letter-spacing: $letter-spacing-tight;
 
-  @include respond-to(lg) {
+  @include respond-to(md) {
     font-size: $font-size-2xl;
   }
 }
@@ -82,4 +102,35 @@
   font-size: $font-size-sm;
   color: $color-text-secondary;
   line-height: $line-height-relaxed;
+}
+
+// ── Illustration ──
+.card-illust {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: $spacing-lg $spacing-md 0;
+  min-height: 14rem;
+  overflow: hidden;
+}
+
+.card-image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 16rem;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+// ── Animation ──
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
