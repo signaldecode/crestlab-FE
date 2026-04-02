@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import BoardWriteContainer from '@/components/containers/board/BoardWriteContainer';
 
 export async function generateMetadata() {
@@ -8,6 +8,8 @@ export async function generateMetadata() {
 
 export default async function BoardWritePage() {
   const t = await getTranslations('board.community.writeForm');
+  const allMessages = await getMessages();
+  const common = allMessages.common as Record<string, unknown>;
 
   const messages = {
     title: t('title'),
@@ -25,5 +27,10 @@ export default async function BoardWritePage() {
     },
   };
 
-  return <BoardWriteContainer messages={messages} />;
+  return (
+    <BoardWriteContainer
+      messages={messages}
+      editorMessages={common.editor as never}
+    />
+  );
 }

@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import NewsUploadContainer from '@/components/containers/board/NewsUploadContainer';
 
 export async function generateMetadata() {
@@ -8,6 +8,8 @@ export async function generateMetadata() {
 
 export default async function NewsWritePage() {
   const t = await getTranslations('board.admin.newsUploadForm');
+  const allMessages = await getMessages();
+  const common = allMessages.common as Record<string, unknown>;
 
   const messages = {
     title: t('title'),
@@ -45,5 +47,10 @@ export default async function NewsWritePage() {
     },
   };
 
-  return <NewsUploadContainer messages={messages} />;
+  return (
+    <NewsUploadContainer
+      messages={messages}
+      editorMessages={common.editor as never}
+    />
+  );
 }

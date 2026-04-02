@@ -6,6 +6,7 @@ import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import Checkbox from '@/components/ui/Checkbox';
+import useUIStore from '@/stores/useUIStore';
 import styles from '@/assets/styles/components/containers/auth/AuthFormContainer.module.scss';
 
 interface RegisterMessages {
@@ -54,6 +55,7 @@ interface RegisterFormContainerProps {
 }
 
 export default function RegisterFormContainer({ messages }: RegisterFormContainerProps) {
+  const openLoginModal = useUIStore((s) => s.openLoginModal);
   const [form, setForm] = useState({
     name: '',
     userId: '',
@@ -323,7 +325,7 @@ export default function RegisterFormContainer({ messages }: RegisterFormContaine
 
         <p className={styles['link-row']}>
           <span>{messages.hasAccount}</span>
-          <Link href="/login" className={styles.link}>{messages.goLogin}</Link>
+          <button type="button" className={styles.link} onClick={openLoginModal}>{messages.goLogin}</button>
         </p>
       </div>
     </section>

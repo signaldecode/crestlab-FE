@@ -15,7 +15,6 @@ export default async function VideosPage() {
     <VideoListContainer
       messages={board.videos as never}
       data={videosData}
-      isLoggedIn={false}
       adminMessages={{ uploadVideo: admin.uploadVideo }}
     />
   );

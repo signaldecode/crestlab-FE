@@ -22,6 +22,36 @@
     "noItems": "등록된 영상이 없습니다.",
     "backToList": "목록으로"
   },
+  "community": {
+    "title": "게시판",
+    "subtitle": "자유롭게 의견을 나누는 공간입니다",
+    "write": "글쓰기",
+    "noItems": "등록된 게시글이 없습니다.",
+    "backToList": "목록으로",
+    "author": "작성자",
+    "date": "작성일",
+    "views": "조회수",
+    "loginRequired": "글쓰기는 로그인이 필요합니다.",
+    "loginCta": "로그인하기",
+    "deleteConfirm": "정말 삭제하시겠습니까?",
+    "edit": "수정",
+    "delete": "삭제",
+    "writeForm": {
+      "title": "글쓰기",
+      "subtitle": "게시판에 새 글을 작성합니다",
+      "postTitle": "제목",
+      "postTitlePlaceholder": "제목을 입력하세요",
+      "content": "내용",
+      "contentPlaceholder": "내용을 입력하세요",
+      "submit": "등록",
+      "submitAriaLabel": "게시글 등록 제출",
+      "backToList": "목록으로",
+      "errors": {
+        "titleRequired": "제목을 입력해주세요",
+        "contentRequired": "내용을 입력해주세요"
+      }
+    }
+  },
   "admin": {
     "writeNotice": "공지 작성",
     "editNotice": "수정",

@@ -37,10 +37,11 @@ export interface LoginMessages {
 interface LoginFormProps {
   messages: LoginMessages;
   onSuccess?: () => void;
+  onNavigate?: () => void;
   idPrefix?: string;
 }
 
-export default function LoginForm({ messages, onSuccess, idPrefix = 'login' }: LoginFormProps) {
+export default function LoginForm({ messages, onSuccess, onNavigate, idPrefix = 'login' }: LoginFormProps) {
   const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -119,10 +120,10 @@ export default function LoginForm({ messages, onSuccess, idPrefix = 'login' }: L
         </FormField>
 
         <div className={styles['forgot-link-row']}>
-          <Link href="/find-id" className={styles['forgot-link']}>
+          <Link href="/find-id" className={styles['forgot-link']} onClick={onNavigate}>
             {messages.findId}
           </Link>
-          <Link href="/reset-password" className={styles['forgot-link']}>
+          <Link href="/reset-password" className={styles['forgot-link']} onClick={onNavigate}>
             {messages.forgotPassword}
           </Link>
         </div>
@@ -142,7 +143,7 @@ export default function LoginForm({ messages, onSuccess, idPrefix = 'login' }: L
 
       <p className={styles['link-row']}>
         <span>{messages.noAccount}</span>
-        <Link href="/register" className={styles.link}>{messages.goRegister}</Link>
+        <Link href="/register" className={styles.link} onClick={onNavigate}>{messages.goRegister}</Link>
       </p>
     </>
   );

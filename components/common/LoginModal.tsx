@@ -75,6 +75,7 @@ export default function LoginModal({ messages, closeAriaLabel }: LoginModalProps
         <LoginForm
           messages={messages}
           onSuccess={closeLoginModal}
+          onNavigate={closeLoginModal}
           idPrefix="modal-login"
         />
       </div>

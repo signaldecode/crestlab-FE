@@ -1,0 +1,127 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/breakpoints' as *;
+
+.editor {
+  border: 0.0625rem solid $color-border;
+  border-radius: $spacing-xs;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-xs $spacing-sm;
+  background-color: $color-background-alt;
+  border-bottom: 0.0625rem solid $color-border;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.toolbar-divider {
+  width: 0.0625rem;
+  height: 1.25rem;
+  background-color: $color-border;
+  margin: 0 $spacing-xs;
+}
+
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: $spacing-xs;
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  background: none;
+  border: none;
+  border-radius: $spacing-xs;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+
+  &:hover:not(:disabled) {
+    background-color: $color-background-light;
+    color: $color-text-primary;
+  }
+
+  &:focus-visible {
+    outline: 0.125rem solid $color-primary;
+    outline-offset: -0.125rem;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  &--active {
+    background-color: $color-primary-light;
+    color: $color-primary-dark;
+  }
+}
+
+.content :global(.tiptap) {
+  min-height: 16rem;
+  padding: $spacing-md;
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  color: $color-text-primary;
+  line-height: $line-height-relaxed;
+  outline: none;
+
+  @include respond-to(md) {
+    min-height: 20rem;
+  }
+
+  > * + * {
+    margin-top: $spacing-sm;
+  }
+
+  h2 {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    margin-top: $spacing-lg;
+  }
+
+  h3 {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-snug;
+    margin-top: $spacing-md;
+  }
+
+  ul,
+  ol {
+    padding-left: $spacing-lg;
+  }
+
+  blockquote {
+    padding-left: $spacing-md;
+    border-left: 0.1875rem solid $color-border;
+    color: $color-text-secondary;
+    font-style: italic;
+  }
+
+  hr {
+    border: none;
+    border-top: 0.0625rem solid $color-border;
+    margin: $spacing-lg 0;
+  }
+}
+
+.content :global(.tiptap) :global(.is-editor-empty):first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: $color-text-muted;
+  pointer-events: none;
+  height: 0;
+}

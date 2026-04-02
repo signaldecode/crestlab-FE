@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import AdminActions from '@/components/ui/AdminActions';
@@ -24,13 +26,12 @@ interface VideoMessages {
 interface VideoListContainerProps {
   messages: VideoMessages;
   data: { items: VideoItem[] };
-  isLoggedIn: boolean;
   adminMessages?: {
     uploadVideo: string;
   };
 }
 
-export default function VideoListContainer({ messages, data, isLoggedIn, adminMessages }: VideoListContainerProps) {
+export default function VideoListContainer({ messages, data, adminMessages }: VideoListContainerProps) {
   return (
     <section className={styles.section} aria-label={messages.title}>
       <div className={styles.inner}>
@@ -43,15 +44,6 @@ export default function VideoListContainer({ messages, data, isLoggedIn, adminMe
             </Link>
           </div>
         </AdminActions>
-
-        {!isLoggedIn && (
-          <div className={styles['login-message']}>
-            <p className={styles['login-text']}>{messages.loginRequired}</p>
-            <Link href="/login">
-              <Button variant="primary">{messages.loginCta}</Button>
-            </Link>
-          </div>
-        )}
 
         {data.items.length > 0 ? (
           <div className={styles.grid}>

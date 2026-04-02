@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
-import TextArea from '@/components/ui/TextArea';
+import TiptapEditor from '@/components/ui/TiptapEditor';
+import type { ToolbarMessages } from '@/components/ui/TiptapEditor';
 import Button from '@/components/ui/Button';
 import styles from '@/assets/styles/components/containers/board/NoticeWriteContainer.module.scss';
 
@@ -26,11 +27,13 @@ interface NoticeWriteMessages {
 
 interface NoticeWriteContainerProps {
   messages: NoticeWriteMessages;
+  editorMessages: ToolbarMessages;
   idPrefix?: string;
 }
 
 export default function NoticeWriteContainer({
   messages,
+  editorMessages,
   idPrefix = 'notice-write',
 }: NoticeWriteContainerProps) {
   const [noticeTitle, setNoticeTitle] = useState('');
@@ -40,7 +43,8 @@ export default function NoticeWriteContainer({
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!noticeTitle.trim()) newErrors.noticeTitle = messages.errors.titleRequired;
-    if (!content.trim()) newErrors.content = messages.errors.contentRequired;
+    const textOnly = content.replace(/<[^>]*>/g, '').trim();
+    if (!textOnly) newErrors.content = messages.errors.contentRequired;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -79,11 +83,11 @@ export default function NoticeWriteContainer({
             required
             error={errors.content}
           >
-            <TextArea
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+            <TiptapEditor
+              content={content}
+              onChange={setContent}
               placeholder={messages.contentPlaceholder}
-              rows={12}
+              toolbarMessages={editorMessages}
             />
           </FormField>
 

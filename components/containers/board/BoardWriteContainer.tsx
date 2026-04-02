@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import FormField from '@/components/ui/FormField';
 import Input from '@/components/ui/Input';
-import TextArea from '@/components/ui/TextArea';
+import TiptapEditor from '@/components/ui/TiptapEditor';
+import type { ToolbarMessages } from '@/components/ui/TiptapEditor';
 import Button from '@/components/ui/Button';
 import styles from '@/assets/styles/components/containers/board/BoardWriteContainer.module.scss';
 
@@ -26,11 +27,13 @@ interface BoardWriteMessages {
 
 interface BoardWriteContainerProps {
   messages: BoardWriteMessages;
+  editorMessages: ToolbarMessages;
   idPrefix?: string;
 }
 
 export default function BoardWriteContainer({
   messages,
+  editorMessages,
   idPrefix = 'board-write',
 }: BoardWriteContainerProps) {
   const [postTitle, setPostTitle] = useState('');
@@ -40,12 +43,13 @@ export default function BoardWriteContainer({
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!postTitle.trim()) newErrors.postTitle = messages.errors.titleRequired;
-    if (!content.trim()) newErrors.content = messages.errors.contentRequired;
+    const textOnly = content.replace(/<[^>]*>/g, '').trim();
+    if (!textOnly) newErrors.content = messages.errors.contentRequired;
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
     // TODO: API call (POST /api/board)
@@ -79,11 +83,11 @@ export default function BoardWriteContainer({
             required
             error={errors.content}
           >
-            <TextArea
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
+            <TiptapEditor
+              content={content}
+              onChange={setContent}
               placeholder={messages.contentPlaceholder}
-              rows={12}
+              toolbarMessages={editorMessages}
             />
           </FormField>
 
