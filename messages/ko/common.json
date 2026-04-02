@@ -9,7 +9,9 @@
     },
     "lang": "언어",
     "cta": "회원가입",
-    "login": "로그인"
+    "login": "로그인",
+    "mypage": "마이페이지",
+    "logout": "로그아웃"
   },
   "footer": {
     "copyright": "© 2026 CrestLab Investment. All rights reserved.",
