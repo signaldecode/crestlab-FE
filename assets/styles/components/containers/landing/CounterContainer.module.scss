@@ -7,7 +7,7 @@ $counter-green: #3cd36c;
 
 .counter {
   background-color: $counter-green;
-  padding: $spacing-3xl $spacing-md;
+  padding: $spacing-2xl $spacing-md;
 
   @include respond-to(md) {
     padding: $spacing-4xl $spacing-lg;
@@ -26,6 +26,7 @@ $counter-green: #3cd36c;
   font-size: $font-size-3xl;
   color: $color-text-on-dark;
   margin-bottom: $spacing-2xl;
+  white-space: pre-wrap;
 
   @include respond-to(md) {
     font-size: $font-size-5xl;
@@ -49,7 +50,7 @@ $counter-green: #3cd36c;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4.5rem;
+  width: 4rem;
   height: 5.75rem;
   background-color: $color-background;
   border-radius: 1.25rem;
@@ -59,8 +60,8 @@ $counter-green: #3cd36c;
   color: $counter-green;
 
   @include respond-to(md) {
-    width: 10.375rem;
-    height: 13.3125rem;
+    width: 7rem;
+    height: 10rem;
     font-size: 7.5rem;
   }
 }
@@ -69,7 +70,7 @@ $counter-green: #3cd36c;
   font-family: $font-family-sans;
   font-weight: $font-weight-bold;
   font-size: $font-size-4xl;
-  color: $counter-green;
+  color: $color-text-on-dark;
   display: flex;
   align-items: flex-end;
 
@@ -84,6 +85,7 @@ $counter-green: #3cd36c;
   font-size: $font-size-lg;
   color: $color-text-on-dark;
   margin-top: $spacing-xl;
+  white-space: pre-wrap;
 
   @include respond-to(md) {
     font-size: $font-size-2xl;

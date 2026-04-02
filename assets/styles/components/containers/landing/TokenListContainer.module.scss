@@ -31,6 +31,7 @@ $token-reward-red: #ec444b;
   color: $color-text-primary;
   text-align: center;
   margin-bottom: $spacing-2xl;
+  white-space: pre-wrap;
 
   @include respond-to(md) {
     font-size: $font-size-4xl;
