@@ -120,6 +120,28 @@ export default function AppHeader({ data }: AppHeaderProps) {
         </div>
 
         <div className={styles['right-group']}>
+          <div className={styles['auth-group']}>
+            {isLoggedIn ? (
+              <>
+                <Link href="/mypage" className={styles['auth-link']}>
+                  {data.mypage}
+                </Link>
+                <button type="button" className={styles['auth-link']} onClick={handleLogout}>
+                  {data.logout}
+                </button>
+              </>
+            ) : (
+              <>
+                <button type="button" className={styles['auth-link']} onClick={handleLoginClick}>
+                  {data.login}
+                </button>
+                <Link href="/register" className={styles['auth-button']}>
+                  {data.cta}
+                </Link>
+              </>
+            )}
+          </div>
+
           <div className={styles['lang-dropdown']}>
             <button
               type="button"

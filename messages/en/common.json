@@ -9,8 +9,11 @@
       "videos": "Resources",
       "contact": "Contact"
     },
+    "lang": "Language",
     "cta": "Sign Up",
-    "login": "Log In"
+    "login": "Log In",
+    "mypage": "My Page",
+    "logout": "Log Out"
   },
   "footer": {
     "copyright": "© 2026 CrestLab Investment. All rights reserved.",
