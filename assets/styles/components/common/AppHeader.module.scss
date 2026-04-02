@@ -37,6 +37,36 @@
   background-color: rgba(255, 255, 255, 0.85);
 }
 
+.header--mobile-open {
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(1.25rem);
+  z-index: $z-index-modal;
+
+  @include respond-to(lg) {
+    top: $spacing-lg;
+    width: calc(100% - #{$spacing-xl} * 2);
+    max-width: 97.5rem;
+    border-radius: 0.75rem;
+    background-color: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(0.275rem);
+    z-index: $z-index-sticky;
+  }
+}
+
+.header--scrolled.header--mobile-open {
+  @include respond-to(lg) {
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+}
+
 .inner {
   display: flex;
   align-items: center;
@@ -46,6 +76,27 @@
   @include respond-to(lg) {
     padding: $spacing-sm $spacing-md;
   }
+}
+
+// ============================================
+// Backdrop (mobile only)
+// ============================================
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: calc(#{$z-index-modal} - 1);
+  animation: backdrop-in 0.3s ease-out;
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 // ============================================
@@ -72,10 +123,10 @@
 }
 
 // ============================================
-// Navigation
+// Desktop Navigation (inside header)
 // ============================================
 
-.nav {
+.nav-desktop {
   display: none;
 
   @include respond-to(lg) {
@@ -84,57 +135,33 @@
 }
 
 .nav-list {
-  display: none;
-  list-style: none;
-  gap: $spacing-2xl; // ~48px, approximation of Figma 60px
-
-  @include respond-to(lg) {
-    display: flex;
-    align-items: center;
-    gap: 3.75rem; // 60px from Figma
-  }
-}
-
-// Mobile open state
-.nav-list--open {
   display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 5rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $color-background;
-  padding: $spacing-md $spacing-sm;
-  gap: $spacing-lg;
-  z-index: $z-index-modal;
-
-  @include respond-to(lg) {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-    background-color: transparent;
-    gap: 3.75rem;
-  }
+  list-style: none;
+  align-items: center;
+  gap: 3.75rem; // 60px from Figma
 }
 
 .nav-item {
   list-style: none;
+  animation: item-fade-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.nav-item--mobile-only {
-  list-style: none;
-
-  @include respond-to(lg) {
-    display: none;
+@keyframes item-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 .nav-link {
   font-family: $font-family-sans;
-  font-size: $font-size-base;
+  font-size: $font-size-lg; // 18px from Figma
   font-weight: $font-weight-medium;
-  color: #1e1e1e;
+  color: $color-text-primary;
   text-decoration: none;
   letter-spacing: $letter-spacing-tight;
   transition: color 0.2s;
@@ -143,17 +170,153 @@
   cursor: pointer;
   white-space: nowrap;
 
-  @include respond-to(lg) {
-    font-size: $font-size-lg; // 18px from Figma
-  }
-
   &:hover {
     color: $color-text-secondary;
   }
 }
 
 // ============================================
-// Right group: Language dropdown
+// Mobile Navigation (outside header)
+// ============================================
+
+.mobile-nav {
+  position: fixed;
+  top: 3.5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $color-background;
+  z-index: $z-index-modal;
+  overflow-y: auto;
+  animation: menu-slide-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+@keyframes menu-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-xl $spacing-lg;
+  gap: 0;
+}
+
+.nav-divider {
+  list-style: none;
+  height: 1px;
+  background-color: $color-border;
+  margin: $spacing-sm 0;
+}
+
+.mobile-nav-link {
+  font-family: $font-family-sans;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  text-decoration: none;
+  letter-spacing: $letter-spacing-tight;
+  transition: color 0.2s, background-color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: $spacing-xl $spacing-md;
+  border-radius: 0.5rem;
+  min-height: 4.5rem;
+
+  &:hover {
+    background-color: $color-background-alt;
+  }
+
+  &:active {
+    background-color: $color-background-light;
+  }
+}
+
+// Mobile CTA button
+.mobile-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  background-color: $color-secondary;
+  color: $color-text-on-dark;
+  border-radius: 0.75rem;
+  font-family: $font-family-sans;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  min-height: 3.5rem;
+
+  &:hover {
+    background-color: $color-secondary-light;
+  }
+
+  &:active {
+    background-color: $color-secondary-dark;
+  }
+
+  @include respond-to(lg) {
+    display: none;
+  }
+}
+
+// Mobile language selector
+.mobile-lang {
+  display: flex;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+  flex-wrap: wrap;
+}
+
+.mobile-lang-option {
+  padding: $spacing-sm $spacing-md;
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  background-color: $color-background-light;
+  border: 1px solid transparent;
+  border-radius: 6.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 2.25rem;
+
+  &:hover {
+    background-color: $color-background-alt;
+    border-color: $color-border;
+  }
+}
+
+.mobile-lang-option--active {
+  color: $color-primary-dark;
+  background-color: $color-primary-light;
+  border-color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+// ============================================
+// Right group: Language dropdown (desktop)
 // ============================================
 
 .right-group {
@@ -202,7 +365,7 @@
   font-weight: $font-weight-semibold;
   text-decoration: none;
   transition: background-color 0.2s, opacity 0.2s;
-  height: 2.25rem; // sm-ish height
+  height: 2.25rem;
   white-space: nowrap;
 
   &:hover {
@@ -221,14 +384,14 @@
   align-items: center;
   justify-content: space-between;
   gap: $spacing-sm;
-  padding: $spacing-sm $spacing-md; // ~10px 12px
+  padding: $spacing-sm $spacing-md;
   width: 5.75rem; // 92px from Figma
   background-color: $color-background-light;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
   font-family: $font-family-sans;
-  font-size: $font-size-sm; // 14px
+  font-size: $font-size-sm;
   font-weight: $font-weight-medium;
   color: $color-text-secondary;
   letter-spacing: $letter-spacing-tight;
@@ -289,7 +452,7 @@
 }
 
 // ============================================
-// Hamburger (mobile only)
+// Hamburger (mobile only) — animated X toggle
 // ============================================
 
 .hamburger {
@@ -304,6 +467,8 @@
   min-height: 2.75rem;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: calc(#{$z-index-modal} + 1);
 
   @include respond-to(lg) {
     display: none;
@@ -316,5 +481,23 @@
   height: 0.125rem;
   background-color: $color-text-primary;
   border-radius: 0.0625rem;
-  transition: transform 0.2s;
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s ease;
+  transform-origin: center;
+
+  .hamburger--active & {
+    &:nth-child(1) {
+      transform: translateY(0.4375rem) rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(-0.4375rem) rotate(-45deg);
+    }
+  }
 }

@@ -31,11 +31,11 @@
 // --- Variants ---
 
 .button--primary {
-  background-color: $color-primary;
+  background-color: $color-secondary;
   color: $color-text-on-dark;
 
   &:hover:not(:disabled) {
-    background-color: $color-primary-dark;
+    background-color: $color-secondary-dark;
   }
 }
 

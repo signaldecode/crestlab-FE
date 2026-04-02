@@ -92,10 +92,10 @@ export default async function HomePage() {
       <CounterContainer messages={counterMsg} data={landingData.counter} />
       <TokenListContainer messages={tokenListMsg} data={landingData.tokenList} />
       <PortfolioMockupContainer messages={portfolioMsg} />
-      <ChatBubblesContainer messages={chatMsg} />
-      <WalletCardsContainer messages={walletMsg} />
+      {/* <ChatBubblesContainer messages={chatMsg} /> */}
+      {/* <WalletCardsContainer messages={walletMsg} /> */}
       <FaqAccordionContainer messages={faqMsg} data={landingData.faq} />
-      <CtaContainer data={ctaMsg} />
+      {/* <CtaContainer data={ctaMsg} /> */}
     </>
   );
 }
