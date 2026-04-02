@@ -1,0 +1,73 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ============================================
+// Logo Marquee — 파트너 로고 무한 가로 스크롤
+// ============================================
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: $spacing-2xl 0;
+  background-color: $color-background;
+
+  @include respond-to(lg) {
+    padding: $spacing-3xl 0;
+  }
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+}
+
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: $spacing-3xl;
+  padding-right: $spacing-3xl;
+
+  @include respond-to(lg) {
+    gap: $spacing-4xl;
+    padding-right: $spacing-4xl;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-family: $font-family-sans;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: $letter-spacing-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.logo-icon {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

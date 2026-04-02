@@ -10,7 +10,9 @@ export default function FeatureShowcaseContainer({ messages }: FeatureShowcaseCo
   return (
     <section className={styles.showcase}>
       <div className={styles.inner}>
-        <h2 className={styles.title}>{messages.title}</h2>
+        <h2 className={styles.title}>{messages.title.split('\n').map((line, i) => (
+          <span key={i}>{line}<br /></span>
+        ))}</h2>
         <div className={styles.grid}>
           {messages.items.map((item, i) => (
             <article key={i} className={styles.card}>

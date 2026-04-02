@@ -1,4 +1,14 @@
 {
+  "logoMarquee": {
+    "logos": [
+      { "name": "Midjourney" },
+      { "name": "DALL·E 2", "icon": "✦" },
+      { "name": "Google AI", "icon": "✳" },
+      { "name": "NovelAI", "icon": "◆" },
+      { "name": "stability.ai" },
+      { "name": "ChatGPT", "icon": "◎" }
+    ]
+  },
   "counter": {
     "value": "1,000,000,000"
   },

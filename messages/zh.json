@@ -32,7 +32,12 @@
     "featureShowcase": { "title": "值得信赖的市场份额与管理资产规模", "item1Title": "考虑市场趋势的最新比特币动态", "item1Desc": "基于最新市场数据，提供当前最值得关注的投资机会。", "item2Title": "AI驱动的实时投资组合分析", "item2Desc": "人工智能24小时监控市场，建议最优资产配置。", "item3Title": "风险管理仪表板", "item3Desc": "通过多层风险监控系统地应对市场波动。", "item4Title": "定制化投资报告", "item4Desc": "根据客户的投资风格和目标提供详细的分析报告。" },
     "counter": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "不需要更多数据，需要的是信号" },
     "tokenList": { "title": "值得信赖的市场份额与管理资产规模", "rewardLabel": "年奖励率" },
-    "appScreens": { "ariaLabel": "Crest Lab 应用截图" },
+    "appScreens": {
+      "ariaLabel": "Crest Lab 应用截图",
+      "badge": "INVEST",
+      "title": "最适合您的投资倾向的\n最佳资产推荐",
+      "description": "在海量数据中寻找如宝石般的机遇。从索拉纳到以太坊，查看拥有高年化收益率的精选代币信号。"
+    },
     "portfolio": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "通过KOSCOM测试台验证的投资解决方案", "cat1": "月配息投资", "cat2": "韩国主题投资", "cat3": "全球分散投资", "cat4": "稳定型投资组合" },
     "chat": { "title": "实时投资提醒", "subtitle": "不要错过重要的投资信号" },
     "wallet": { "title": "值得信赖的市场份额与管理资产规模", "subtitle": "通过KOSCOM机器人顾问测试台的经过验证的投资解决方案" },

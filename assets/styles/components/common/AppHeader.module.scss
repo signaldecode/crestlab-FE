@@ -11,10 +11,9 @@
 // ============================================
 
 .header {
-  position: fixed;
+  position: sticky;
   top: $spacing-lg;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   z-index: $z-index-sticky;
   width: calc(100% - #{$spacing-xl} * 2);
   max-width: 97.5rem; // 1560px from Figma
@@ -26,7 +25,8 @@
     width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     max-width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
     border-radius 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header--scrolled {
@@ -148,7 +148,7 @@
   }
 
   &:hover {
-    color: $color-primary;
+    color: $color-text-secondary;
   }
 }
 

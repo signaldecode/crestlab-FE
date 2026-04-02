@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import HeroContainer from '@/components/containers/landing/HeroContainer';
+import LogoMarqueeContainer from '@/components/containers/landing/LogoMarqueeContainer';
 import ServiceCardsContainer from '@/components/containers/landing/ServiceCardsContainer';
 import AppScreensContainer from '@/components/containers/landing/AppScreensContainer';
 import FeatureShowcaseContainer from '@/components/containers/landing/FeatureShowcaseContainer';
@@ -28,7 +29,10 @@ export default async function HomePage() {
     chartWidgetAlt: t('hero.chartWidgetAlt'),
   };
 
+  const logoMarqueeMsg = { ariaLabel: t('logoMarquee.ariaLabel') };
+
   const serviceCardsMsg = {
+    badge: t('serviceCards.badge'),
     title: t('serviceCards.title'),
     items: [
       { title: t('serviceCards.item1Title'), description: t('serviceCards.item1Desc') },
@@ -37,7 +41,12 @@ export default async function HomePage() {
     ],
   };
 
-  const appScreensMsg = { ariaLabel: t('appScreens.ariaLabel') };
+  const appScreensMsg = {
+    ariaLabel: t('appScreens.ariaLabel'),
+    badge: t('appScreens.badge'),
+    title: t('appScreens.title'),
+    description: t('appScreens.description'),
+  };
 
   const featureShowcaseMsg = {
     title: t('featureShowcase.title'),
@@ -76,6 +85,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroContainer messages={heroMsg} />
+      <LogoMarqueeContainer messages={logoMarqueeMsg} data={landingData.logoMarquee} />
       <ServiceCardsContainer messages={serviceCardsMsg} />
       <AppScreensContainer messages={appScreensMsg} />
       <FeatureShowcaseContainer messages={featureShowcaseMsg} />

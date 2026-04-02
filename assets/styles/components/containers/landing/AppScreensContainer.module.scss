@@ -4,67 +4,173 @@
 @use '../../../tokens/breakpoints' as *;
 
 .app-screens {
-  padding: $spacing-4xl $spacing-md;
+  padding: $spacing-5xl 0;
   background-color: $color-background;
   overflow: hidden;
 }
 
-.fan {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: $spacing-md;
+.container {
   max-width: 75rem;
   margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+
+  .badge {
+    display: inline-block;
+    color: #00ca6e; // INVEST badge color from image
+    font-weight: 600;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-xs;
+    letter-spacing: 0.05em;
+  }
+
+  .title {
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: pre-line;
+    color: $color-text-primary;
+
+    @include respond-to(md) {
+      font-size: $font-size-3xl;
+    }
+  }
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  margin-bottom: $spacing-3xl;
 
   @include respond-to(md) {
-    gap: $spacing-lg;
+    height: 40rem;
   }
 }
 
 .phone {
+  position: absolute;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   flex-shrink: 0;
-  border-radius: 1.25rem;
-  overflow: hidden;
-  box-shadow: 1.25rem 1.25rem 1.875rem rgba(34, 34, 34, 0.06);
 
   &--center {
-    box-shadow: 1.25rem 1.25rem 1.875rem rgba(34, 34, 34, 0.1);
-    z-index: 1;
+    z-index: 10;
+    transform: scale(1);
+    
+    .phone-image {
+      width: 14rem;
+      @include respond-to(md) { width: 18rem; }
+    }
   }
+
+  &--left {
+    z-index: 5;
+    opacity: 0.6;
+    
+    &:nth-child(1) {
+      transform: translateX(-110%) rotate(-12deg) scale(0.85);
+      @include respond-to(md) { transform: translateX(-160%) rotate(-12deg) scale(0.85); }
+    }
+    &:nth-child(2) {
+      transform: translateX(-55%) rotate(-6deg) scale(0.92);
+      @include respond-to(md) { transform: translateX(-80%) rotate(-6deg) scale(0.92); }
+    }
+  }
+
+  &--right {
+    z-index: 5;
+    opacity: 0.6;
+
+    &:nth-child(4) {
+      transform: translateX(55%) rotate(6deg) scale(0.92);
+      @include respond-to(md) { transform: translateX(80%) rotate(6deg) scale(0.92); }
+    }
+    &:nth-child(5) {
+      transform: translateX(110%) rotate(12deg) scale(0.85);
+      @include respond-to(md) { transform: translateX(160%) rotate(12deg) scale(0.85); }
+    }
+  }
+}
+
+.phone-frame {
+  background: #fff;
+  border-radius: 2rem;
+  padding: 0.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .phone-image {
   display: block;
-  width: 8rem;
+  width: 10rem;
   height: auto;
-
-  @include respond-to(sm) {
-    width: 10rem;
-  }
+  border-radius: 1.5rem;
 
   @include respond-to(md) {
-    width: 15rem;
-  }
-
-  @include respond-to(lg) {
-    width: auto;
-    max-width: 100%;
+    width: 13rem;
   }
 }
 
-.phone--center .phone-image {
-  width: 10rem;
+.content {
+  text-align: center;
+  max-width: 32rem;
+  margin: 0 auto;
+}
 
-  @include respond-to(sm) {
-    width: 12rem;
+.description {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-xl;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-sm;
+}
+
+.navButton {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f7;
+  color: #333;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 
-  @include respond-to(md) {
-    width: 18.75rem;
+  &:hover {
+    background-color: #e5e5e7;
   }
 
-  @include respond-to(lg) {
-    width: auto;
+  &--active {
+    background-color: #333;
+    color: #fff;
+
+    &:hover {
+      background-color: #000;
+    }
   }
 }

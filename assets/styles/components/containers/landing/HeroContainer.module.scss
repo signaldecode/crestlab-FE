@@ -70,6 +70,7 @@
   text-align: center;
   padding: $spacing-2xl $spacing-lg 0;
 
+
   @include respond-to(md) {
     padding: $spacing-3xl $spacing-lg 0;
   }
@@ -117,7 +118,7 @@
   color: $color-text-secondary;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  margin-bottom: $spacing-2xl; // 40px gap to CTA
+  margin-bottom: $spacing-xl; // 40px gap to CTA
   max-width: 40rem;
   animation: fade-up 0.8s 0.15s ease-out both;
 
@@ -136,6 +137,7 @@
   justify-content: center;
   width: 10rem; // 160px
   padding: $spacing-md 0; // 20px
+  margin-bottom: $spacing-2xl; // 32px
   background-color: #3086f5;
   color: $color-text-on-dark;
   font-size: $font-size-base;
@@ -158,6 +160,7 @@
 
 .phones {
   position: absolute;
+  margin-top: $spacing-2xl; // 32px gap from title
   z-index: 2;
   left: 50%;
   transform: translateX(-50%);
@@ -172,11 +175,11 @@
   }
 
   @include respond-to(xl) {
-    top: 34%;
+    top: 32%;
   }
 
   @include respond-to(2xl) {
-    top: 31.5625rem; // y:505px
+    top: 32.5625rem; // y:505px
   }
 
   animation: float-up 1s 0.3s ease-out both;

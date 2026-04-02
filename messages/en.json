@@ -59,7 +59,12 @@
       "title": "Trusted market share and managed asset scale",
       "rewardLabel": "Annual Reward"
     },
-    "appScreens": { "ariaLabel": "Crest Lab app screenshots" },
+    "appScreens": {
+      "ariaLabel": "Crest Lab App Screenshots",
+      "badge": "INVEST",
+      "title": "Optimal asset recommendation\nperfect for your investment style",
+      "description": "Find gem-like opportunities in vast data. Check out carefully selected coin signals from Solana to Ethereum, boasting high annual rewards."
+    },
     "portfolio": {
       "title": "Trusted market share and managed asset scale",
       "subtitle": "Investment solutions verified through the KOSCOM Robo-Advisor Testbed",

@@ -57,11 +57,11 @@ export default function HeroContainer({ messages }: HeroContainerProps) {
         <Image
           src="/images/landing/hero_phone.png"
           alt={messages.phoneAlt}
-          width={2208}
-          height={2217}
+          width={4000}
+          height={4000}
           className={styles['phones-image']}
           priority
-          sizes="(max-width: 768px) 50vw, (max-width: 1536px) 40vw, 764px"
+          sizes="(max-width: 768px) 100vw, (max-width: 2000px) 100vw, 764px"
         />
       </div>
 

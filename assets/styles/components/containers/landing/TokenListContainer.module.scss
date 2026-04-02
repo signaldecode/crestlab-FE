@@ -38,21 +38,44 @@ $token-reward-red: #ec444b;
   }
 }
 
-.scroll {
-  display: flex;
-  gap: $spacing-xl;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 0 $spacing-md $spacing-md;
-  -webkit-overflow-scrolling: touch;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: $spacing-md;
 
   @include respond-to(md) {
-    padding: 0 $spacing-xl $spacing-lg;
+    padding-bottom: $spacing-lg;
+  }
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 60s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.slide {
+  display: flex;
+  flex-shrink: 0;
+  gap: $spacing-xl;
+  padding-right: $spacing-xl;
+
+  @include respond-to(md) {
     gap: 1.875rem;
+    padding-right: 1.875rem;
+  }
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%);
   }
 }
 
@@ -66,7 +89,6 @@ $token-reward-red: #ec444b;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  scroll-snap-align: start;
 
   @include respond-to(md) {
     width: 19.75rem;

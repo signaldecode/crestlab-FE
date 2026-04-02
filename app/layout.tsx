@@ -13,12 +13,6 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning>
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap"
-          rel="stylesheet"
-        />
-      </head>
       <body>{children}</body>
     </html>
   );
