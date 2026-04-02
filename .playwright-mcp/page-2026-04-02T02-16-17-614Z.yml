@@ -1,0 +1,157 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic [ref=e5]:
+      - generic [ref=e7]: "0"
+      - generic [ref=e9]: "2"
+      - generic [ref=e11]: "2"
+    - generic:
+      - generic:
+        - generic:
+          - generic: creative creative creative
+          - generic: frontend frontend frontend
+          - generic: developer developer developer
+    - navigation:
+      - link "Eric.Hgn" [ref=e14] [cursor=pointer]:
+        - /url: https://erichuguenin.com/en
+      - generic:
+        - navigation:
+          - generic:
+            - list:
+              - listitem:
+                - link "About" [ref=e15] [cursor=pointer]:
+                  - /url: https://erichuguenin.com/en/about/
+                - text: ","
+              - listitem:
+                - link "Contact" [ref=e16] [cursor=pointer]:
+                  - /url: https://erichuguenin.com/en/contact-me/
+  - main [ref=e17]:
+    - generic [ref=e19]:
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic: E
+            - generic:
+              - generic: r
+            - generic:
+              - generic: i
+            - generic:
+              - generic: c
+          - generic:
+            - generic:
+              - generic: H
+            - generic:
+              - generic: u
+            - generic:
+              - generic: g
+            - generic:
+              - generic: u
+            - generic:
+              - generic: e
+            - generic:
+              - generic: "n"
+            - generic:
+              - generic: i
+            - generic:
+              - generic: "n"
+        - generic:
+          - generic:
+            - generic:
+              - text: Creative Front-End developer
+              - text: Building unique digital experiences
+              - text: one pixel at a time
+          - link "Available" [ref=e20] [cursor=pointer]:
+            - /url: mailto:contact@erichuguenin.com
+          - generic:
+            - navigation:
+              - generic:
+                - list:
+                  - listitem:
+                    - link "About" [ref=e21] [cursor=pointer]:
+                      - /url: https://erichuguenin.com/en/about/
+                    - text: ","
+                  - listitem:
+                    - link "Contact" [ref=e22] [cursor=pointer]:
+                      - /url: https://erichuguenin.com/en/contact-me/
+      - generic [ref=e23]:
+        - article [ref=e24] [cursor=pointer]:
+          - generic:
+            - generic: Ozone
+            - generic: Light
+          - generic [ref=e25]:
+            - img "Ozone Light - Photograph of a chandelier"
+          - heading "Ozone Light" [level=2]:
+            - link "Ozone Light" [ref=e26]:
+              - /url: https://erichuguenin.com/en/ozone/
+        - article [ref=e27] [cursor=pointer]:
+          - generic:
+            - generic: Hebras
+            - generic: Avocats
+          - generic [ref=e28]:
+            - img "Photograph of stairs and lights, from the Hebras law firm, used on the website developed on WordPress, created on Wordpress by Eric Huguenin"
+          - heading "Hebras Avocats" [level=2]:
+            - link "Hebras Avocats" [ref=e29]:
+              - /url: https://erichuguenin.com/en/hebras/
+        - article [ref=e30] [cursor=pointer]:
+          - generic:
+            - generic: Un jour
+            - generic: Un dessin
+          - generic [ref=e31]:
+            - img "Un Jour Un Dessin - Drawing of Wolverine, by Matthieu Bolufer from Creano, used on the cover of the web project developed by Eric Huguenin"
+          - heading "Un jour, un dessin" [level=2]:
+            - link "Un jour, un dessin" [ref=e32]:
+              - /url: https://erichuguenin.com/en/1j1d/
+        - article [ref=e33] [cursor=pointer]:
+          - generic:
+            - generic: Legend of
+            - generic: the 5 rings
+          - generic [ref=e34]:
+            - img "Legend Of The Five Rings - Illustration used on the site developed on WordPress by Eric Huguenin for Asmodee with the Ezperanza studio"
+          - heading "Legend of The Five Rings" [level=2]:
+            - link "Legend of The Five Rings" [ref=e35]:
+              - /url: https://erichuguenin.com/en/legend-of-the-5-rings/
+        - article [ref=e36] [cursor=pointer]:
+          - generic:
+            - generic: Halley
+            - generic: "&co"
+          - generic [ref=e37]:
+            - img "Halley&co - Cover photography for the Halley&co custom website development project by Eric Huguenin"
+          - heading "Halley&co" [level=2]:
+            - link "Halley&co" [ref=e38]:
+              - /url: https://erichuguenin.com/en/halleyco/
+        - article [ref=e39] [cursor=pointer]:
+          - generic:
+            - generic: Der
+            - generic: loewe
+          - generic [ref=e40]:
+            - img "DER LÖWE BURGBERG - Photograph of a meal, used on the cover of the web project developed by Eric Huguenin"
+          - heading "Der Löwe" [level=2]:
+            - link "Der Löwe" [ref=e41]:
+              - /url: https://erichuguenin.com/en/der-lowe/
+        - article [ref=e42] [cursor=pointer]:
+          - generic:
+            - generic: Label
+            - generic: experience
+          - generic [ref=e43]:
+            - img "Label Experience - Photography of a dressing room"
+          - heading "Label experience" [level=2]:
+            - link "Label experience" [ref=e44]:
+              - /url: https://erichuguenin.com/en/label-experience-agency/
+        - article [ref=e45] [cursor=pointer]:
+          - generic:
+            - generic: Studio
+            - generic: ouam
+          - generic [ref=e46]:
+            - img "Studio OUAM - Photo of the members of the Graphic Studio, used on the cover of the web project developed by Eric Huguenin"
+          - heading "Studio ouam" [level=2]:
+            - link "Studio ouam" [ref=e47]:
+              - /url: https://erichuguenin.com/en/ouam/
+        - article [ref=e48] [cursor=pointer]:
+          - generic:
+            - generic: Epok
+            - generic: Design
+          - generic [ref=e49]:
+            - img "Epok Design - Screen printing of a 2018 New Year's greeting card"
+          - heading "Epok Design" [level=2]:
+            - link "Epok Design" [ref=e50]:
+              - /url: https://erichuguenin.com/en/epokdesign/

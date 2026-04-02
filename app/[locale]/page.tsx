@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import HeroMarqueeContainer from '@/components/containers/landing/HeroMarqueeContainer';
+import HeroContainer from '@/components/containers/landing/HeroContainer';
 import ServiceCardsContainer from '@/components/containers/landing/ServiceCardsContainer';
 import AppScreensContainer from '@/components/containers/landing/AppScreensContainer';
 import FeatureShowcaseContainer from '@/components/containers/landing/FeatureShowcaseContainer';
@@ -16,8 +16,16 @@ export default async function HomePage() {
   const t = await getTranslations('landing');
 
   const heroMsg = {
-    marqueeText: t('hero.marqueeText'),
+    titleHighlight: t('hero.titleHighlight'),
+    titleSuffix: t('hero.titleSuffix'),
+    titleMain: t('hero.titleMain'),
+    subtitle: t('hero.subtitle'),
+    cta: t('hero.cta'),
+    ctaAriaLabel: t('hero.ctaAriaLabel'),
     ariaLabel: t('hero.ariaLabel'),
+    phoneAlt: t('hero.phoneAlt'),
+    tempWidgetAlt: t('hero.tempWidgetAlt'),
+    chartWidgetAlt: t('hero.chartWidgetAlt'),
   };
 
   const serviceCardsMsg = {
@@ -67,7 +75,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <HeroMarqueeContainer messages={heroMsg} />
+      <HeroContainer messages={heroMsg} />
       <ServiceCardsContainer messages={serviceCardsMsg} />
       <AppScreensContainer messages={appScreensMsg} />
       <FeatureShowcaseContainer messages={featureShowcaseMsg} />

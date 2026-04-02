@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
-import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import useUIStore from '@/stores/useUIStore';
 import useAuthStore from '@/stores/useAuthStore';
 import { Link } from '@/i18n/navigation';
+import { useLocale } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/navigation';
 
 interface NavItem {
   label: string;
@@ -15,20 +16,50 @@ interface NavItem {
 interface HeaderData {
   logo: string;
   nav: Record<string, string>;
+  lang: string;
   cta: string;
   login: string;
-  mypage: string;
-  logout: string;
+  mypage?: string;
+  logout?: string;
 }
 
 interface AppHeaderProps {
   data: HeaderData;
 }
 
+const LOCALES = [
+  { code: 'ko', label: '한국어' },
+  { code: 'en', label: 'English' },
+  { code: 'zh', label: '中文' },
+  { code: 'ja', label: '日本語' },
+] as const;
+
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const openLoginModal = useUIStore((s) => s.openLoginModal);
   const { isLoggedIn, logout } = useAuthStore();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!langOpen) return;
+
+    const handleClickOutside = () => setLangOpen(false);
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [langOpen]);
 
   const navItems: NavItem[] = Object.entries(data.nav).map(([key, label]) => ({
     label,
@@ -45,77 +76,101 @@ export default function AppHeader({ data }: AppHeaderProps) {
     logout();
   };
 
+  const handleLocaleChange = (nextLocale: string) => {
+    setLangOpen(false);
+    router.replace(pathname, { locale: nextLocale });
+  };
+
+  const headerClass = `${styles.header} ${scrolled ? styles['header--scrolled'] : ''}`;
+
   return (
-    <header className={styles.header}>
+    <header className={headerClass}>
       <div className={styles.inner}>
-        <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
-          {data.logo}
-        </Link>
+        <div className={styles['left-group']}>
+          <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
+            {data.logo}
+          </Link>
 
-        <nav className={styles.nav} aria-label="메인 내비게이션">
-          <ul className={`${styles['nav-list']} ${mobileOpen ? styles['nav-list--open'] : ''}`}>
-            <li className={styles['nav-item--mobile-only']}>
-              <LanguageSwitcher />
-            </li>
-            {navItems.map((item) => (
-              <li key={item.href} className={styles['nav-item']}>
-                <Link href={item.href} className={styles['nav-link']}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+          <nav className={styles.nav} aria-label="메인 내비게이션">
+            <ul className={`${styles['nav-list']} ${mobileOpen ? styles['nav-list--open'] : ''}`}>
+              {navItems.map((item) => (
+                <li key={item.href} className={styles['nav-item']}>
+                  <Link href={item.href} className={styles['nav-link']}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
 
-            {isLoggedIn ? (
-              <>
-                <li className={styles['nav-item--mobile-only']}>
-                  <Link href="/mypage" className={styles['nav-link']}>{data.mypage}</Link>
-                </li>
-                <li className={styles['nav-item--mobile-only']}>
-                  <button type="button" className={styles['nav-link']} onClick={handleLogout}>
-                    {data.logout}
-                  </button>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className={styles['nav-item--mobile-only']}>
+              <li className={styles['nav-item--mobile-only']}>
+                {isLoggedIn ? (
+                  <>
+                    <Link href="/mypage" className={styles['nav-link']}>{data.mypage}</Link>
+                    <button type="button" className={styles['nav-link']} onClick={handleLogout}>
+                      {data.logout}
+                    </button>
+                  </>
+                ) : (
                   <button type="button" className={styles['nav-link']} onClick={handleLoginClick}>
                     {data.login}
                   </button>
-                </li>
-                <li className={styles['nav-item--mobile-only']}>
-                  <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
-                </li>
-              </>
-            )}
-          </ul>
-        </nav>
-
-        <div className={styles['desktop-lang']}>
-          <LanguageSwitcher />
+                )}
+              </li>
+            </ul>
+          </nav>
         </div>
 
-        <div className={styles.actions}>
-          {isLoggedIn ? (
-            <>
-              <Link href="/mypage" className={styles['btn-login']}>{data.mypage}</Link>
-              <button type="button" className={styles['btn-cta']} onClick={handleLogout}>
-                {data.logout}
-              </button>
-            </>
-          ) : (
-            <>
-              <button type="button" className={styles['btn-login']} onClick={openLoginModal}>
-                {data.login}
-              </button>
-              <Link href="/register" className={styles['btn-cta']}>{data.cta}</Link>
-            </>
-          )}
+        <div className={styles['right-group']}>
+          <div className={styles['lang-dropdown']}>
+            <button
+              type="button"
+              className={styles['lang-trigger']}
+              onClick={(e) => {
+                e.stopPropagation();
+                setLangOpen(!langOpen);
+              }}
+              aria-expanded={langOpen}
+              aria-haspopup="listbox"
+            >
+              <span>{data.lang}</span>
+              <svg
+                className={`${styles['lang-arrow']} ${langOpen ? styles['lang-arrow--open'] : ''}`}
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 6L8 10L12 6"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+
+            {langOpen && (
+              <ul className={styles['lang-menu']} role="listbox" aria-label="언어 선택">
+                {LOCALES.map(({ code, label }) => (
+                  <li key={code} role="option" aria-selected={locale === code}>
+                    <button
+                      type="button"
+                      className={`${styles['lang-option']} ${locale === code ? styles['lang-option--active'] : ''}`}
+                      onClick={() => handleLocaleChange(code)}
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
 
         <button
           type="button"
-          className={styles['hamburger']}
+          className={styles.hamburger}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label="메뉴 열기/닫기"

@@ -38,8 +38,10 @@
 - URL: `/ko`, `/en/about`, `/zh/news/market-update`, `/ja/lectures/value-investing`
 - 기본 locale: `ko` — Middleware에서 locale 감지 후 리다이렉트
 
-### 번역 파일 구조
-- `messages/{locale}/` 디렉토리에 도메인별 JSON 파일로 분리
+### 번역 파일 구조 (⚠️ 중요)
+- **실제 런타임에 로드되는 파일은 `messages/{locale}.json` (통합 파일)** — `i18n/request.ts`에서 `import(`../messages/${locale}.json`)` 으로 로드
+- `messages/{locale}/` 디렉토리의 개별 JSON 파일(landing.json, common.json 등)은 **참고용/원본 관리용**이며, 런타임에 직접 사용되지 않음
+- **메시지 키를 추가/수정/삭제할 때 반드시 `messages/{locale}.json` 통합 파일을 수정해야 한다** — 개별 파일만 수정하면 `MISSING_MESSAGE` 에러 발생
 - 네임스페이스: `common`, `landing`, `about`, `academy`, `news`, `auth`, `seo`
 - UI 텍스트/CTA/aria-label/alt 등은 반드시 messages에서 가져온다
 

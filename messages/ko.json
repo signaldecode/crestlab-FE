@@ -4,11 +4,11 @@
       "logo": "CrestLab",
       "nav": {
         "home": "홈",
-        "notices": "공지사항",
-        "news": "뉴스",
-        "videos": "교육자료",
-        "board": "게시판"
+        "about": "회사소개",
+        "lectures": "강의 업로드",
+        "support": "고객지원"
       },
+      "lang": "언어",
       "cta": "회원가입",
       "login": "로그인",
       "mypage": "마이페이지",
@@ -41,8 +41,16 @@
   },
   "landing": {
     "hero": {
-      "marqueeText": "더 많은 데이터가 아니라 시그널이 필요합니다",
-      "ariaLabel": "Crest Lab 메인 히어로 섹션"
+      "titleHighlight": "1,349,789명",
+      "titleSuffix": "이 선택한",
+      "titleMain": "쉽고 편한 투자의 시작",
+      "subtitle": "소중한 내 자산, 보다 쉽고 편하게 관리하고 싶다면? AI가 알아서 주식, ETF 등을 투자하세요!",
+      "cta": "다운로드",
+      "ctaAriaLabel": "앱 다운로드 페이지로 이동",
+      "ariaLabel": "히어로 섹션",
+      "phoneAlt": "CrestLab 앱 화면",
+      "tempWidgetAlt": "온도 위젯 UI",
+      "chartWidgetAlt": "차트 위젯 UI"
     },
     "serviceCards": {
       "title": "믿을 수 있는 시장 점유율에 관리자산 규모까지",

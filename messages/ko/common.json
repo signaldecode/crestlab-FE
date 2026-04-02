@@ -3,11 +3,11 @@
     "logo": "CrestLab",
     "nav": {
       "home": "홈",
-      "notices": "공지사항",
-      "news": "뉴스",
-      "videos": "교육자료",
-      "board": "게시판"
+      "about": "회사소개",
+      "lectures": "강의 업로드",
+      "support": "고객지원"
     },
+    "lang": "언어",
     "cta": "회원가입",
     "login": "로그인"
   },
