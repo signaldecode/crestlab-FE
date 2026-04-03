@@ -18,16 +18,7 @@ export default function PortfolioMockupContainer({ messages }: PortfolioMockupCo
     <section className={styles.portfolio}>
       <div className={styles.inner}>
         <h2 className={styles.title}>{messages.title}</h2>
-        <p className={styles.subtitle}>{messages.subtitle}</p>
-
-        <ul className={styles.categories}>
-          {messages.categories.map((cat, i) => (
-            <li key={i} className={styles.pill}>
-              <span className={styles['pill-icon']} />
-              <span className={styles['pill-label']}>{cat.label}</span>
-            </li>
-          ))}
-        </ul>
+        {/* <p className={styles.subtitle}>{messages.subtitle}</p> */}
 
         <div className={styles['mockup-wrap']}>
           <Image
@@ -39,6 +30,16 @@ export default function PortfolioMockupContainer({ messages }: PortfolioMockupCo
             sizes="(max-width: 768px) 100vw, 900px"
           />
         </div>
+        
+        <ul className={styles.categories}>
+          {messages.categories.map((cat, i) => (
+            <li key={i} className={styles.pill}>
+              <span className={styles['pill-icon']} />
+              <span className={styles['pill-label']}>{cat.label}</span>
+            </li>
+          ))}
+        </ul>
+
       </div>
     </section>
   );

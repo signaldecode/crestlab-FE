@@ -166,6 +166,6 @@ $token-reward-red: #ec444b;
   color: $token-reward-red;
 
   @include respond-to(md) {
-    font-size: $font-size-4xl;
+    font-size: $font-size-3xl;
   }
 }
