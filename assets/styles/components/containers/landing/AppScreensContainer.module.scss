@@ -57,9 +57,14 @@
   width: 100%;
   height: 24rem;
   margin-bottom: $spacing-3xl;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
   cursor: grab;
   user-select: none;
+  -webkit-user-drag: none;
+
+  &:active {
+    cursor: grabbing;
+  }
 
   @include respond-to(sm) {
     height: 28rem;
@@ -74,101 +79,98 @@
   }
 }
 
+// Disable CSS transitions while dragging for instant response
+.showcase--dragging .phone {
+  transition: none !important;
+}
+
 // --- Phone base ---
+// 모든 이미지는 "중앙 크기"로 렌더링하고, scale()로 축소
 .phone {
   position: absolute;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+              opacity 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform, opacity;
 
-  // Center (offset 0)
+  // Center (offset 0) — 항상 원본 크기
   &[data-offset='0'] {
+    --tx: 0px;
+    --sc: 1;
     z-index: 10;
-    transform: translateX(0) scale(1);
+    transform: translateX(var(--tx)) scale(var(--sc));
     opacity: 1;
   }
 
   // Near left (offset -1)
   &[data-offset='-1'] {
+    --sc: 0.72;
+    --tx: -7rem;
     z-index: 5;
     opacity: 1;
-    transform: translateX(-75%);
+    transform: translateX(var(--tx)) scale(var(--sc));
 
-    @include respond-to(sm) { transform: translateX(-80%); }
-    @include respond-to(md) { transform: translateX(-90%); }
-    @include respond-to(lg) { transform: translateX(-100%); }
-
-    .phone-image,
-    .center-phone { // side-sized when not centered
-      width: 9rem;
-      @include respond-to(sm) { width: 11rem; }
-      @include respond-to(md) { width: 14rem; }
-      @include respond-to(lg) { width: 16rem; }
-    }
+    @include respond-to(sm) { --tx: -9rem; }
+    @include respond-to(md) { --tx: -12rem; }
+    @include respond-to(lg) { --tx: -14rem; }
   }
 
   // Near right (offset 1)
   &[data-offset='1'] {
+    --sc: 0.72;
+    --tx: 7rem;
     z-index: 5;
     opacity: 1;
-    transform: translateX(75%);
+    transform: translateX(var(--tx)) scale(var(--sc));
 
-    @include respond-to(sm) { transform: translateX(80%); }
-    @include respond-to(md) { transform: translateX(90%); }
-    @include respond-to(lg) { transform: translateX(100%); }
-
-    .phone-image,
-    .center-phone {
-      width: 9rem;
-      @include respond-to(sm) { width: 11rem; }
-      @include respond-to(md) { width: 14rem; }
-      @include respond-to(lg) { width: 16rem; }
-    }
+    @include respond-to(sm) { --tx: 9rem; }
+    @include respond-to(md) { --tx: 12rem; }
+    @include respond-to(lg) { --tx: 14rem; }
   }
 
   // Far left (offset -2)
   &[data-offset='-2'] {
+    --sc: 0.55;
+    --tx: -12rem;
     z-index: 2;
-    opacity: 0.7;
-    transform: translateX(-130%);
+    opacity: 0.6;
+    transform: translateX(var(--tx)) scale(var(--sc));
 
-    @include respond-to(sm) { transform: translateX(-150%); }
-    @include respond-to(md) { transform: translateX(-180%); }
-    @include respond-to(lg) { transform: translateX(-210%); }
-
-    .phone-image,
-    .center-phone {
-      width: 8rem;
-      @include respond-to(sm) { width: 9rem; }
-      @include respond-to(md) { width: 11rem; }
-      @include respond-to(lg) { width: 13rem; }
-    }
+    @include respond-to(sm) { --tx: -15rem; }
+    @include respond-to(md) { --tx: -21rem; }
+    @include respond-to(lg) { --tx: -25rem; }
   }
 
   // Far right (offset 2)
   &[data-offset='2'] {
+    --sc: 0.55;
+    --tx: 12rem;
     z-index: 2;
-    opacity: 0.7;
-    transform: translateX(130%);
+    opacity: 0.6;
+    transform: translateX(var(--tx)) scale(var(--sc));
 
-    @include respond-to(sm) { transform: translateX(150%); }
-    @include respond-to(md) { transform: translateX(180%); }
-    @include respond-to(lg) { transform: translateX(210%); }
-
-    .phone-image,
-    .center-phone {
-      width: 8rem;
-      @include respond-to(sm) { width: 9rem; }
-      @include respond-to(md) { width: 11rem; }
-      @include respond-to(lg) { width: 13rem; }
-    }
+    @include respond-to(sm) { --tx: 15rem; }
+    @include respond-to(md) { --tx: 21rem; }
+    @include respond-to(lg) { --tx: 25rem; }
   }
 }
 
+// --- Phone image (모든 슬라이드 동일한 기본 크기) ---
 .phone-image {
   display: block;
-  width: auto;
+  width: 13rem;
   height: auto;
+
+  @include respond-to(sm) {
+    width: 15rem;
+  }
+
+  @include respond-to(md) {
+    width: 19rem;
+  }
+
+  @include respond-to(lg) {
+    width: 22rem;
+  }
 }
 
 // --- Center phone (gray mockup) ---
@@ -195,31 +197,6 @@
   @include respond-to(lg) {
     width: 22rem;
   }
-}
-
-// When center phone is at offset 0, show mockup at full size
-.phone[data-offset='0'] .mockup-frame {
-  width: 13rem;
-  @include respond-to(sm) { width: 15rem; }
-  @include respond-to(md) { width: 19rem; }
-  @include respond-to(lg) { width: 22rem; }
-}
-
-// When center phone is at side positions, scale mockup down
-.phone[data-offset='-1'] .mockup-frame,
-.phone[data-offset='1'] .mockup-frame {
-  width: 9rem;
-  @include respond-to(sm) { width: 11rem; }
-  @include respond-to(md) { width: 14rem; }
-  @include respond-to(lg) { width: 16rem; }
-}
-
-.phone[data-offset='-2'] .mockup-frame,
-.phone[data-offset='2'] .mockup-frame {
-  width: 8rem;
-  @include respond-to(sm) { width: 9rem; }
-  @include respond-to(md) { width: 11rem; }
-  @include respond-to(lg) { width: 13rem; }
 }
 
 .screen-content {

@@ -50,7 +50,7 @@ const ChartPreview = ({ index }: { index: number }) => {
   switch (index) {
     case 0:
       return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <AreaChart data={areaData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
             <defs>
               <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -68,7 +68,7 @@ const ChartPreview = ({ index }: { index: number }) => {
       );
     case 1:
       return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <BarChart data={barData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
             <XAxis dataKey="name" hide />
@@ -80,7 +80,7 @@ const ChartPreview = ({ index }: { index: number }) => {
       );
     case 2:
       return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <PieChart>
             <Pie
               data={pieData}
@@ -102,7 +102,7 @@ const ChartPreview = ({ index }: { index: number }) => {
       );
     case 3:
       return (
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="100%" minWidth={0}>
           <LineChart data={areaData} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
             <XAxis dataKey="name" hide />
