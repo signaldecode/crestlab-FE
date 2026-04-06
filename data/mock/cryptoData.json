@@ -7,14 +7,15 @@
     { "id": "ripple", "symbol": "XRP", "name": "XRP", "price": 0.6234, "change24h": -0.45, "marketCap": 34200000000, "volume24h": 1230000000, "image": "/images/coins/xrp.svg" },
     { "id": "cardano", "symbol": "ADA", "name": "Cardano", "price": 0.4521, "change24h": 1.87, "marketCap": 15900000000, "volume24h": 456000000, "image": "/images/coins/ada.svg" }
   ],
-  "dominance": {
-    "btc": 52.4,
-    "eth": 16.2,
-    "others": 31.4
-  },
   "fearGreed": {
-    "value": 72,
-    "label": "Greed",
-    "timestamp": "2026-04-06T00:00:00Z"
+    "value": 48,
+    "label": "Neutral",
+    "timestamp": "2026-04-06T00:00:00Z",
+    "history": {
+      "1d": { "value": 32, "label": "Fear" },
+      "1w": { "value": 38, "label": "Mild Fear" },
+      "1m": { "value": 58, "label": "Mild Greed" },
+      "3m": { "value": 72, "label": "Greed" }
+    }
   }
 }

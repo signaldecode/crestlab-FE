@@ -51,10 +51,16 @@ export interface DominanceTimeSeriesItem {
   others: number;
 }
 
+export interface FearGreedHistoryItem {
+  value: number;
+  label: string;
+}
+
 export interface FearGreedData {
   value: number;
   label: string;
   timestamp: string;
+  history?: Record<string, FearGreedHistoryItem>;
 }
 
 // News

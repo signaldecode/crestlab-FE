@@ -22,7 +22,14 @@ interface CryptoPageContainerProps {
     };
     fearGreed: {
       title: string;
+      subtitle: string;
+      asOf: string;
+      currentTitle: string;
+      currentDescription: string;
+      historyTitle: string;
+      historyLabels: Record<string, string>;
       labels: Record<string, string>;
+      legendLabels: string[];
     };
     coinList: {
       title: string;
@@ -58,7 +65,7 @@ export default function CryptoPageContainer({ messages, coinsData, fearGreedData
         <>
           <div className={styles.widgets}>
             <DominanceChartContainer messages={messages.dominance} data={[]} />
-            <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
+            <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} compact />
           </div>
           <CoinListContainer messages={messages.coinList} data={coinsData} />
         </>
@@ -69,10 +76,7 @@ export default function CryptoPageContainer({ messages, coinsData, fearGreedData
       )}
 
       {activeTab === 'fearIndex' && (
-        <div className={styles.widgets}>
-          <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
-          <DominanceChartContainer messages={messages.dominance} data={[]} />
-        </div>
+        <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
       )}
     </>
   );
