@@ -21,9 +21,18 @@ export default async function CryptoPage() {
     },
     dominance: {
       title: t('dominance.title'),
+      subtitle: t('dominance.subtitle'),
       btcLabel: t('dominance.btcLabel'),
       ethLabel: t('dominance.ethLabel'),
       othersLabel: t('dominance.othersLabel'),
+      asOf: t('dominance.asOf'),
+      periods: {
+        '1w': t('dominance.periods.1w'),
+        '1m': t('dominance.periods.1m'),
+        '3m': t('dominance.periods.3m'),
+        '1y': t('dominance.periods.1y'),
+        '5y': t('dominance.periods.5y'),
+      },
     },
     fearGreed: {
       title: t('fearGreed.title'),
@@ -51,7 +60,6 @@ export default async function CryptoPage() {
     <CryptoPageContainer
       messages={messages}
       coinsData={cryptoData.coins}
-      dominanceData={cryptoData.dominance}
       fearGreedData={cryptoData.fearGreed}
     />
   );

@@ -73,7 +73,21 @@
       "top100": "Top 100",
       "fearIndex": "Fear Index"
     },
-    "dominance": { "title": "BTC 도미넌스", "btcLabel": "Bitcoin", "ethLabel": "Ethereum", "othersLabel": "Others" },
+    "dominance": {
+      "title": "비트코인 도미넌스 차트",
+      "subtitle": "글로벌 암호화폐 시장 점유율 추이",
+      "btcLabel": "비트코인",
+      "ethLabel": "이더리움",
+      "othersLabel": "기타",
+      "asOf": "오늘 24:00기준",
+      "periods": {
+        "1w": "1주",
+        "1m": "1개월",
+        "3m": "3개월",
+        "1y": "1년",
+        "5y": "5년"
+      }
+    },
     "fearGreed": {
       "title": "공포/탐욕 지수",
       "labels": { "extremeFear": "극단적 공포", "fear": "공포", "neutral": "중립", "greed": "탐욕", "extremeGreed": "극단적 탐욕" }

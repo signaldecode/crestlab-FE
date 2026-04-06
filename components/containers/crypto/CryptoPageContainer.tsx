@@ -6,16 +6,19 @@ import DominanceChartContainer from './DominanceChartContainer';
 import FearGreedContainer from './FearGreedContainer';
 import CoinListContainer from './CoinListContainer';
 import styles from '@/assets/styles/components/containers/crypto/CryptoWidgets.module.scss';
-import type { CoinItem, DominanceData, FearGreedData } from '@/types/finance';
+import type { CoinItem, FearGreedData } from '@/types/finance';
 
 interface CryptoPageContainerProps {
   messages: {
     tabs: Record<string, string>;
     dominance: {
       title: string;
+      subtitle: string;
       btcLabel: string;
       ethLabel: string;
       othersLabel: string;
+      asOf: string;
+      periods: Record<string, string>;
     };
     fearGreed: {
       title: string;
@@ -33,7 +36,6 @@ interface CryptoPageContainerProps {
     };
   };
   coinsData: CoinItem[];
-  dominanceData: DominanceData;
   fearGreedData: FearGreedData;
 }
 
@@ -43,7 +45,7 @@ const TABS = [
   { key: 'fearIndex', label: '' },
 ];
 
-export default function CryptoPageContainer({ messages, coinsData, dominanceData, fearGreedData }: CryptoPageContainerProps) {
+export default function CryptoPageContainer({ messages, coinsData, fearGreedData }: CryptoPageContainerProps) {
   const [activeTab, setActiveTab] = useState('livePrice');
 
   const tabs = TABS.map((t) => ({ ...t, label: messages.tabs[t.key] }));
@@ -55,7 +57,7 @@ export default function CryptoPageContainer({ messages, coinsData, dominanceData
       {activeTab === 'livePrice' && (
         <>
           <div className={styles.widgets}>
-            <DominanceChartContainer messages={messages.dominance} data={dominanceData} />
+            <DominanceChartContainer messages={messages.dominance} data={[]} />
             <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
           </div>
           <CoinListContainer messages={messages.coinList} data={coinsData} />
@@ -69,7 +71,7 @@ export default function CryptoPageContainer({ messages, coinsData, dominanceData
       {activeTab === 'fearIndex' && (
         <div className={styles.widgets}>
           <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
-          <DominanceChartContainer messages={messages.dominance} data={dominanceData} />
+          <DominanceChartContainer messages={messages.dominance} data={[]} />
         </div>
       )}
     </>

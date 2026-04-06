@@ -44,6 +44,13 @@ export interface DominanceData {
   others: number;
 }
 
+export interface DominanceTimeSeriesItem {
+  date: string;
+  btc: number;
+  eth: number;
+  others: number;
+}
+
 export interface FearGreedData {
   value: number;
   label: string;

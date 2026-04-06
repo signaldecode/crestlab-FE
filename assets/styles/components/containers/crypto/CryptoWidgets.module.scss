@@ -11,6 +11,7 @@
 
   @include respond-to(md) {
     flex-direction: row;
+    align-items: flex-start;
     gap: $spacing-lg;
   }
 }
