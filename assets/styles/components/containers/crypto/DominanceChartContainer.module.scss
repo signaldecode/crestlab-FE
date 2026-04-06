@@ -1,0 +1,58 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.dominance-chart {
+  flex: 1;
+  min-width: 0;
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  padding: $spacing-lg;
+}
+
+.dominance-chart__title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-lg;
+}
+
+.dominance-chart__bar {
+  display: flex;
+  height: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: $spacing-md;
+}
+
+.dominance-chart__segment--btc {
+  background: $color-chart-segment-1-end;
+  transition: width 0.5s ease;
+}
+
+.dominance-chart__segment--eth {
+  background: $color-chart-segment-2;
+  transition: width 0.5s ease;
+}
+
+.dominance-chart__segment--others {
+  background: $color-chart-segment-3;
+  transition: width 0.5s ease;
+}
+
+.dominance-chart__legend {
+  display: flex;
+  gap: $spacing-lg;
+  flex-wrap: wrap;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-family: $font-family-mono;
+  }
+}

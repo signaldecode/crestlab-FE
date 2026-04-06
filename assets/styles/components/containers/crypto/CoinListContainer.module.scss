@@ -1,0 +1,73 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.coin-list {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding;
+}
+
+.coin-list__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.coin-list__wrapper {
+  overflow-x: auto;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+}
+
+.coin-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+
+  @include respond-to(md) { font-size: $font-size-base; }
+
+  th {
+    text-align: left;
+    padding: $spacing-md $spacing-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-secondary;
+    background: $color-background-alt;
+    border-bottom: 0.0625rem solid $color-border;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 0.0625rem solid $color-border-light;
+    white-space: nowrap;
+    font-family: $font-family-mono;
+  }
+}
+
+.coin-list__row {
+  transition: background 0.15s;
+
+  &:hover { background: $color-background-alt; }
+  &:last-child td { border-bottom: none; }
+}
+
+.coin-list__cell--name {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-family: $font-family-sans;
+}
+
+.coin-list__symbol {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  min-width: 3rem;
+}
+
+.coin-list__cell--gain { color: $color-gain; }
+.coin-list__cell--loss { color: $color-loss; }

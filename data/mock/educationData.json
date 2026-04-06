@@ -1,0 +1,10 @@
+{
+  "videos": [
+    { "slug": "intro-to-investing", "title": "투자 입문 가이드", "description": "초보자를 위한 투자 기초 개념", "youtubeId": "dQw4w9WgXcQ", "category": "beginner", "thumbnail": "/images/education/intro.jpg", "duration": "12:34" },
+    { "slug": "candlestick-patterns", "title": "캔들스틱 패턴 분석", "description": "주요 캔들스틱 패턴과 활용법", "youtubeId": "dQw4w9WgXcQ", "category": "technical-analysis", "thumbnail": "/images/education/candle.jpg", "duration": "18:45" },
+    { "slug": "what-is-blockchain", "title": "블록체인이란?", "description": "블록체인 기술의 기본 원리", "youtubeId": "dQw4w9WgXcQ", "category": "crypto-basics", "thumbnail": "/images/education/blockchain.jpg", "duration": "15:20" },
+    { "slug": "reading-financial-statements", "title": "재무제표 읽는 법", "description": "기업 재무제표 핵심 분석", "youtubeId": "dQw4w9WgXcQ", "category": "beginner", "thumbnail": "/images/education/financial.jpg", "duration": "22:10" },
+    { "slug": "moving-averages", "title": "이동평균선 전략", "description": "이동평균선을 활용한 매매 전략", "youtubeId": "dQw4w9WgXcQ", "category": "technical-analysis", "thumbnail": "/images/education/ma.jpg", "duration": "16:55" },
+    { "slug": "defi-explained", "title": "DeFi 완벽 가이드", "description": "탈중앙화 금융의 이해", "youtubeId": "dQw4w9WgXcQ", "category": "crypto-basics", "thumbnail": "/images/education/defi.jpg", "duration": "20:30" }
+  ]
+}

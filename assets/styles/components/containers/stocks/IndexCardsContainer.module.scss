@@ -1,0 +1,66 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.index-cards {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding;
+}
+
+.index-cards__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.index-cards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to(sm) { grid-template-columns: repeat(2, 1fr); }
+  @include respond-to(lg) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.index-cards__card {
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  padding: $spacing-lg $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  transition: box-shadow 0.2s;
+
+  &:hover { box-shadow: $shadow-md; }
+}
+
+.index-cards__name {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+}
+
+.index-cards__price {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-mono;
+  color: $color-text-primary;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.index-cards__change {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-mono;
+}
+
+.index-cards__change--gain { color: $color-gain; }
+.index-cards__change--loss { color: $color-loss; }

@@ -1,10 +1,10 @@
 {
   "items": [
-    { "id": 1, "title": "글로벌 시장 분석: 2026년 2분기 전망", "source": "한국경제", "date": "2026-03-28", "summary": "미국 연준의 금리 정책 변화와 글로벌 경제 회복세에 따른 2분기 시장 전망을 분석합니다.", "thumbnail": "/images/news/placeholder-1.jpg", "url": "#" },
-    { "id": 2, "title": "AI 기반 투자 솔루션의 성장과 미래", "source": "매일경제", "date": "2026-03-25", "summary": "인공지능을 활용한 투자 솔루션이 기관 투자자들 사이에서 빠르게 확산되고 있습니다.", "thumbnail": "/images/news/placeholder-2.jpg", "url": "#" },
-    { "id": 3, "title": "ESG 투자 트렌드 2026", "source": "조선일보", "date": "2026-03-22", "summary": "환경·사회·지배구조 투자가 새로운 국면을 맞이하고 있습니다.", "thumbnail": "/images/news/placeholder-3.jpg", "url": "#" },
-    { "id": 4, "title": "미국 기술주 실적 시즌 프리뷰", "source": "서울경제", "date": "2026-03-18", "summary": "1분기 실적 발표를 앞둔 미국 주요 기술 기업들의 실적 전망을 살펴봅니다.", "thumbnail": "/images/news/placeholder-4.jpg", "url": "#" },
-    { "id": 5, "title": "국내 채권 시장 동향 분석", "source": "한국경제", "date": "2026-03-15", "summary": "금리 인하 기대감에 따른 국내 채권 시장의 움직임을 분석합니다.", "thumbnail": "/images/news/placeholder-5.jpg", "url": "#" },
-    { "id": 6, "title": "동남아 신흥시장 투자 가이드", "source": "매일경제", "date": "2026-03-10", "summary": "높은 성장 잠재력을 가진 동남아시아 시장에 대한 투자 전략을 소개합니다.", "thumbnail": "/images/news/placeholder-6.jpg", "url": "#" }
+    { "id": "1", "title": "S&P 500 Hits New All-Time High Amid Tech Rally", "summary": "The S&P 500 reached record levels as technology stocks led the broader market higher.", "source": "CNBC", "url": "#", "category": "stocks", "publishedAt": "2026-04-05T14:30:00Z", "thumbnail": "/images/news/placeholder-1.jpg" },
+    { "id": "2", "title": "Bitcoin Surges Past $68K on Institutional Demand", "summary": "Bitcoin prices climbed as major institutional investors increased their crypto allocations.", "source": "CoinDesk", "url": "#", "category": "crypto", "publishedAt": "2026-04-04T09:15:00Z", "thumbnail": "/images/news/placeholder-2.jpg" },
+    { "id": "3", "title": "Fed Signals Potential Rate Cut in Q3 2026", "summary": "Federal Reserve officials hinted at possible rate reductions as inflation continues to moderate.", "source": "Bloomberg", "url": "#", "category": "macro", "publishedAt": "2026-04-03T16:45:00Z", "thumbnail": "/images/news/placeholder-3.jpg" },
+    { "id": "4", "title": "NVIDIA Reports Record Revenue Driven by AI Chip Demand", "summary": "NVIDIA exceeded analyst expectations with record quarterly revenue fueled by data center growth.", "source": "CNBC", "url": "#", "category": "stocks", "publishedAt": "2026-04-02T11:00:00Z", "thumbnail": "/images/news/placeholder-4.jpg" },
+    { "id": "5", "title": "Ethereum Layer 2 Ecosystem Reaches $50B TVL", "summary": "The total value locked in Ethereum L2 solutions has surpassed $50 billion for the first time.", "source": "CoinDesk", "url": "#", "category": "crypto", "publishedAt": "2026-04-01T08:30:00Z", "thumbnail": "/images/news/placeholder-5.jpg" },
+    { "id": "6", "title": "Global GDP Growth Forecast Revised Upward", "summary": "The IMF has raised its global growth projection for 2026, citing resilient consumer spending.", "source": "Bloomberg", "url": "#", "category": "macro", "publishedAt": "2026-03-30T13:20:00Z", "thumbnail": "/images/news/placeholder-6.jpg" }
   ]
 }

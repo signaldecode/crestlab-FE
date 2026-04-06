@@ -1,0 +1,94 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.news-preview {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding;
+}
+
+.news-preview__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+  margin-top: $spacing-xl;
+
+  @include respond-to(md) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.news-preview__item {
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+
+  &:hover { box-shadow: $shadow-md; }
+}
+
+.news-preview__link {
+  display: block;
+  padding: $spacing-lg;
+  text-decoration: none;
+  color: inherit;
+}
+
+.news-preview__category {
+  display: inline-block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-text-accent;
+  background: $color-background-accent;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+  margin-bottom: $spacing-sm;
+}
+
+.news-preview__title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-snug;
+  margin-bottom: $spacing-sm;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @include respond-to(md) { font-size: $font-size-lg; }
+}
+
+.news-preview__summary {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: $spacing-md;
+}
+
+.news-preview__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.news-preview__view-all {
+  display: block;
+  text-align: center;
+  margin-top: $spacing-xl;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-accent;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover { color: $color-text-accent-dark; }
+}

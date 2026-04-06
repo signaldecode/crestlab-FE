@@ -1,0 +1,59 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.ticker-bar {
+  background: $color-secondary;
+  overflow: hidden;
+  padding: $spacing-sm 0;
+}
+
+.ticker-bar__track {
+  display: flex;
+  gap: $spacing-2xl;
+  white-space: nowrap;
+  animation: ticker-scroll 30s linear infinite;
+  width: max-content;
+}
+
+.ticker-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-on-dark;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+    gap: $spacing-md;
+  }
+}
+
+.ticker-bar__symbol {
+  font-weight: $font-weight-semibold;
+  color: $color-white-80;
+}
+
+.ticker-bar__price {
+  font-weight: $font-weight-medium;
+  font-family: $font-family-mono;
+}
+
+.ticker-bar__change {
+  font-family: $font-family-mono;
+  font-weight: $font-weight-medium;
+}
+
+.ticker-bar__item--gain .ticker-bar__change {
+  color: $color-gain;
+}
+
+.ticker-bar__item--loss .ticker-bar__change {
+  color: $color-loss;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

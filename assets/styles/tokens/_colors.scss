@@ -56,6 +56,14 @@ $color-error-dark: #b91c1c;
 $color-info: #3086f5;
 $color-highlight: #EC444B;
 
+// Financial — gain/loss/neutral
+$color-gain: #16a34a;
+$color-gain-bg: rgba(22, 163, 74, 0.1);
+$color-loss: #dc2626;
+$color-loss-bg: rgba(220, 38, 38, 0.1);
+$color-neutral: #767676;
+$color-neutral-bg: rgba(118, 118, 118, 0.1);
+
 // ==============================================
 // Opacity variants — 하드코딩 rgba 대체용
 // ==============================================

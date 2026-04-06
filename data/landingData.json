@@ -3,180 +3,27 @@
     "backgroundImage": "/mainpage/section1.0.jpg",
     "phoneImage": "/mainpage/front-side-view-photo-gray-smartphone-mobile-phone-without-background-template-mockup 1.png",
     "dashboardImage": "/mainpage/section1.3.png",
-    "mockupCards": [
-      { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-      { "icon": "/mainpage/section1.2.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-    ]
+    "mockupCards": []
   },
-  "partners": {
-    "logos": [
-      "/mainpage/section2.1.svg",
-      "/mainpage/section2.2.svg",
-      "/mainpage/section2.3.svg",
-      "/mainpage/section2.4.svg",
-      "/mainpage/section2.5.svg",
-      "/mainpage/section2.6.svg"
-    ]
-  },
-  "marketShare": {
-    "cards": [
-      {
-        "label": "Q1.",
-        "badgeVariant": "outlined",
-        "chartType": "pie",
-        "segments": [
-          { "label": "텍스트", "value": 48 },
-          { "label": "텍스트", "value": 32 },
-          { "label": "텍스트", "value": 20 }
-        ]
-      },
-      {
-        "label": "Q1.",
-        "badgeVariant": "outlined",
-        "chartType": "vbar",
-        "bars": [
-          { "value": 45, "label": "임시텍스트", "displayValue": "00%" },
-          { "value": 80, "label": "임시텍스트", "displayValue": "00%" },
-          { "value": 35, "label": "임시텍스트", "displayValue": "00%" }
-        ]
-      },
-      {
-        "label": "Q1.",
-        "badgeVariant": "filled",
-        "chartType": "hbar",
-        "bars": [
-          { "value": 90, "label": "임시텍스트", "displayValue": "00%" },
-          { "value": 60, "label": "임시텍스트", "displayValue": "00%" },
-          { "value": 40, "label": "임시텍스트", "displayValue": "00%" },
-          { "value": 30, "label": "임시텍스트", "displayValue": "00%" }
-        ]
-      }
-    ]
-  },
-  "performance": {
-    "cryptoCards": [
-      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
-      { "name": "리플", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
-      { "name": "비트코인", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (2).svg" },
-      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" },
-      { "name": "이더리움", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (3).svg" },
-      { "name": "도지코인", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2 (1).svg" },
-      { "name": "트론(TRX)", "amount": "-10,000,000 KRW", "rate": "1.82%", "icon": "/mainpage/Ellipse 2.svg" }
-    ]
-  },
-  "investmentTypes": {
-    "items": [
-      { "category": "한국주식", "title": "월배당투자", "image": "/mainpage/576107c6ebc7434fa50be6ba608ca57a3abaf553.png", "bgColor": "blue" },
-      { "category": "ETF", "title": "미국 한국 테마투자", "image": "/mainpage/00b11f4143cb0ef6d654a040a3c79cb671888056.png", "bgColor": "green" },
-      { "category": "ETF", "title": "한국 비트코인", "image": "/mainpage/0ecd04fbdcf57536a4ec563834b6a08aced6d21a.png", "bgColor": "pink" },
-      { "category": "한국주식", "title": "글로벌 배당투자", "image": "/mainpage/576107c6ebc7434fa50be6ba608ca57a3abaf553.png", "bgColor": "green" },
-      { "category": "ETF", "title": "AI 테마투자", "image": "/mainpage/00b11f4143cb0ef6d654a040a3c79cb671888056.png", "bgColor": "blue" }
-    ]
-  },
-  "plans": {
-    "icon": "📦",
-    "items": [
-      {
-        "tag": "일반계좌",
-        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
-        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
-        "image": "/mainpage/section1.3.png",
-        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-      },
-      {
-        "tag": "일반계좌",
-        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
-        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
-        "image": "/mainpage/section1.3.png",
-        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-      },
-      {
-        "tag": "일반계좌",
-        "title": "전략 구성부터 자산 매매까지,\n모두 알아서 해주는 AI 일임투자",
-        "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요",
-        "image": "/mainpage/section1.3.png",
-        "mockupCard": { "icon": "/mainpage/section1.1.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-      }
-    ]
-  },
-  "trust": {
-    "items": [
-      { "title": "개인정보 보호", "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요" },
-      { "title": "개인정보 보호", "description": "투자가 어렵거나, 신경쓸 시간이 부족하신가요? 그렇다면 추천드려요" }
-    ],
-    "lockIcon": "/mainpage/material-symbols_lock.svg",
-    "portfolioCards": [
-      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-      { "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-    ]
-  },
-  "points": {
-    "items": [
-      {
-        "point": "Point 01",
-        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
-        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
-        "image": "/mainpage/d2b902950f1f0e226f9e0e59e4fb2083fd5afb7e.png"
-      },
-      {
-        "point": "Point 02",
-        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
-        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
-        "image": "/mainpage/section1.3.png"
-      },
-      {
-        "point": "Point 03",
-        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
-        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
-        "cryptoItems": [
-          { "icon": "/mainpage/Ellipse 2.svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-          { "icon": "/mainpage/Ellipse 2 (1).svg", "name": "이더리움", "amount": "-10,000,000 KRW", "value": "1,642 ETH" },
-          { "icon": "/mainpage/Ellipse 2 (2).svg", "name": "비트코인", "amount": "-10,000,000 KRW", "value": "1,642 ETH" }
-        ]
-      },
-      {
-        "point": "Point 04",
-        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
-        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
-        "image": "/mainpage/d2b902950f1f0e226f9e0e59e4fb2083fd5afb7e.png"
-      },
-      {
-        "point": "Point 05",
-        "title": "시장 동향을 고려한\n최신 트렌드 비트코인",
-        "description": "최신 채용공고를 기반으로 현 시장에서\n가장 필요로 하는 인재로 성장할 수 있어요.",
-        "image": "/mainpage/section1.3.png"
-      }
-    ]
-  },
-  "progress": {
-    "heartIcon": "/mainpage/38ddf1f3788dfaef3e6536ccace6a35706a7f9da.png",
-    "bellIcon": "/mainpage/3d-notification-bell-with-social-media-engagement-icons 1.png",
-    "phoneMockup": "/mainpage/section1.4.png"
-  },
+  "ticker": [
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 },
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 },
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 }
+  ],
   "faq": {
     "items": [
-      {
-        "question": "기본 플랜과 프로페셔널 플랜의 가장 큰 차이점은 무엇인가요?",
-        "answer": "해당 제품은 건성·중성·복합성 피부를 중심으로 개발되었으며, 민감성 피부도 사용하실 수 있도록 저자극 테스트를 완료했습니다. 개인의 피부 상태에 따라 차이가 있을 수 있으니 사용 전 전성분을 확인해 주세요."
-      },
-      {
-        "question": "SEO 효과는 언제부터 나타나나요?",
-        "answer": "임시 답변입니다."
-      },
-      {
-        "question": "광고(SEM)와 SEO의 차이는 무엇인가요?",
-        "answer": "임시 답변입니다."
-      },
-      {
-        "question": "기본 플랜과 프로페셔널 플랜의 가장 큰 차이점은 무엇인가요?",
-        "answer": "임시 답변입니다."
-      },
-      {
-        "question": "기존 사이트를 유지한 채 SEO 개선이 가능한가요?",
-        "answer": "임시 답변입니다."
-      }
+      { "question": "faq.q1", "answer": "faq.a1" },
+      { "question": "faq.q2", "answer": "faq.a2" },
+      { "question": "faq.q3", "answer": "faq.a3" }
     ]
   }
 }

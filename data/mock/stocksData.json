@@ -1,0 +1,17 @@
+{
+  "indices": [
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "DJI", "name": "Dow Jones", "price": 39142.56, "change": 128.47, "changePercent": 0.33 }
+  ],
+  "stocks": [
+    { "symbol": "AAPL", "name": "Apple Inc.", "price": 192.53, "change": 2.41, "changePercent": 1.27, "volume": 58432100, "marketCap": 2980000000000, "sector": "tech" },
+    { "symbol": "GOOGL", "name": "Alphabet Inc.", "price": 155.72, "change": -1.18, "changePercent": -0.75, "volume": 24310500, "marketCap": 1920000000000, "sector": "tech" },
+    { "symbol": "MSFT", "name": "Microsoft Corp.", "price": 420.15, "change": 5.32, "changePercent": 1.28, "volume": 21543200, "marketCap": 3120000000000, "sector": "tech" },
+    { "symbol": "AMZN", "name": "Amazon.com Inc.", "price": 186.24, "change": 0.87, "changePercent": 0.47, "volume": 35621800, "marketCap": 1940000000000, "sector": "consumer" },
+    { "symbol": "TSLA", "name": "Tesla Inc.", "price": 175.42, "change": -3.56, "changePercent": -1.99, "volume": 92145300, "marketCap": 558000000000, "sector": "consumer" },
+    { "symbol": "XOM", "name": "Exxon Mobil Corp.", "price": 112.87, "change": 1.23, "changePercent": 1.10, "volume": 15234600, "marketCap": 452000000000, "sector": "energy" },
+    { "symbol": "JPM", "name": "JPMorgan Chase", "price": 198.35, "change": 3.12, "changePercent": 1.60, "volume": 8542100, "marketCap": 572000000000, "sector": "finance" },
+    { "symbol": "JNJ", "name": "Johnson & Johnson", "price": 156.89, "change": -0.45, "changePercent": -0.29, "volume": 6234500, "marketCap": 378000000000, "sector": "healthcare" }
+  ]
+}

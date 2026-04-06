@@ -1,0 +1,97 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.stock-table {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding;
+}
+
+.stock-table__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.stock-table__filters {
+  display: flex;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-xl;
+}
+
+.stock-table__filter {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $color-primary;
+    color: $color-primary;
+  }
+}
+
+.stock-table__filter--active {
+  background: $color-primary;
+  color: $color-text-on-dark;
+  border-color: $color-primary;
+}
+
+.stock-table__wrapper {
+  overflow-x: auto;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+}
+
+.stock-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: $font-size-sm;
+
+  @include respond-to(md) { font-size: $font-size-base; }
+
+  th {
+    text-align: left;
+    padding: $spacing-md $spacing-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-secondary;
+    background: $color-background-alt;
+    border-bottom: 0.0625rem solid $color-border;
+    white-space: nowrap;
+  }
+
+  td {
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 0.0625rem solid $color-border-light;
+    white-space: nowrap;
+    font-family: $font-family-mono;
+  }
+}
+
+.stock-table__row {
+  transition: background 0.15s;
+
+  &:hover { background: $color-background-alt; }
+  &:last-child td { border-bottom: none; }
+}
+
+.stock-table__cell--symbol {
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  font-family: $font-family-sans;
+}
+
+.stock-table__cell--gain { color: $color-gain; }
+.stock-table__cell--loss { color: $color-loss; }

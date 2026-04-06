@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import { Link } from '@/i18n/navigation';
+import useAuthStore from '@/stores/useAuthStore';
+import useUIStore from '@/stores/useUIStore';
 
 interface NavItem {
   label: string;
@@ -27,6 +29,8 @@ interface AppHeaderProps {
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { isLoggedIn, logout } = useAuthStore();
+  const { openLoginModal } = useUIStore();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,6 +67,33 @@ export default function AppHeader({ data }: AppHeaderProps) {
         </nav>
 
         <div className={styles['right-group']}>
+          <div className={styles['auth-buttons']}>
+            {isLoggedIn ? (
+              <button
+                type="button"
+                className={styles['btn-logout']}
+                onClick={logout}
+              >
+                {data.logout}
+              </button>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  className={styles['btn-login']}
+                  onClick={openLoginModal}
+                >
+                  {data.login}
+                </button>
+                <Link href="/register" className={styles['btn-cta']}>
+                  {data.cta}
+                </Link>
+              </>
+            )}
+          </div>
+
+          <LanguageSwitcher label={data.language} />
+
           <button
             type="button"
             className={`${styles.hamburger} ${mobileOpen ? styles['hamburger--open'] : ''}`}
@@ -74,8 +105,6 @@ export default function AppHeader({ data }: AppHeaderProps) {
             <span className={styles['hamburger-bar']} />
             <span className={styles['hamburger-bar']} />
           </button>
-
-          <LanguageSwitcher label={data.language} />
         </div>
       </div>
 
@@ -94,6 +123,27 @@ export default function AppHeader({ data }: AppHeaderProps) {
                 </Link>
               </li>
             ))}
+            <li className={styles['mobile-item']}>
+              {isLoggedIn ? (
+                <button
+                  type="button"
+                  className={styles['mobile-link']}
+                  onClick={() => { logout(); setMobileOpen(false); }}
+                >
+                  {data.logout}
+                </button>
+              ) : (
+                <>
+                  <button
+                    type="button"
+                    className={styles['mobile-link']}
+                    onClick={() => { openLoginModal(); setMobileOpen(false); }}
+                  >
+                    {data.login}
+                  </button>
+                </>
+              )}
+            </li>
           </ul>
         </nav>
       )}
