@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import NewsFeedContainer from '@/components/containers/news/NewsFeedContainer';
+import NewsPageContainer from '@/components/containers/news/NewsPageContainer';
 import type { NewsItem } from '@/types/finance';
 import newsData from '@/data/newsData.json';
 
@@ -14,15 +14,35 @@ export async function generateMetadata() {
 export default async function NewsPage() {
   const t = await getTranslations('news');
 
-  const msg = {
-    title: t('title'),
-    filterAll: t('filterAll'),
-    categories: {
-      stocks: t('categories.stocks'),
-      crypto: t('categories.crypto'),
-      macro: t('categories.macro'),
+  const messages = {
+    tabs: {
+      autoFeed: t('tabs.autoFeed'),
+      marketMovers: t('tabs.marketMovers'),
+      indices: t('tabs.indices'),
+    },
+    autoFeed: {
+      title: t('autoFeed.title'),
+      filterAll: t('autoFeed.filterAll'),
+      categories: {
+        stocks: t('autoFeed.categories.stocks'),
+        crypto: t('autoFeed.categories.crypto'),
+        macro: t('autoFeed.categories.macro'),
+      },
+    },
+    marketMovers: {
+      title: t('marketMovers.title'),
+      gainers: t('marketMovers.gainers'),
+      losers: t('marketMovers.losers'),
+    },
+    indices: {
+      title: t('indices.title'),
     },
   };
 
-  return <NewsFeedContainer messages={msg} data={newsData.items as NewsItem[]} />;
+  return (
+    <NewsPageContainer
+      messages={messages}
+      newsData={newsData.items as NewsItem[]}
+    />
+  );
 }

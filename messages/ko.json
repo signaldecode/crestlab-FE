@@ -4,11 +4,15 @@
       "logo": "CrestLab",
       "nav": {
         "home": "홈",
-        "stocks": "US Stocks",
-        "crypto": "Crypto",
-        "education": "Education",
-        "news": "News",
-        "about": "About"
+        "stocks": "미국 증시",
+        "crypto": "암호화폐",
+        "markets": "더보기"
+      },
+      "marketsDropdown": {
+        "education": "교육자료",
+        "news": "뉴스",
+        "about": "회사소개",
+        "disclaimer": "면책 고지"
       },
       "language": "언어",
       "cta": "회원가입",
@@ -41,7 +45,21 @@
     "faq": { "title": "자주 묻는 질문" }
   },
   "stocks": {
+    "tabs": {
+      "livePrices": "Live Prices",
+      "chartView": "Chart View",
+      "watchlist": "Watchlist"
+    },
     "indices": { "title": "주요 지수" },
+    "watchlist": {
+      "title": "Watchlist",
+      "empty": "관심 종목을 추가해보세요.",
+      "addPlaceholder": "티커 입력 (예: AAPL)"
+    },
+    "chartView": {
+      "title": "Chart View",
+      "selectStock": "종목을 선택하세요"
+    },
     "table": {
       "title": "실시간 주식 가격",
       "filterAll": "전체",
@@ -50,6 +68,11 @@
     }
   },
   "crypto": {
+    "tabs": {
+      "livePrice": "Live Price",
+      "top100": "Top 100",
+      "fearIndex": "Fear Index"
+    },
     "dominance": { "title": "BTC 도미넌스", "btcLabel": "Bitcoin", "ethLabel": "Ethereum", "othersLabel": "Others" },
     "fearGreed": {
       "title": "공포/탐욕 지수",
@@ -61,15 +84,46 @@
     }
   },
   "education": {
-    "title": "교육 콘텐츠",
-    "filterAll": "전체",
-    "categories": { "beginner": "입문", "technicalAnalysis": "기술적 분석", "cryptoBasics": "암호화폐 기초" },
+    "title": "Education",
+    "tabs": {
+      "videos": "Videos",
+      "articles": "Articles",
+      "faq": "FAQ"
+    },
+    "videos": {
+      "title": "교육 영상",
+      "filterAll": "전체",
+      "categories": { "beginner": "입문", "technicalAnalysis": "기술적 분석", "cryptoBasics": "암호화폐 기초" }
+    },
+    "articles": {
+      "title": "아티클",
+      "empty": "등록된 아티클이 없습니다."
+    },
+    "faq": {
+      "title": "자주 묻는 질문"
+    },
     "backToList": "목록으로"
   },
   "news": {
-    "title": "뉴스",
-    "filterAll": "전체",
-    "categories": { "stocks": "주식", "crypto": "암호화폐", "macro": "거시경제" }
+    "title": "News",
+    "tabs": {
+      "autoFeed": "Auto Feed",
+      "marketMovers": "Market Movers",
+      "indices": "Indices"
+    },
+    "autoFeed": {
+      "title": "실시간 뉴스",
+      "filterAll": "전체",
+      "categories": { "stocks": "주식", "crypto": "암호화폐", "macro": "거시경제" }
+    },
+    "marketMovers": {
+      "title": "Market Movers",
+      "gainers": "상승 TOP",
+      "losers": "하락 TOP"
+    },
+    "indices": {
+      "title": "주요 지수 현황"
+    }
   },
   "about": {
     "title": "About CrestLab",

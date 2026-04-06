@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import VideoCategoryContainer from '@/components/containers/education/VideoCategoryContainer';
+import EducationPageContainer from '@/components/containers/education/EducationPageContainer';
 import type { VideoItem } from '@/types/finance';
 import educationData from '@/data/mock/educationData.json';
 
@@ -14,15 +14,34 @@ export async function generateMetadata() {
 export default async function EducationPage() {
   const t = await getTranslations('education');
 
-  const msg = {
-    title: t('title'),
-    filterAll: t('filterAll'),
-    categories: {
-      beginner: t('categories.beginner'),
-      'technical-analysis': t('categories.technicalAnalysis'),
-      'crypto-basics': t('categories.cryptoBasics'),
+  const messages = {
+    tabs: {
+      videos: t('tabs.videos'),
+      articles: t('tabs.articles'),
+      faq: t('tabs.faq'),
+    },
+    videos: {
+      title: t('videos.title'),
+      filterAll: t('videos.filterAll'),
+      categories: {
+        beginner: t('videos.categories.beginner'),
+        'technical-analysis': t('videos.categories.technicalAnalysis'),
+        'crypto-basics': t('videos.categories.cryptoBasics'),
+      },
+    },
+    articles: {
+      title: t('articles.title'),
+      empty: t('articles.empty'),
+    },
+    faq: {
+      title: t('faq.title'),
     },
   };
 
-  return <VideoCategoryContainer messages={msg} data={educationData.videos as VideoItem[]} />;
+  return (
+    <EducationPageContainer
+      messages={messages}
+      videosData={educationData.videos as VideoItem[]}
+    />
+  );
 }
