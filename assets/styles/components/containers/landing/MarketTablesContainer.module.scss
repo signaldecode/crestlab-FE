@@ -1,0 +1,98 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.market-tables {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding;
+}
+
+.market-tables__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-2xl;
+
+  @include respond-to(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-3xl;
+  }
+}
+
+.market-tables__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.market-tables__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-background-dark;
+  letter-spacing: $letter-spacing-tight;
+  text-transform: uppercase;
+  margin: 0 0 $spacing-md;
+
+  @include respond-to(md) {
+    font-size: 1.75rem;
+  }
+}
+
+.market-tables__table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.market-tables__head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: $spacing-sm 0;
+  border-bottom: 0.0625rem solid $color-border;
+}
+
+.market-tables__row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  height: 4.5rem;
+  padding: 0 $spacing-md;
+  transition: background 0.15s;
+
+  &:hover {
+    background: $color-background-light;
+  }
+}
+
+.market-tables__row--alt {
+  background: $color-background;
+}
+
+.market-tables__cell {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  text-align: center;
+}
+
+.market-tables__cell--name {
+  text-align: left;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.market-tables__cell--gain {
+  color: $color-highlight;
+  font-weight: $font-weight-medium;
+}
+
+.market-tables__cell--loss {
+  color: $color-loss;
+  font-weight: $font-weight-medium;
+}

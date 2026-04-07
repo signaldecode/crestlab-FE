@@ -47,9 +47,7 @@ export default function NewsFeedContainer({ messages, data }: NewsFeedContainerP
         {filtered.map((item) => (
           <article key={item.id} className={styles['news-feed__item']}>
             <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/news/${item.slug}`}
               className={styles['news-feed__link']}
             >
               <span className={styles['news-feed__category']}>{messages.categories[item.category] ?? item.category}</span>
@@ -58,7 +56,7 @@ export default function NewsFeedContainer({ messages, data }: NewsFeedContainerP
               <div className={styles['news-feed__meta']}>
                 <span>{item.source}</span>
                 <time dateTime={item.publishedAt}>
-                  {new Date(item.publishedAt).toLocaleDateString()}
+                  {new Date(item.publishedAt).toISOString().slice(0, 10)}
                 </time>
               </div>
             </a>

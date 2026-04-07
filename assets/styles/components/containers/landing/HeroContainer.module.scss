@@ -113,9 +113,9 @@
   height: auto;
   display: block;
   filter: drop-shadow($drop-shadow-md);
-  @include respond-to(sm) { width: 16rem; }
-  @include respond-to(md) { width: 20rem; }
-  @include respond-to(lg) { width: 28rem; }
+  @include respond-to(sm) { width: 28rem; }
+  @include respond-to(md) { width: 32rem; }
+  @include respond-to(lg) { width: 40rem; }
 }
 
 // ==========================================================
@@ -164,22 +164,28 @@
   @include respond-to(md) {
     display: block;
     position: absolute;
-    right: 0;
-    bottom: $spacing-3xl;
+    right: 10%;
+    bottom: $spacing-6xl;
     z-index: 2;
   }
-  @include respond-to(lg) { right: 5%; }
+  @include respond-to(lg) { right: 15%; }
 }
 
 .dashboard-img {
   width: 11rem;
   height: auto;
   border-radius: 0.75rem;
-  box-shadow: $shadow-lg;
+  animation: fade-up 0.8s ease-out 0.4s both, floating 3s ease-in-out infinite;
   @include respond-to(lg) { width: 16rem; }
 }
 
 @keyframes fade-up {
   from { opacity: 0; transform: translateY($spacing-xl); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-$spacing-sm); }
+  100% { transform: translateY(0); }
 }

@@ -1,8 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import HeroContainer from '@/components/containers/landing/HeroContainer';
 import TickerBarContainer from '@/components/containers/landing/TickerBarContainer';
-import StocksPreviewContainer from '@/components/containers/landing/StocksPreviewContainer';
-import CryptoPreviewContainer from '@/components/containers/landing/CryptoPreviewContainer';
+import FeaturedCarouselContainer from '@/components/containers/landing/FeaturedCarouselContainer';
+import MarketTablesContainer from '@/components/containers/landing/MarketTablesContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
 import FaqContainer from '@/components/containers/landing/FaqContainer';
 import landingData from '@/data/landingData.json';
@@ -21,10 +21,38 @@ export default async function HomePage() {
   };
 
   const tickerMsg = { ariaLabel: t('ticker.ariaLabel') };
-  const stocksPreviewMsg = { title: t('stocksPreview.title'), viewAll: t('stocksPreview.viewAll') };
-  const cryptoPreviewMsg = { title: t('cryptoPreview.title'), viewAll: t('cryptoPreview.viewAll') };
-  const newsPreviewMsg = { title: t('newsPreview.title'), viewAll: t('newsPreview.viewAll') };
+
+  const featuredMsg = {
+    title: t('featured.title'),
+    subtitle: t('featured.subtitle'),
+    prevAriaLabel: t('featured.prevAriaLabel'),
+    nextAriaLabel: t('featured.nextAriaLabel'),
+  };
+
+  const marketTablesMsg = {
+    stocksTitle: t('marketTables.stocksTitle'),
+    cryptoTitle: t('marketTables.cryptoTitle'),
+    headers: {
+      name: t('marketTables.headers.name'),
+      price: t('marketTables.headers.price'),
+      change: t('marketTables.headers.change'),
+      volume: t('marketTables.headers.volume'),
+    },
+  };
+
+  const newsPreviewMsg = {
+    title: t('newsPreview.title'),
+    subtitle: t('newsPreview.subtitle'),
+    tabs: {
+      all: t('newsPreview.tabs.all'),
+      stocks: t('newsPreview.tabs.stocks'),
+      crypto: t('newsPreview.tabs.crypto'),
+    },
+  };
+
   const faqMsg = { title: t('faq.title') };
+
+  const featuredItems = stocksData.stocks.map((s) => ({ symbol: s.symbol, name: s.name }));
 
   return (
     <>
@@ -32,11 +60,15 @@ export default async function HomePage() {
       <HeroContainer data={heroMsg} landingData={landingData.hero} />
       {/* 실시간 티커 바 */}
       <TickerBarContainer data={landingData.ticker} messages={tickerMsg} />
-      {/* US Stocks 프리뷰 */}
-      <StocksPreviewContainer messages={stocksPreviewMsg} data={stocksData.stocks} />
-      {/* Crypto 프리뷰 */}
-      <CryptoPreviewContainer messages={cryptoPreviewMsg} data={cryptoData.coins} />
-      {/* 뉴스 프리뷰 */}
+      {/* 주목 종목 캐러셀 */}
+      <FeaturedCarouselContainer messages={featuredMsg} items={featuredItems} />
+      {/* US Stocks + Crypto 시세 테이블 */}
+      <MarketTablesContainer
+        messages={marketTablesMsg}
+        stocks={stocksData.stocks}
+        coins={cryptoData.coins}
+      />
+      {/* 뉴스 */}
       <NewsPreviewContainer messages={newsPreviewMsg} data={newsData.items as never} />
       {/* FAQ */}
       <FaqContainer messages={faqMsg} data={landingData.faq} />

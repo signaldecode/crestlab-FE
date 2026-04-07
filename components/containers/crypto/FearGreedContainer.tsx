@@ -22,12 +22,10 @@ interface FearGreedContainerProps {
 const GAUGE_COLORS = ['#2563EB', '#60A5FA', '#94A3B8', '#4ADE80', '#22C55E'];
 
 function getLevel(value: number) {
-  if (value <= 15) return 'extremeFear';
-  if (value <= 30) return 'fear';
-  if (value <= 40) return 'mildFear';
+  if (value <= 24) return 'extremeFear';
+  if (value <= 44) return 'fear';
   if (value <= 55) return 'neutral';
-  if (value <= 65) return 'mildGreed';
-  if (value <= 80) return 'greed';
+  if (value <= 75) return 'greed';
   return 'extremeGreed';
 }
 
@@ -43,11 +41,14 @@ function getLevelColor(value: number) {
  * SVG 호(arc) 경로 — 시계방향 반원
  * angleDeg: 0°=우측(3시), 반시계로 증가. 반원은 180°(좌)→0°(우)
  */
+// SSR/CSR 간 부동소수점 직렬화 차이로 인한 hydration mismatch 방지를 위해 좌표를 반올림
+const round3 = (n: number) => Math.round(n * 1000) / 1000;
+
 function polarToXY(cx: number, cy: number, r: number, angleDeg: number) {
   const rad = (angleDeg * Math.PI) / 180;
   return {
-    x: cx + r * Math.cos(rad),
-    y: cy - r * Math.sin(rad),
+    x: round3(cx + r * Math.cos(rad)),
+    y: round3(cy - r * Math.sin(rad)),
   };
 }
 

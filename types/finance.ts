@@ -66,13 +66,16 @@ export interface FearGreedData {
 // News
 export interface NewsItem {
   id: string;
+  slug: string;
   title: string;
   summary: string;
+  content?: string[];
   source: string;
   url: string;
   category: 'stocks' | 'crypto' | 'macro';
   publishedAt: string;
   thumbnail?: string;
+  author?: string;
 }
 
 // Education

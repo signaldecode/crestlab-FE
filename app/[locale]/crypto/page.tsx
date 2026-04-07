@@ -50,9 +50,7 @@ export default async function CryptoPage() {
       labels: {
         extremeFear: t('fearGreed.labels.extremeFear'),
         fear: t('fearGreed.labels.fear'),
-        mildFear: t('fearGreed.labels.mildFear'),
         neutral: t('fearGreed.labels.neutral'),
-        mildGreed: t('fearGreed.labels.mildGreed'),
         greed: t('fearGreed.labels.greed'),
         extremeGreed: t('fearGreed.labels.extremeGreed'),
       },
