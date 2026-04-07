@@ -3,8 +3,10 @@ import HeroContainer from '@/components/containers/landing/HeroContainer';
 import TickerBarContainer from '@/components/containers/landing/TickerBarContainer';
 import FeaturedCarouselContainer from '@/components/containers/landing/FeaturedCarouselContainer';
 import MarketTablesContainer from '@/components/containers/landing/MarketTablesContainer';
+import FeatureCardsContainer, {
+  type FeatureCardItem,
+} from '@/components/containers/landing/FeatureCardsContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
-import FaqContainer from '@/components/containers/landing/FaqContainer';
 import landingData from '@/data/landingData.json';
 import stocksData from '@/data/mock/stocksData.json';
 import cryptoData from '@/data/mock/cryptoData.json';
@@ -40,6 +42,21 @@ export default async function HomePage() {
     },
   };
 
+  const featureCardsMsg = {
+    title: t('featureCards.title'),
+    subtitle: t('featureCards.subtitle'),
+  };
+
+  const featureCardKeys = ['01', '02', '03', '04'] as const;
+  const featureCardItems: FeatureCardItem[] = featureCardKeys.map((key) => ({
+    index: key,
+    frontTitle: t(`featureCards.items.${key}.frontTitle`),
+    frontDescription: t(`featureCards.items.${key}.frontDescription`),
+    backTitle: t(`featureCards.items.${key}.backTitle`),
+    backDescription: t(`featureCards.items.${key}.backDescription`),
+    ariaLabel: t(`featureCards.items.${key}.ariaLabel`),
+  }));
+
   const newsPreviewMsg = {
     title: t('newsPreview.title'),
     subtitle: t('newsPreview.subtitle'),
@@ -68,10 +85,10 @@ export default async function HomePage() {
         stocks={stocksData.stocks}
         coins={cryptoData.coins}
       />
+      {/* Feature flip cards */}
+      <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
       {/* 뉴스 */}
       <NewsPreviewContainer messages={newsPreviewMsg} data={newsData.items as never} />
-      {/* FAQ */}
-      <FaqContainer messages={faqMsg} data={landingData.faq} />
     </>
   );
 }

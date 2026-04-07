@@ -1,0 +1,145 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/breakpoints' as *;
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  perspective: 1200px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  &:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+    border-radius: 1rem;
+  }
+}
+
+.flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+// Hover flip — only on devices with a fine pointer (mouse).
+// Touch devices fall back to click toggle handled in JS.
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card__inner {
+    transform: rotateY(180deg);
+  }
+}
+
+// Click-toggled flipped state (used on touch devices and as keyboard fallback)
+.flip-card--flipped .flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+// Reduced motion: disable rotation, fall back to opacity swap
+@media (prefers-reduced-motion: reduce) {
+  .flip-card__inner {
+    transition: none;
+  }
+
+  .flip-card:hover .flip-card__inner,
+  .flip-card--flipped .flip-card__inner {
+    transform: none;
+  }
+
+  .flip-card:hover .flip-card__face--front,
+  .flip-card--flipped .flip-card__face--front {
+    opacity: 0;
+  }
+
+  .flip-card:hover .flip-card__face--back,
+  .flip-card--flipped .flip-card__face--back {
+    opacity: 1;
+  }
+}
+
+.flip-card__face {
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: $spacing-lg $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(165deg, rgba(15, 32, 70, 0.85) 0%, rgba(10, 22, 51, 0.95) 100%);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.2s;
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-xl $spacing-lg;
+  }
+}
+
+.flip-card__face--front {
+  z-index: 2;
+}
+
+.flip-card__face--back {
+  transform: rotateY(180deg);
+  background: linear-gradient(165deg, rgba(48, 134, 245, 0.25) 0%, rgba(10, 22, 51, 0.95) 100%);
+  justify-content: center;
+
+  @media (prefers-reduced-motion: reduce) {
+    transform: none;
+    opacity: 0;
+  }
+}
+
+.flip-card__index {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.flip-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1 1 auto;
+  margin: $spacing-sm 0;
+
+  svg {
+    width: 60%;
+    height: auto;
+    max-width: 6rem;
+  }
+}
+
+.flip-card__title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: #ffffff;
+  margin: 0;
+  line-height: $line-height-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.flip-card__description {
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}

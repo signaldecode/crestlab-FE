@@ -55,6 +55,40 @@
         "volume": "거래대금"
       }
     },
+    "featureCards": {
+      "title": "CrestLab을 선택하는 이유",
+      "subtitle": "실시간 데이터, AI 분석, 교육 콘텐츠를 한 곳에서 제공합니다.",
+      "items": {
+        "01": {
+          "frontTitle": "실시간 시장 데이터",
+          "frontDescription": "미국 주식과 암호화폐 가격을 1분 단위로 갱신합니다.",
+          "backTitle": "24시간 커버리지",
+          "backDescription": "S&P 500, NASDAQ, DOW, BTC, ETH 등 4,000개 이상 종목을 신뢰할 수 있는 데이터 공급자로부터 직접 제공받습니다.",
+          "ariaLabel": "실시간 시장 데이터 — 플립 카드"
+        },
+        "02": {
+          "frontTitle": "AI 기반 분석",
+          "frontDescription": "모든 차트에 패턴 감지와 시그널 스코어링을 적용합니다.",
+          "backTitle": "스마트 인사이트",
+          "backDescription": "추세, 모멘텀, 변동성 모델이 중요한 신호를 놓치지 않도록 도와줍니다.",
+          "ariaLabel": "AI 기반 분석 — 플립 카드"
+        },
+        "03": {
+          "frontTitle": "암호화폐 심리 지표",
+          "frontDescription": "BTC 도미넌스와 공포/탐욕 지수를 한눈에 확인하세요.",
+          "backTitle": "시장 분위기",
+          "backDescription": "과거 심리 변화와 도미넌스 흐름을 추적해 더 나은 매매 타이밍을 잡으세요.",
+          "ariaLabel": "암호화폐 심리 지표 — 플립 카드"
+        },
+        "04": {
+          "frontTitle": "투자자 교육",
+          "frontDescription": "입문 기초부터 기술적 분석 전략까지.",
+          "backTitle": "투자하며 배우기",
+          "backDescription": "엄선된 영상 강의, 용어집, 따라하기 가이드를 4개 언어로 제공합니다.",
+          "ariaLabel": "투자자 교육 — 플립 카드"
+        }
+      }
+    },
     "newsPreview": {
       "title": "NEWS",
       "subtitle": "최신 시장 뉴스와 분석을 한곳에서 확인하세요",
@@ -87,6 +121,29 @@
       "filterAll": "전체",
       "columns": { "symbol": "티커", "name": "종목명", "price": "현재가", "change": "변동률", "volume": "거래량", "marketCap": "시가총액" },
       "sectors": { "tech": "기술", "energy": "에너지", "finance": "금융", "healthcare": "헬스케어", "consumer": "소비재", "industrial": "산업" }
+    },
+    "detail": {
+      "currentPrice": "현재가",
+      "periodOpen": "기간 시작가",
+      "volume": "거래량",
+      "open": "시가",
+      "high": "고가",
+      "low": "저가",
+      "close": "종가",
+      "shares": "주",
+      "closeAriaLabel": "종목 상세 닫기",
+      "periods": { "1w": "1주", "1m": "1개월", "3m": "3개월", "1y": "1년", "5y": "5년" },
+      "tooltipDate": "날짜",
+      "tooltipOpen": "시가",
+      "tooltipHigh": "고가",
+      "tooltipLow": "저가",
+      "tooltipClose": "종가",
+      "tooltipVolume": "거래량",
+      "chartType": {
+        "line": "선",
+        "candle": "봉",
+        "ariaLabel": "차트 종류"
+      }
     }
   },
   "crypto": {

@@ -6,9 +6,9 @@
       "title": "S&P 500 Hits New All-Time High Amid Tech Rally",
       "summary": "The S&P 500 reached record levels as technology stocks led the broader market higher.",
       "content": [
-        "S&P 500 지수가 기술주 강세에 힘입어 사상 최고치를 경신했습니다. 주요 빅테크 종목들이 일제히 상승하며 지수 상승을 이끌었습니다.",
-        "특히 AI 반도체 관련주와 클라우드 서비스 기업들의 주가가 두드러진 강세를 보였습니다. 시장 참가자들은 견조한 실적과 가이던스 상향을 긍정적으로 평가했습니다.",
-        "전문가들은 단기 급등에 따른 차익 실현 매물 출회 가능성을 경계하면서도, 중장기 추세는 여전히 우상향이라는 견해를 유지하고 있습니다."
+        "The S&P 500 closed at a fresh all-time high on Friday, propelled by a broad-based rally in mega-cap technology stocks. The benchmark index has now posted gains in five of the past six sessions.",
+        "Semiconductor names tied to artificial intelligence infrastructure and cloud-services providers led the advance, as investors continued to reward companies delivering above-consensus earnings and raised guidance.",
+        "Strategists cautioned that profit-taking is likely after such a sharp run, but maintained that the medium-term trend remains constructive given resilient corporate fundamentals."
       ],
       "source": "CNBC",
       "author": "Market Desk",
@@ -23,9 +23,9 @@
       "title": "Bitcoin Surges Past $68K on Institutional Demand",
       "summary": "Bitcoin prices climbed as major institutional investors increased their crypto allocations.",
       "content": [
-        "비트코인 가격이 기관 투자자들의 매수세에 힘입어 6만 8천 달러를 돌파했습니다.",
-        "현물 ETF로의 자금 유입이 지속되면서 시장 유동성이 크게 개선되고 있습니다. 일부 헤지펀드와 자산운용사들은 포트폴리오 내 디지털 자산 비중을 확대하고 있는 것으로 알려졌습니다.",
-        "온체인 데이터 또한 장기 보유자들의 매도 압력이 줄어드는 모습을 보여주며 추가 상승에 대한 기대감을 키우고 있습니다."
+        "Bitcoin pushed above $68,000 on Friday as sustained inflows into spot ETFs and growing balance-sheet allocations from institutional investors lifted the largest cryptocurrency to multi-week highs.",
+        "Asset managers and macro hedge funds reportedly increased their digital-asset exposure, citing improving regulatory clarity and portfolio diversification benefits.",
+        "On-chain data showed long-term holders continuing to absorb supply, a dynamic analysts say has historically preceded extended uptrends."
       ],
       "source": "CoinDesk",
       "author": "Crypto Desk",
@@ -40,9 +40,9 @@
       "title": "Fed Signals Potential Rate Cut in Q3 2026",
       "summary": "Federal Reserve officials hinted at possible rate reductions as inflation continues to moderate.",
       "content": [
-        "연방준비제도(Fed) 위원들이 인플레이션 둔화세를 근거로 2026년 3분기 금리 인하 가능성을 시사했습니다.",
-        "최근 발표된 고용 지표와 소비자물가지수(CPI) 모두 시장 예상에 부합하는 수준을 보이며 정책 전환의 명분을 제공하고 있습니다.",
-        "시장에서는 이미 연내 두 차례의 금리 인하를 가격에 반영하고 있으며, 채권 금리는 하락세로 돌아섰습니다."
+        "Several Federal Reserve officials signaled this week that the central bank could begin cutting interest rates as early as the third quarter of 2026, citing continued moderation in core inflation and a cooling labor market.",
+        "Recent CPI and payroll prints came in line with consensus, giving policymakers room to pivot away from the restrictive stance maintained over the past year.",
+        "Bond markets have already priced in roughly two cuts before year-end, with the 10-year Treasury yield retreating from recent highs."
       ],
       "source": "Bloomberg",
       "author": "Macro Team",
@@ -57,9 +57,9 @@
       "title": "NVIDIA Reports Record Revenue Driven by AI Chip Demand",
       "summary": "NVIDIA exceeded analyst expectations with record quarterly revenue fueled by data center growth.",
       "content": [
-        "엔비디아(NVIDIA)가 데이터센터 부문 성장에 힘입어 분기 사상 최대 매출을 기록했습니다.",
-        "AI 가속기에 대한 수요가 폭발적으로 증가하면서 매출과 이익 모두 시장 전망치를 큰 폭으로 상회했습니다. 회사는 다음 분기 가이던스 또한 상향 조정했습니다.",
-        "차세대 GPU 공급이 본격화되면서 향후 실적 모멘텀이 이어질 것으로 전망됩니다."
+        "NVIDIA reported record quarterly revenue, comfortably beating Wall Street estimates as data-center sales of its AI accelerators continued to outpace supply.",
+        "Both top- and bottom-line figures topped consensus, and the company guided next-quarter revenue meaningfully above analyst expectations.",
+        "Management said volume shipments of its next-generation GPUs are ramping on schedule, supporting continued earnings momentum into the second half of the year."
       ],
       "source": "CNBC",
       "author": "Tech Desk",
@@ -74,9 +74,9 @@
       "title": "Ethereum Layer 2 Ecosystem Reaches $50B TVL",
       "summary": "The total value locked in Ethereum L2 solutions has surpassed $50 billion for the first time.",
       "content": [
-        "이더리움 레이어2(L2) 생태계의 총 예치 자산(TVL)이 사상 처음으로 500억 달러를 돌파했습니다.",
-        "Arbitrum, Optimism, Base 등 주요 L2 네트워크의 활동량이 가파르게 증가하면서 디파이(DeFi) 시장 전반에 활력을 불어넣고 있습니다.",
-        "낮은 수수료와 빠른 처리 속도를 무기로 신규 사용자 유입이 가속화되고 있으며, 이더리움 메인넷의 부담을 효과적으로 분산시키고 있습니다."
+        "Total value locked across Ethereum Layer 2 networks crossed the $50 billion milestone for the first time, underscoring the rapid scaling of the broader Ethereum ecosystem.",
+        "Activity on Arbitrum, Optimism and Base continues to expand, with DeFi protocols and consumer applications driving sustained user growth.",
+        "Cheaper fees and faster confirmation times are accelerating onboarding while easing congestion on Ethereum mainnet."
       ],
       "source": "CoinDesk",
       "author": "DeFi Desk",
@@ -91,9 +91,9 @@
       "title": "Global GDP Growth Forecast Revised Upward",
       "summary": "The IMF has raised its global growth projection for 2026, citing resilient consumer spending.",
       "content": [
-        "국제통화기금(IMF)이 견조한 소비 지출을 근거로 2026년 글로벌 GDP 성장률 전망치를 상향 조정했습니다.",
-        "선진국과 신흥국 모두 예상보다 강한 회복세를 보이고 있으며, 특히 서비스업 부문이 성장을 주도하고 있다고 분석했습니다.",
-        "다만 IMF는 지정학적 리스크와 일부 지역의 부채 문제를 주요 하방 위험 요인으로 지목했습니다."
+        "The International Monetary Fund raised its 2026 global GDP growth forecast, citing resilient consumer spending across both advanced and emerging economies.",
+        "Service-sector activity remains the primary engine of growth, while goods demand has stabilized after last year's slowdown.",
+        "The IMF flagged geopolitical tensions and elevated debt levels in several regions as the most prominent downside risks to its outlook."
       ],
       "source": "Bloomberg",
       "author": "Macro Team",

@@ -19,11 +19,12 @@ interface StockTableContainerProps {
     sectors: Record<string, string>;
   };
   data: StockItem[];
+  onSelect?: (stock: StockItem) => void;
 }
 
 const SECTORS: Array<StockSector | 'all'> = ['all', 'tech', 'energy', 'finance', 'healthcare', 'consumer', 'industrial'];
 
-export default function StockTableContainer({ messages, data }: StockTableContainerProps) {
+export default function StockTableContainer({ messages, data, onSelect }: StockTableContainerProps) {
   const [activeSector, setActiveSector] = useState<StockSector | 'all'>('all');
 
   const filtered = activeSector === 'all'
@@ -65,22 +66,41 @@ export default function StockTableContainer({ messages, data }: StockTableContai
             </tr>
           </thead>
           <tbody>
-            {filtered.map((stock) => (
-              <tr key={stock.symbol} className={styles['stock-table__row']}>
-                <td className={styles['stock-table__cell--symbol']}>{stock.symbol}</td>
-                <td>{stock.name}</td>
-                <td>${stock.price.toLocaleString()}</td>
-                <td
-                  className={
-                    stock.change >= 0 ? styles['stock-table__cell--gain'] : styles['stock-table__cell--loss']
+            {filtered.map((stock) => {
+              const clickable = Boolean(onSelect);
+              return (
+                <tr
+                  key={stock.symbol}
+                  className={`${styles['stock-table__row']} ${clickable ? styles['stock-table__row--clickable'] : ''}`}
+                  tabIndex={clickable ? 0 : undefined}
+                  role={clickable ? 'button' : undefined}
+                  onClick={clickable ? () => onSelect!(stock) : undefined}
+                  onKeyDown={
+                    clickable
+                      ? (e) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            onSelect!(stock);
+                          }
+                        }
+                      : undefined
                   }
                 >
-                  {stock.change >= 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%
-                </td>
-                <td>{(stock.volume / 1e6).toFixed(1)}M</td>
-                <td>${(stock.marketCap / 1e9).toFixed(0)}B</td>
-              </tr>
-            ))}
+                  <td className={styles['stock-table__cell--symbol']}>{stock.symbol}</td>
+                  <td>{stock.name}</td>
+                  <td>${stock.price.toLocaleString()}</td>
+                  <td
+                    className={
+                      stock.change >= 0 ? styles['stock-table__cell--gain'] : styles['stock-table__cell--loss']
+                    }
+                  >
+                    {stock.change >= 0 ? '+' : ''}{stock.changePercent.toFixed(2)}%
+                  </td>
+                  <td>{(stock.volume / 1e6).toFixed(1)}M</td>
+                  <td>${(stock.marketCap / 1e9).toFixed(0)}B</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

@@ -49,6 +49,31 @@ export default async function StocksPage() {
       title: t('chartView.title'),
       selectStock: t('chartView.selectStock'),
     },
+    detail: {
+      currentPrice: t('detail.currentPrice'),
+      periodOpen: t('detail.periodOpen'),
+      volume: t('detail.volume'),
+      shares: t('detail.shares'),
+      closeAriaLabel: t('detail.closeAriaLabel'),
+      periods: {
+        '1w': t('detail.periods.1w'),
+        '1m': t('detail.periods.1m'),
+        '3m': t('detail.periods.3m'),
+        '1y': t('detail.periods.1y'),
+        '5y': t('detail.periods.5y'),
+      },
+      tooltipDate: t('detail.tooltipDate'),
+      tooltipOpen: t('detail.tooltipOpen'),
+      tooltipHigh: t('detail.tooltipHigh'),
+      tooltipLow: t('detail.tooltipLow'),
+      tooltipClose: t('detail.tooltipClose'),
+      tooltipVolume: t('detail.tooltipVolume'),
+      chartType: {
+        line: t('detail.chartType.line'),
+        candle: t('detail.chartType.candle'),
+        ariaLabel: t('detail.chartType.ariaLabel'),
+      },
+    },
   };
 
   return (

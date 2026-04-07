@@ -4,7 +4,8 @@ import { useState } from 'react';
 import PageTabs from '@/components/ui/PageTabs';
 import IndexCardsContainer from './IndexCardsContainer';
 import StockTableContainer from './StockTableContainer';
-import type { StockIndex, StockItem } from '@/types/finance';
+import StockDetailModal from './StockDetailModal';
+import type { StockIndex, StockItem, StockPeriod } from '@/types/finance';
 
 interface StocksPageContainerProps {
   messages: {
@@ -32,6 +33,25 @@ interface StocksPageContainerProps {
       title: string;
       selectStock: string;
     };
+    detail: {
+      currentPrice: string;
+      periodOpen: string;
+      volume: string;
+      shares: string;
+      closeAriaLabel: string;
+      periods: Record<StockPeriod, string>;
+      tooltipDate: string;
+      tooltipOpen: string;
+      tooltipHigh: string;
+      tooltipLow: string;
+      tooltipClose: string;
+      tooltipVolume: string;
+      chartType: {
+        line: string;
+        candle: string;
+        ariaLabel: string;
+      };
+    };
   };
   indicesData: StockIndex[];
   stocksData: StockItem[];
@@ -45,8 +65,13 @@ const TABS = [
 
 export default function StocksPageContainer({ messages, indicesData, stocksData }: StocksPageContainerProps) {
   const [activeTab, setActiveTab] = useState('livePrices');
+  const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
 
   const tabs = TABS.map((t) => ({ ...t, label: messages.tabs[t.key] }));
+
+  const selectedStock = selectedSymbol
+    ? stocksData.find((s) => s.symbol === selectedSymbol) ?? null
+    : null;
 
   return (
     <>
@@ -55,8 +80,20 @@ export default function StocksPageContainer({ messages, indicesData, stocksData 
       {activeTab === 'livePrices' && (
         <>
           <IndexCardsContainer messages={messages.indices} data={indicesData} />
-          <StockTableContainer messages={messages.table} data={stocksData} />
+          <StockTableContainer
+            messages={messages.table}
+            data={stocksData}
+            onSelect={(stock) => setSelectedSymbol(stock.symbol)}
+          />
         </>
+      )}
+
+      {selectedStock && (
+        <StockDetailModal
+          messages={messages.detail}
+          stock={selectedStock}
+          onClose={() => setSelectedSymbol(null)}
+        />
       )}
 
       {activeTab === 'chartView' && (

@@ -186,6 +186,6 @@
 
 @keyframes floating {
   0% { transform: translateY(0); }
-  50% { transform: translateY(-$spacing-sm); }
+  50% { transform: translateY(-$spacing-xl); }
   100% { transform: translateY(0); }
 }

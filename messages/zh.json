@@ -4,9 +4,15 @@
       "logo": "CrestLab",
       "nav": {
         "home": "首页",
-        "about": "公司介绍",
-        "lectures": "课程上传",
-        "support": "客服支持"
+        "stocks": "美股",
+        "crypto": "加密货币",
+        "markets": "更多"
+      },
+      "marketsDropdown": {
+        "education": "教育",
+        "news": "新闻",
+        "about": "关于",
+        "disclaimer": "免责声明"
       },
       "language": "语言",
       "cta": "注册",
@@ -15,57 +21,251 @@
       "logout": "退出登录"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "copyright": "© 2026 CrestLab. All rights reserved.",
       "links": {
-        "terms": "使用条款",
-        "privacy": "隐私政策",
-        "disclaimer": "投资注意事项"
+        "about": "关于",
+        "disclaimer": "免责声明",
+        "privacy": "隐私政策"
       },
-      "disclaimer": "投资存在本金损失的风险，过去的收益率不保证未来的收益率。"
+      "disclaimer": "本网站信息不构成投资建议，投资存在本金损失风险。"
     },
     "skipToContent": "跳转至正文"
   },
   "landing": {
     "hero": {
-      "title": "1,349,789人选择的\n简单便捷投资的开始，CrestLab",
-      "subtitle": "想更轻松便捷地管理您的资产？让AI自动交易股票、ETF等，在CrestLab开始投资吧！",
-      "cta": "下载",
-      "ctaAriaLabel": "下载CrestLab应用"
+      "title": "全球金融市场\n尽在掌握",
+      "subtitle": "美股与加密货币的实时数据、AI 驱动的分析以及专业教育内容，一站式呈现。",
+      "cta": "立即开始",
+      "ctaAriaLabel": "开始使用 CrestLab"
     },
-    "partners": {
-      "title": "已有500多家企业与潜在客户一起成长，欢迎加入。"
+    "ticker": { "ariaLabel": "实时行情股票代码" },
+    "featured": {
+      "title": "当前值得关注的标的",
+      "subtitle": "查看实时更新的全球热门股票",
+      "prevAriaLabel": "查看上一只股票",
+      "nextAriaLabel": "查看下一只股票"
     },
-    "marketShare": {
-      "title": "值得信赖的市场份额\n和管理资产规模",
-      "badgeLabel": "韩国人最常使用的第一名智能投顾"
+    "marketTables": {
+      "stocksTitle": "美股",
+      "cryptoTitle": "加密货币",
+      "headers": {
+        "name": "名称",
+        "price": "价格",
+        "change": "涨跌幅",
+        "volume": "成交量"
+      }
     },
-    "performance": {
-      "title": "经过验证的投资解决方案运营业绩，\n请查看收益率",
-      "subtitle": "在通过KOSCOM智能投顾测试平台的投资解决方案中，\nCrestLab的股票解决方案拥有韩国最长运营时间的算法",
-      "annualReturn": "年回报率"
+    "featureCards": {
+      "title": "为什么选择 CrestLab",
+      "subtitle": "实时数据、AI 分析、教育内容，一站搞定。",
+      "items": {
+        "01": {
+          "frontTitle": "实时市场数据",
+          "frontDescription": "美股与加密货币价格每分钟刷新。",
+          "backTitle": "全天候覆盖",
+          "backDescription": "S&P 500、NASDAQ、DOW、BTC、ETH 等 4,000 多个品种，由可信数据源直接推送。",
+          "ariaLabel": "实时市场数据 — 翻转卡片"
+        },
+        "02": {
+          "frontTitle": "AI 驱动分析",
+          "frontDescription": "为每一张图表提供模式识别与信号评分。",
+          "backTitle": "智能洞察",
+          "backDescription": "趋势、动量与波动率模型助您不错过任何关键信号。",
+          "ariaLabel": "AI 驱动分析 — 翻转卡片"
+        },
+        "03": {
+          "frontTitle": "加密市场情绪",
+          "frontDescription": "BTC 占有率与恐惧贪婪指数一目了然。",
+          "backTitle": "市场情绪",
+          "backDescription": "追踪历史情绪变化与占有率走向,把握更精准的入场时机。",
+          "ariaLabel": "加密市场情绪 — 翻转卡片"
+        },
+        "04": {
+          "frontTitle": "投资者教育",
+          "frontDescription": "从入门基础到技术分析策略。",
+          "backTitle": "边交易边学习",
+          "backDescription": "精选视频课程、术语表与操作指南,提供四种语言版本。",
+          "ariaLabel": "投资者教育 — 翻转卡片"
+        }
+      }
     },
-    "investmentTypes": {
-      "title": "您想进行\n什么样的投资？",
-      "subtitle": "在通过KOSCOM智能投顾测试平台的投资解决方案中"
+    "newsPreview": {
+      "title": "NEWS",
+      "subtitle": "最新市场新闻与分析,一站尽览",
+      "tabs": {
+        "all": "全部",
+        "stocks": "Stocks",
+        "crypto": "Crypto"
+      }
     },
-    "plans": {
-      "title": "AI需要到什么程度？\n按投资风格选择"
+    "faq": { "title": "常见问题" }
+  },
+  "stocks": {
+    "tabs": {
+      "livePrices": "Live Prices",
+      "chartView": "Chart View",
+      "watchlist": "Watchlist"
     },
-    "trust": {
-      "title": "我的钱和个人信息\n可以放心交给CrestLab吗？"
+    "indices": { "title": "主要指数" },
+    "watchlist": {
+      "title": "自选列表",
+      "empty": "请添加您关注的股票。",
+      "addPlaceholder": "输入股票代码 (例如：AAPL)"
     },
-    "points": {
-      "title": "值得信赖的市场份额\n和管理资产规模"
+    "chartView": {
+      "title": "Chart View",
+      "selectStock": "请选择股票"
     },
-    "progress": {
-      "title": "只需查看进度\n其余交给CrestLab"
+    "table": {
+      "title": "实时股价",
+      "filterAll": "全部",
+      "columns": { "symbol": "代码", "name": "名称", "price": "价格", "change": "涨跌幅", "volume": "成交量", "marketCap": "市值" },
+      "sectors": { "tech": "科技", "energy": "能源", "finance": "金融", "healthcare": "医疗", "consumer": "消费", "industrial": "工业" }
     },
-    "reviews": {
-      "cta": "写下您的CrestLab评价"
+    "detail": {
+      "currentPrice": "现价",
+      "periodOpen": "区间开盘",
+      "volume": "成交量",
+      "open": "开盘",
+      "high": "最高",
+      "low": "最低",
+      "close": "收盘",
+      "shares": "股",
+      "closeAriaLabel": "关闭股票详情",
+      "periods": { "1w": "1周", "1m": "1月", "3m": "3月", "1y": "1年", "5y": "5年" },
+      "tooltipDate": "日期",
+      "tooltipOpen": "开盘",
+      "tooltipHigh": "最高",
+      "tooltipLow": "最低",
+      "tooltipClose": "收盘",
+      "tooltipVolume": "成交量",
+      "chartType": {
+        "line": "折线",
+        "candle": "K线",
+        "ariaLabel": "图表类型"
+      }
+    }
+  },
+  "crypto": {
+    "tabs": {
+      "livePrice": "Live Price",
+      "top100": "Top 100",
+      "fearIndex": "Fear Index"
+    },
+    "dominance": {
+      "title": "比特币占有率图表",
+      "subtitle": "全球加密货币市场份额走势",
+      "btcLabel": "比特币",
+      "ethLabel": "以太坊",
+      "othersLabel": "其他",
+      "asOf": "截至今日 24:00",
+      "periods": {
+        "1w": "1周",
+        "1m": "1月",
+        "3m": "3月",
+        "1y": "1年",
+        "5y": "5年"
+      }
+    },
+    "fearGreed": {
+      "title": "比特币恐惧与贪婪指数",
+      "subtitle": "基于资产价格与成交量，将市场情绪划分为恐惧到贪婪的五个阶段。",
+      "asOf": "截至今日 24:00",
+      "currentTitle": "当前指数",
+      "currentDescription": "指数正在受到市场参与者心理上的支撑与阻力。在成交量与流动性较高的市场中，这意味着短期价格走势的关键拐点。",
+      "historyTitle": "历史指数",
+      "historyLabels": {
+        "1d": "1天前",
+        "1w": "1周前",
+        "1m": "1月前",
+        "3m": "3月前"
+      },
+      "labels": {
+        "extremeFear": "极度恐惧",
+        "fear": "恐惧",
+        "neutral": "中性",
+        "greed": "贪婪",
+        "extremeGreed": "极度贪婪"
+      },
+      "legendLabels": {
+        "0": "极度恐惧",
+        "1": "恐惧",
+        "2": "中性",
+        "3": "贪婪",
+        "4": "极度贪婪"
+      }
+    },
+    "coinList": {
+      "title": "加密货币行情",
+      "columns": { "name": "名称", "price": "价格", "change24h": "24小时涨跌", "marketCap": "市值", "volume": "成交量" }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "tabs": {
+      "videos": "Videos",
+      "articles": "Articles",
+      "faq": "FAQ"
+    },
+    "videos": {
+      "title": "教育视频",
+      "filterAll": "全部",
+      "categories": { "beginner": "入门", "technicalAnalysis": "技术分析", "cryptoBasics": "加密货币基础" }
+    },
+    "articles": {
+      "title": "文章",
+      "empty": "暂无已发布文章。"
     },
     "faq": {
-      "title": "客户常见问题，\n在这里确认"
+      "title": "常见问题"
+    },
+    "backToList": "返回列表"
+  },
+  "news": {
+    "title": "News",
+    "tabs": {
+      "autoFeed": "Auto Feed",
+      "marketMovers": "Market Movers",
+      "indices": "Indices"
+    },
+    "autoFeed": {
+      "title": "实时新闻",
+      "filterAll": "全部",
+      "categories": { "stocks": "股票", "crypto": "加密货币", "macro": "宏观经济" }
+    },
+    "marketMovers": {
+      "title": "Market Movers",
+      "gainers": "涨幅榜",
+      "losers": "跌幅榜"
+    },
+    "indices": {
+      "title": "主要指数行情"
+    },
+    "detail": {
+      "backToList": "返回新闻列表",
+      "publishedOn": "发布日期",
+      "by": "作者",
+      "source": "来源",
+      "shareTitle": "分享本文",
+      "originalLink": "查看原文",
+      "relatedTitle": "相关新闻",
+      "notFoundTitle": "未找到该文章",
+      "breadcrumbHome": "首页",
+      "breadcrumbNews": "新闻",
+      "disclaimer": "本文仅供参考，不构成投资建议。"
     }
+  },
+  "about": {
+    "title": "About CrestLab",
+    "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台，提供美股与加密货币市场的实时数据，将投资者所需的信息汇集于一处。",
+    "mission": { "title": "使命", "description": "为全球投资者提供可靠的金融数据与分析工具，支持明智的投资决策。" },
+    "vision": { "title": "愿景", "description": "成为基于 AI 与大数据的全球金融信息平台领先者。" }
+  },
+  "disclaimer": {
+    "title": "免责声明 (Disclaimer)",
+    "content": "本网站提供的信息不构成投资建议、金融顾问意见或其他专业建议。基于本网站信息所作出的任何投资决定，责任完全由用户本人承担。过往业绩不代表未来收益，所有投资均存在本金损失的风险。",
+    "registrationTitle": "公司信息",
+    "registrationNumber": "营业执照号: 000-00-00000"
   },
   "auth": {
     "login": {
@@ -226,5 +426,13 @@
       "confirmDelete": "确定要删除吗？",
       "cancel": "取消"
     }
+  },
+  "seo": {
+    "stocks": { "title": "US Stocks | CrestLab", "description": "查看美股实时价格、主要指数及行业板块行情。" },
+    "crypto": { "title": "Crypto | CrestLab", "description": "查看加密货币实时行情、BTC 占有率以及恐惧与贪婪指数。" },
+    "education": { "title": "Education | CrestLab", "description": "从投资入门到技术分析，提供系统化的教育内容。" },
+    "news": { "title": "News | CrestLab", "description": "实时获取全球金融市场最新新闻。" },
+    "about": { "title": "About | CrestLab", "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台。" },
+    "disclaimer": { "title": "Disclaimer | CrestLab", "description": "关于使用 CrestLab 服务的免责声明与法律事项。" }
   }
 }

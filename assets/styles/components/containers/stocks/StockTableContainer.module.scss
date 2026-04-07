@@ -87,6 +87,15 @@
   &:last-child td { border-bottom: none; }
 }
 
+.stock-table__row--clickable {
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $color-text-accent;
+    outline-offset: -2px;
+  }
+}
+
 .stock-table__cell--symbol {
   font-weight: $font-weight-bold;
   color: $color-text-primary;

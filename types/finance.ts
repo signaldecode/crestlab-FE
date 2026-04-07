@@ -18,6 +18,19 @@ export interface StockItem {
   sector: string;
 }
 
+export interface OHLCV {
+  date: string;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  volume: number;
+}
+
+export type StockPeriod = '1w' | '1m' | '3m' | '1y' | '5y';
+
+export type StockHistory = Record<StockPeriod, OHLCV[]>;
+
 export type StockSector =
   | 'tech'
   | 'energy'
