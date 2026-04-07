@@ -6,13 +6,17 @@
 @use '../../tokens/shadows' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: $z-index-sticky;
   padding: $spacing-md $spacing-lg;
   transition: padding 0.35s ease;
+}
+
+.header--sticky {
+  position: sticky;
 }
 
 .header--scrolled {

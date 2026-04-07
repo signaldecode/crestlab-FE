@@ -4,7 +4,10 @@
 @use '../../../tokens/breakpoints' as *;
 
 .ticker-bar {
-  background: $color-secondary;
+  background: $color-white-80;
+  backdrop-filter: blur(0.375rem);
+  border-top: 0.0625rem solid $color-white-10;
+  border-bottom: 0.0625rem solid $color-white-10;
   overflow: hidden;
   padding: $spacing-sm 0;
 }
@@ -21,32 +24,35 @@
   display: inline-flex;
   align-items: center;
   gap: $spacing-sm;
-  font-size: $font-size-sm;
-  color: $color-text-on-dark;
+  padding: $spacing-sm 0;
+  letter-spacing: $letter-spacing-tight;
+}
 
-  @include respond-to(md) {
-    font-size: $font-size-base;
-    gap: $spacing-md;
-  }
+.ticker-bar__info {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
 }
 
 .ticker-bar__symbol {
-  font-weight: $font-weight-semibold;
-  color: $color-white-80;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
 }
 
 .ticker-bar__price {
+  font-size: $font-size-lg;
   font-weight: $font-weight-medium;
-  font-family: $font-family-mono;
+  color: $color-text-primary;
 }
 
 .ticker-bar__change {
-  font-family: $font-family-mono;
-  font-weight: $font-weight-medium;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-regular;
 }
 
 .ticker-bar__item--gain .ticker-bar__change {
-  color: $color-gain;
+  color: $color-highlight;
 }
 
 .ticker-bar__item--loss .ticker-bar__change {

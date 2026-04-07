@@ -112,7 +112,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: $spacing-md;
-  margin-top: $spacing-md;
+  margin-top: $spacing-lg;
 }
 
 .fear-greed__legend-item {
@@ -219,13 +219,39 @@
 }
 
 // ══════════════════════════════════════
+// SVG 게이지 텍스트 스타일
+// ══════════════════════════════════════
+.gauge-svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.gauge-svg__value {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-extrabold;
+  font-family: $font-family-mono;
+  fill: $color-text-primary;
+}
+
+.gauge-svg__label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+}
+
+.gauge-svg__full-label {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  fill: $color-text-primary;
+}
+
+// ══════════════════════════════════════
 // Compact 모드 (Live Price 탭용)
 // ══════════════════════════════════════
 .fear-greed--compact {
   background: $color-background;
   border: 0.0625rem solid $color-border;
   border-radius: 0.75rem;
-  padding: $spacing-lg;
+  padding: $spacing-lg $spacing-lg $spacing-md $spacing-lg;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -233,7 +259,7 @@
   flex-shrink: 0;
 
   @include respond-to(md) {
-    min-width: 16rem;
+    min-width: 17rem;
   }
 }
 
@@ -241,39 +267,5 @@
   font-size: $font-size-base;
   font-weight: $font-weight-semibold;
   color: $color-text-primary;
-  margin-bottom: $spacing-md;
-}
-
-.fear-greed__compact-gauge {
-  position: relative;
-  width: 15rem;
-  height: 8.5rem;
-}
-
-.fear-greed__compact-label {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $spacing-xs;
-}
-
-.fear-greed__compact-value {
-  font-size: $font-size-3xl;
-  font-weight: $font-weight-extrabold;
-  font-family: $font-family-mono;
-  color: $color-text-primary;
-  line-height: 1;
-}
-
-.fear-greed__compact-badge {
-  font-size: $font-size-xs;
-  font-weight: $font-weight-semibold;
-  color: $color-text-on-dark;
-  padding: $spacing-xs $spacing-md;
-  border-radius: 2rem;
-  white-space: nowrap;
+  margin-bottom: $spacing-sm;
 }

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
-import { Link } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 import useAuthStore from '@/stores/useAuthStore';
 import useUIStore from '@/stores/useUIStore';
 
@@ -30,6 +30,8 @@ export default function AppHeader({ data }: AppHeaderProps) {
   const { isLoggedIn, logout } = useAuthStore();
   const { openLoginModal } = useUIStore();
   const dropdownRef = useRef<HTMLLIElement>(null);
+  const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -53,7 +55,7 @@ export default function AppHeader({ data }: AppHeaderProps) {
   }));
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles['header--scrolled'] : ''}`}>
+    <header className={`${styles.header} ${isHome ? '' : styles['header--sticky']} ${scrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
           {data.logo}

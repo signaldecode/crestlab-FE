@@ -96,6 +96,8 @@ export default function HeroContainer({ data, landingData }: HeroContainerProps)
             className={styles['dashboard-img']}
           />
         </div>
+
+        <div className={styles['background-text']}>CRAST LAB</div>
       </div>
     </section>
   );

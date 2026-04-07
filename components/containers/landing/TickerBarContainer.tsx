@@ -21,12 +21,14 @@ export default function TickerBarContainer({ data, messages }: TickerBarContaine
               item.change >= 0 ? styles['ticker-bar__item--gain'] : styles['ticker-bar__item--loss']
             }`}
           >
-            <span className={styles['ticker-bar__symbol']}>{item.symbol}</span>
-            <span className={styles['ticker-bar__price']}>
-              ${item.price.toLocaleString()}
+            <span className={styles['ticker-bar__info']}>
+              <span className={styles['ticker-bar__symbol']}>{item.symbol}</span>
+              <span className={styles['ticker-bar__price']}>
+                {item.price.toLocaleString()}
+              </span>
             </span>
             <span className={styles['ticker-bar__change']}>
-              {item.change >= 0 ? '▲' : '▼'} {Math.abs(item.changePercent).toFixed(2)}%
+              {item.change >= 0 ? '+' : '-'}{Math.abs(item.changePercent).toFixed(2)}%
             </span>
           </span>
         ))}

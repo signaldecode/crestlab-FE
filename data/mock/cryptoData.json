@@ -8,7 +8,7 @@
     { "id": "cardano", "symbol": "ADA", "name": "Cardano", "price": 0.4521, "change24h": 1.87, "marketCap": 15900000000, "volume24h": 456000000, "image": "/images/coins/ada.svg" }
   ],
   "fearGreed": {
-    "value": 48,
+    "value": 64,
     "label": "Neutral",
     "timestamp": "2026-04-06T00:00:00Z",
     "history": {
