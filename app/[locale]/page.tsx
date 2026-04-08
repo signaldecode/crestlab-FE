@@ -10,6 +10,7 @@ import IntersectionContainer from '@/components/containers/landing/IntersectionC
 import RotatingHeadlineContainer, {
   type RotatingHeadlineItem,
 } from '@/components/containers/landing/RotatingHeadlineContainer';
+import RollingCounterContainer from '@/components/containers/landing/RollingCounterContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
 import landingData from '@/data/landingData.json';
 import stocksData from '@/data/mock/stocksData.json';
@@ -87,6 +88,16 @@ export default async function HomePage() {
     iconAlt: t(`rotatingHeadline.items.${key}.iconAlt`),
   }));
 
+  const rollingCounterTarget = 9999999;
+  const rollingCounterMsg = {
+    title: t('rollingCounter.title'),
+    subtitle: t('rollingCounter.subtitle'),
+    description: t('rollingCounter.description'),
+    valueAriaLabel: t('rollingCounter.valueAriaLabel', {
+      value: new Intl.NumberFormat('en-US').format(rollingCounterTarget),
+    }),
+  };
+
   const faqMsg = { title: t('faq.title') };
 
   const featuredItems = stocksData.stocks.map((s) => ({ symbol: s.symbol, name: s.name }));
@@ -111,6 +122,8 @@ export default async function HomePage() {
       </IntersectionContainer>
       {/* Rotating headline — sticky 3D wheel of trust pillars */}
       <RotatingHeadlineContainer messages={rotatingHeadlineMsg} items={rotatingHeadlineItems} />
+      {/* Rolling counter — count-up stat triggered on viewport entry */}
+      <RollingCounterContainer messages={rollingCounterMsg} targetValue={rollingCounterTarget} />
       {/* 뉴스 */}
       <NewsPreviewContainer messages={newsPreviewMsg} data={newsData.items as never} />
     </>

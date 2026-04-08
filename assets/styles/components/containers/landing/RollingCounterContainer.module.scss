@@ -1,0 +1,153 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ─────────────────────────────────────────────────────────────
+// Stat counter section.
+//
+// Triggered by IntersectionObserver: when the section enters the viewport
+// the JS counts a single number value from 0 → target with an ease-out.
+// Each digit is rendered into its own white card; commas live in their
+// own slot so the layout stays stable as the value increases.
+// ─────────────────────────────────────────────────────────────
+
+.rolling-counter {
+  position: relative;
+  padding: $spacing-3xl 0;
+  background: #34d399; // vibrant emerald — see screenshot
+  color: #ffffff;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl 0;
+  }
+}
+
+.rolling-counter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+.rolling-counter__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  margin: 0 0 $spacing-xs;
+  color: #ffffff;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.rolling-counter__subtitle {
+  font-size: $font-size-xs;
+  margin: 0 0 $spacing-xl;
+  color: rgba(255, 255, 255, 0.85);
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.rolling-counter__display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: $spacing-xs;
+  margin-bottom: $spacing-xl;
+  font-variant-numeric: tabular-nums;
+
+  @include respond-to(md) {
+    gap: $spacing-sm;
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.rolling-counter__digit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2.6rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #34d399;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  line-height: 1;
+
+  @include respond-to(sm) {
+    width: 2.6rem;
+    height: 3.4rem;
+    font-size: $font-size-2xl;
+    border-radius: 0.65rem;
+  }
+
+  @include respond-to(md) {
+    width: 3.5rem;
+    height: 4.6rem;
+    font-size: $font-size-3xl;
+    border-radius: 0.85rem;
+  }
+
+  @include respond-to(lg) {
+    width: 4.5rem;
+    height: 5.8rem;
+    font-size: $font-size-5xl;
+    border-radius: 1rem;
+  }
+}
+
+.rolling-counter__separator {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 2.6rem;
+  padding-bottom: 0.4rem;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: #ffffff;
+  line-height: 1;
+
+  @include respond-to(sm) {
+    height: 3.4rem;
+    font-size: $font-size-2xl;
+  }
+
+  @include respond-to(md) {
+    height: 4.6rem;
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    height: 5.8rem;
+    font-size: $font-size-5xl;
+  }
+}
+
+.rolling-counter__description {
+  max-width: 38rem;
+  margin: 0;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  color: rgba(255, 255, 255, 0.92);
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}

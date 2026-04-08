@@ -89,6 +89,12 @@
         }
       }
     },
+    "rollingCounter": {
+      "title": "데이터 한 점에서 시작되는 성장의 순간",
+      "subtitle": "더 똑똑한 성장을 위한 데이터 기반 인사이트",
+      "description": "알고리즘 인사이트가 만들어낸 누적 수익을 확인하세요. 시장 데이터를 사용자가 체감할 수 있는 가치로 바꿔드립니다.",
+      "valueAriaLabel": "총 누적 수익: {value}"
+    },
     "newsPreview": {
       "title": "NEWS",
       "subtitle": "최신 시장 뉴스와 분석을 한곳에서 확인하세요",

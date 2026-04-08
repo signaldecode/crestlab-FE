@@ -89,6 +89,12 @@
         }
       }
     },
+    "rollingCounter": {
+      "title": "数据一点一滴,成就财富增长",
+      "subtitle": "以数据洞察赋能更智能的增长",
+      "description": "查看我们的算法洞察所创造的累计回报。我们将市场数据转化为用户可衡量的真实价值。",
+      "valueAriaLabel": "累计总回报: {value}"
+    },
     "newsPreview": {
       "title": "NEWS",
       "subtitle": "最新市场新闻与分析,一站尽览",
