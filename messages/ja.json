@@ -96,13 +96,12 @@
       "valueAriaLabel": "累積リターン合計: {value}"
     },
     "newsPreview": {
-      "title": "NEWS",
-      "subtitle": "最新のマーケットニュースと分析を一か所で",
-      "tabs": {
-        "all": "すべて",
-        "stocks": "Stocks",
-        "crypto": "Crypto"
-      }
+      "title": "グローバルマーケットニュース",
+      "subtitle": "世界の金融市場をリアルタイムで読み解く",
+      "viewMore": "もっと見る",
+      "prevAriaLabel": "前のニュース",
+      "nextAriaLabel": "次のニュース",
+      "sourceLabel": "出典"
     },
     "faq": { "title": "よくあるご質問" }
   },

@@ -15,7 +15,7 @@
       "url": "#",
       "category": "stocks",
       "publishedAt": "2026-04-05T14:30:00Z",
-      "thumbnail": "/images/news/placeholder-1.jpg"
+      "thumbnail": "/images/news/placeholder-stocks.svg"
     },
     {
       "id": "2",
@@ -32,7 +32,7 @@
       "url": "#",
       "category": "crypto",
       "publishedAt": "2026-04-04T09:15:00Z",
-      "thumbnail": "/images/news/placeholder-2.jpg"
+      "thumbnail": "/images/news/placeholder-crypto.svg"
     },
     {
       "id": "3",
@@ -49,7 +49,7 @@
       "url": "#",
       "category": "macro",
       "publishedAt": "2026-04-03T16:45:00Z",
-      "thumbnail": "/images/news/placeholder-3.jpg"
+      "thumbnail": "/images/news/placeholder-macro.svg"
     },
     {
       "id": "4",
@@ -66,7 +66,7 @@
       "url": "#",
       "category": "stocks",
       "publishedAt": "2026-04-02T11:00:00Z",
-      "thumbnail": "/images/news/placeholder-4.jpg"
+      "thumbnail": "/images/news/placeholder-stocks.svg"
     },
     {
       "id": "5",
@@ -83,7 +83,7 @@
       "url": "#",
       "category": "crypto",
       "publishedAt": "2026-04-01T08:30:00Z",
-      "thumbnail": "/images/news/placeholder-5.jpg"
+      "thumbnail": "/images/news/placeholder-crypto.svg"
     },
     {
       "id": "6",
@@ -100,7 +100,7 @@
       "url": "#",
       "category": "macro",
       "publishedAt": "2026-03-30T13:20:00Z",
-      "thumbnail": "/images/news/placeholder-6.jpg"
+      "thumbnail": "/images/news/placeholder-macro.svg"
     }
   ]
 }

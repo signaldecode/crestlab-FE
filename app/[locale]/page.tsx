@@ -65,11 +65,10 @@ export default async function HomePage() {
   const newsPreviewMsg = {
     title: t('newsPreview.title'),
     subtitle: t('newsPreview.subtitle'),
-    tabs: {
-      all: t('newsPreview.tabs.all'),
-      stocks: t('newsPreview.tabs.stocks'),
-      crypto: t('newsPreview.tabs.crypto'),
-    },
+    viewMore: t('newsPreview.viewMore'),
+    prevAriaLabel: t('newsPreview.prevAriaLabel'),
+    nextAriaLabel: t('newsPreview.nextAriaLabel'),
+    sourceLabel: t('newsPreview.sourceLabel'),
   };
 
   const intersectionMsg = {

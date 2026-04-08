@@ -96,13 +96,12 @@
       "valueAriaLabel": "총 누적 수익: {value}"
     },
     "newsPreview": {
-      "title": "NEWS",
-      "subtitle": "최신 시장 뉴스와 분석을 한곳에서 확인하세요",
-      "tabs": {
-        "all": "전체",
-        "stocks": "Stocks",
-        "crypto": "Crypto"
-      }
+      "title": "글로벌 마켓 뉴스",
+      "subtitle": "전 세계 금융 시장의 실시간 인사이트",
+      "viewMore": "더 보기",
+      "prevAriaLabel": "이전 뉴스",
+      "nextAriaLabel": "다음 뉴스",
+      "sourceLabel": "출처"
     },
     "faq": { "title": "자주 묻는 질문" }
   },

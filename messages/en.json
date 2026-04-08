@@ -124,13 +124,12 @@
       "valueAriaLabel": "Total accumulated returns: {value}"
     },
     "newsPreview": {
-      "title": "NEWS",
-      "subtitle": "The latest market news and analysis in one place",
-      "tabs": {
-        "all": "All",
-        "stocks": "Stocks",
-        "crypto": "Crypto"
-      }
+      "title": "Global Market News",
+      "subtitle": "Real-time insights across global financial markets.",
+      "viewMore": "View more",
+      "prevAriaLabel": "Previous news",
+      "nextAriaLabel": "Next news",
+      "sourceLabel": "Source"
     },
     "faq": { "title": "Frequently Asked Questions" }
   },

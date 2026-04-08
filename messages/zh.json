@@ -96,13 +96,12 @@
       "valueAriaLabel": "累计总回报: {value}"
     },
     "newsPreview": {
-      "title": "NEWS",
-      "subtitle": "最新市场新闻与分析,一站尽览",
-      "tabs": {
-        "all": "全部",
-        "stocks": "Stocks",
-        "crypto": "Crypto"
-      }
+      "title": "全球市场新闻",
+      "subtitle": "实时洞察全球金融市场",
+      "viewMore": "查看更多",
+      "prevAriaLabel": "上一条新闻",
+      "nextAriaLabel": "下一条新闻",
+      "sourceLabel": "来源"
     },
     "faq": { "title": "常见问题" }
   },
