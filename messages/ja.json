@@ -164,10 +164,13 @@
     }
   },
   "crypto": {
-    "tabs": {
-      "livePrice": "Live Price",
-      "top100": "Top 100",
-      "fearIndex": "Fear Index"
+    "globalStats": {
+      "sectionTitle": "グローバル暗号資産統計",
+      "totalMarketCap": "総時価総額",
+      "totalVolume24h": "24時間出来高",
+      "btcDominance": "BTCドミナンス",
+      "ethLabel": "ETH",
+      "change24hShort": "24h"
     },
     "dominance": {
       "title": "ビットコインドミナンスチャート",
@@ -214,7 +217,34 @@
     },
     "coinList": {
       "title": "暗号資産価格",
-      "columns": { "name": "コイン名", "price": "価格", "change24h": "24時間変動", "marketCap": "時価総額", "volume": "出来高" }
+      "filterAll": "すべて",
+      "columns": { "name": "コイン", "price": "価格", "change24h": "24h %", "marketCap": "時価総額", "volume": "24時間出来高" },
+      "categories": {
+        "layer1": "レイヤー 1",
+        "defi": "DeFi",
+        "meme": "ミーム",
+        "ai": "AIトークン",
+        "exchange": "取引所",
+        "stablecoin": "ステーブルコイン"
+      }
+    },
+    "detail": {
+      "currentPrice": "現在値",
+      "periodOpen": "期間始値",
+      "volume24h": "24時間出来高",
+      "closeAriaLabel": "コイン詳細を閉じる",
+      "periods": { "1w": "1週", "1m": "1ヶ月", "3m": "3ヶ月", "1y": "1年", "5y": "5年" },
+      "tooltipDate": "日付",
+      "tooltipOpen": "始値",
+      "tooltipHigh": "高値",
+      "tooltipLow": "安値",
+      "tooltipClose": "終値",
+      "tooltipVolume": "出来高",
+      "chartType": {
+        "line": "ライン",
+        "candle": "ローソク",
+        "ariaLabel": "チャート種類"
+      }
     }
   },
   "education": {

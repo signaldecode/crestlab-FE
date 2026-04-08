@@ -164,10 +164,13 @@
     }
   },
   "crypto": {
-    "tabs": {
-      "livePrice": "Live Price",
-      "top100": "Top 100",
-      "fearIndex": "Fear Index"
+    "globalStats": {
+      "sectionTitle": "全球加密货币统计",
+      "totalMarketCap": "总市值",
+      "totalVolume24h": "24小时成交量",
+      "btcDominance": "BTC 占有率",
+      "ethLabel": "ETH",
+      "change24hShort": "24小时"
     },
     "dominance": {
       "title": "比特币占有率图表",
@@ -214,7 +217,34 @@
     },
     "coinList": {
       "title": "加密货币行情",
-      "columns": { "name": "名称", "price": "价格", "change24h": "24小时涨跌", "marketCap": "市值", "volume": "成交量" }
+      "filterAll": "全部",
+      "columns": { "name": "币种", "price": "价格", "change24h": "24h %", "marketCap": "市值", "volume": "24小时成交量" },
+      "categories": {
+        "layer1": "Layer 1",
+        "defi": "DeFi",
+        "meme": "Meme",
+        "ai": "AI 代币",
+        "exchange": "交易所",
+        "stablecoin": "稳定币"
+      }
+    },
+    "detail": {
+      "currentPrice": "现价",
+      "periodOpen": "区间开盘",
+      "volume24h": "24小时成交量",
+      "closeAriaLabel": "关闭币种详情",
+      "periods": { "1w": "1周", "1m": "1月", "3m": "3月", "1y": "1年", "5y": "5年" },
+      "tooltipDate": "日期",
+      "tooltipOpen": "开盘",
+      "tooltipHigh": "最高",
+      "tooltipLow": "最低",
+      "tooltipClose": "收盘",
+      "tooltipVolume": "成交量",
+      "chartType": {
+        "line": "折线",
+        "candle": "K线",
+        "ariaLabel": "图表类型"
+      }
     }
   },
   "education": {

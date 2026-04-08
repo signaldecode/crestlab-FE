@@ -40,6 +40,14 @@ export type StockSector =
   | 'industrial';
 
 // Crypto
+export type CoinCategory =
+  | 'layer1'
+  | 'defi'
+  | 'meme'
+  | 'ai'
+  | 'exchange'
+  | 'stablecoin';
+
 export interface CoinItem {
   id: string;
   symbol: string;
@@ -49,7 +57,21 @@ export interface CoinItem {
   marketCap: number;
   volume24h: number;
   image: string;
+  category: CoinCategory;
 }
+
+export interface CryptoGlobalStats {
+  totalMarketCap: number;
+  totalMarketCapChange24h: number;
+  totalVolume24h: number;
+  totalVolume24hChangePct: number;
+  btcDominance: number;
+  ethDominance: number;
+}
+
+export type CoinPeriod = '1w' | '1m' | '3m' | '1y' | '5y';
+
+export type CoinHistory = Record<CoinPeriod, OHLCV[]>;
 
 export interface DominanceData {
   btc: number;

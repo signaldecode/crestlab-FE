@@ -1,0 +1,71 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.global-stats {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding;
+}
+
+.global-stats__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.global-stats__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-md;
+
+  @include respond-to(sm) { grid-template-columns: repeat(3, 1fr); }
+}
+
+.global-stats__card {
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  padding: $spacing-lg $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  transition: box-shadow 0.2s;
+
+  &:hover { box-shadow: $shadow-md; }
+}
+
+.global-stats__label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: $color-text-muted;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.global-stats__value {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.global-stats__delta {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.global-stats__delta--gain { color: $color-gain; }
+.global-stats__delta--loss { color: $color-loss; }
+
+.global-stats__sub {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+}

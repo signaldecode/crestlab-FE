@@ -17,6 +17,7 @@ import landingData from '@/data/landingData.json';
 import stocksData from '@/data/mock/stocksData.json';
 import cryptoData from '@/data/mock/cryptoData.json';
 import newsData from '@/data/newsData.json';
+import type { CoinItem } from '@/types/finance';
 
 export default async function HomePage() {
   const t = await getTranslations('landing');
@@ -134,7 +135,7 @@ export default async function HomePage() {
       <MarketTablesContainer
         messages={marketTablesMsg}
         stocks={stocksData.stocks}
-        coins={cryptoData.coins}
+        coins={cryptoData.coins as CoinItem[]}
       />
       {/* Intersection — sticky scroll morphs into flip cards in the same viewport */}
       <IntersectionContainer messages={intersectionMsg}>

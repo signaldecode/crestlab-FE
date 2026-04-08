@@ -164,10 +164,13 @@
     }
   },
   "crypto": {
-    "tabs": {
-      "livePrice": "Live Price",
-      "top100": "Top 100",
-      "fearIndex": "Fear Index"
+    "globalStats": {
+      "sectionTitle": "글로벌 암호화폐 통계",
+      "totalMarketCap": "전체 시가총액",
+      "totalVolume24h": "24시간 거래량",
+      "btcDominance": "BTC 도미넌스",
+      "ethLabel": "ETH",
+      "change24hShort": "24시간"
     },
     "dominance": {
       "title": "비트코인 도미넌스 차트",
@@ -214,7 +217,34 @@
     },
     "coinList": {
       "title": "암호화폐 시세",
-      "columns": { "name": "코인명", "price": "현재가", "change24h": "24시간 변동", "marketCap": "시가총액", "volume": "거래량" }
+      "filterAll": "전체",
+      "columns": { "name": "코인", "price": "현재가", "change24h": "24h %", "marketCap": "시가총액", "volume": "24시간 거래량" },
+      "categories": {
+        "layer1": "레이어 1",
+        "defi": "디파이",
+        "meme": "밈코인",
+        "ai": "AI 토큰",
+        "exchange": "거래소",
+        "stablecoin": "스테이블코인"
+      }
+    },
+    "detail": {
+      "currentPrice": "현재가",
+      "periodOpen": "기간 시작가",
+      "volume24h": "24시간 거래량",
+      "closeAriaLabel": "코인 상세 닫기",
+      "periods": { "1w": "1주", "1m": "1개월", "3m": "3개월", "1y": "1년", "5y": "5년" },
+      "tooltipDate": "날짜",
+      "tooltipOpen": "시가",
+      "tooltipHigh": "고가",
+      "tooltipLow": "저가",
+      "tooltipClose": "종가",
+      "tooltipVolume": "거래량",
+      "chartType": {
+        "line": "선",
+        "candle": "봉",
+        "ariaLabel": "차트 종류"
+      }
     }
   },
   "education": {

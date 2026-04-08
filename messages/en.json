@@ -192,10 +192,13 @@
     }
   },
   "crypto": {
-    "tabs": {
-      "livePrice": "Live Price",
-      "top100": "Top 100",
-      "fearIndex": "Fear Index"
+    "globalStats": {
+      "sectionTitle": "Global Crypto Stats",
+      "totalMarketCap": "Total Market Cap",
+      "totalVolume24h": "24h Volume",
+      "btcDominance": "BTC Dominance",
+      "ethLabel": "ETH",
+      "change24hShort": "24h"
     },
     "dominance": {
       "title": "Bitcoin Dominance Chart",
@@ -242,7 +245,34 @@
     },
     "coinList": {
       "title": "Cryptocurrency Prices",
-      "columns": { "name": "Name", "price": "Price", "change24h": "24h Change", "marketCap": "Market Cap", "volume": "Volume" }
+      "filterAll": "All",
+      "columns": { "name": "Coin", "price": "Price", "change24h": "24h %", "marketCap": "Market Cap", "volume": "Volume 24h" },
+      "categories": {
+        "layer1": "Layer 1",
+        "defi": "DeFi",
+        "meme": "Meme",
+        "ai": "AI Tokens",
+        "exchange": "Exchange",
+        "stablecoin": "Stablecoins"
+      }
+    },
+    "detail": {
+      "currentPrice": "Current Price",
+      "periodOpen": "Period Open",
+      "volume24h": "24h Volume",
+      "closeAriaLabel": "Close coin detail",
+      "periods": { "1w": "1W", "1m": "1M", "3m": "3M", "1y": "1Y", "5y": "5Y" },
+      "tooltipDate": "Date",
+      "tooltipOpen": "Open",
+      "tooltipHigh": "High",
+      "tooltipLow": "Low",
+      "tooltipClose": "Close",
+      "tooltipVolume": "Vol",
+      "chartType": {
+        "line": "Line",
+        "candle": "Candle",
+        "ariaLabel": "Chart type"
+      }
     }
   },
   "education": {

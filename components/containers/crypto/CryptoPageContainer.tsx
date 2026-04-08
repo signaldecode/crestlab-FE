@@ -1,16 +1,30 @@
 'use client';
 
 import { useState } from 'react';
-import PageTabs from '@/components/ui/PageTabs';
+import GlobalStatsContainer from './GlobalStatsContainer';
 import DominanceChartContainer from './DominanceChartContainer';
 import FearGreedContainer from './FearGreedContainer';
 import CoinListContainer from './CoinListContainer';
+import CoinDetailModal from './CoinDetailModal';
 import styles from '@/assets/styles/components/containers/crypto/CryptoWidgets.module.scss';
-import type { CoinItem, FearGreedData } from '@/types/finance';
+import type {
+  CoinCategory,
+  CoinItem,
+  CoinPeriod,
+  CryptoGlobalStats,
+  FearGreedData,
+} from '@/types/finance';
 
 interface CryptoPageContainerProps {
   messages: {
-    tabs: Record<string, string>;
+    globalStats: {
+      sectionTitle: string;
+      totalMarketCap: string;
+      totalVolume24h: string;
+      btcDominance: string;
+      ethLabel: string;
+      change24hShort: string;
+    };
     dominance: {
       title: string;
       subtitle: string;
@@ -33,6 +47,7 @@ interface CryptoPageContainerProps {
     };
     coinList: {
       title: string;
+      filterAll: string;
       columns: {
         name: string;
         price: string;
@@ -40,43 +55,65 @@ interface CryptoPageContainerProps {
         marketCap: string;
         volume: string;
       };
+      categories: Record<CoinCategory, string>;
+    };
+    detail: {
+      currentPrice: string;
+      periodOpen: string;
+      volume24h: string;
+      closeAriaLabel: string;
+      periods: Record<CoinPeriod, string>;
+      tooltipDate: string;
+      tooltipOpen: string;
+      tooltipHigh: string;
+      tooltipLow: string;
+      tooltipClose: string;
+      tooltipVolume: string;
+      chartType: {
+        line: string;
+        candle: string;
+        ariaLabel: string;
+      };
     };
   };
+  globalStats: CryptoGlobalStats;
   coinsData: CoinItem[];
   fearGreedData: FearGreedData;
 }
 
-const TABS = [
-  { key: 'livePrice', label: '' },
-  { key: 'top100', label: '' },
-  { key: 'fearIndex', label: '' },
-];
+export default function CryptoPageContainer({
+  messages,
+  globalStats,
+  coinsData,
+  fearGreedData,
+}: CryptoPageContainerProps) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
 
-export default function CryptoPageContainer({ messages, coinsData, fearGreedData }: CryptoPageContainerProps) {
-  const [activeTab, setActiveTab] = useState('livePrice');
-
-  const tabs = TABS.map((t) => ({ ...t, label: messages.tabs[t.key] }));
+  const selectedCoin = selectedId
+    ? coinsData.find((c) => c.id === selectedId) ?? null
+    : null;
 
   return (
     <>
-      <PageTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
+      <GlobalStatsContainer messages={messages.globalStats} data={globalStats} />
 
-      {activeTab === 'livePrice' && (
-        <>
-          <div className={styles.widgets}>
-            <DominanceChartContainer messages={messages.dominance} data={[]} />
-            <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} compact />
-          </div>
-          <CoinListContainer messages={messages.coinList} data={coinsData} />
-        </>
-      )}
+      <div className={styles.widgets}>
+        <DominanceChartContainer messages={messages.dominance} data={[]} />
+        <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} compact />
+      </div>
 
-      {activeTab === 'top100' && (
-        <CoinListContainer messages={{ ...messages.coinList, title: 'Top 100 Cryptocurrencies' }} data={coinsData} />
-      )}
+      <CoinListContainer
+        messages={messages.coinList}
+        data={coinsData}
+        onSelect={(coin) => setSelectedId(coin.id)}
+      />
 
-      {activeTab === 'fearIndex' && (
-        <FearGreedContainer messages={messages.fearGreed} data={fearGreedData} />
+      {selectedCoin && (
+        <CoinDetailModal
+          messages={messages.detail}
+          coin={selectedCoin}
+          onClose={() => setSelectedId(null)}
+        />
       )}
     </>
   );
