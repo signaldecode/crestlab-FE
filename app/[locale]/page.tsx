@@ -6,6 +6,7 @@ import MarketTablesContainer from '@/components/containers/landing/MarketTablesC
 import FeatureCardsContainer, {
   type FeatureCardItem,
 } from '@/components/containers/landing/FeatureCardsContainer';
+import IntersectionContainer from '@/components/containers/landing/IntersectionContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
 import landingData from '@/data/landingData.json';
 import stocksData from '@/data/mock/stocksData.json';
@@ -67,6 +68,12 @@ export default async function HomePage() {
     },
   };
 
+  const intersectionMsg = {
+    leadingText: t('intersection.leadingText'),
+    trailingText: t('intersection.trailingText'),
+    imageAlt: t('intersection.imageAlt'),
+  };
+
   const faqMsg = { title: t('faq.title') };
 
   const featuredItems = stocksData.stocks.map((s) => ({ symbol: s.symbol, name: s.name }));
@@ -85,8 +92,10 @@ export default async function HomePage() {
         stocks={stocksData.stocks}
         coins={cryptoData.coins}
       />
-      {/* Feature flip cards */}
-      <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
+      {/* Intersection — sticky scroll morphs into flip cards in the same viewport */}
+      <IntersectionContainer messages={intersectionMsg}>
+        <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
+      </IntersectionContainer>
       {/* 뉴스 */}
       <NewsPreviewContainer messages={newsPreviewMsg} data={newsData.items as never} />
     </>

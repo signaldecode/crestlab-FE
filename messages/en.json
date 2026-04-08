@@ -89,6 +89,11 @@
         }
       }
     },
+    "intersection": {
+      "leadingText": "The Intersection of",
+      "trailingText": "Crypto and Equity",
+      "imageAlt": "Crypto and equity intersection visual"
+    },
     "newsPreview": {
       "title": "NEWS",
       "subtitle": "The latest market news and analysis in one place",

@@ -6,12 +6,30 @@
 .flip-card {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
+  min-height: 0;
   perspective: 1200px;
   cursor: pointer;
   background: transparent;
   border: none;
   padding: 0;
+
+  // Mobile (2x2 grid) lets the parent grid rows define card height so the
+  // 4 cards always squeeze into 100dvh.
+  //
+  // From tablet up the layout switches to a 4-column row and we restore
+  // the 3:4 portrait design. At narrow tablet widths the aspect-ratio alone
+  // would shrink the card below the content's needed height, so a min-height
+  // floor guarantees the title + description always have room.
+  @include respond-to(md) {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    min-height: 18rem; // 288px — fits index/icon/title(2)/description(3-4) at md
+  }
+
+  @include respond-to(lg) {
+    min-height: 0; // wider cards comfortably satisfy aspect-ratio on their own
+  }
 
   &:focus-visible {
     outline: 2px solid #ffffff;
@@ -67,11 +85,12 @@
   position: absolute;
   inset: 0;
   border-radius: 1rem;
-  padding: $spacing-lg $spacing-md;
+  padding: $spacing-md $spacing-sm;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: $spacing-sm;
+  gap: $spacing-xs;
+  overflow: hidden; // safety net so content can never spill past the rounded box
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -84,6 +103,11 @@
   }
 
   @include respond-to(md) {
+    padding: $spacing-md $spacing-sm;
+    gap: $spacing-sm;
+  }
+
+  @include respond-to(lg) {
     padding: $spacing-xl $spacing-lg;
   }
 }
@@ -116,30 +140,61 @@
   justify-content: center;
   width: 100%;
   flex: 1 1 auto;
-  margin: $spacing-sm 0;
+  min-height: 0;
+  margin: $spacing-xs 0;
 
   svg {
-    width: 60%;
+    width: 50%;
     height: auto;
-    max-width: 6rem;
+    max-width: 4rem;
+  }
+
+  @include respond-to(lg) {
+    margin: $spacing-sm 0;
+
+    svg {
+      width: 60%;
+      max-width: 6rem;
+    }
   }
 }
 
 .flip-card__title {
-  font-size: $font-size-lg;
+  font-size: $font-size-base;
   font-weight: $font-weight-bold;
   color: #ffffff;
   margin: 0;
   line-height: $line-height-tight;
 
   @include respond-to(md) {
+    font-size: $font-size-lg;
+  }
+
+  @include respond-to(lg) {
     font-size: $font-size-xl;
   }
 }
 
 .flip-card__description {
-  font-size: $font-size-sm;
+  font-size: $font-size-xs;
   line-height: $line-height-relaxed;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
+  // Clamp to prevent edge cases where unusually long descriptions push theh
+  // icon out of its flex room. The face also has overflow:hidden as a safety
+  // net but clamping is the cleaner visual.
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to(lg) {
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+  }
 }
