@@ -54,17 +54,40 @@
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.logo-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  @include respond-to(md) {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.logo-wordmark {
+  font-family: $font-family-sans;
   font-size: $font-size-lg;
   font-weight: $font-weight-extrabold;
   color: $color-text-primary;
-  text-decoration: none;
   letter-spacing: $letter-spacing-tight;
-  white-space: nowrap;
-  flex-shrink: 0;
+  line-height: 1;
 
   @include respond-to(md) {
     font-size: $font-size-xl;
   }
+}
+
+.logo-wordmark-accent {
+  color: $color-primary;
 }
 
 // 데스크톱/태블릿 네비 — md 이상에서만 보임

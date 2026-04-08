@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from '@/assets/styles/components/containers/stocks/StockTableContainer.module.scss';
+import TickerBadge from '@/components/ui/TickerBadge';
 import type { StockItem, StockSector } from '@/types/finance';
 
 interface StockTableContainerProps {
@@ -86,7 +87,12 @@ export default function StockTableContainer({ messages, data, onSelect }: StockT
                       : undefined
                   }
                 >
-                  <td className={styles['stock-table__cell--symbol']}>{stock.symbol}</td>
+                  <td className={styles['stock-table__cell--symbol']}>
+                    <span className={styles['stock-table__symbol-wrap']}>
+                      <TickerBadge symbol={stock.symbol} size="sm" />
+                      {stock.symbol}
+                    </span>
+                  </td>
                   <td>{stock.name}</td>
                   <td>${stock.price.toLocaleString()}</td>
                   <td

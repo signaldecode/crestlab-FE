@@ -153,26 +153,19 @@
     "faq": { "title": "Frequently Asked Questions" }
   },
   "stocks": {
-    "tabs": {
-      "livePrices": "Live Prices",
-      "chartView": "Chart View",
-      "watchlist": "Watchlist"
-    },
     "indices": { "title": "Major Indices" },
-    "watchlist": {
-      "title": "Watchlist",
-      "empty": "Add tickers to your watchlist.",
-      "addPlaceholder": "Enter ticker (e.g. AAPL)"
-    },
-    "chartView": {
-      "title": "Chart View",
-      "selectStock": "Select a stock"
-    },
     "table": {
       "title": "Live Stock Prices",
       "filterAll": "All",
       "columns": { "symbol": "Symbol", "name": "Name", "price": "Price", "change": "Change", "volume": "Volume", "marketCap": "Market Cap" },
       "sectors": { "tech": "Technology", "energy": "Energy", "finance": "Financials", "healthcare": "Healthcare", "consumer": "Consumer", "industrial": "Industrials" }
+    },
+    "movers": {
+      "sectionTitle": "Market Movers",
+      "gainersTitle": "Today's Best Performers",
+      "losersTitle": "Today's Worst Performers",
+      "gainersBadge": "Top Gainers",
+      "losersBadge": "Top Losers"
     },
     "detail": {
       "currentPrice": "Current Price",

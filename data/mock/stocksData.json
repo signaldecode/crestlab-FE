@@ -2,16 +2,31 @@
   "indices": [
     { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
     { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
-    { "symbol": "DJI", "name": "Dow Jones", "price": 39142.56, "change": 128.47, "changePercent": 0.33 }
+    { "symbol": "DJI", "name": "Dow Jones", "price": 39142.56, "change": 128.47, "changePercent": 0.33 },
+    { "symbol": "RUT", "name": "Russell 2000", "price": 2087.45, "change": 11.62, "changePercent": 0.56 }
   ],
   "stocks": [
     { "symbol": "AAPL", "name": "Apple Inc.", "price": 192.53, "change": 2.41, "changePercent": 1.27, "volume": 58432100, "marketCap": 2980000000000, "sector": "tech" },
     { "symbol": "GOOGL", "name": "Alphabet Inc.", "price": 155.72, "change": -1.18, "changePercent": -0.75, "volume": 24310500, "marketCap": 1920000000000, "sector": "tech" },
     { "symbol": "MSFT", "name": "Microsoft Corp.", "price": 420.15, "change": 5.32, "changePercent": 1.28, "volume": 21543200, "marketCap": 3120000000000, "sector": "tech" },
+    { "symbol": "NVDA", "name": "NVIDIA Corp.", "price": 876.40, "change": 35.20, "changePercent": 4.19, "volume": 44120800, "marketCap": 2160000000000, "sector": "tech" },
+    { "symbol": "META", "name": "Meta Platforms", "price": 524.80, "change": 4.66, "changePercent": 0.90, "volume": 21345700, "marketCap": 1330000000000, "sector": "tech" },
+    { "symbol": "SMCI", "name": "Super Micro Computer", "price": 968.20, "change": 150.15, "changePercent": 18.36, "volume": 18234500, "marketCap": 56000000000, "sector": "tech" },
+    { "symbol": "CRWD", "name": "CrowdStrike Holdings", "price": 312.40, "change": 11.40, "changePercent": 3.79, "volume": 5123400, "marketCap": 75000000000, "sector": "tech" },
+    { "symbol": "INTC", "name": "Intel Corp.", "price": 42.18, "change": -1.35, "changePercent": -3.10, "volume": 48234100, "marketCap": 178000000000, "sector": "tech" },
     { "symbol": "AMZN", "name": "Amazon.com Inc.", "price": 186.24, "change": 0.87, "changePercent": 0.47, "volume": 35621800, "marketCap": 1940000000000, "sector": "consumer" },
-    { "symbol": "TSLA", "name": "Tesla Inc.", "price": 175.42, "change": -3.56, "changePercent": -1.99, "volume": 92145300, "marketCap": 558000000000, "sector": "consumer" },
+    { "symbol": "TSLA", "name": "Tesla Inc.", "price": 175.42, "change": -5.04, "changePercent": -2.79, "volume": 92145300, "marketCap": 558000000000, "sector": "consumer" },
+    { "symbol": "NKE", "name": "Nike Inc.", "price": 88.45, "change": -2.32, "changePercent": -2.56, "volume": 9234600, "marketCap": 134000000000, "sector": "consumer" },
+    { "symbol": "MCD", "name": "McDonald's Corp.", "price": 285.13, "change": 1.42, "changePercent": 0.50, "volume": 3421500, "marketCap": 207000000000, "sector": "consumer" },
     { "symbol": "XOM", "name": "Exxon Mobil Corp.", "price": 112.87, "change": 1.23, "changePercent": 1.10, "volume": 15234600, "marketCap": 452000000000, "sector": "energy" },
+    { "symbol": "CVX", "name": "Chevron Corp.", "price": 158.22, "change": 4.61, "changePercent": 3.00, "volume": 7234500, "marketCap": 295000000000, "sector": "energy" },
     { "symbol": "JPM", "name": "JPMorgan Chase", "price": 198.35, "change": 3.12, "changePercent": 1.60, "volume": 8542100, "marketCap": 572000000000, "sector": "finance" },
-    { "symbol": "JNJ", "name": "Johnson & Johnson", "price": 156.89, "change": -0.45, "changePercent": -0.29, "volume": 6234500, "marketCap": 378000000000, "sector": "healthcare" }
+    { "symbol": "BAC", "name": "Bank of America", "price": 38.74, "change": 0.52, "changePercent": 1.36, "volume": 32145600, "marketCap": 304000000000, "sector": "finance" },
+    { "symbol": "V", "name": "Visa Inc.", "price": 278.90, "change": -1.05, "changePercent": -0.38, "volume": 5123400, "marketCap": 562000000000, "sector": "finance" },
+    { "symbol": "JNJ", "name": "Johnson & Johnson", "price": 156.89, "change": -0.45, "changePercent": -0.29, "volume": 6234500, "marketCap": 378000000000, "sector": "healthcare" },
+    { "symbol": "PFE", "name": "Pfizer Inc.", "price": 26.42, "change": -0.51, "changePercent": -1.89, "volume": 38234100, "marketCap": 150000000000, "sector": "healthcare" },
+    { "symbol": "LLY", "name": "Eli Lilly & Co.", "price": 762.35, "change": 18.45, "changePercent": 2.48, "volume": 3421500, "marketCap": 724000000000, "sector": "healthcare" },
+    { "symbol": "CAT", "name": "Caterpillar Inc.", "price": 354.18, "change": 6.78, "changePercent": 1.95, "volume": 2812400, "marketCap": 175000000000, "sector": "industrial" },
+    { "symbol": "BA", "name": "Boeing Co.", "price": 178.32, "change": -4.18, "changePercent": -2.29, "volume": 7823400, "marketCap": 108000000000, "sector": "industrial" }
   ]
 }

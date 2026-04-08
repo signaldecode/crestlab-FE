@@ -1,0 +1,123 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.movers {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding;
+}
+
+.movers__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xl;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.movers__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-lg;
+
+  @include respond-to(md) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.movers__panel {
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  padding: $spacing-lg $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.movers__panel--gain {
+  border-top: 0.25rem solid $color-gain;
+}
+
+.movers__panel--loss {
+  border-top: 0.25rem solid $color-loss;
+}
+
+.movers__header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.movers__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+}
+
+.movers__badge--gain {
+  background: $color-gain-bg;
+  color: $color-gain;
+}
+
+.movers__badge--loss {
+  background: $color-loss-bg;
+  color: $color-loss;
+}
+
+.movers__panel-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin: 0;
+}
+
+.movers__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.movers__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $spacing-sm 0;
+  border-bottom: 0.0625rem solid $color-border-light;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.movers__symbol-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.movers__symbol {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  font-family: $font-family-sans;
+}
+
+.movers__change {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  font-family: $font-family-sans;
+}
+
+.movers__change--gain { color: $color-gain; }
+.movers__change--loss { color: $color-loss; }

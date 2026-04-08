@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 import { Link, usePathname } from '@/i18n/navigation';
@@ -58,7 +59,17 @@ export default function AppHeader({ data }: AppHeaderProps) {
     <header className={`${styles.header} ${isHome ? '' : styles['header--sticky']} ${scrolled ? styles['header--scrolled'] : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label={`${data.logo} 홈으로 이동`}>
-          {data.logo}
+          <Image
+            src="/logo-mark.svg"
+            alt=""
+            width={28}
+            height={28}
+            className={styles['logo-mark']}
+            priority
+          />
+          <span className={styles['logo-wordmark']}>
+            Crest<span className={styles['logo-wordmark-accent']}>Lab</span>
+          </span>
         </Link>
 
         {/* 데스크톱 네비 */}

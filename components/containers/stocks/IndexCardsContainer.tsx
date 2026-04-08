@@ -1,4 +1,5 @@
 import styles from '@/assets/styles/components/containers/stocks/IndexCardsContainer.module.scss';
+import TickerBadge from '@/components/ui/TickerBadge';
 import type { StockIndex } from '@/types/finance';
 
 interface IndexCardsContainerProps {
@@ -17,7 +18,10 @@ export default function IndexCardsContainer({ messages, data }: IndexCardsContai
       <div className={styles['index-cards__grid']}>
         {data.map((index) => (
           <div key={index.symbol} className={styles['index-cards__card']}>
-            <span className={styles['index-cards__name']}>{index.name}</span>
+            <div className={styles['index-cards__header']}>
+              <TickerBadge symbol={index.symbol} size="md" />
+              <span className={styles['index-cards__name']}>{index.name}</span>
+            </div>
             <span className={styles['index-cards__price']}>
               {index.price.toLocaleString()}
             </span>

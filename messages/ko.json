@@ -125,26 +125,19 @@
     "faq": { "title": "자주 묻는 질문" }
   },
   "stocks": {
-    "tabs": {
-      "livePrices": "Live Prices",
-      "chartView": "Chart View",
-      "watchlist": "Watchlist"
-    },
     "indices": { "title": "주요 지수" },
-    "watchlist": {
-      "title": "Watchlist",
-      "empty": "관심 종목을 추가해보세요.",
-      "addPlaceholder": "티커 입력 (예: AAPL)"
-    },
-    "chartView": {
-      "title": "Chart View",
-      "selectStock": "종목을 선택하세요"
-    },
     "table": {
       "title": "실시간 주식 가격",
       "filterAll": "전체",
       "columns": { "symbol": "티커", "name": "종목명", "price": "현재가", "change": "변동률", "volume": "거래량", "marketCap": "시가총액" },
       "sectors": { "tech": "기술", "energy": "에너지", "finance": "금융", "healthcare": "헬스케어", "consumer": "소비재", "industrial": "산업" }
+    },
+    "movers": {
+      "sectionTitle": "마켓 무버스",
+      "gainersTitle": "오늘의 상승 종목",
+      "losersTitle": "오늘의 하락 종목",
+      "gainersBadge": "상승 TOP",
+      "losersBadge": "하락 TOP"
     },
     "detail": {
       "currentPrice": "현재가",

@@ -14,11 +14,6 @@ export default async function StocksPage() {
   const t = await getTranslations('stocks');
 
   const messages = {
-    tabs: {
-      livePrices: t('tabs.livePrices'),
-      chartView: t('tabs.chartView'),
-      watchlist: t('tabs.watchlist'),
-    },
     indices: { title: t('indices.title') },
     table: {
       title: t('table.title'),
@@ -40,14 +35,12 @@ export default async function StocksPage() {
         industrial: t('table.sectors.industrial'),
       },
     },
-    watchlist: {
-      title: t('watchlist.title'),
-      empty: t('watchlist.empty'),
-      addPlaceholder: t('watchlist.addPlaceholder'),
-    },
-    chartView: {
-      title: t('chartView.title'),
-      selectStock: t('chartView.selectStock'),
+    movers: {
+      sectionTitle: t('movers.sectionTitle'),
+      gainersTitle: t('movers.gainersTitle'),
+      losersTitle: t('movers.losersTitle'),
+      gainersBadge: t('movers.gainersBadge'),
+      losersBadge: t('movers.losersBadge'),
     },
     detail: {
       currentPrice: t('detail.currentPrice'),

@@ -125,26 +125,19 @@
     "faq": { "title": "よくあるご質問" }
   },
   "stocks": {
-    "tabs": {
-      "livePrices": "Live Prices",
-      "chartView": "Chart View",
-      "watchlist": "Watchlist"
-    },
     "indices": { "title": "主要指数" },
-    "watchlist": {
-      "title": "ウォッチリスト",
-      "empty": "ウォッチリストに銘柄を追加してください。",
-      "addPlaceholder": "ティッカーを入力 (例: AAPL)"
-    },
-    "chartView": {
-      "title": "Chart View",
-      "selectStock": "銘柄を選択してください"
-    },
     "table": {
       "title": "リアルタイム株価",
       "filterAll": "すべて",
       "columns": { "symbol": "ティッカー", "name": "銘柄名", "price": "価格", "change": "変動率", "volume": "出来高", "marketCap": "時価総額" },
       "sectors": { "tech": "テクノロジー", "energy": "エネルギー", "finance": "金融", "healthcare": "ヘルスケア", "consumer": "消費財", "industrial": "資本財" }
+    },
+    "movers": {
+      "sectionTitle": "マーケット ムーバーズ",
+      "gainersTitle": "本日の上昇銘柄",
+      "losersTitle": "本日の下落銘柄",
+      "gainersBadge": "上昇 TOP",
+      "losersBadge": "下落 TOP"
     },
     "detail": {
       "currentPrice": "現在値",

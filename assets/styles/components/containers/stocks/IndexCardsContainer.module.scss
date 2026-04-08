@@ -25,7 +25,7 @@
   gap: $spacing-md;
 
   @include respond-to(sm) { grid-template-columns: repeat(2, 1fr); }
-  @include respond-to(lg) { grid-template-columns: repeat(3, 1fr); }
+  @include respond-to(lg) { grid-template-columns: repeat(4, 1fr); }
 }
 
 .index-cards__card {
@@ -41,6 +41,12 @@
   &:hover { box-shadow: $shadow-md; }
 }
 
+.index-cards__header {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
 .index-cards__name {
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
@@ -50,7 +56,7 @@
 .index-cards__price {
   font-size: $font-size-2xl;
   font-weight: $font-weight-bold;
-  font-family: $font-family-mono;
+  font-family: $font-family-sans;
   color: $color-text-primary;
 
   @include respond-to(md) { font-size: $font-size-3xl; }
@@ -59,7 +65,7 @@
 .index-cards__change {
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  font-family: $font-family-mono;
+  font-family: $font-family-sans;
 }
 
 .index-cards__change--gain { color: $color-gain; }

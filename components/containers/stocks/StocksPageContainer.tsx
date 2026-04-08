@@ -1,15 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import PageTabs from '@/components/ui/PageTabs';
 import IndexCardsContainer from './IndexCardsContainer';
 import StockTableContainer from './StockTableContainer';
 import StockDetailModal from './StockDetailModal';
+import MarketMoversContainer from './MarketMoversContainer';
 import type { StockIndex, StockItem, StockPeriod } from '@/types/finance';
 
 interface StocksPageContainerProps {
   messages: {
-    tabs: Record<string, string>;
     indices: { title: string };
     table: {
       title: string;
@@ -24,14 +23,12 @@ interface StocksPageContainerProps {
       };
       sectors: Record<string, string>;
     };
-    watchlist: {
-      title: string;
-      empty: string;
-      addPlaceholder: string;
-    };
-    chartView: {
-      title: string;
-      selectStock: string;
+    movers: {
+      sectionTitle: string;
+      gainersTitle: string;
+      losersTitle: string;
+      gainersBadge: string;
+      losersBadge: string;
     };
     detail: {
       currentPrice: string;
@@ -57,17 +54,8 @@ interface StocksPageContainerProps {
   stocksData: StockItem[];
 }
 
-const TABS = [
-  { key: 'livePrices', label: '' },
-  { key: 'chartView', label: '' },
-  { key: 'watchlist', label: '' },
-];
-
 export default function StocksPageContainer({ messages, indicesData, stocksData }: StocksPageContainerProps) {
-  const [activeTab, setActiveTab] = useState('livePrices');
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
-
-  const tabs = TABS.map((t) => ({ ...t, label: messages.tabs[t.key] }));
 
   const selectedStock = selectedSymbol
     ? stocksData.find((s) => s.symbol === selectedSymbol) ?? null
@@ -75,18 +63,13 @@ export default function StocksPageContainer({ messages, indicesData, stocksData 
 
   return (
     <>
-      <PageTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-
-      {activeTab === 'livePrices' && (
-        <>
-          <IndexCardsContainer messages={messages.indices} data={indicesData} />
-          <StockTableContainer
-            messages={messages.table}
-            data={stocksData}
-            onSelect={(stock) => setSelectedSymbol(stock.symbol)}
-          />
-        </>
-      )}
+      <IndexCardsContainer messages={messages.indices} data={indicesData} />
+      <StockTableContainer
+        messages={messages.table}
+        data={stocksData}
+        onSelect={(stock) => setSelectedSymbol(stock.symbol)}
+      />
+      <MarketMoversContainer messages={messages.movers} data={stocksData} />
 
       {selectedStock && (
         <StockDetailModal
@@ -94,22 +77,6 @@ export default function StocksPageContainer({ messages, indicesData, stocksData 
           stock={selectedStock}
           onClose={() => setSelectedSymbol(null)}
         />
-      )}
-
-      {activeTab === 'chartView' && (
-        <section style={{ maxWidth: '75rem', margin: '0 auto', padding: '3rem 1rem' }}>
-          <h2>{messages.chartView.title}</h2>
-          <p style={{ color: '#767676', marginTop: '1rem' }}>{messages.chartView.selectStock}</p>
-          {/* TODO: recharts 기반 차트 뷰 */}
-        </section>
-      )}
-
-      {activeTab === 'watchlist' && (
-        <section style={{ maxWidth: '75rem', margin: '0 auto', padding: '3rem 1rem' }}>
-          <h2>{messages.watchlist.title}</h2>
-          <p style={{ color: '#767676', marginTop: '1rem' }}>{messages.watchlist.empty}</p>
-          {/* TODO: Watchlist CRUD */}
-        </section>
       )}
     </>
   );

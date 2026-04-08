@@ -125,26 +125,19 @@
     "faq": { "title": "常见问题" }
   },
   "stocks": {
-    "tabs": {
-      "livePrices": "Live Prices",
-      "chartView": "Chart View",
-      "watchlist": "Watchlist"
-    },
     "indices": { "title": "主要指数" },
-    "watchlist": {
-      "title": "自选列表",
-      "empty": "请添加您关注的股票。",
-      "addPlaceholder": "输入股票代码 (例如：AAPL)"
-    },
-    "chartView": {
-      "title": "Chart View",
-      "selectStock": "请选择股票"
-    },
     "table": {
       "title": "实时股价",
       "filterAll": "全部",
       "columns": { "symbol": "代码", "name": "名称", "price": "价格", "change": "涨跌幅", "volume": "成交量", "marketCap": "市值" },
       "sectors": { "tech": "科技", "energy": "能源", "finance": "金融", "healthcare": "医疗", "consumer": "消费", "industrial": "工业" }
+    },
+    "movers": {
+      "sectionTitle": "市场领涨/领跌",
+      "gainersTitle": "今日表现最佳",
+      "losersTitle": "今日表现最差",
+      "gainersBadge": "涨幅 TOP",
+      "losersBadge": "跌幅 TOP"
     },
     "detail": {
       "currentPrice": "现价",
