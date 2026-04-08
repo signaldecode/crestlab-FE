@@ -226,24 +226,56 @@
   },
   "education": {
     "title": "Education",
-    "tabs": {
-      "videos": "Videos",
-      "articles": "Articles",
-      "faq": "FAQ"
-    },
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
     "videos": {
-      "title": "教育動画",
-      "filterAll": "すべて",
-      "categories": { "beginner": "入門", "technicalAnalysis": "テクニカル分析", "cryptoBasics": "暗号資産の基礎" }
+      "title": "Educational Videos",
+      "filterAll": "All",
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
     },
-    "articles": {
-      "title": "記事",
-      "empty": "登録された記事はありません。"
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
     },
-    "faq": {
-      "title": "よくあるご質問"
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
     },
-    "backToList": "一覧へ"
+    "backToList": "Back to List"
   },
   "news": {
     "title": "News",

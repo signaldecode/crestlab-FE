@@ -1,62 +1,74 @@
 'use client';
 
-import { useState } from 'react';
-import PageTabs from '@/components/ui/PageTabs';
+import { useMemo, useState } from 'react';
 import VideoCategoryContainer from './VideoCategoryContainer';
-import type { VideoItem } from '@/types/finance';
+import useEducationStore from '@/stores/useEducationStore';
+import type { VideoItem, VideoCategory } from '@/types/finance';
+
+export interface EducationCategoryMessages extends Record<VideoCategory, string> {}
+
+export interface EducationVideosMessages {
+  title: string;
+  filterAll: string;
+  filterAriaLabel: string;
+  empty: string;
+  categories: EducationCategoryMessages;
+}
+
+export interface EducationAdminMessages {
+  openButton: string;
+  openButtonAriaLabel: string;
+  closeAriaLabel: string;
+  title: string;
+  subtitle: string;
+  urlLabel: string;
+  urlPlaceholder: string;
+  categoryLabel: string;
+  submit: string;
+  cancel: string;
+  submitting: string;
+  successMessage: string;
+  fetching: string;
+  fetched: string;
+  fetchError: string;
+  errors: {
+    invalidUrl: string;
+    titleRequired: string;
+    categoryRequired: string;
+  };
+}
+
+export interface EducationMessages {
+  title: string;
+  subtitle: string;
+  videos: EducationVideosMessages;
+  admin: EducationAdminMessages;
+}
 
 interface EducationPageContainerProps {
-  messages: {
-    tabs: Record<string, string>;
-    videos: {
-      title: string;
-      filterAll: string;
-      categories: Record<string, string>;
-    };
-    articles: {
-      title: string;
-      empty: string;
-    };
-    faq: {
-      title: string;
-    };
-  };
+  messages: EducationMessages;
   videosData: VideoItem[];
 }
 
-const TABS = [
-  { key: 'videos', label: '' },
-  { key: 'articles', label: '' },
-  { key: 'faq', label: '' },
-];
+export default function EducationPageContainer({
+  messages,
+  videosData,
+}: EducationPageContainerProps) {
+  const uploadedVideos = useEducationStore((s) => s.uploadedVideos);
+  const [activeCategory, setActiveCategory] = useState<VideoCategory | 'all'>('all');
 
-export default function EducationPageContainer({ messages, videosData }: EducationPageContainerProps) {
-  const [activeTab, setActiveTab] = useState('videos');
-
-  const tabs = TABS.map((t) => ({ ...t, label: messages.tabs[t.key] }));
+  const allVideos = useMemo(
+    () => [...uploadedVideos, ...videosData],
+    [uploadedVideos, videosData],
+  );
 
   return (
-    <>
-      <PageTabs tabs={tabs} activeTab={activeTab} onTabChange={setActiveTab} />
-
-      {activeTab === 'videos' && (
-        <VideoCategoryContainer messages={messages.videos} data={videosData} />
-      )}
-
-      {activeTab === 'articles' && (
-        <section style={{ maxWidth: '75rem', margin: '0 auto', padding: '3rem 1rem' }}>
-          <h2>{messages.articles.title}</h2>
-          <p style={{ color: '#767676', marginTop: '1rem' }}>{messages.articles.empty}</p>
-          {/* TODO: Articles 리스트 */}
-        </section>
-      )}
-
-      {activeTab === 'faq' && (
-        <section style={{ maxWidth: '75rem', margin: '0 auto', padding: '3rem 1rem' }}>
-          <h2>{messages.faq.title}</h2>
-          {/* TODO: FAQ 아코디언 */}
-        </section>
-      )}
-    </>
+    <VideoCategoryContainer
+      messages={messages.videos}
+      adminMessages={messages.admin}
+      data={allVideos}
+      activeCategory={activeCategory}
+      onCategoryChange={setActiveCategory}
+    />
   );
 }

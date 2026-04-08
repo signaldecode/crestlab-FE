@@ -254,22 +254,54 @@
   },
   "education": {
     "title": "Education",
-    "tabs": {
-      "videos": "Videos",
-      "articles": "Articles",
-      "faq": "FAQ"
-    },
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
     "videos": {
       "title": "Educational Videos",
       "filterAll": "All",
-      "categories": { "beginner": "Beginner", "technicalAnalysis": "Technical Analysis", "cryptoBasics": "Crypto Basics" }
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
     },
-    "articles": {
-      "title": "Articles",
-      "empty": "No articles available."
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
     },
-    "faq": {
-      "title": "Frequently Asked Questions"
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
     },
     "backToList": "Back to List"
   },

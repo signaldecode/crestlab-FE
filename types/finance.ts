@@ -92,14 +92,23 @@ export interface NewsItem {
 }
 
 // Education
+export type VideoCategory =
+  | 'beginner'
+  | 'intermediate'
+  | 'technical-analysis'
+  | 'crypto-basics'
+  | 'market-strategy';
+
 export interface VideoItem {
   slug: string;
   title: string;
   description: string;
   youtubeId: string;
-  category: 'beginner' | 'technical-analysis' | 'crypto-basics';
+  category: VideoCategory;
   thumbnail: string;
   duration: string;
+  views: number;
+  publishedAt?: string;
 }
 
 // Ticker

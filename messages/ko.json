@@ -226,24 +226,56 @@
   },
   "education": {
     "title": "Education",
-    "tabs": {
-      "videos": "Videos",
-      "articles": "Articles",
-      "faq": "FAQ"
-    },
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
     "videos": {
-      "title": "교육 영상",
-      "filterAll": "전체",
-      "categories": { "beginner": "입문", "technicalAnalysis": "기술적 분석", "cryptoBasics": "암호화폐 기초" }
+      "title": "Educational Videos",
+      "filterAll": "All",
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
     },
-    "articles": {
-      "title": "아티클",
-      "empty": "등록된 아티클이 없습니다."
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
     },
-    "faq": {
-      "title": "자주 묻는 질문"
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
     },
-    "backToList": "목록으로"
+    "backToList": "Back to List"
   },
   "news": {
     "title": "News",
