@@ -89,6 +89,25 @@
         }
       }
     },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "实时市场脉动",
+        "title": "把握全球数字资产的脉搏",
+        "description": "实时掌握价格波动与即时行情。在数字资产市场,每一秒都可能是机会。"
+      },
+      "rowChart": {
+        "eyebrow": "跨资产信号",
+        "title": "比特币与美国市场核心数据分析",
+        "description": "对比当前比特币市值占比与主要美国市场指数的投资吸引力。"
+      },
+      "barLabels": {
+        "btcDominance": "比特币市占率",
+        "sp500": "S&P 500 投资吸引力",
+        "btcAttractiveness": "比特币投资吸引力"
+      },
+      "coinCardAriaLabel": "实时加密货币行情",
+      "barChartAriaLabel": "投资吸引力对比"
+    },
     "rollingCounter": {
       "title": "数据一点一滴,成就财富增长",
       "subtitle": "以数据洞察赋能更智能的增长",

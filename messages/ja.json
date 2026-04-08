@@ -89,6 +89,25 @@
         }
       }
     },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "リアルタイムのマーケット鼓動",
+        "title": "グローバル・デジタル資産の動きを瞬時に捉える",
+        "description": "リアルタイム価格とボラティリティを即座にチェック。デジタル資産市場では一瞬一瞬がチャンスです。"
+      },
+      "rowChart": {
+        "eyebrow": "クロスアセット・シグナル",
+        "title": "ビットコインと米国市場のコアデータ分析",
+        "description": "現在のビットコイン・ドミナンスと主要な米国市場指数の投資魅力度を比較できます。"
+      },
+      "barLabels": {
+        "btcDominance": "ビットコイン・ドミナンス",
+        "sp500": "S&P 500 投資魅力度",
+        "btcAttractiveness": "ビットコイン投資魅力度"
+      },
+      "coinCardAriaLabel": "リアルタイム暗号資産の価格",
+      "barChartAriaLabel": "投資魅力度の比較"
+    },
     "rollingCounter": {
       "title": "データ一つひとつから育つ、富のかたち",
       "subtitle": "より賢い成長のためのデータドリブン・インサイト",

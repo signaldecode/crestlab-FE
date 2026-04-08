@@ -1,0 +1,314 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ─────────────────────────────────────────────────────────────
+// Two-row showcase: each row pairs a copy block with a visual.
+// Visuals reveal on viewport entry — coin rows fade in stagger,
+// bars grow + count up.
+//
+// Desktop:
+//   Row 1: [copy] | [coin card]
+//   Row 2: [bar card] | [copy]
+//
+// Mobile (mobile-first base):
+//   Visual first, then copy below — per requirements.
+// ─────────────────────────────────────────────────────────────
+
+.data-preview {
+  background: #ffffff;
+}
+
+.data-preview__inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-3xl;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl $container-padding;
+    gap: $spacing-4xl;
+  }
+}
+
+.data-preview__row {
+  display: flex;
+  flex-direction: column-reverse; // visual on top, copy below for mobile
+  gap: $spacing-2xl;
+  align-items: stretch;
+
+  @include respond-to(lg) {
+    flex-direction: row;
+    align-items: center;
+    gap: $spacing-3xl;
+
+    > * {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+  }
+}
+
+// Row 1: copy left, visual right on desktop
+.data-preview__row--coins {
+  @include respond-to(lg) {
+    flex-direction: row;
+  }
+}
+
+// Row 2: visual left, copy right on desktop (the children are already
+// in chart-then-copy order in the JSX)
+.data-preview__row--chart {
+  @include respond-to(lg) {
+    flex-direction: row;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Copy side
+// ─────────────────────────────────────────────────────────────
+.data-preview__copy {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+
+  @include respond-to(lg) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+.data-preview__eyebrow {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+.data-preview__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-background-dark;
+  line-height: $line-height-snug;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.data-preview__description {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  line-height: $line-height-relaxed;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Coin card
+// ─────────────────────────────────────────────────────────────
+.data-preview__coin-card {
+  background: #f4f6fb;
+  border-radius: 1.25rem;
+  padding: $spacing-lg;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+}
+
+.data-preview__coin-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.data-preview__coin-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+
+  // Pre-reveal state: hidden + slid down a touch
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.data-preview__coin-row--in {
+  opacity: 1;
+  transform: none;
+}
+
+.data-preview__coin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.data-preview__coin-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.data-preview__coin-name {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.data-preview__coin-ticker {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+.data-preview__coin-spark {
+  display: none; // hide on narrow widths
+
+  @include respond-to(sm) {
+    display: block;
+    width: 4.5rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+  }
+}
+
+.data-preview__coin-values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: $spacing-xs;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-preview__coin-price {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.data-preview__coin-change {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+}
+
+.data-preview__coin-change--up {
+  color: #10b981;
+}
+
+.data-preview__coin-change--down {
+  color: #ef4444;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Bar chart
+// ─────────────────────────────────────────────────────────────
+.data-preview__bar-card {
+  background: #f4f6fb;
+  border-radius: 1.25rem;
+  padding: $spacing-2xl $spacing-lg;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.06);
+
+  @include respond-to(md) {
+    padding: $spacing-2xl $spacing-xl;
+  }
+}
+
+.data-preview__bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: $spacing-lg;
+  height: 18rem;
+
+  @include respond-to(md) {
+    height: 20rem;
+  }
+}
+
+.data-preview__bar-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  padding-top: 1.5rem;
+}
+
+.data-preview__bar-value {
+  position: absolute;
+  top: 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-preview__bar {
+  width: 100%;
+  max-width: 3.5rem;
+  background: #d0d4dc;
+  border-radius: 0.5rem 0.5rem 0 0;
+  margin-top: auto;
+  margin-bottom: $spacing-md;
+  // height comes from inline style
+  transition: background 0.4s ease;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.data-preview__bar--highlight {
+  background: linear-gradient(180deg, #6f9eff 0%, #2563eb 100%);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.25);
+}
+
+.data-preview__bar-label {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  text-align: center;
+  line-height: $line-height-snug;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}

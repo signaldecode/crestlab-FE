@@ -7,6 +7,7 @@ import FeatureCardsContainer, {
   type FeatureCardItem,
 } from '@/components/containers/landing/FeatureCardsContainer';
 import IntersectionContainer from '@/components/containers/landing/IntersectionContainer';
+import DataPreviewContainer from '@/components/containers/landing/DataPreviewContainer';
 import RotatingHeadlineContainer, {
   type RotatingHeadlineItem,
 } from '@/components/containers/landing/RotatingHeadlineContainer';
@@ -77,6 +78,26 @@ export default async function HomePage() {
     imageAlt: t('intersection.imageAlt'),
   };
 
+  const dataPreviewMsg = {
+    rowCoins: {
+      eyebrow: t('dataPreview.rowCoins.eyebrow'),
+      title: t('dataPreview.rowCoins.title'),
+      description: t('dataPreview.rowCoins.description'),
+    },
+    rowChart: {
+      eyebrow: t('dataPreview.rowChart.eyebrow'),
+      title: t('dataPreview.rowChart.title'),
+      description: t('dataPreview.rowChart.description'),
+    },
+    barLabels: {
+      btcDominance: t('dataPreview.barLabels.btcDominance'),
+      sp500: t('dataPreview.barLabels.sp500'),
+      btcAttractiveness: t('dataPreview.barLabels.btcAttractiveness'),
+    },
+    coinCardAriaLabel: t('dataPreview.coinCardAriaLabel'),
+    barChartAriaLabel: t('dataPreview.barChartAriaLabel'),
+  };
+
   const rotatingHeadlineMsg = { ariaLabel: t('rotatingHeadline.ariaLabel') };
 
   const rotatingHeadlineKeys = ['01', '02', '03'] as const;
@@ -119,6 +140,8 @@ export default async function HomePage() {
       <IntersectionContainer messages={intersectionMsg}>
         <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
       </IntersectionContainer>
+      {/* Data preview — coin card stagger reveal + bar chart count-up */}
+      <DataPreviewContainer messages={dataPreviewMsg} />
       {/* Rotating headline — sticky 3D wheel of trust pillars */}
       <RotatingHeadlineContainer messages={rotatingHeadlineMsg} items={rotatingHeadlineItems} />
       {/* Rolling counter — count-up stat triggered on viewport entry */}

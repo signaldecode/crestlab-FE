@@ -89,6 +89,25 @@
         }
       }
     },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "실시간 마켓 펄스",
+        "title": "글로벌 디지털 자산의 흐름을 한눈에",
+        "description": "실시간 가격과 변동성을 즉시 확인하세요. 디지털 자산 시장에서는 1초가 곧 기회입니다."
+      },
+      "rowChart": {
+        "eyebrow": "크로스에셋 시그널",
+        "title": "비트코인과 미국 시장 핵심 데이터 분석",
+        "description": "현재 비트코인 도미넌스와 주요 미국 시장 지수의 투자 매력도를 한눈에 비교해 보세요."
+      },
+      "barLabels": {
+        "btcDominance": "비트코인 도미넌스",
+        "sp500": "S&P 500 투자 매력도",
+        "btcAttractiveness": "비트코인 투자 매력도"
+      },
+      "coinCardAriaLabel": "실시간 암호화폐 시세",
+      "barChartAriaLabel": "투자 매력도 비교"
+    },
     "rollingCounter": {
       "title": "데이터 한 점에서 시작되는 성장의 순간",
       "subtitle": "더 똑똑한 성장을 위한 데이터 기반 인사이트",

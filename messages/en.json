@@ -94,6 +94,25 @@
       "trailingText": "Crypto and Equity",
       "imageAlt": "Crypto and equity intersection visual"
     },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "Live market pulse",
+        "title": "Capture the Pulse of Global Digital Assets",
+        "description": "Stay ahead with real-time price updates and instant volatility tracking. Every second counts in the digital asset market."
+      },
+      "rowChart": {
+        "eyebrow": "Cross-asset signal",
+        "title": "Bitcoin & U.S. Market Core Data Analysis",
+        "description": "Compare Current Bitcoin Dominance with the investment attractiveness of key U.S. market indices."
+      },
+      "barLabels": {
+        "btcDominance": "BTC Dominance",
+        "sp500": "S&P 500 Score",
+        "btcAttractiveness": "BTC Attractiveness"
+      },
+      "coinCardAriaLabel": "Live crypto prices",
+      "barChartAriaLabel": "Comparative attractiveness scores"
+    },
     "rotatingHeadline": {
       "ariaLabel": "What CrestLab stands for",
       "items": {
