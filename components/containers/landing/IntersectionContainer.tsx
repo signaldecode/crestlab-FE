@@ -24,10 +24,19 @@ export default function IntersectionContainer({ messages, children }: Intersecti
 
   useEffect(() => {
     let raf = 0;
+    let snapTimer: number | null = null;
+    let snapLockTimer: number | null = null;
+    let snapping = false;
+    let lastScrollY = window.scrollY;
+    let lastDirection: 1 | -1 = 1;
 
     const clamp = (n: number, min = 0, max = 1) => Math.min(Math.max(n, min), max);
 
     const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    // Coarse pointer = touch device. We let touch users scroll freely without
+    // hijacking — auto-snap is desktop/wheel only where the morph "stuck"
+    // feeling is most pronounced.
+    const touchMq = window.matchMedia('(pointer: coarse)');
 
     const resetInlineStyles = () => {
       const targets = [
@@ -44,6 +53,44 @@ export default function IntersectionContainer({ messages, children }: Intersecti
         el.style.transform = '';
       });
       if (cardsRef.current) cardsRef.current.style.pointerEvents = '';
+    };
+
+    // After the user stops scrolling mid-morph, smoothly scroll the page
+    // to either the start (progress 0) or the end (progress 1) of the
+    // pinner — whichever direction they were last moving. This makes the
+    // morph naturally complete instead of freezing in an awkward halfway
+    // state when scrolling pauses.
+    const checkSnap = () => {
+      if (snapping || motionMq.matches || touchMq.matches) return;
+
+      const pinner = pinnerRef.current;
+      if (!pinner) return;
+
+      const rect = pinner.getBoundingClientRect();
+      const viewportH = window.innerHeight;
+      const total = rect.height - viewportH;
+      if (total <= 0) return;
+
+      const scrolled = -rect.top;
+      // Only snap when we're actually inside the pinner's pin range.
+      if (scrolled <= 0 || scrolled >= total) return;
+
+      const progress = scrolled / total;
+      // Stable enough at the edges — leave it alone.
+      if (progress < 0.05 || progress > 0.95) return;
+
+      const targetProgress = lastDirection > 0 ? 1 : 0;
+      const delta = (targetProgress - progress) * total;
+      const targetY = Math.max(0, window.scrollY + delta);
+
+      snapping = true;
+      window.scrollTo({ top: targetY, behavior: 'smooth' });
+
+      if (snapLockTimer) window.clearTimeout(snapLockTimer);
+      // Long enough for smooth scroll to settle, then re-arm.
+      snapLockTimer = window.setTimeout(() => {
+        snapping = false;
+      }, 700);
     };
 
     const update = () => {
@@ -95,11 +142,22 @@ export default function IntersectionContainer({ messages, children }: Intersecti
     };
 
     const onScroll = () => {
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        raf = 0;
-        update();
-      });
+      const currentY = window.scrollY;
+      if (currentY > lastScrollY) lastDirection = 1;
+      else if (currentY < lastScrollY) lastDirection = -1;
+      lastScrollY = currentY;
+
+      if (!raf) {
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          update();
+        });
+      }
+
+      // Re-arm the snap timer on every scroll event. checkSnap fires only
+      // after the user has been idle for ~180ms, then completes the morph.
+      if (snapTimer !== null) window.clearTimeout(snapTimer);
+      snapTimer = window.setTimeout(checkSnap, 300);
     };
 
     update();
@@ -111,6 +169,8 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       window.removeEventListener('resize', onScroll);
       motionMq.removeEventListener('change', onScroll);
       if (raf) cancelAnimationFrame(raf);
+      if (snapTimer !== null) window.clearTimeout(snapTimer);
+      if (snapLockTimer !== null) window.clearTimeout(snapLockTimer);
     };
   }, []);
 

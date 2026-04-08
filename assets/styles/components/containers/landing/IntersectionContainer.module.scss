@@ -26,10 +26,12 @@
 
 .intersection__pinner {
   position: relative;
-  height: 220vh;
+  // Larger pinner = more scroll budget per morph cycle = slower, more
+  // deliberate transition. Tweak here to make it faster/slower overall.
+  height: 380vh;
 
   @include respond-to(md) {
-    height: 280vh;
+    height: 500vh;
   }
 }
 
