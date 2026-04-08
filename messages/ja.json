@@ -278,25 +278,21 @@
     "backToList": "Back to List"
   },
   "news": {
-    "title": "News",
-    "tabs": {
-      "autoFeed": "Auto Feed",
-      "marketMovers": "Market Movers",
-      "indices": "Indices"
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
     },
-    "autoFeed": {
-      "title": "リアルタイムニュース",
-      "filterAll": "すべて",
-      "categories": { "stocks": "株式", "crypto": "暗号資産", "macro": "マクロ経済" }
-    },
-    "marketMovers": {
-      "title": "Market Movers",
-      "gainers": "値上がりTOP",
-      "losers": "値下がりTOP"
-    },
-    "indices": {
-      "title": "主要指数の状況"
-    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
     "detail": {
       "backToList": "ニュース一覧へ",
       "publishedOn": "掲載日",

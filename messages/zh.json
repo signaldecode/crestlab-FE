@@ -278,25 +278,21 @@
     "backToList": "Back to List"
   },
   "news": {
-    "title": "News",
-    "tabs": {
-      "autoFeed": "Auto Feed",
-      "marketMovers": "Market Movers",
-      "indices": "Indices"
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
     },
-    "autoFeed": {
-      "title": "实时新闻",
-      "filterAll": "全部",
-      "categories": { "stocks": "股票", "crypto": "加密货币", "macro": "宏观经济" }
-    },
-    "marketMovers": {
-      "title": "Market Movers",
-      "gainers": "涨幅榜",
-      "losers": "跌幅榜"
-    },
-    "indices": {
-      "title": "主要指数行情"
-    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
     "detail": {
       "backToList": "返回新闻列表",
       "publishedOn": "发布日期",

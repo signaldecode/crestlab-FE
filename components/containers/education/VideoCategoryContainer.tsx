@@ -119,6 +119,11 @@ export default function VideoCategoryContainer({
                 </div>
                 <div className={styles['video-category__body']}>
                   <h3 className={styles['video-category__card-title']}>{video.title}</h3>
+                  {video.description && (
+                    <p className={styles['video-category__card-description']}>
+                      {video.description}
+                    </p>
+                  )}
                   <div className={styles['video-category__meta']}>
                     <span className={styles['video-category__category']}>
                       {messages.categories[video.category]}

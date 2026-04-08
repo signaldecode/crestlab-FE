@@ -278,25 +278,21 @@
     "backToList": "Back to List"
   },
   "news": {
-    "title": "News",
-    "tabs": {
-      "autoFeed": "Auto Feed",
-      "marketMovers": "Market Movers",
-      "indices": "Indices"
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
     },
-    "autoFeed": {
-      "title": "실시간 뉴스",
-      "filterAll": "전체",
-      "categories": { "stocks": "주식", "crypto": "암호화폐", "macro": "거시경제" }
-    },
-    "marketMovers": {
-      "title": "Market Movers",
-      "gainers": "상승 TOP",
-      "losers": "하락 TOP"
-    },
-    "indices": {
-      "title": "주요 지수 현황"
-    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
     "detail": {
       "backToList": "뉴스 목록으로",
       "publishedOn": "게재일",

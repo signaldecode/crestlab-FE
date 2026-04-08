@@ -478,25 +478,21 @@
     }
   },
   "news": {
-    "title": "News",
-    "tabs": {
-      "autoFeed": "Auto Feed",
-      "marketMovers": "Market Movers",
-      "indices": "Indices"
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
     },
-    "autoFeed": {
-      "title": "Live News",
-      "filterAll": "All",
-      "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" }
-    },
-    "marketMovers": {
-      "title": "Market Movers",
-      "gainers": "Top Gainers",
-      "losers": "Top Losers"
-    },
-    "indices": {
-      "title": "Major Indices"
-    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
     "detail": {
       "backToList": "Back to News",
       "publishedOn": "Published",

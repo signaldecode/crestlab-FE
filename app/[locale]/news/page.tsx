@@ -15,28 +15,25 @@ export default async function NewsPage() {
   const t = await getTranslations('news');
 
   const messages = {
-    tabs: {
-      autoFeed: t('tabs.autoFeed'),
-      marketMovers: t('tabs.marketMovers'),
-      indices: t('tabs.indices'),
+    title: t('title'),
+    subtitle: t('subtitle'),
+    filterAll: t('filterAll'),
+    filterAriaLabel: t('filterAriaLabel'),
+    categories: {
+      stocks: t('categories.stocks'),
+      crypto: t('categories.crypto'),
+      macro: t('categories.macro'),
     },
-    autoFeed: {
-      title: t('autoFeed.title'),
-      filterAll: t('autoFeed.filterAll'),
-      categories: {
-        stocks: t('autoFeed.categories.stocks'),
-        crypto: t('autoFeed.categories.crypto'),
-        macro: t('autoFeed.categories.macro'),
-      },
+    search: {
+      label: t('search.label'),
+      placeholder: t('search.placeholder'),
+      ariaLabel: t('search.ariaLabel'),
+      clear: t('search.clear'),
+      noResults: t('search.noResults'),
     },
-    marketMovers: {
-      title: t('marketMovers.title'),
-      gainers: t('marketMovers.gainers'),
-      losers: t('marketMovers.losers'),
-    },
-    indices: {
-      title: t('indices.title'),
-    },
+    empty: t('empty'),
+    loadMore: t('loadMore'),
+    autoUpdate: t('autoUpdate'),
   };
 
   return (
