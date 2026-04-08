@@ -1,0 +1,171 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ─────────────────────────────────────────────────────────────
+// Sticky-pinned wheel of headlines.
+//
+// Structure:
+//   .rotating-headline (section)
+//     .rotating-headline__pinner   ← tall scroll area driving progress
+//       .rotating-headline__stage  ← position: sticky, 100dvh
+//         .rotating-headline__wheel
+//           .rotating-headline__item × N (3D-rotated by JS)
+//
+// JS maps scroll progress to a "focus" value that travels through the
+// items, with hold ranges at start/middle/end and rotateX transitions
+// in between. The last item holds before the sticky releases so the
+// next page section reveals after the user has read it.
+// ─────────────────────────────────────────────────────────────
+
+.rotating-headline {
+  position: relative;
+  background: #ffffff;
+}
+
+.rotating-headline__pinner {
+  position: relative;
+  height: 320vh;
+
+  @include respond-to(md) {
+    height: 380vh;
+  }
+}
+
+.rotating-headline__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+}
+
+.rotating-headline__wheel {
+  position: relative;
+  width: 100%;
+  max-width: $container-max-width;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  transform-style: preserve-3d;
+}
+
+.rotating-headline__item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // JS sets transform to translate3d(-50%, calc(-50% + Ypx), 0)
+  // rotateX(...)deg scale(...). The base transform here is just a fallback
+  // for the very first paint before JS runs.
+  transform: translate3d(-50%, -50%, 0);
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+
+  // Lerp the JS-driven transforms over a short window. This smooths out
+  // per-frame scroll jitter and gives the wheel a subtle momentum without
+  // visibly lagging behind the scroll position.
+  transition:
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.35s ease-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: $spacing-sm;
+
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: #0a1f4d;
+  text-align: center;
+  white-space: nowrap;
+
+  // First item starts visible so SSR / pre-hydration paint is sensible.
+  // JS overrides opacity per scroll progress on hydration.
+  opacity: 0;
+  &:first-child {
+    opacity: 1;
+  }
+
+  @include respond-to(sm) {
+    font-size: $font-size-xl;
+    gap: $spacing-md;
+  }
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+    gap: $spacing-lg;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.rotating-headline__text {
+  display: inline-block;
+}
+
+.rotating-headline__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+
+  @include respond-to(md) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @include respond-to(lg) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Reduced-motion: collapse to a static stack of all items, no pinning,
+// no rotation. JS bails out so no inline transforms remain.
+@media (prefers-reduced-motion: reduce) {
+  .rotating-headline__pinner {
+    height: auto;
+  }
+
+  .rotating-headline__stage {
+    position: static;
+    height: auto;
+    perspective: none;
+    padding: $spacing-3xl 0;
+    overflow: visible;
+  }
+
+  .rotating-headline__wheel {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-xl;
+  }
+
+  .rotating-headline__item {
+    position: static;
+    transform: none;
+    opacity: 1;
+    white-space: normal;
+    transition: none;
+  }
+}

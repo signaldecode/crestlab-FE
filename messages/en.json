@@ -94,6 +94,29 @@
       "trailingText": "Crypto and Equity",
       "imageAlt": "Crypto and equity intersection visual"
     },
+    "rotatingHeadline": {
+      "ariaLabel": "What CrestLab stands for",
+      "items": {
+        "01": {
+          "before": "The Industry Standard",
+          "after": "for Financial Leaders",
+          "icon": "pencil",
+          "iconAlt": "Editorial standard"
+        },
+        "02": {
+          "before": "Trusted by More Financial",
+          "after": "Institutions Than Any Other",
+          "icon": "medal",
+          "iconAlt": "Trust medal"
+        },
+        "03": {
+          "before": "Powering the World's",
+          "after": "Leading Banks. Why Wait?",
+          "icon": "bank",
+          "iconAlt": "Leading bank"
+        }
+      }
+    },
     "newsPreview": {
       "title": "NEWS",
       "subtitle": "The latest market news and analysis in one place",

@@ -7,6 +7,9 @@ import FeatureCardsContainer, {
   type FeatureCardItem,
 } from '@/components/containers/landing/FeatureCardsContainer';
 import IntersectionContainer from '@/components/containers/landing/IntersectionContainer';
+import RotatingHeadlineContainer, {
+  type RotatingHeadlineItem,
+} from '@/components/containers/landing/RotatingHeadlineContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
 import landingData from '@/data/landingData.json';
 import stocksData from '@/data/mock/stocksData.json';
@@ -74,6 +77,16 @@ export default async function HomePage() {
     imageAlt: t('intersection.imageAlt'),
   };
 
+  const rotatingHeadlineMsg = { ariaLabel: t('rotatingHeadline.ariaLabel') };
+
+  const rotatingHeadlineKeys = ['01', '02', '03'] as const;
+  const rotatingHeadlineItems: RotatingHeadlineItem[] = rotatingHeadlineKeys.map((key) => ({
+    before: t(`rotatingHeadline.items.${key}.before`),
+    after: t(`rotatingHeadline.items.${key}.after`),
+    icon: t(`rotatingHeadline.items.${key}.icon`) as RotatingHeadlineItem['icon'],
+    iconAlt: t(`rotatingHeadline.items.${key}.iconAlt`),
+  }));
+
   const faqMsg = { title: t('faq.title') };
 
   const featuredItems = stocksData.stocks.map((s) => ({ symbol: s.symbol, name: s.name }));
@@ -96,6 +109,8 @@ export default async function HomePage() {
       <IntersectionContainer messages={intersectionMsg}>
         <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
       </IntersectionContainer>
+      {/* Rotating headline — sticky 3D wheel of trust pillars */}
+      <RotatingHeadlineContainer messages={rotatingHeadlineMsg} items={rotatingHeadlineItems} />
       {/* 뉴스 */}
       <NewsPreviewContainer messages={newsPreviewMsg} data={newsData.items as never} />
     </>
