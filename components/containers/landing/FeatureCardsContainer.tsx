@@ -5,8 +5,8 @@ export interface FeatureCardItem {
   index: string;
   frontTitle: string;
   frontDescription: string;
-  backTitle: string;
-  backDescription: string;
+  frontImage: string;
+  backImage: string;
   ariaLabel: string;
 }
 
@@ -36,8 +36,8 @@ export default function FeatureCardsContainer({ messages, items }: FeatureCardsC
                 index={item.index}
                 frontTitle={item.frontTitle}
                 frontDescription={item.frontDescription}
-                backTitle={item.backTitle}
-                backDescription={item.backDescription}
+                frontImage={item.frontImage}
+                backImage={item.backImage}
                 ariaLabel={item.ariaLabel}
               />
             </li>

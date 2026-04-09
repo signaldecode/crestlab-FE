@@ -64,42 +64,35 @@
       "imageAlt": "CrestLab app screenshots showing real-time stock and crypto market data"
     },
     "featureCards": {
-      "title": "Why CrestLab",
-      "subtitle": "Live data, AI-powered analytics, and education — all in one place.",
+      "title": "Market Intelligence Framework",
+      "subtitle": "A structured approach to understanding market behavior, asset relationships, and data-driven decision making.",
       "items": {
         "01": {
-          "frontTitle": "Real-Time Market Data",
-          "frontDescription": "Live US equities and crypto prices, refreshed every minute.",
-          "backTitle": "Always-On Coverage",
-          "backDescription": "S&P 500, NASDAQ, DOW, BTC, ETH and 4,000+ tickers, streamed straight from trusted providers.",
-          "ariaLabel": "Real-time market data — flip card"
+          "frontTitle": "Market Structure",
+          "frontDescription": "Understanding the core foundations of the Bitcoin market.",
+          "ariaLabel": "Market structure — flip card"
         },
         "02": {
-          "frontTitle": "AI-Powered Analytics",
-          "frontDescription": "Pattern detection and signal scoring on every chart.",
-          "backTitle": "Smart Insights",
-          "backDescription": "Trend, momentum and volatility models surface what matters before you scroll past it.",
-          "ariaLabel": "AI-powered analytics — flip card"
+          "frontTitle": "Volatility Flow",
+          "frontDescription": "Tracking global asset movements and market dynamics.",
+          "ariaLabel": "Volatility flow — flip card"
         },
         "03": {
-          "frontTitle": "Crypto Sentiment",
-          "frontDescription": "BTC dominance and Fear & Greed at a glance.",
-          "backTitle": "Market Mood",
-          "backDescription": "Track historical sentiment shifts and dominance flows to time the market with context.",
-          "ariaLabel": "Crypto sentiment — flip card"
+          "frontTitle": "Correlation",
+          "frontDescription": "Analyzing relationships between BTC and Nasdaq.",
+          "ariaLabel": "Correlation — flip card"
         },
         "04": {
-          "frontTitle": "Investor Education",
-          "frontDescription": "From beginner basics to technical analysis playbooks.",
-          "backTitle": "Learn As You Trade",
-          "backDescription": "Curated video lessons, glossaries and walkthroughs available in four languages.",
-          "ariaLabel": "Investor education — flip card"
+          "frontTitle": "Data Decisions",
+          "frontDescription": "Identifying optimal timing through data insights.",
+          "ariaLabel": "Data decisions — flip card"
         }
       }
     },
     "intersection": {
-      "leadingText": "The Intersection of",
-      "trailingText": "Crypto and Equity",
+      "eyebrow": "INSTITUTIONAL-GRADE",
+      "title": "THE INTERSECTION\nOF CRYPTO AND EQUITY",
+      "description": "We seamlessly integrate the time-tested stability of traditional equity markets with the high-growth potential of digital assets to build a resilient, forward-thinking investment ecosystem for the modern era.",
       "imageAlt": "Crypto and equity intersection visual"
     },
     "dataPreview": {

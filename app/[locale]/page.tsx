@@ -63,12 +63,12 @@ export default async function HomePage() {
   };
 
   const featureCardKeys = ['01', '02', '03', '04'] as const;
-  const featureCardItems: FeatureCardItem[] = featureCardKeys.map((key) => ({
+  const featureCardItems: FeatureCardItem[] = featureCardKeys.map((key, i) => ({
     index: key,
     frontTitle: t(`featureCards.items.${key}.frontTitle`),
     frontDescription: t(`featureCards.items.${key}.frontDescription`),
-    backTitle: t(`featureCards.items.${key}.backTitle`),
-    backDescription: t(`featureCards.items.${key}.backDescription`),
+    frontImage: `/mainpage/intersection/card/cardfront${i + 1}.svg`,
+    backImage: `/mainpage/intersection/card/cardback${i + 1}.svg`,
     ariaLabel: t(`featureCards.items.${key}.ariaLabel`),
   }));
 
@@ -82,8 +82,9 @@ export default async function HomePage() {
   };
 
   const intersectionMsg = {
-    leadingText: t('intersection.leadingText'),
-    trailingText: t('intersection.trailingText'),
+    eyebrow: t('intersection.eyebrow'),
+    title: t('intersection.title'),
+    description: t('intersection.description'),
     imageAlt: t('intersection.imageAlt'),
   };
 

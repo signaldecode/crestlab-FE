@@ -6,8 +6,9 @@ import styles from '@/assets/styles/components/containers/landing/IntersectionCo
 
 interface IntersectionContainerProps {
   messages: {
-    leadingText: string;
-    trailingText: string;
+    eyebrow: string;
+    title: string;
+    description: string;
     imageAlt: string;
   };
   children: ReactNode;
@@ -16,11 +17,12 @@ interface IntersectionContainerProps {
 export default function IntersectionContainer({ messages, children }: IntersectionContainerProps) {
   const pinnerRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLSpanElement>(null);
-  const leadingRef = useRef<HTMLSpanElement>(null);
-  const trailingRef = useRef<HTMLSpanElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+
+  const titleLines = messages.title.split('\n');
 
   useEffect(() => {
     let raf = 0;
@@ -33,17 +35,13 @@ export default function IntersectionContainer({ messages, children }: Intersecti
     const clamp = (n: number, min = 0, max = 1) => Math.min(Math.max(n, min), max);
 
     const motionMq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    // Coarse pointer = touch device. We let touch users scroll freely without
-    // hijacking — auto-snap is desktop/wheel only where the morph "stuck"
-    // feeling is most pronounced.
     const touchMq = window.matchMedia('(pointer: coarse)');
 
     const resetInlineStyles = () => {
       const targets = [
         introRef.current,
         imageRef.current,
-        leadingRef.current,
-        trailingRef.current,
+        contentRef.current,
         overlayRef.current,
         cardsRef.current,
       ];
@@ -55,11 +53,6 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       if (cardsRef.current) cardsRef.current.style.pointerEvents = '';
     };
 
-    // After the user stops scrolling mid-morph, smoothly scroll the page
-    // to either the start (progress 0) or the end (progress 1) of the
-    // pinner — whichever direction they were last moving. This makes the
-    // morph naturally complete instead of freezing in an awkward halfway
-    // state when scrolling pauses.
     const checkSnap = () => {
       if (snapping || motionMq.matches || touchMq.matches) return;
 
@@ -72,11 +65,9 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       if (total <= 0) return;
 
       const scrolled = -rect.top;
-      // Only snap when we're actually inside the pinner's pin range.
       if (scrolled <= 0 || scrolled >= total) return;
 
       const progress = scrolled / total;
-      // Stable enough at the edges — leave it alone.
       if (progress < 0.05 || progress > 0.95) return;
 
       const targetProgress = lastDirection > 0 ? 1 : 0;
@@ -87,7 +78,6 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       window.scrollTo({ top: targetY, behavior: 'smooth' });
 
       if (snapLockTimer) window.clearTimeout(snapLockTimer);
-      // Long enough for smooth scroll to settle, then re-arm.
       snapLockTimer = window.setTimeout(() => {
         snapping = false;
       }, 700);
@@ -108,30 +98,26 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       const scrolled = clamp(-rect.top, 0, Math.max(total, 0));
       const progress = total > 0 ? scrolled / total : 0;
 
-      // offsetWidth gives the un-transformed CSS box size — required because
-      // getBoundingClientRect would feed back the already-scaled size and break
-      // the target scale calculation.
       const baseSize = Math.min(image.offsetWidth, image.offsetHeight) || 1;
       const coverSize = Math.max(window.innerWidth, viewportH) * 1.8;
       const targetScale = coverSize / baseSize;
 
-      const eased = progress * progress; // ease-in punch
+      const eased = progress * progress;
       const scale = 1 + (targetScale - 1) * eased;
 
-      // Phase 1 (0   – 0.45): texts fade out, image expands on white
-      // Phase 2 (0.45 – 0.7): blue overlay covers, image fades, intro fades
-      // Phase 3 (0.6  – 1.0): cards layer fades in over the blue
-      const textOpacity = clamp(1 - progress * 2.4);
+      // Phase 1 (0–0.45): content fades out, image expands
+      // Phase 2 (0.45–0.7): overlay covers, image fades, intro fades
+      // Phase 3 (0.6–1.0): cards layer fades in
+      const contentOpacity = clamp(1 - progress * 2.4);
       const imageOpacity = clamp(1 - (progress - 0.5) * 3.5);
       const introOpacity = clamp(1 - (progress - 0.55) * 3);
       const overlayOpacity = clamp((progress - 0.4) * 3);
       const cardsOpacity = clamp((progress - 0.6) * 3);
-      const cardsTranslate = (1 - cardsOpacity) * 24; // px slide-up
+      const cardsTranslate = (1 - cardsOpacity) * 24;
 
       image.style.transform = `scale(${scale})`;
       image.style.opacity = String(imageOpacity);
-      if (leadingRef.current) leadingRef.current.style.opacity = String(textOpacity);
-      if (trailingRef.current) trailingRef.current.style.opacity = String(textOpacity);
+      if (contentRef.current) contentRef.current.style.opacity = String(contentOpacity);
       if (introRef.current) introRef.current.style.opacity = String(introOpacity);
       if (overlayRef.current) overlayRef.current.style.opacity = String(overlayOpacity);
       if (cardsRef.current) {
@@ -154,8 +140,6 @@ export default function IntersectionContainer({ messages, children }: Intersecti
         });
       }
 
-      // Re-arm the snap timer on every scroll event. checkSnap fires only
-      // after the user has been idle for ~180ms, then completes the morph.
       if (snapTimer !== null) window.clearTimeout(snapTimer);
       snapTimer = window.setTimeout(checkSnap, 300);
     };
@@ -179,23 +163,30 @@ export default function IntersectionContainer({ messages, children }: Intersecti
       <div ref={pinnerRef} className={styles['intersection__pinner']}>
         <div className={styles['intersection__stage']}>
           <div ref={introRef} className={styles['intersection__intro']}>
-            <h2 id="intersection-title" className={styles['intersection__title']}>
-              <span ref={leadingRef} className={styles['intersection__text']}>
-                {messages.leadingText}
-              </span>
-              <span ref={imageRef} className={styles['intersection__image']}>
-                <Image
-                  src="/mainpage/intersection/flipcardabove.svg"
-                  alt={messages.imageAlt}
-                  width={128}
-                  height={128}
-                  priority
-                />
-              </span>
-              <span ref={trailingRef} className={styles['intersection__text']}>
-                {messages.trailingText}
-              </span>
-            </h2>
+            {/* Image — expands on scroll */}
+            <div ref={imageRef} className={styles['intersection__image']}>
+              <Image
+                src="/mainpage/intersection/flipcardabove.svg"
+                alt={messages.imageAlt}
+                width={200}
+                height={200}
+                priority
+              />
+            </div>
+
+            {/* Text content — fades out on scroll */}
+            <div ref={contentRef} className={styles['intersection__content']}>
+              <span className={styles['intersection__eyebrow']}>{messages.eyebrow}</span>
+              <h2 id="intersection-title" className={styles['intersection__title']}>
+                {titleLines.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    {i < titleLines.length - 1 && <br />}
+                  </span>
+                ))}
+              </h2>
+              <p className={styles['intersection__description']}>{messages.description}</p>
+            </div>
           </div>
           <div
             ref={overlayRef}

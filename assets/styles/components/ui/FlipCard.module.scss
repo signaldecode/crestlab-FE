@@ -94,7 +94,7 @@
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(165deg, rgba(15, 32, 70, 0.85) 0%, rgba(10, 22, 51, 0.95) 100%);
+  background: linear-gradient(165deg, rgba(48, 134, 245, 0.25) 0%, rgba(10, 22, 51, 0.95) 100%);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
   color: #ffffff;
 
@@ -120,6 +120,8 @@
   transform: rotateY(180deg);
   background: linear-gradient(165deg, rgba(48, 134, 245, 0.25) 0%, rgba(10, 22, 51, 0.95) 100%);
   justify-content: center;
+  align-items: center;
+  padding: $spacing-md;
 
   @media (prefers-reduced-motion: reduce) {
     transform: none;
@@ -143,19 +145,33 @@
   min-height: 0;
   margin: $spacing-xs 0;
 
-  svg {
+  img {
     width: 50%;
     height: auto;
-    max-width: 4rem;
+    max-width: 5rem;
+    object-fit: contain;
   }
 
   @include respond-to(lg) {
     margin: $spacing-sm 0;
 
-    svg {
+    img {
       width: 60%;
-      max-width: 6rem;
+      max-width: 7rem;
     }
+  }
+}
+
+.flip-card__back-image {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    object-fit: contain;
   }
 }
 

@@ -4,20 +4,7 @@
 @use '../../../tokens/breakpoints' as *;
 
 // ─────────────────────────────────────────────────────────────
-// Single sticky stage with three layered phases.
-//
-// Structure:
-//   .intersection (section)
-//     .intersection__pinner   ← tall scroll area driving progress
-//       .intersection__stage  ← position: sticky, 100dvh
-//         .intersection__intro    (z 1) image + text on white
-//         .intersection__overlay  (z 2) blue gradient that fades in
-//         .intersection__cards    (z 3) FeatureCardsContainer that fades in
-//
-// All three layers occupy the same 100dvh box, so the cards arrive in the
-// SAME spot the image just expanded into. There is no sibling section below
-// the pinner — when sticky releases the user has already seen the cards
-// inside the stage and continues into the next page section seamlessly.
+// Sticky scroll morph: image expands → overlay → cards appear
 // ─────────────────────────────────────────────────────────────
 
 .intersection {
@@ -26,8 +13,6 @@
 
 .intersection__pinner {
   position: relative;
-  // Larger pinner = more scroll budget per morph cycle = slower, more
-  // deliberate transition. Tweak here to make it faster/slower overall.
   height: 380vh;
 
   @include respond-to(md) {
@@ -41,19 +26,112 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background: #ffffff;
+  background: $color-background;
 }
 
+// ── Intro: image on top, text below — vertically centered ──
 .intersection__intro {
   position: absolute;
   inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: $spacing-xl;
   z-index: 1;
+  will-change: opacity;
+  padding: 0 $container-padding;
+
+  @include respond-to(md) {
+    gap: $spacing-2xl;
+  }
+}
+
+// ── Image — expands via JS transform ──
+.intersection__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  flex-shrink: 0;
+  transform-origin: center center;
+  will-change: transform, opacity;
+
+  @include respond-to(md) {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  @include respond-to(lg) {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// ── Text content below image ──
+.intersection__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-md;
+  max-width: 48rem;
   will-change: opacity;
 }
 
+.intersection__eyebrow {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.intersection__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.intersection__description {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  line-height: $line-height-normal;
+  margin: 0;
+  max-width: 40rem;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Overlay ──
 .intersection__overlay {
   position: absolute;
   inset: 0;
@@ -61,12 +139,10 @@
   opacity: 0;
   z-index: 2;
   will-change: opacity;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(48, 134, 245, 0.4) 0%, transparent 55%),
-    radial-gradient(circle at 70% 80%, rgba(48, 134, 245, 0.35) 0%, transparent 55%),
-    linear-gradient(180deg, #061734 0%, #0a1f4d 100%);
+  background: url('/mainpage/intersection/card/Cardbackground.png') center / cover no-repeat;
 }
 
+// ── Cards layer ──
 .intersection__cards {
   position: absolute;
   inset: 0;
@@ -77,17 +153,12 @@
   pointer-events: none;
   will-change: opacity, transform;
 
-  // Mobile: stretch the FeatureCardsContainer section to fill the full
-  // sticky pane so the 2x2 grid squeezes 4 cards into 100dvh.
   > * {
     flex: 1;
     width: 100%;
     min-height: 0;
   }
 
-  // Tablet+ : center the cards section vertically. The section reverts to its
-  // natural height (4x1 row of 3:4 portrait cards) so the original design is
-  // preserved instead of being stretched.
   @include respond-to(md) {
     justify-content: center;
 
@@ -98,76 +169,7 @@
   }
 }
 
-.intersection__title {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: $spacing-sm;
-  margin: 0;
-  padding: 0 $container-padding;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-bold;
-  color: #0a1f4d;
-  text-align: center;
-
-  @include respond-to(sm) {
-    font-size: $font-size-2xl;
-    gap: $spacing-md;
-  }
-
-  @include respond-to(md) {
-    font-size: $font-size-3xl;
-    gap: $spacing-lg;
-  }
-
-  @include respond-to(lg) {
-    font-size: $font-size-4xl;
-  }
-}
-
-.intersection__text {
-  white-space: nowrap;
-  will-change: opacity;
-}
-
-.intersection__image {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  flex-shrink: 0;
-  transform-origin: center center;
-  will-change: transform, opacity;
-
-  @include respond-to(sm) {
-    width: 5rem;
-    height: 5rem;
-  }
-
-  @include respond-to(md) {
-    width: 7rem;
-    height: 7rem;
-  }
-
-  @include respond-to(lg) {
-    width: 8rem;
-    height: 8rem;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-
-// Reduced-motion: disable pinning. Stage becomes static, layers become
-// normal blocks stacked vertically. JS bails out too.
+// ── Reduced motion ──
 @media (prefers-reduced-motion: reduce) {
   .intersection__pinner {
     height: auto;
