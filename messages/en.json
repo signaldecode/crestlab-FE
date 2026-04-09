@@ -190,7 +190,7 @@
     "detail": {
       "closeAriaLabel": "Close stock detail",
       "chartView": {
-        "overview": "Overview",
+        "overview": "Basic",
         "advanced": "Advanced",
         "ariaLabel": "Chart view"
       }
@@ -270,7 +270,7 @@
     "detail": {
       "closeAriaLabel": "Close coin detail",
       "chartView": {
-        "overview": "Overview",
+        "overview": "Basic",
         "advanced": "Advanced",
         "ariaLabel": "Chart view"
       }

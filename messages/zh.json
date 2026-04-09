@@ -162,7 +162,7 @@
     "detail": {
       "closeAriaLabel": "关闭股票详情",
       "chartView": {
-        "overview": "概览",
+        "overview": "基础",
         "advanced": "高级",
         "ariaLabel": "图表视图"
       }
@@ -242,7 +242,7 @@
     "detail": {
       "closeAriaLabel": "关闭币种详情",
       "chartView": {
-        "overview": "概览",
+        "overview": "基础",
         "advanced": "高级",
         "ariaLabel": "图表视图"
       }

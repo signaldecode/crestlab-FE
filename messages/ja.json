@@ -162,7 +162,7 @@
     "detail": {
       "closeAriaLabel": "銘柄詳細を閉じる",
       "chartView": {
-        "overview": "概要",
+        "overview": "基本",
         "advanced": "詳細",
         "ariaLabel": "チャート表示"
       }
@@ -242,7 +242,7 @@
     "detail": {
       "closeAriaLabel": "コイン詳細を閉じる",
       "chartView": {
-        "overview": "概要",
+        "overview": "基本",
         "advanced": "詳細",
         "ariaLabel": "チャート表示"
       }

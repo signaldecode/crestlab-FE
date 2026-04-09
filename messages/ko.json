@@ -162,7 +162,7 @@
     "detail": {
       "closeAriaLabel": "종목 상세 닫기",
       "chartView": {
-        "overview": "개요",
+        "overview": "기본",
         "advanced": "고급",
         "ariaLabel": "차트 보기"
       }
@@ -242,7 +242,7 @@
     "detail": {
       "closeAriaLabel": "코인 상세 닫기",
       "chartView": {
-        "overview": "개요",
+        "overview": "기본",
         "advanced": "고급",
         "ariaLabel": "차트 보기"
       }
