@@ -185,7 +185,7 @@ export default function IntersectionContainer({ messages, children }: Intersecti
               </span>
               <span ref={imageRef} className={styles['intersection__image']}>
                 <Image
-                  src="/mainpage/flipcardabove.svg"
+                  src="/mainpage/intersection/flipcardabove.svg"
                   alt={messages.imageAlt}
                   width={128}
                   height={128}

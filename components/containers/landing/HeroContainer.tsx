@@ -1,13 +1,6 @@
 import Image from 'next/image';
 import styles from '@/assets/styles/components/containers/landing/HeroContainer.module.scss';
 
-interface MockupCard {
-  icon: string;
-  name: string;
-  amount: string;
-  value: string;
-}
-
 interface HeroData {
   title: string;
   subtitle: string;
@@ -18,8 +11,8 @@ interface HeroData {
 interface HeroLandingData {
   backgroundImage: string;
   phoneImage: string;
-  dashboardImage: string;
-  mockupCards: MockupCard[];
+  leftCardImage: string;
+  rightCardImage: string;
 }
 
 interface HeroContainerProps {
@@ -58,43 +51,42 @@ export default function HeroContainer({ data, landingData }: HeroContainerProps)
           </a>
         </div>
 
-        {/* 폰 — 하단 잘림 (margin-bottom 음수) */}
-        <div className={styles.phone}>
-          <Image
-            src={landingData.phoneImage}
-            alt=""
-            width={547}
-            height={452}
-            className={styles['phone-img']}
-            priority
-          />
-        </div>
+        {/* 에셋 영역 */}
+        <div className={styles.assets}>
+          {/* 좌측 카드 */}
+          <div className={styles['asset-left']} aria-hidden="true">
+            <Image
+              src={landingData.leftCardImage}
+              alt=""
+              width={280}
+              height={280}
+              className={styles['asset-left-img']}
+            />
+          </div>
 
-        {/* 카드 — .inner 기준 absolute, 폰과 별도 → 잘리지 않음 */}
-        <div className={styles.cards} aria-hidden="true">
-          {landingData.mockupCards.map((card, i) => (
-            <div key={i} className={styles.card}>
-              <div className={styles['card-left']}>
-                <Image src={card.icon} alt="" width={40} height={40} className={styles['card-icon']} />
-                <div className={styles['card-info']}>
-                  <span className={styles['card-name']}>{card.name}</span>
-                  <span className={styles['card-amount']}>{card.amount}</span>
-                </div>
-              </div>
-              <span className={styles['card-value']}>{card.value}</span>
-            </div>
-          ))}
-        </div>
+          {/* 중앙 폰 */}
+          <div className={styles.phone}>
+            <Image
+              src={landingData.phoneImage}
+              alt=""
+              width={520}
+              height={483}
+              className={styles['phone-img']}
+              priority
+              unoptimized
+            />
+          </div>
 
-        {/* 대시보드 — .inner 기준 absolute */}
-        <div className={styles.dashboard} aria-hidden="true">
-          <Image
-            src={landingData.dashboardImage}
-            alt=""
-            width={280}
-            height={350}
-            className={styles['dashboard-img']}
-          />
+          {/* 우측 카드 */}
+          <div className={styles['asset-right']} aria-hidden="true">
+            <Image
+              src={landingData.rightCardImage}
+              alt=""
+              width={280}
+              height={200}
+              className={styles['asset-right-img']}
+            />
+          </div>
         </div>
 
         <div className={styles['background-text']}>CRAST LAB</div>

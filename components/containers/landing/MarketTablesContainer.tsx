@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import styles from '@/assets/styles/components/containers/landing/MarketTablesContainer.module.scss';
 import type { StockItem, CoinItem } from '@/types/finance';
 
@@ -22,6 +25,26 @@ interface TableRow {
   price: number;
   changePercent: number;
   volume: number;
+}
+
+const ICON_COLORS: Record<string, string> = {
+  AAPL: '#555555', GOOGL: '#4285f4', MSFT: '#00a4ef', NVDA: '#76b900', META: '#0082fb',
+  SMCI: '#0a8a3e', CRWD: '#e23636', INTC: '#0071c5', AMZN: '#ff9900', TSLA: '#cc0000',
+  NKE: '#111111', MCD: '#ffc72c',
+  bitcoin: '#f7931a', ethereum: '#627eea', solana: '#9945ff', binancecoin: '#f3ba2f',
+  cardano: '#0033ad', avalanche: '#e84142', uniswap: '#ff007a', aave: '#b6509e',
+  curve: '#0000ff', dogecoin: '#c2a633',
+};
+
+function TickerIcon({ symbol }: { symbol: string }) {
+  const color = ICON_COLORS[symbol] ?? '#888';
+  const label = symbol.slice(0, 2).toUpperCase();
+  return (
+    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" style={{ flexShrink: 0 }}>
+      <circle cx="14" cy="14" r="14" fill={color} />
+      <text x="14" y="18" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff">{label}</text>
+    </svg>
+  );
 }
 
 function formatVolume(value: number): string {
@@ -61,6 +84,7 @@ function MarketTable({
               role="row"
             >
               <span className={`${styles['market-tables__cell']} ${styles['market-tables__cell--name']}`} role="cell">
+                <TickerIcon symbol={row.key} />
                 {row.name}
               </span>
               <span className={styles['market-tables__cell']} role="cell">
@@ -86,6 +110,27 @@ function MarketTable({
 }
 
 export default function MarketTablesContainer({ messages, stocks, coins }: MarketTablesContainerProps) {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 },
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const stockRows: TableRow[] = stocks.slice(0, 5).map((s) => ({
     key: s.symbol,
     name: s.name,
@@ -103,7 +148,11 @@ export default function MarketTablesContainer({ messages, stocks, coins }: Marke
   }));
 
   return (
-    <section className={styles['market-tables']} aria-label="시장 테이블">
+    <section
+      ref={sectionRef}
+      className={`${styles['market-tables']} ${inView ? styles['market-tables--in'] : ''}`}
+      aria-label="Market Tables"
+    >
       <div className={styles['market-tables__grid']}>
         <MarketTable title={messages.stocksTitle} headers={messages.headers} rows={stockRows} />
         <MarketTable title={messages.cryptoTitle} headers={messages.headers} rows={coinRows} />

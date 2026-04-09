@@ -42,10 +42,11 @@
       "ariaLabel": "Live market ticker"
     },
     "featured": {
-      "title": "Stocks to watch right now",
-      "subtitle": "Track the world's hottest tickers with live updates",
-      "prevAriaLabel": "View previous stock",
-      "nextAriaLabel": "View next stock"
+      "title": "Bitcoin-Based Digital Asset Framework",
+      "subtitle": "A systematic analysis of the structure and characteristics of diverse digital assets formed around Bitcoin.",
+      "changeLabel": "Change",
+      "prevAriaLabel": "View previous coin",
+      "nextAriaLabel": "View next coin"
     },
     "marketTables": {
       "stocksTitle": "US Stocks",
@@ -56,6 +57,11 @@
         "change": "Change",
         "volume": "Volume"
       }
+    },
+    "digitalShowcase": {
+      "title": "Market Pulse at a Glance",
+      "subtitle": "Track real-time global market data—from Bitcoin to Nasdaq—anytime, anywhere.",
+      "imageAlt": "CrestLab app screenshots showing real-time stock and crypto market data"
     },
     "featureCards": {
       "title": "Why CrestLab",

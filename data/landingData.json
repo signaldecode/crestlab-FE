@@ -1,9 +1,9 @@
 {
   "hero": {
-    "backgroundImage": "/mainpage/section1.0.jpg",
-    "phoneImage": "/mainpage/front-side-view-photo-gray-smartphone-mobile-phone-without-background-template-mockup 1.png",
-    "dashboardImage": "/mainpage/section1.3.png",
-    "mockupCards": []
+    "backgroundImage": "/mainpage/hero/section1.0.jpg",
+    "phoneImage": "/mainpage/hero/heroPhone.png",
+    "leftCardImage": "/mainpage/hero/heroleft.svg",
+    "rightCardImage": "/mainpage/hero/heroright.svg"
   },
   "ticker": [
     { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },

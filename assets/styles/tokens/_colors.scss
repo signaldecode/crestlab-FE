@@ -26,6 +26,11 @@ $color-chart-track: #e5e5ec;
 $color-gradient-sky-start: #f0f3ff;
 $color-gradient-sky-end: #d7e5fd;
 
+// Digital Section gradient
+$color-gradient-digital-start: #f0f3ff;
+$color-gradient-digital-mid: #b7cffd;
+$color-gradient-digital-end: #8db5f9;
+
 // Semantic Backgrounds
 $color-background: #ffffff;
 $color-background-alt: #f8f9f9;
@@ -59,7 +64,7 @@ $color-highlight: #EC444B;
 // Financial — gain/loss/neutral
 $color-gain: #16a34a;
 $color-gain-bg: rgba(22, 163, 74, 0.1);
-$color-loss: #dc2626;
+$color-loss: #175AE4;
 $color-loss-bg: rgba(220, 38, 38, 0.1);
 $color-neutral: #767676;
 $color-neutral-bg: rgba(118, 118, 118, 0.1);

@@ -5,9 +5,7 @@
 @use '../../../tokens/shadows' as *;
 
 // ==========================================================
-// Hero — 텍스트 위, 폰 중앙 (하단 잘림), 카드·대시보드 겹침
-// 폰: 문서 흐름 + margin-bottom 음수 → hero overflow:hidden으로 잘림
-// 카드·대시보드: .inner 기준 absolute → 잘리지 않음
+// Hero — 텍스트 위, 에셋(좌카드 + 폰 + 우카드) 아래
 // ==========================================================
 .hero {
   position: relative;
@@ -95,17 +93,21 @@
 }
 
 // ==========================================================
-// Phone — 문서 흐름, 중앙 배치, 하단 잘림
+// Assets — 좌카드 + 중앙폰 + 우카드
 // ==========================================================
+.assets {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+// ── 중앙 폰 ──
 .phone {
-  display: none;
-  @include respond-to(md) {
-    display: block;
-    z-index: 1;
-    margin-bottom: -5rem;
-    animation: fade-up 0.8s ease-out 0.2s both;
-  }
-  @include respond-to(lg) { margin-bottom: -7rem; }
+  position: relative;
+  z-index: 2;
+  animation: fade-up 0.8s ease-out 0.2s both;
 }
 
 .phone-img {
@@ -113,79 +115,71 @@
   height: auto;
   display: block;
   filter: drop-shadow($drop-shadow-md);
-  @include respond-to(sm) { width: 28rem; }
-  @include respond-to(md) { width: 32rem; }
-  @include respond-to(lg) { width: 40rem; }
+  @include respond-to(sm) { width: 20rem; }
+  @include respond-to(md) { width: 26rem; }
+  @include respond-to(lg) { width: 30rem; }
 }
 
-// ==========================================================
-// Cards — .inner 기준 absolute → 폰과 별개로 잘리지 않음
-// 모바일 숨김
-// ==========================================================
-.cards {
+// ── 좌측 카드 ──
+.asset-left {
   display: none;
-  @include respond-to(md) {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-md;
-    position: absolute;
-    left: 0;
-    bottom: $spacing-3xl;
-    z-index: 2;
-  }
-  @include respond-to(lg) { left: 5%; gap: $spacing-lg; }
-}
+  z-index: 1;
+  top: 25%;
 
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: $spacing-sm;
-  padding: $spacing-sm $spacing-md;
-  background: $color-background;
-  border-radius: 0.75rem;
-  box-shadow: $shadow-lg;
-  width: 14rem;
-  @include respond-to(lg) { width: 20rem; padding: $spacing-md $spacing-lg; gap: $spacing-md; }
-}
-
-.card-left { display: flex; align-items: center; gap: $spacing-sm; }
-.card-icon { border-radius: 50%; flex-shrink: 0; width: 2rem; height: 2rem; @include respond-to(lg) { width: 2.5rem; height: 2.5rem; } }
-.card-info { display: flex; flex-direction: column; }
-.card-name { font-size: $font-size-xs; color: $color-text-muted; @include respond-to(lg) { font-size: $font-size-sm; } }
-.card-amount { font-size: $font-size-xs; color: $color-text-primary; @include respond-to(lg) { font-size: $font-size-sm; } }
-.card-value { font-size: $font-size-sm; font-weight: $font-weight-semibold; color: $color-text-primary; white-space: nowrap; @include respond-to(lg) { font-size: $font-size-base; } }
-
-// ==========================================================
-// Dashboard — .inner 기준 absolute, 모바일 숨김
-// ==========================================================
-.dashboard {
-  display: none;
   @include respond-to(md) {
     display: block;
     position: absolute;
-    right: 10%;
-    bottom: $spacing-6xl;
-    z-index: 2;
+    left: 5%;
+    bottom: $spacing-2xl;
+    animation: fade-up 0.8s ease-out 0.3s both, floating-left 4s ease-in-out infinite;
   }
-  @include respond-to(lg) { right: 15%; }
+  @include respond-to(lg) { left: 7%; }
 }
 
-.dashboard-img {
-  width: 11rem;
+.asset-left-img {
+  width: 13rem;
+  height: auto;
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(lg) { width: 15rem; }
+}
+
+// ── 우측 카드 ──
+.asset-right {
+  display: none;
+  z-index: 3;
+
+  @include respond-to(md) {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -5%;
+    animation: fade-up 0.8s ease-out 0.4s both, floating-right 3.5s ease-in-out infinite;
+  }
+  @include respond-to(lg) { right: 5%; }
+}
+
+.asset-right-img {
+  width: 19rem;
   height: auto;
   border-radius: 0.75rem;
-  animation: fade-up 0.8s ease-out 0.4s both, floating 3s ease-in-out infinite;
-  @include respond-to(lg) { width: 16rem; }
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(lg) { width: 22rem; }
 }
 
+// ==========================================================
+// Keyframes
+// ==========================================================
 @keyframes fade-up {
   from { opacity: 0; transform: translateY($spacing-xl); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-$spacing-xl); }
-  100% { transform: translateY(0); }
+@keyframes floating-left {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floating-right {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

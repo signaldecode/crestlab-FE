@@ -6,6 +6,7 @@ import MarketTablesContainer from '@/components/containers/landing/MarketTablesC
 import FeatureCardsContainer, {
   type FeatureCardItem,
 } from '@/components/containers/landing/FeatureCardsContainer';
+import DigitalShowcaseContainer from '@/components/containers/landing/DigitalShowcaseContainer';
 import IntersectionContainer from '@/components/containers/landing/IntersectionContainer';
 import DataPreviewContainer from '@/components/containers/landing/DataPreviewContainer';
 import RotatingHeadlineContainer, {
@@ -34,6 +35,7 @@ export default async function HomePage() {
   const featuredMsg = {
     title: t('featured.title'),
     subtitle: t('featured.subtitle'),
+    changeLabel: t('featured.changeLabel'),
     prevAriaLabel: t('featured.prevAriaLabel'),
     nextAriaLabel: t('featured.nextAriaLabel'),
   };
@@ -47,6 +49,12 @@ export default async function HomePage() {
       change: t('marketTables.headers.change'),
       volume: t('marketTables.headers.volume'),
     },
+  };
+
+  const digitalShowcaseMsg = {
+    title: t('digitalShowcase.title'),
+    subtitle: t('digitalShowcase.subtitle'),
+    imageAlt: t('digitalShowcase.imageAlt'),
   };
 
   const featureCardsMsg = {
@@ -117,11 +125,9 @@ export default async function HomePage() {
     valueAriaLabel: t('rollingCounter.valueAriaLabel', {
       value: new Intl.NumberFormat('en-US').format(rollingCounterTarget),
     }),
-  };
+  };  
 
   const faqMsg = { title: t('faq.title') };
-
-  const featuredItems = stocksData.stocks.map((s) => ({ symbol: s.symbol, name: s.name }));
 
   return (
     <>
@@ -130,13 +136,15 @@ export default async function HomePage() {
       {/* 실시간 티커 바 */}
       <TickerBarContainer data={landingData.ticker} messages={tickerMsg} />
       {/* 주목 종목 캐러셀 */}
-      <FeaturedCarouselContainer messages={featuredMsg} items={featuredItems} />
+      <FeaturedCarouselContainer messages={featuredMsg} />
       {/* US Stocks + Crypto 시세 테이블 */}
       <MarketTablesContainer
         messages={marketTablesMsg}
         stocks={stocksData.stocks}
         coins={cryptoData.coins as CoinItem[]}
       />
+      {/* Digital Showcase — app mockup gallery */}
+      <DigitalShowcaseContainer messages={digitalShowcaseMsg} />
       {/* Intersection — sticky scroll morphs into flip cards in the same viewport */}
       <IntersectionContainer messages={intersectionMsg}>
         <FeatureCardsContainer messages={featureCardsMsg} items={featureCardItems} />
