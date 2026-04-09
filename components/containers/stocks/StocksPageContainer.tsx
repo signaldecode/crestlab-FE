@@ -5,7 +5,7 @@ import IndexCardsContainer from './IndexCardsContainer';
 import StockTableContainer from './StockTableContainer';
 import StockDetailModal from './StockDetailModal';
 import MarketMoversContainer from './MarketMoversContainer';
-import type { StockIndex, StockItem, StockPeriod } from '@/types/finance';
+import type { StockIndex, StockItem } from '@/types/finance';
 
 interface StocksPageContainerProps {
   messages: {
@@ -31,21 +31,10 @@ interface StocksPageContainerProps {
       losersBadge: string;
     };
     detail: {
-      currentPrice: string;
-      periodOpen: string;
-      volume: string;
-      shares: string;
       closeAriaLabel: string;
-      periods: Record<StockPeriod, string>;
-      tooltipDate: string;
-      tooltipOpen: string;
-      tooltipHigh: string;
-      tooltipLow: string;
-      tooltipClose: string;
-      tooltipVolume: string;
-      chartType: {
-        line: string;
-        candle: string;
+      chartView: {
+        overview: string;
+        advanced: string;
         ariaLabel: string;
       };
     };

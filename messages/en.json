@@ -38,7 +38,9 @@
       "cta": "Get Started",
       "ctaAriaLabel": "Get started with CrestLab"
     },
-    "ticker": { "ariaLabel": "Live market ticker" },
+    "ticker": {
+      "ariaLabel": "Live market ticker"
+    },
     "featured": {
       "title": "Stocks to watch right now",
       "subtitle": "Track the world's hottest tickers with live updates",
@@ -150,15 +152,33 @@
       "nextAriaLabel": "Next news",
       "sourceLabel": "Source"
     },
-    "faq": { "title": "Frequently Asked Questions" }
+    "faq": {
+      "title": "Frequently Asked Questions"
+    }
   },
   "stocks": {
-    "indices": { "title": "Major Indices" },
+    "indices": {
+      "title": "Major Indices"
+    },
     "table": {
       "title": "Live Stock Prices",
       "filterAll": "All",
-      "columns": { "symbol": "Symbol", "name": "Name", "price": "Price", "change": "Change", "volume": "Volume", "marketCap": "Market Cap" },
-      "sectors": { "tech": "Technology", "energy": "Energy", "finance": "Financials", "healthcare": "Healthcare", "consumer": "Consumer", "industrial": "Industrials" }
+      "columns": {
+        "symbol": "Symbol",
+        "name": "Name",
+        "price": "Price",
+        "change": "Change",
+        "volume": "Volume",
+        "marketCap": "Market Cap"
+      },
+      "sectors": {
+        "tech": "Technology",
+        "energy": "Energy",
+        "finance": "Financials",
+        "healthcare": "Healthcare",
+        "consumer": "Consumer",
+        "industrial": "Industrials"
+      }
     },
     "movers": {
       "sectionTitle": "Market Movers",
@@ -168,26 +188,11 @@
       "losersBadge": "Top Losers"
     },
     "detail": {
-      "currentPrice": "Current Price",
-      "periodOpen": "Period Open",
-      "volume": "Volume",
-      "open": "Open",
-      "high": "High",
-      "low": "Low",
-      "close": "Close",
-      "shares": "shares",
       "closeAriaLabel": "Close stock detail",
-      "periods": { "1w": "1W", "1m": "1M", "3m": "3M", "1y": "1Y", "5y": "5Y" },
-      "tooltipDate": "Date",
-      "tooltipOpen": "Open",
-      "tooltipHigh": "High",
-      "tooltipLow": "Low",
-      "tooltipClose": "Close",
-      "tooltipVolume": "Vol",
-      "chartType": {
-        "line": "Line",
-        "candle": "Candle",
-        "ariaLabel": "Chart type"
+      "chartView": {
+        "overview": "Overview",
+        "advanced": "Advanced",
+        "ariaLabel": "Chart view"
       }
     }
   },
@@ -246,7 +251,13 @@
     "coinList": {
       "title": "Cryptocurrency Prices",
       "filterAll": "All",
-      "columns": { "name": "Coin", "price": "Price", "change24h": "24h %", "marketCap": "Market Cap", "volume": "Volume 24h" },
+      "columns": {
+        "name": "Coin",
+        "price": "Price",
+        "change24h": "24h %",
+        "marketCap": "Market Cap",
+        "volume": "Volume 24h"
+      },
       "categories": {
         "layer1": "Layer 1",
         "defi": "DeFi",
@@ -257,21 +268,11 @@
       }
     },
     "detail": {
-      "currentPrice": "Current Price",
-      "periodOpen": "Period Open",
-      "volume24h": "24h Volume",
       "closeAriaLabel": "Close coin detail",
-      "periods": { "1w": "1W", "1m": "1M", "3m": "3M", "1y": "1Y", "5y": "5Y" },
-      "tooltipDate": "Date",
-      "tooltipOpen": "Open",
-      "tooltipHigh": "High",
-      "tooltipLow": "Low",
-      "tooltipClose": "Close",
-      "tooltipVolume": "Vol",
-      "chartType": {
-        "line": "Line",
-        "candle": "Candle",
-        "ariaLabel": "Chart type"
+      "chartView": {
+        "overview": "Overview",
+        "advanced": "Advanced",
+        "ariaLabel": "Chart view"
       }
     }
   },
@@ -331,8 +332,14 @@
   "about": {
     "title": "About CrestLab",
     "description": "CrestLab is an AI-powered global financial information platform. We deliver real-time data on US equities and cryptocurrencies, putting everything investors need in one place.",
-    "mission": { "title": "Mission", "description": "Empowering investors worldwide with reliable financial data and analytics tools to support informed investment decisions." },
-    "vision": { "title": "Vision", "description": "To become the global leader in AI- and data-driven financial information platforms." }
+    "mission": {
+      "title": "Mission",
+      "description": "Empowering investors worldwide with reliable financial data and analytics tools to support informed investment decisions."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To become the global leader in AI- and data-driven financial information platforms."
+    }
   },
   "disclaimer": {
     "title": "Disclaimer",
@@ -505,7 +512,11 @@
     "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
     "filterAll": "All",
     "filterAriaLabel": "Filter news by category",
-    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
     "search": {
       "label": "Search news",
       "placeholder": "Search headlines, sources, or keywords",
@@ -531,11 +542,29 @@
     }
   },
   "seo": {
-    "stocks": { "title": "US Stocks | CrestLab", "description": "Live US stock prices, major indices, and sector-by-sector ticker information." },
-    "crypto": { "title": "Crypto | CrestLab", "description": "Live cryptocurrency prices, BTC dominance, and the Fear & Greed Index." },
-    "education": { "title": "Education | CrestLab", "description": "From investing fundamentals to technical analysis — structured education content for investors." },
-    "news": { "title": "News | CrestLab", "description": "Stay up to date with the latest news from global financial markets." },
-    "about": { "title": "About | CrestLab", "description": "CrestLab is an AI-powered global financial information platform." },
-    "disclaimer": { "title": "Disclaimer | CrestLab", "description": "Legal notices and disclaimers regarding the use of CrestLab services." }
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "Live US stock prices, major indices, and sector-by-sector ticker information."
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "Live cryptocurrency prices, BTC dominance, and the Fear & Greed Index."
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "From investing fundamentals to technical analysis — structured education content for investors."
+    },
+    "news": {
+      "title": "News | CrestLab",
+      "description": "Stay up to date with the latest news from global financial markets."
+    },
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLab is an AI-powered global financial information platform."
+    },
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "Legal notices and disclaimers regarding the use of CrestLab services."
+    }
   }
 }

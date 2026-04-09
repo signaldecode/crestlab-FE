@@ -38,7 +38,9 @@
       "cta": "立即开始",
       "ctaAriaLabel": "开始使用 CrestLab"
     },
-    "ticker": { "ariaLabel": "实时行情股票代码" },
+    "ticker": {
+      "ariaLabel": "实时行情股票代码"
+    },
     "featured": {
       "title": "当前值得关注的标的",
       "subtitle": "查看实时更新的全球热门股票",
@@ -122,15 +124,33 @@
       "nextAriaLabel": "下一条新闻",
       "sourceLabel": "来源"
     },
-    "faq": { "title": "常见问题" }
+    "faq": {
+      "title": "常见问题"
+    }
   },
   "stocks": {
-    "indices": { "title": "主要指数" },
+    "indices": {
+      "title": "主要指数"
+    },
     "table": {
       "title": "实时股价",
       "filterAll": "全部",
-      "columns": { "symbol": "代码", "name": "名称", "price": "价格", "change": "涨跌幅", "volume": "成交量", "marketCap": "市值" },
-      "sectors": { "tech": "科技", "energy": "能源", "finance": "金融", "healthcare": "医疗", "consumer": "消费", "industrial": "工业" }
+      "columns": {
+        "symbol": "代码",
+        "name": "名称",
+        "price": "价格",
+        "change": "涨跌幅",
+        "volume": "成交量",
+        "marketCap": "市值"
+      },
+      "sectors": {
+        "tech": "科技",
+        "energy": "能源",
+        "finance": "金融",
+        "healthcare": "医疗",
+        "consumer": "消费",
+        "industrial": "工业"
+      }
     },
     "movers": {
       "sectionTitle": "市场领涨/领跌",
@@ -140,26 +160,11 @@
       "losersBadge": "跌幅 TOP"
     },
     "detail": {
-      "currentPrice": "现价",
-      "periodOpen": "区间开盘",
-      "volume": "成交量",
-      "open": "开盘",
-      "high": "最高",
-      "low": "最低",
-      "close": "收盘",
-      "shares": "股",
       "closeAriaLabel": "关闭股票详情",
-      "periods": { "1w": "1周", "1m": "1月", "3m": "3月", "1y": "1年", "5y": "5年" },
-      "tooltipDate": "日期",
-      "tooltipOpen": "开盘",
-      "tooltipHigh": "最高",
-      "tooltipLow": "最低",
-      "tooltipClose": "收盘",
-      "tooltipVolume": "成交量",
-      "chartType": {
-        "line": "折线",
-        "candle": "K线",
-        "ariaLabel": "图表类型"
+      "chartView": {
+        "overview": "概览",
+        "advanced": "高级",
+        "ariaLabel": "图表视图"
       }
     }
   },
@@ -218,7 +223,13 @@
     "coinList": {
       "title": "加密货币行情",
       "filterAll": "全部",
-      "columns": { "name": "币种", "price": "价格", "change24h": "24h %", "marketCap": "市值", "volume": "24小时成交量" },
+      "columns": {
+        "name": "币种",
+        "price": "价格",
+        "change24h": "24h %",
+        "marketCap": "市值",
+        "volume": "24小时成交量"
+      },
       "categories": {
         "layer1": "Layer 1",
         "defi": "DeFi",
@@ -229,21 +240,11 @@
       }
     },
     "detail": {
-      "currentPrice": "现价",
-      "periodOpen": "区间开盘",
-      "volume24h": "24小时成交量",
       "closeAriaLabel": "关闭币种详情",
-      "periods": { "1w": "1周", "1m": "1月", "3m": "3月", "1y": "1年", "5y": "5年" },
-      "tooltipDate": "日期",
-      "tooltipOpen": "开盘",
-      "tooltipHigh": "最高",
-      "tooltipLow": "最低",
-      "tooltipClose": "收盘",
-      "tooltipVolume": "成交量",
-      "chartType": {
-        "line": "折线",
-        "candle": "K线",
-        "ariaLabel": "图表类型"
+      "chartView": {
+        "overview": "概览",
+        "advanced": "高级",
+        "ariaLabel": "图表视图"
       }
     }
   },
@@ -305,7 +306,11 @@
     "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
     "filterAll": "All",
     "filterAriaLabel": "Filter news by category",
-    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
     "search": {
       "label": "Search news",
       "placeholder": "Search headlines, sources, or keywords",
@@ -333,8 +338,14 @@
   "about": {
     "title": "About CrestLab",
     "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台，提供美股与加密货币市场的实时数据，将投资者所需的信息汇集于一处。",
-    "mission": { "title": "使命", "description": "为全球投资者提供可靠的金融数据与分析工具，支持明智的投资决策。" },
-    "vision": { "title": "愿景", "description": "成为基于 AI 与大数据的全球金融信息平台领先者。" }
+    "mission": {
+      "title": "使命",
+      "description": "为全球投资者提供可靠的金融数据与分析工具，支持明智的投资决策。"
+    },
+    "vision": {
+      "title": "愿景",
+      "description": "成为基于 AI 与大数据的全球金融信息平台领先者。"
+    }
   },
   "disclaimer": {
     "title": "免责声明 (Disclaimer)",
@@ -503,11 +514,29 @@
     }
   },
   "seo": {
-    "stocks": { "title": "US Stocks | CrestLab", "description": "查看美股实时价格、主要指数及行业板块行情。" },
-    "crypto": { "title": "Crypto | CrestLab", "description": "查看加密货币实时行情、BTC 占有率以及恐惧与贪婪指数。" },
-    "education": { "title": "Education | CrestLab", "description": "从投资入门到技术分析，提供系统化的教育内容。" },
-    "news": { "title": "News | CrestLab", "description": "实时获取全球金融市场最新新闻。" },
-    "about": { "title": "About | CrestLab", "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台。" },
-    "disclaimer": { "title": "Disclaimer | CrestLab", "description": "关于使用 CrestLab 服务的免责声明与法律事项。" }
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "查看美股实时价格、主要指数及行业板块行情。"
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "查看加密货币实时行情、BTC 占有率以及恐惧与贪婪指数。"
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "从投资入门到技术分析，提供系统化的教育内容。"
+    },
+    "news": {
+      "title": "News | CrestLab",
+      "description": "实时获取全球金融市场最新新闻。"
+    },
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台。"
+    },
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "关于使用 CrestLab 服务的免责声明与法律事项。"
+    }
   }
 }

@@ -38,7 +38,9 @@
       "cta": "始める",
       "ctaAriaLabel": "CrestLabサービスを始める"
     },
-    "ticker": { "ariaLabel": "リアルタイム相場ティッカー" },
+    "ticker": {
+      "ariaLabel": "リアルタイム相場ティッカー"
+    },
     "featured": {
       "title": "今注目の銘柄",
       "subtitle": "リアルタイムで更新されるグローバルなホット銘柄をご確認ください",
@@ -122,15 +124,33 @@
       "nextAriaLabel": "次のニュース",
       "sourceLabel": "出典"
     },
-    "faq": { "title": "よくあるご質問" }
+    "faq": {
+      "title": "よくあるご質問"
+    }
   },
   "stocks": {
-    "indices": { "title": "主要指数" },
+    "indices": {
+      "title": "主要指数"
+    },
     "table": {
       "title": "リアルタイム株価",
       "filterAll": "すべて",
-      "columns": { "symbol": "ティッカー", "name": "銘柄名", "price": "価格", "change": "変動率", "volume": "出来高", "marketCap": "時価総額" },
-      "sectors": { "tech": "テクノロジー", "energy": "エネルギー", "finance": "金融", "healthcare": "ヘルスケア", "consumer": "消費財", "industrial": "資本財" }
+      "columns": {
+        "symbol": "ティッカー",
+        "name": "銘柄名",
+        "price": "価格",
+        "change": "変動率",
+        "volume": "出来高",
+        "marketCap": "時価総額"
+      },
+      "sectors": {
+        "tech": "テクノロジー",
+        "energy": "エネルギー",
+        "finance": "金融",
+        "healthcare": "ヘルスケア",
+        "consumer": "消費財",
+        "industrial": "資本財"
+      }
     },
     "movers": {
       "sectionTitle": "マーケット ムーバーズ",
@@ -140,26 +160,11 @@
       "losersBadge": "下落 TOP"
     },
     "detail": {
-      "currentPrice": "現在値",
-      "periodOpen": "期間始値",
-      "volume": "出来高",
-      "open": "始値",
-      "high": "高値",
-      "low": "安値",
-      "close": "終値",
-      "shares": "株",
       "closeAriaLabel": "銘柄詳細を閉じる",
-      "periods": { "1w": "1週", "1m": "1ヶ月", "3m": "3ヶ月", "1y": "1年", "5y": "5年" },
-      "tooltipDate": "日付",
-      "tooltipOpen": "始値",
-      "tooltipHigh": "高値",
-      "tooltipLow": "安値",
-      "tooltipClose": "終値",
-      "tooltipVolume": "出来高",
-      "chartType": {
-        "line": "ライン",
-        "candle": "ローソク",
-        "ariaLabel": "チャート種類"
+      "chartView": {
+        "overview": "概要",
+        "advanced": "詳細",
+        "ariaLabel": "チャート表示"
       }
     }
   },
@@ -218,7 +223,13 @@
     "coinList": {
       "title": "暗号資産価格",
       "filterAll": "すべて",
-      "columns": { "name": "コイン", "price": "価格", "change24h": "24h %", "marketCap": "時価総額", "volume": "24時間出来高" },
+      "columns": {
+        "name": "コイン",
+        "price": "価格",
+        "change24h": "24h %",
+        "marketCap": "時価総額",
+        "volume": "24時間出来高"
+      },
       "categories": {
         "layer1": "レイヤー 1",
         "defi": "DeFi",
@@ -229,21 +240,11 @@
       }
     },
     "detail": {
-      "currentPrice": "現在値",
-      "periodOpen": "期間始値",
-      "volume24h": "24時間出来高",
       "closeAriaLabel": "コイン詳細を閉じる",
-      "periods": { "1w": "1週", "1m": "1ヶ月", "3m": "3ヶ月", "1y": "1年", "5y": "5年" },
-      "tooltipDate": "日付",
-      "tooltipOpen": "始値",
-      "tooltipHigh": "高値",
-      "tooltipLow": "安値",
-      "tooltipClose": "終値",
-      "tooltipVolume": "出来高",
-      "chartType": {
-        "line": "ライン",
-        "candle": "ローソク",
-        "ariaLabel": "チャート種類"
+      "chartView": {
+        "overview": "概要",
+        "advanced": "詳細",
+        "ariaLabel": "チャート表示"
       }
     }
   },
@@ -305,7 +306,11 @@
     "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
     "filterAll": "All",
     "filterAriaLabel": "Filter news by category",
-    "categories": { "stocks": "Stocks", "crypto": "Crypto", "macro": "Macro" },
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
     "search": {
       "label": "Search news",
       "placeholder": "Search headlines, sources, or keywords",
@@ -333,8 +338,14 @@
   "about": {
     "title": "About CrestLab",
     "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。米国株と暗号資産市場のリアルタイムデータを提供し、投資家に必要な情報を一か所でご確認いただけます。",
-    "mission": { "title": "Mission", "description": "世界中の投資家に信頼できる金融データと分析ツールを提供し、賢明な投資判断を支援します。" },
-    "vision": { "title": "Vision", "description": "AIとビッグデータを活用したグローバル金融情報プラットフォームのリーダーを目指します。" }
+    "mission": {
+      "title": "Mission",
+      "description": "世界中の投資家に信頼できる金融データと分析ツールを提供し、賢明な投資判断を支援します。"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "AIとビッグデータを活用したグローバル金融情報プラットフォームのリーダーを目指します。"
+    }
   },
   "disclaimer": {
     "title": "免責事項 (Disclaimer)",
@@ -503,11 +514,29 @@
     }
   },
   "seo": {
-    "stocks": { "title": "US Stocks | CrestLab", "description": "米国株のリアルタイム価格、主要指数、セクター別銘柄情報をご確認ください。" },
-    "crypto": { "title": "Crypto | CrestLab", "description": "暗号資産のリアルタイム価格、BTCドミナンス、恐怖・強欲指数をご確認ください。" },
-    "education": { "title": "Education | CrestLab", "description": "投資の入門からテクニカル分析まで、体系的な教育コンテンツを提供します。" },
-    "news": { "title": "News | CrestLab", "description": "グローバル金融市場の最新ニュースをリアルタイムでご確認ください。" },
-    "about": { "title": "About | CrestLab", "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。" },
-    "disclaimer": { "title": "Disclaimer | CrestLab", "description": "CrestLabサービスのご利用に関する免責事項および法的事項についてご案内します。" }
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "米国株のリアルタイム価格、主要指数、セクター別銘柄情報をご確認ください。"
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "暗号資産のリアルタイム価格、BTCドミナンス、恐怖・強欲指数をご確認ください。"
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "投資の入門からテクニカル分析まで、体系的な教育コンテンツを提供します。"
+    },
+    "news": {
+      "title": "News | CrestLab",
+      "description": "グローバル金融市場の最新ニュースをリアルタイムでご確認ください。"
+    },
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。"
+    },
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "CrestLabサービスのご利用に関する免責事項および法的事項についてご案内します。"
+    }
   }
 }

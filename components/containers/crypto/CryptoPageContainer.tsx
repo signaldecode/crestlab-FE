@@ -10,7 +10,6 @@ import styles from '@/assets/styles/components/containers/crypto/CryptoWidgets.m
 import type {
   CoinCategory,
   CoinItem,
-  CoinPeriod,
   CryptoGlobalStats,
   FearGreedData,
 } from '@/types/finance';
@@ -58,20 +57,10 @@ interface CryptoPageContainerProps {
       categories: Record<CoinCategory, string>;
     };
     detail: {
-      currentPrice: string;
-      periodOpen: string;
-      volume24h: string;
       closeAriaLabel: string;
-      periods: Record<CoinPeriod, string>;
-      tooltipDate: string;
-      tooltipOpen: string;
-      tooltipHigh: string;
-      tooltipLow: string;
-      tooltipClose: string;
-      tooltipVolume: string;
-      chartType: {
-        line: string;
-        candle: string;
+      chartView: {
+        overview: string;
+        advanced: string;
         ariaLabel: string;
       };
     };

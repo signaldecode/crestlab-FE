@@ -39,7 +39,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 60rem;
+  max-width: 50rem;
   max-height: calc(100vh - #{$spacing-xl});
   overflow-y: auto;
   background-color: #ffffff;
@@ -128,87 +128,16 @@
   }
 }
 
-.stock-detail__price-row {
-  display: flex;
-  align-items: baseline;
-  gap: $spacing-md;
-}
-
-.stock-detail__price {
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-
-  @include respond-to(md) {
-    font-size: $font-size-3xl;
-  }
-}
-
-.stock-detail__change {
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-
-  &--gain {
-    color: $color-gain;
-  }
-
-  &--loss {
-    color: $color-loss;
-  }
-}
-
-.stock-detail__controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: $spacing-sm;
+.stock-detail__chart-toggle {
+  display: inline-flex;
+  gap: $spacing-xs;
+  padding: $spacing-xs;
+  background-color: $color-border-light;
+  border-radius: 0.5rem;
   margin-bottom: $spacing-md;
 }
 
-.stock-detail__chart-type {
-  display: inline-flex;
-  gap: $spacing-xs;
-  padding: $spacing-xs;
-  background-color: $color-border-light;
-  border-radius: 0.5rem;
-}
-
-.stock-detail__chart-type-btn {
-  padding: $spacing-sm $spacing-md;
-  border: none;
-  background: transparent;
-  border-radius: 0.25rem;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: #999999;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-
-  &:hover {
-    color: $color-text-primary;
-  }
-
-  &--active {
-    background-color: #ffffff;
-    color: $color-text-primary;
-    box-shadow: 0 2px 2px rgba(35, 35, 35, 0.16);
-
-    &:hover {
-      color: $color-text-primary;
-    }
-  }
-}
-
-.stock-detail__periods {
-  display: inline-flex;
-  gap: $spacing-xs;
-  padding: $spacing-xs;
-  background-color: $color-border-light;
-  border-radius: 0.5rem;
-}
-
-.stock-detail__period {
+.stock-detail__chart-toggle-btn {
   padding: $spacing-sm $spacing-md;
   border: none;
   background: transparent;
@@ -236,8 +165,8 @@
 
 .stock-detail__chart {
   width: 100%;
-  margin-bottom: $spacing-xl;
-  min-height: 360px;
+  margin: $spacing-md 0 $spacing-xl;
+  height: 25rem;
   position: relative;
 }
 
@@ -279,45 +208,4 @@
   font-size: $font-size-xs;
 }
 
-.stock-detail__stats {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: $spacing-md;
-
-  @include respond-to(md) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.stock-detail__stat {
-  background-color: $color-border-light;
-  border-radius: 1rem;
-  padding: $spacing-md $spacing-lg;
-  display: flex;
-  flex-direction: column;
-  gap: $spacing-sm;
-  min-height: 6rem;
-  justify-content: space-between;
-}
-
-.stock-detail__stat-label {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  color: $color-text-secondary;
-
-  @include respond-to(md) {
-    font-size: $font-size-base;
-  }
-}
-
-.stock-detail__stat-value {
-  font-size: $font-size-xl;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-  word-break: break-all;
-
-  @include respond-to(md) {
-    font-size: $font-size-2xl;
-  }
-}
 
