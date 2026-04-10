@@ -40,6 +40,7 @@
     "featured": {
       "title": "今注目の銘柄",
       "subtitle": "リアルタイムで更新されるグローバルなホット銘柄をご確認ください",
+      "changeLabel": "変動率",
       "prevAriaLabel": "前の銘柄を表示",
       "nextAriaLabel": "次の銘柄を表示"
     },
@@ -52,6 +53,11 @@
         "change": "変動率",
         "volume": "出来高"
       }
+    },
+    "digitalShowcase": {
+      "title": "グローバル市場のトレンドを一目で",
+      "subtitle": "ビットコインからナスダックまで、リアルタイムのグローバル市場データをいつでもどこでも。",
+      "imageAlt": "CrestLab アプリのスクリーンショット — リアルタイム株式・暗号資産市場データ"
     },
     "featureCards": {
       "title": "CrestLab が選ばれる理由",
@@ -87,6 +93,12 @@
         }
       }
     },
+    "intersection": {
+      "eyebrow": "機関投資家グレード",
+      "title": "クリプトと株式の\n交差点",
+      "description": "伝統的な株式市場の実績ある安定性とデジタル資産の高い成長ポテンシャルをシームレスに統合し、現代の投資家のための強靭で先進的な投資エコシステムを構築します。",
+      "imageAlt": "暗号資産と株式の交差点ビジュアル"
+    },
     "dataPreview": {
       "rowCoins": {
         "eyebrow": "リアルタイムのマーケット鼓動",
@@ -105,6 +117,29 @@
       },
       "coinCardAriaLabel": "リアルタイム暗号資産の価格",
       "barChartAriaLabel": "投資魅力度の比較"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "CrestLab が目指すもの",
+      "items": {
+        "01": {
+          "before": "金融リーダーのための",
+          "after": "業界スタンダード",
+          "icon": "pencil",
+          "iconAlt": "編集基準"
+        },
+        "02": {
+          "before": "他のどのプラットフォームよりも多くの",
+          "after": "金融機関が信頼",
+          "icon": "medal",
+          "iconAlt": "信頼のメダル"
+        },
+        "03": {
+          "before": "世界の主要銀行を",
+          "after": "支えています。今すぐ始めましょう。",
+          "icon": "bank",
+          "iconAlt": "主要銀行"
+        }
+      }
     },
     "rollingCounter": {
       "title": "データ一つひとつから育つ、富のかたち",

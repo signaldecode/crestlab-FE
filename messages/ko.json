@@ -40,6 +40,7 @@
     "featured": {
       "title": "지금 주목해야 할 종목",
       "subtitle": "실시간으로 업데이트되는 글로벌 핫 종목을 확인하세요",
+      "changeLabel": "변동률",
       "prevAriaLabel": "이전 종목 보기",
       "nextAriaLabel": "다음 종목 보기"
     },
@@ -52,6 +53,11 @@
         "change": "등락률",
         "volume": "거래대금"
       }
+    },
+    "digitalShowcase": {
+      "title": "글로벌 시장 동향을 한눈에",
+      "subtitle": "비트코인부터 나스닥까지, 실시간 글로벌 시장 데이터를 언제 어디서나 확인하세요.",
+      "imageAlt": "CrestLab 앱 스크린샷 — 실시간 주식 및 암호화폐 시장 데이터"
     },
     "featureCards": {
       "title": "CrestLab을 선택하는 이유",
@@ -87,6 +93,12 @@
         }
       }
     },
+    "intersection": {
+      "eyebrow": "기관 투자 등급",
+      "title": "크립토와 주식의\n교차점",
+      "description": "전통 주식 시장의 검증된 안정성과 디지털 자산의 높은 성장 잠재력을 융합하여, 현대 투자자를 위한 견고하고 미래지향적인 투자 생태계를 구축합니다.",
+      "imageAlt": "암호화폐와 주식 교차점 비주얼"
+    },
     "dataPreview": {
       "rowCoins": {
         "eyebrow": "실시간 마켓 펄스",
@@ -105,6 +117,29 @@
       },
       "coinCardAriaLabel": "실시간 암호화폐 시세",
       "barChartAriaLabel": "투자 매력도 비교"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "CrestLab이 추구하는 가치",
+      "items": {
+        "01": {
+          "before": "금융 리더를 위한",
+          "after": "업계 표준",
+          "icon": "pencil",
+          "iconAlt": "편집 기준"
+        },
+        "02": {
+          "before": "어떤 플랫폼보다 더 많은",
+          "after": "금융 기관이 신뢰하는",
+          "icon": "medal",
+          "iconAlt": "신뢰 메달"
+        },
+        "03": {
+          "before": "세계 주요 은행을",
+          "after": "지원합니다. 지금 시작하세요.",
+          "icon": "bank",
+          "iconAlt": "주요 은행"
+        }
+      }
     },
     "rollingCounter": {
       "title": "데이터 한 점에서 시작되는 성장의 순간",

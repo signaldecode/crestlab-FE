@@ -40,6 +40,7 @@
     "featured": {
       "title": "当前值得关注的标的",
       "subtitle": "查看实时更新的全球热门股票",
+      "changeLabel": "涨跌幅",
       "prevAriaLabel": "查看上一只股票",
       "nextAriaLabel": "查看下一只股票"
     },
@@ -52,6 +53,11 @@
         "change": "涨跌幅",
         "volume": "成交量"
       }
+    },
+    "digitalShowcase": {
+      "title": "全球市场动态一览",
+      "subtitle": "从比特币到纳斯达克，随时随地追踪全球实时市场数据。",
+      "imageAlt": "CrestLab 应用截图 — 实时股票与加密货币市场数据"
     },
     "featureCards": {
       "title": "为什么选择 CrestLab",
@@ -87,6 +93,12 @@
         }
       }
     },
+    "intersection": {
+      "eyebrow": "机构级投资",
+      "title": "加密资产与股票的\n交汇点",
+      "description": "我们将传统股票市场经过时间验证的稳定性与数字资产的高增长潜力无缝融合，为现代投资者打造稳健且前瞻性的投资生态系统。",
+      "imageAlt": "加密货币与股票交汇视觉"
+    },
     "dataPreview": {
       "rowCoins": {
         "eyebrow": "实时市场脉动",
@@ -105,6 +117,29 @@
       },
       "coinCardAriaLabel": "实时加密货币行情",
       "barChartAriaLabel": "投资吸引力对比"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "CrestLab 的核心理念",
+      "items": {
+        "01": {
+          "before": "金融领袖的",
+          "after": "行业标准",
+          "icon": "pencil",
+          "iconAlt": "编辑标准"
+        },
+        "02": {
+          "before": "比任何平台更受",
+          "after": "金融机构信赖",
+          "icon": "medal",
+          "iconAlt": "信任勋章"
+        },
+        "03": {
+          "before": "为全球顶级银行",
+          "after": "提供支持，立即开始。",
+          "icon": "bank",
+          "iconAlt": "顶级银行"
+        }
+      }
     },
     "rollingCounter": {
       "title": "数据一点一滴,成就财富增长",

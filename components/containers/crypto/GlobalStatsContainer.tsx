@@ -66,9 +66,39 @@ export default function GlobalStatsContainer({ messages, data }: GlobalStatsCont
           <span className={styles['global-stats__value']}>
             {data.btcDominance.toFixed(1)}%
           </span>
-          <span className={styles['global-stats__sub']}>
-            {messages.ethLabel} {data.ethDominance.toFixed(1)}%
-          </span>
+          <div className={styles['global-stats__dominance-row']}>
+            <div
+              className={styles['global-stats__dominance-bar']}
+              role="progressbar"
+              aria-valuenow={data.btcDominance}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label={`${messages.btcDominance} ${data.btcDominance.toFixed(1)}%`}
+            >
+              <div
+                className={styles['global-stats__dominance-fill']}
+                style={{ width: `${data.btcDominance}%` }}
+              />
+            </div>
+          </div>
+          <div className={styles['global-stats__dominance-row']}>
+            <span className={styles['global-stats__sub']}>
+              {messages.ethLabel} {data.ethDominance.toFixed(1)}%
+            </span>
+            <div
+              className={styles['global-stats__dominance-bar']}
+              role="progressbar"
+              aria-valuenow={data.ethDominance}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label={`${messages.ethLabel} ${data.ethDominance.toFixed(1)}%`}
+            >
+              <div
+                className={`${styles['global-stats__dominance-fill']} ${styles['global-stats__dominance-fill--eth']}`}
+                style={{ width: `${data.ethDominance}%` }}
+              />
+            </div>
+          </div>
         </article>
       </div>
     </section>
