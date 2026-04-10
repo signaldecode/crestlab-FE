@@ -10,13 +10,34 @@
   padding: $spacing-2xl $container-padding;
 }
 
+.index-cards__title-row {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+  flex-wrap: wrap;
+}
+
 .index-cards__title {
   font-size: $font-size-2xl;
   font-weight: $font-weight-bold;
   color: $color-text-primary;
-  margin-bottom: $spacing-xl;
+  margin: 0;
 
   @include respond-to(md) { font-size: $font-size-3xl; }
+}
+
+.index-cards__fetched-at {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0;
+}
+
+.index-cards__clock-icon {
+  flex-shrink: 0;
 }
 
 .index-cards__grid {

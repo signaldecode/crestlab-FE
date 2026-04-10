@@ -1,6 +1,7 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import StocksPageContainer from '@/components/containers/stocks/StocksPageContainer';
-import stocksData from '@/data/mock/stocksData.json';
+import { apiFetch } from '@/lib/api';
+import type { StocksPageResponse } from '@/types/market';
 
 export async function generateMetadata() {
   const t = await getTranslations('seo.stocks');
@@ -12,11 +13,23 @@ export async function generateMetadata() {
 
 export default async function StocksPage() {
   const t = await getTranslations('stocks');
+  const locale = await getLocale();
+
+  let data: StocksPageResponse | null = null;
+  try {
+    data = await apiFetch<StocksPageResponse>('/market/stocks');
+  } catch {
+    /* API failure — render empty */
+  }
 
   const messages = {
-    indices: { title: t('indices.title') },
+    indices: {
+      title: t('indices.title'),
+      fetchedAtLabel: t('indices.fetchedAtLabel', { time: '{time}' }),
+    },
     table: {
       title: t('table.title'),
+      // description: t('table.description'),
       filterAll: t('table.filterAll'),
       columns: {
         symbol: t('table.columns.symbol'),
@@ -27,12 +40,12 @@ export default async function StocksPage() {
         marketCap: t('table.columns.marketCap'),
       },
       sectors: {
-        tech: t('table.sectors.tech'),
-        energy: t('table.sectors.energy'),
-        finance: t('table.sectors.finance'),
-        healthcare: t('table.sectors.healthcare'),
-        consumer: t('table.sectors.consumer'),
-        industrial: t('table.sectors.industrial'),
+        TECHNOLOGY: t('table.sectors.tech'),
+        ENERGY: t('table.sectors.energy'),
+        FINANCE: t('table.sectors.finance'),
+        HEALTHCARE: t('table.sectors.healthcare'),
+        CONSUMER: t('table.sectors.consumer'),
+        INDUSTRIAL: t('table.sectors.industrial'),
       },
     },
     movers: {
@@ -55,8 +68,12 @@ export default async function StocksPage() {
   return (
     <StocksPageContainer
       messages={messages}
-      indicesData={stocksData.indices}
-      stocksData={stocksData.stocks}
+      indicesData={data?.indices ?? []}
+      stocksData={data?.stocks ?? []}
+      topGainers={data?.topGainers ?? []}
+      topLosers={data?.topLosers ?? []}
+      fetchedAt={data?.fetchedAt}
+      locale={locale}
     />
   );
 }

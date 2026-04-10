@@ -47,11 +47,11 @@
     "marketTables": {
       "stocksTitle": "美股",
       "cryptoTitle": "加密货币",
+      "fetchedAtLabel": "{time}(美国时间) 基准数据",
       "headers": {
         "name": "名称",
         "price": "价格",
-        "change": "涨跌幅",
-        "volume": "成交量"
+        "change": "涨跌幅"
       }
     },
     "digitalShowcase": {
@@ -161,7 +161,8 @@
   },
   "stocks": {
     "indices": {
-      "title": "主要指数"
+      "title": "主要指数",
+      "fetchedAtLabel": "{time}(美国时间) 基准数据"
     },
     "table": {
       "title": "实时股价",

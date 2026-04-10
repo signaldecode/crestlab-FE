@@ -1,4 +1,4 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import HeroContainer from '@/components/containers/landing/HeroContainer';
 import TickerBarContainer from '@/components/containers/landing/TickerBarContainer';
 import FeaturedCarouselContainer from '@/components/containers/landing/FeaturedCarouselContainer';
@@ -15,13 +15,21 @@ import RotatingHeadlineContainer, {
 import RollingCounterContainer from '@/components/containers/landing/RollingCounterContainer';
 import NewsPreviewContainer from '@/components/containers/landing/NewsPreviewContainer';
 import landingData from '@/data/landingData.json';
-import stocksData from '@/data/mock/stocksData.json';
-import cryptoData from '@/data/mock/cryptoData.json';
 import newsData from '@/data/newsData.json';
-import type { CoinItem } from '@/types/finance';
+import { apiFetch } from '@/lib/api';
+import type { MarketMainResponse } from '@/types/market';
 
 export default async function HomePage() {
   const t = await getTranslations('landing');
+  const locale = await getLocale();
+
+  /* ── Fetch market data from backend ── */
+  let marketData: MarketMainResponse | null = null;
+  try {
+    marketData = await apiFetch<MarketMainResponse>('/market/main');
+  } catch {
+    /* API failure — components will render with empty data */
+  }
 
   const heroMsg = {
     title: t('hero.title'),
@@ -43,11 +51,11 @@ export default async function HomePage() {
   const marketTablesMsg = {
     stocksTitle: t('marketTables.stocksTitle'),
     cryptoTitle: t('marketTables.cryptoTitle'),
+    fetchedAtLabel: t('marketTables.fetchedAtLabel', { time: '{time}' }),
     headers: {
       name: t('marketTables.headers.name'),
       price: t('marketTables.headers.price'),
       change: t('marketTables.headers.change'),
-      volume: t('marketTables.headers.volume'),
     },
   };
 
@@ -135,14 +143,22 @@ export default async function HomePage() {
       {/* Hero */}
       <HeroContainer data={heroMsg} landingData={landingData.hero} />
       {/* 실시간 티커 바 */}
-      <TickerBarContainer data={landingData.ticker} messages={tickerMsg} />
+      <TickerBarContainer
+        data={marketData ? [...marketData.stocks, ...marketData.coins] : []}
+        messages={tickerMsg}
+      />
       {/* 주목 종목 캐러셀 */}
-      <FeaturedCarouselContainer messages={featuredMsg} />
+      <FeaturedCarouselContainer
+        messages={featuredMsg}
+        items={marketData ? marketData.coins : []}
+      />
       {/* US Stocks + Crypto 시세 테이블 */}
       <MarketTablesContainer
         messages={marketTablesMsg}
-        stocks={stocksData.stocks}
-        coins={cryptoData.coins as CoinItem[]}
+        stocks={marketData?.stocks ?? []}
+        coins={marketData?.coins ?? []}
+        fetchedAt={marketData?.fetchedAt}
+        locale={locale}
       />
       {/* Digital Showcase — app mockup gallery */}
       <DigitalShowcaseContainer messages={digitalShowcaseMsg} />

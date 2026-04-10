@@ -5,14 +5,17 @@ import IndexCardsContainer from './IndexCardsContainer';
 import StockTableContainer from './StockTableContainer';
 import StockDetailModal from './StockDetailModal';
 import MarketMoversContainer from './MarketMoversContainer';
-import type { StockIndex, StockItem } from '@/types/finance';
+import type { StockIndexApi, StockItemApi, StockMoverApi } from '@/types/market';
 
 interface StocksPageContainerProps {
   messages: {
-    indices: { title: string };
+    indices: {
+      title: string;
+      fetchedAtLabel: string;
+    };
     table: {
       title: string;
-      description: string;
+      description?: string;
       filterAll: string;
       columns: {
         symbol: string;
@@ -40,11 +43,23 @@ interface StocksPageContainerProps {
       };
     };
   };
-  indicesData: StockIndex[];
-  stocksData: StockItem[];
+  indicesData: StockIndexApi[];
+  stocksData: StockItemApi[];
+  topGainers: StockMoverApi[];
+  topLosers: StockMoverApi[];
+  fetchedAt?: string;
+  locale?: string;
 }
 
-export default function StocksPageContainer({ messages, indicesData, stocksData }: StocksPageContainerProps) {
+export default function StocksPageContainer({
+  messages,
+  indicesData,
+  stocksData,
+  topGainers,
+  topLosers,
+  fetchedAt,
+  locale,
+}: StocksPageContainerProps) {
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
 
   const selectedStock = selectedSymbol
@@ -53,16 +68,22 @@ export default function StocksPageContainer({ messages, indicesData, stocksData 
 
   return (
     <>
-      <IndexCardsContainer messages={messages.indices} data={indicesData} />
+      <IndexCardsContainer
+        messages={messages.indices}
+        data={indicesData}
+        fetchedAt={fetchedAt}
+        locale={locale}
+      />
       <StockTableContainer
         messages={messages.table}
         data={stocksData}
-        onSelect={(stock) => setSelectedSymbol(stock.symbol)}
+        onSelect={(symbol) => setSelectedSymbol(symbol)}
       />
       <MarketMoversContainer
         messages={messages.movers}
-        data={stocksData}
-        onSelect={(stock) => setSelectedSymbol(stock.symbol)}
+        gainers={topGainers}
+        losers={topLosers}
+        onSelect={(symbol) => setSelectedSymbol(symbol)}
       />
 
       {selectedStock && (

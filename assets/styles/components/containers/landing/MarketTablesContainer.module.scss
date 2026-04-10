@@ -17,6 +17,19 @@
   transform: translateY(0);
 }
 
+.market-tables__fetched-at {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin: 0 0 $spacing-lg;
+}
+
+.market-tables__clock-icon {
+  flex-shrink: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .market-tables {
     opacity: 1;
@@ -62,7 +75,7 @@
 
 .market-tables__head {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
   padding: $spacing-sm 0;
   border-bottom: 0.0625rem solid $color-border;
@@ -70,7 +83,7 @@
 
 .market-tables__row {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   align-items: center;
   height: 4.5rem;
   padding: 0 $spacing-md;

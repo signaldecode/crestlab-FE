@@ -47,11 +47,11 @@
     "marketTables": {
       "stocksTitle": "US Stocks",
       "cryptoTitle": "Crypto",
+      "fetchedAtLabel": "{time}(미국시간) 기준 데이터",
       "headers": {
         "name": "종목명",
         "price": "현재가",
-        "change": "등락률",
-        "volume": "거래대금"
+        "change": "등락률"
       }
     },
     "digitalShowcase": {
@@ -161,7 +161,8 @@
   },
   "stocks": {
     "indices": {
-      "title": "주요 지수"
+      "title": "주요 지수",
+      "fetchedAtLabel": "{time}(미국시간) 기준 데이터"
     },
     "table": {
       "title": "실시간 주식 가격",

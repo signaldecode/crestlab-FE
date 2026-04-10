@@ -47,11 +47,11 @@
     "marketTables": {
       "stocksTitle": "US Stocks",
       "cryptoTitle": "Crypto",
+      "fetchedAtLabel": "Data as of {time} (ET)",
       "headers": {
         "name": "Name",
         "price": "Price",
-        "change": "Change",
-        "volume": "Volume"
+        "change": "Change"
       }
     },
     "digitalShowcase": {
@@ -153,7 +153,8 @@
   },
   "stocks": {
     "indices": {
-      "title": "Major Indices"
+      "title": "Major Indices",
+      "fetchedAtLabel": "Data as of {time} (ET)"
     },
     "table": {
       "title": "Live Stock Prices",

@@ -4,13 +4,13 @@ const API_BASE_URL = process.env.API_BASE_URL ?? '';
 
 export async function GET() {
   try {
-    const res = await fetch(`${API_BASE_URL}/market/stocks`, {
+    const res = await fetch(`${API_BASE_URL}/market/main`, {
       next: { revalidate: 60 },
     });
 
     if (!res.ok) {
       return NextResponse.json(
-        { success: false, error: { code: 'UPSTREAM_ERROR', message: 'Failed to fetch stocks data' } },
+        { success: false, error: { code: 'UPSTREAM_ERROR', message: 'Failed to fetch market data' } },
         { status: res.status },
       );
     }

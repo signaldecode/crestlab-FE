@@ -1,57 +1,34 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import styles from '@/assets/styles/components/containers/landing/MarketTablesContainer.module.scss';
-import type { StockItem, CoinItem } from '@/types/finance';
+import { formatFetchedAt } from '@/lib/formatDate';
+import type { MarketMainItem } from '@/types/market';
 
 interface MarketTablesContainerProps {
   messages: {
     stocksTitle: string;
     cryptoTitle: string;
+    fetchedAtLabel: string;
     headers: {
       name: string;
       price: string;
       change: string;
-      volume: string;
     };
   };
-  stocks: StockItem[];
-  coins: CoinItem[];
+  stocks: MarketMainItem[];
+  coins: MarketMainItem[];
+  fetchedAt?: string;
+  locale?: string;
 }
 
 interface TableRow {
   key: string;
   name: string;
+  logoUrl: string;
   price: number;
   changePercent: number;
-  volume: number;
-}
-
-const ICON_COLORS: Record<string, string> = {
-  AAPL: '#555555', GOOGL: '#4285f4', MSFT: '#00a4ef', NVDA: '#76b900', META: '#0082fb',
-  SMCI: '#0a8a3e', CRWD: '#e23636', INTC: '#0071c5', AMZN: '#ff9900', TSLA: '#cc0000',
-  NKE: '#111111', MCD: '#ffc72c',
-  bitcoin: '#f7931a', ethereum: '#627eea', solana: '#9945ff', binancecoin: '#f3ba2f',
-  cardano: '#0033ad', avalanche: '#e84142', uniswap: '#ff007a', aave: '#b6509e',
-  curve: '#0000ff', dogecoin: '#c2a633',
-};
-
-function TickerIcon({ symbol }: { symbol: string }) {
-  const color = ICON_COLORS[symbol] ?? '#888';
-  const label = symbol.slice(0, 2).toUpperCase();
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <circle cx="14" cy="14" r="14" fill={color} />
-      <text x="14" y="18" textAnchor="middle" fontSize="10" fontWeight="600" fill="#fff">{label}</text>
-    </svg>
-  );
-}
-
-function formatVolume(value: number): string {
-  if (value >= 1_000_000_000) return `${(value / 1_000_000_000).toFixed(1)}B`;
-  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(1)}M`;
-  if (value >= 1_000) return `${(value / 1_000).toFixed(1)}K`;
-  return value.toString();
 }
 
 function MarketTable({
@@ -73,7 +50,6 @@ function MarketTable({
           </span>
           <span className={styles['market-tables__cell']} role="columnheader">{headers.price}</span>
           <span className={styles['market-tables__cell']} role="columnheader">{headers.change}</span>
-          <span className={styles['market-tables__cell']} role="columnheader">{headers.volume}</span>
         </div>
         {rows.map((row, idx) => {
           const isGain = row.changePercent >= 0;
@@ -84,11 +60,18 @@ function MarketTable({
               role="row"
             >
               <span className={`${styles['market-tables__cell']} ${styles['market-tables__cell--name']}`} role="cell">
-                <TickerIcon symbol={row.key} />
+                <Image
+                  src={row.logoUrl}
+                  alt=""
+                  width={28}
+                  height={28}
+                  aria-hidden="true"
+                  unoptimized
+                />
                 {row.name}
               </span>
               <span className={styles['market-tables__cell']} role="cell">
-                {row.price.toLocaleString()}
+                ${row.price.toLocaleString()}
               </span>
               <span
                 className={`${styles['market-tables__cell']} ${
@@ -96,10 +79,7 @@ function MarketTable({
                 }`}
                 role="cell"
               >
-                {isGain ? '+' : ''}{row.changePercent.toFixed(2)}%
-              </span>
-              <span className={styles['market-tables__cell']} role="cell">
-                {formatVolume(row.volume)}
+                {isGain ? '▲ +' : '▼ '}{row.changePercent.toFixed(2)}%
               </span>
             </div>
           );
@@ -109,7 +89,7 @@ function MarketTable({
   );
 }
 
-export default function MarketTablesContainer({ messages, stocks, coins }: MarketTablesContainerProps) {
+export default function MarketTablesContainer({ messages, stocks, coins, fetchedAt, locale }: MarketTablesContainerProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -131,20 +111,20 @@ export default function MarketTablesContainer({ messages, stocks, coins }: Marke
     return () => observer.disconnect();
   }, []);
 
-  const stockRows: TableRow[] = stocks.slice(0, 5).map((s) => ({
+  const stockRows: TableRow[] = stocks.map((s) => ({
     key: s.symbol,
     name: s.name,
+    logoUrl: s.logoUrl,
     price: s.price,
-    changePercent: s.changePercent,
-    volume: s.volume,
+    changePercent: s.change24h,
   }));
 
-  const coinRows: TableRow[] = coins.slice(0, 5).map((c) => ({
-    key: c.id,
+  const coinRows: TableRow[] = coins.map((c) => ({
+    key: c.symbol,
     name: c.name,
+    logoUrl: c.logoUrl,
     price: c.price,
     changePercent: c.change24h,
-    volume: c.volume24h,
   }));
 
   return (
@@ -153,6 +133,22 @@ export default function MarketTablesContainer({ messages, stocks, coins }: Marke
       className={`${styles['market-tables']} ${inView ? styles['market-tables--in'] : ''}`}
       aria-label="Market Tables"
     >
+      {fetchedAt && (
+        <p className={styles['market-tables__fetched-at']} aria-live="polite">
+          <svg
+            className={styles['market-tables__clock-icon']}
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M7 4v3.5l2.5 1.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          {formatFetchedAt(fetchedAt, messages.fetchedAtLabel, locale)}
+        </p>
+      )}
       <div className={styles['market-tables__grid']}>
         <MarketTable title={messages.stocksTitle} headers={messages.headers} rows={stockRows} />
         <MarketTable title={messages.cryptoTitle} headers={messages.headers} rows={coinRows} />

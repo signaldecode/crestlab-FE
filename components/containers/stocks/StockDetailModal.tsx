@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styles from '@/assets/styles/components/containers/stocks/StockDetailModal.module.scss';
 import TradingViewChart, { type TradingViewVariant } from '@/components/charts/TradingViewChart';
-import type { StockItem } from '@/types/finance';
+import type { StockItemApi } from '@/types/market';
 
 interface StockDetailModalProps {
   messages: {
@@ -15,7 +15,7 @@ interface StockDetailModalProps {
       ariaLabel: string;
     };
   };
-  stock: StockItem;
+  stock: StockItemApi;
   onClose: () => void;
 }
 

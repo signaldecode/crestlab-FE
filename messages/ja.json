@@ -47,11 +47,11 @@
     "marketTables": {
       "stocksTitle": "米国株",
       "cryptoTitle": "暗号資産",
+      "fetchedAtLabel": "{time}(米国時間) 基準データ",
       "headers": {
         "name": "銘柄名",
         "price": "価格",
-        "change": "変動率",
-        "volume": "出来高"
+        "change": "変動率"
       }
     },
     "digitalShowcase": {
@@ -161,7 +161,8 @@
   },
   "stocks": {
     "indices": {
-      "title": "主要指数"
+      "title": "主要指数",
+      "fetchedAtLabel": "{time}(米国時間) 基準データ"
     },
     "table": {
       "title": "リアルタイム株価",
