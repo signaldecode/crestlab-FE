@@ -21,13 +21,13 @@
       "logout": "ログアウト"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
-        "about": "会社紹介",
-        "disclaimer": "免責事項",
-        "privacy": "プライバシーポリシー"
+        "terms": "利用規約",
+        "privacy": "プライバシーポリシー",
+        "disclaimer": "免責事項"
       },
-      "disclaimer": "本サイトの情報は投資助言ではなく、投資には元本損失のリスクがあります。"
+      "disclaimer": "本プラットフォームで提供されるコンテンツは情報提供のみを目的としており、金融・投資・法律上の助言には該当しません。過去の実績は将来の成果を保証するものではなく、すべての投資には元本損失のリスクが伴います。CrestLab Inc.は登録投資顧問ではありません。"
     },
     "skipToContent": "本文へスキップ"
   },
@@ -134,6 +134,7 @@
     },
     "table": {
       "title": "リアルタイム株価",
+      "description": "株式市場の構造と変動を体系的に分析します",
       "filterAll": "すべて",
       "columns": {
         "symbol": "ティッカー",
@@ -222,6 +223,7 @@
     },
     "coinList": {
       "title": "暗号資産価格",
+      "description": "デジタル資産のリアルタイム価格、時価総額、24時間取引量",
       "filterAll": "すべて",
       "columns": {
         "name": "コイン",

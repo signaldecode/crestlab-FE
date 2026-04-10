@@ -21,13 +21,13 @@
       "logout": "退出登录"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
-        "about": "关于",
-        "disclaimer": "免责声明",
-        "privacy": "隐私政策"
+        "terms": "服务条款",
+        "privacy": "隐私政策",
+        "disclaimer": "免责声明"
       },
-      "disclaimer": "本网站信息不构成投资建议，投资存在本金损失风险。"
+      "disclaimer": "本平台提供的内容仅供参考，不构成金融、投资或法律建议。过往业绩不代表未来表现，所有投资均存在本金损失风险。CrestLab Inc. 并非注册投资顾问。"
     },
     "skipToContent": "跳转至正文"
   },
@@ -134,6 +134,7 @@
     },
     "table": {
       "title": "实时股价",
+      "description": "系统性分析股票市场的结构与变化",
       "filterAll": "全部",
       "columns": {
         "symbol": "代码",
@@ -222,6 +223,7 @@
     },
     "coinList": {
       "title": "加密货币行情",
+      "description": "数字资产的实时价格、市值及24小时交易量",
       "filterAll": "全部",
       "columns": {
         "name": "币种",

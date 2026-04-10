@@ -12,6 +12,7 @@ interface StocksPageContainerProps {
     indices: { title: string };
     table: {
       title: string;
+      description: string;
       filterAll: string;
       columns: {
         symbol: string;
@@ -58,7 +59,11 @@ export default function StocksPageContainer({ messages, indicesData, stocksData 
         data={stocksData}
         onSelect={(stock) => setSelectedSymbol(stock.symbol)}
       />
-      <MarketMoversContainer messages={messages.movers} data={stocksData} />
+      <MarketMoversContainer
+        messages={messages.movers}
+        data={stocksData}
+        onSelect={(stock) => setSelectedSymbol(stock.symbol)}
+      />
 
       {selectedStock && (
         <StockDetailModal

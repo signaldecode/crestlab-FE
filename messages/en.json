@@ -21,13 +21,13 @@
       "logout": "Log Out"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
-        "about": "About",
-        "disclaimer": "Disclaimer",
-        "privacy": "Privacy Policy"
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "disclaimer": "Disclaimer"
       },
-      "disclaimer": "Information on this site is not investment advice. All investments carry the risk of principal loss."
+      "disclaimer": "The content provided on this platform is for informational purposes only and does not constitute financial, investment, or legal advice. Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal. CrestLab Inc. is not a registered investment advisor."
     },
     "skipToContent": "Skip to content"
   },
@@ -161,6 +161,7 @@
     },
     "table": {
       "title": "Live Stock Prices",
+      "description": "A systematic analysis of the structure and changes in the stock market",
       "filterAll": "All",
       "columns": {
         "symbol": "Symbol",
@@ -249,6 +250,7 @@
     },
     "coinList": {
       "title": "Cryptocurrency Prices",
+      "description": "Real-time prices, market cap, and 24h trading volume across digital assets",
       "filterAll": "All",
       "columns": {
         "name": "Coin",

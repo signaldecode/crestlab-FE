@@ -8,6 +8,7 @@ import type { CoinCategory, CoinItem } from '@/types/finance';
 interface CoinListContainerProps {
   messages: {
     title: string;
+    description: string;
     filterAll: string;
     columns: {
       name: string;
@@ -55,11 +56,17 @@ export default function CoinListContainer({ messages, data, onSelect }: CoinList
 
   return (
     <section className={styles['coin-list']} aria-labelledby="coin-list-title">
-      <h2 id="coin-list-title" className={styles['coin-list__title']}>
-        {messages.title}
-      </h2>
+      <div className={styles['coin-list__header']}>
+        <div className={styles['coin-list__header-text']}>
+          <h2 id="coin-list-title" className={styles['coin-list__title']}>
+            {messages.title}
+          </h2>
+          <p className={styles['coin-list__description']}>
+            {messages.description}
+          </p>
+        </div>
 
-      <div className={styles['coin-list__filters']} role="tablist">
+        <div className={styles['coin-list__filters']} role="tablist">
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
@@ -74,6 +81,7 @@ export default function CoinListContainer({ messages, data, onSelect }: CoinList
             {cat === 'all' ? messages.filterAll : messages.categories[cat]}
           </button>
         ))}
+        </div>
       </div>
 
       <div className={styles['coin-list__wrapper']}>

@@ -181,7 +181,7 @@
   color: #ffffff;
   margin: 0;
   line-height: $line-height-tight;
-
+  
   @include respond-to(md) {
     font-size: $font-size-lg;
   }

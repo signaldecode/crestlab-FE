@@ -46,6 +46,7 @@ interface CryptoPageContainerProps {
     };
     coinList: {
       title: string;
+      description: string;
       filterAll: string;
       columns: {
         name: string;

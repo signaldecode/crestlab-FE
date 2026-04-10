@@ -8,6 +8,7 @@ import type { StockItem, StockSector } from '@/types/finance';
 interface StockTableContainerProps {
   messages: {
     title: string;
+    description: string;
     filterAll: string;
     columns: {
       symbol: string;
@@ -34,11 +35,17 @@ export default function StockTableContainer({ messages, data, onSelect }: StockT
 
   return (
     <section className={styles['stock-table']} aria-labelledby="stock-table-title">
-      <h2 id="stock-table-title" className={styles['stock-table__title']}>
-        {messages.title}
-      </h2>
+      <div className={styles['stock-table__header']}>
+        <div className={styles['stock-table__header-text']}>
+          <h2 id="stock-table-title" className={styles['stock-table__title']}>
+            {messages.title}
+          </h2>
+          <p className={styles['stock-table__description']}>
+            {messages.description}
+          </p>
+        </div>
 
-      <div className={styles['stock-table__filters']} role="tablist">
+        <div className={styles['stock-table__filters']} role="tablist">
         {SECTORS.map((sector) => (
           <button
             key={sector}
@@ -52,6 +59,7 @@ export default function StockTableContainer({ messages, data, onSelect }: StockT
             {sector === 'all' ? messages.filterAll : messages.sectors[sector] ?? sector}
           </button>
         ))}
+        </div>
       </div>
 
       <div className={styles['stock-table__wrapper']}>

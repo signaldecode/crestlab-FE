@@ -12,12 +12,14 @@ interface MarketMoversContainerProps {
   };
   data: StockItem[];
   topCount?: number;
+  onSelect?: (stock: StockItem) => void;
 }
 
 export default function MarketMoversContainer({
   messages,
   data,
   topCount = 5,
+  onSelect,
 }: MarketMoversContainerProps) {
   const sorted = [...data].sort((a, b) => b.changePercent - a.changePercent);
   const gainers = sorted.slice(0, topCount);
@@ -39,7 +41,23 @@ export default function MarketMoversContainer({
           </header>
           <ul className={styles['movers__list']}>
             {gainers.map((stock) => (
-              <li key={stock.symbol} className={styles['movers__list-item']}>
+              <li
+                key={stock.symbol}
+                className={`${styles['movers__list-item']} ${onSelect ? styles['movers__list-item--clickable'] : ''}`}
+                tabIndex={onSelect ? 0 : undefined}
+                role={onSelect ? 'button' : undefined}
+                onClick={onSelect ? () => onSelect(stock) : undefined}
+                onKeyDown={
+                  onSelect
+                    ? (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onSelect(stock);
+                        }
+                      }
+                    : undefined
+                }
+              >
                 <span className={styles['movers__symbol-wrap']}>
                   <TickerBadge symbol={stock.symbol} size="sm" />
                   <span className={styles['movers__symbol']}>{stock.symbol}</span>
@@ -61,7 +79,23 @@ export default function MarketMoversContainer({
           </header>
           <ul className={styles['movers__list']}>
             {losers.map((stock) => (
-              <li key={stock.symbol} className={styles['movers__list-item']}>
+              <li
+                key={stock.symbol}
+                className={`${styles['movers__list-item']} ${onSelect ? styles['movers__list-item--clickable'] : ''}`}
+                tabIndex={onSelect ? 0 : undefined}
+                role={onSelect ? 'button' : undefined}
+                onClick={onSelect ? () => onSelect(stock) : undefined}
+                onKeyDown={
+                  onSelect
+                    ? (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onSelect(stock);
+                        }
+                      }
+                    : undefined
+                }
+              >
                 <span className={styles['movers__symbol-wrap']}>
                   <TickerBadge symbol={stock.symbol} size="sm" />
                   <span className={styles['movers__symbol']}>{stock.symbol}</span>

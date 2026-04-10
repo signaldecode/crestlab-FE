@@ -1,9 +1,9 @@
 {
   "company": {
-    "name": "CrestLab Investment",
-    "description": "데이터 기반의 체계적 투자로 고객의 자산 가치를 극대화합니다.",
-    "address": "서울특별시 강남구 테헤란로 123, 크레스트랩 빌딩 10층",
-    "tel": "02-1234-5678",
-    "email": "contact@crestlab.co.kr"
+    "name": "CrestLab Inc.",
+    "description": "Data-driven insights for global financial markets. Empowering investors with real-time analytics, AI-powered research, and comprehensive market intelligence.",
+    "address": "350 Fifth Avenue, Suite 4820, New York, NY 10118",
+    "tel": "+1 (212) 555-0142",
+    "email": "contact@crestlab.io"
   }
 }

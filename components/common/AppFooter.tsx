@@ -24,8 +24,12 @@ interface AppFooterProps {
 }
 
 export default function AppFooter({ company, messages }: AppFooterProps) {
+  const marqueeText = 'CREST LAB';
+  const repeatCount = 6;
+
   return (
     <footer className={styles.footer}>
+      {/* Section 1: Info */}
       <div className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brand}>
@@ -51,6 +55,22 @@ export default function AppFooter({ company, messages }: AppFooterProps) {
         <div className={styles.bottom}>
           <p className={styles['disclaimer-text']}>{messages.disclaimer}</p>
           <p className={styles['copyright-text']}>{messages.copyright}</p>
+        </div>
+      </div>
+
+      {/* Section 2: Marquee */}
+      <div className={styles.marquee} aria-hidden="true">
+        <div className={styles['marquee-track']}>
+          {Array.from({ length: repeatCount }, (_, i) => (
+            <span key={i} className={styles['marquee-text']}>
+              {marqueeText}
+            </span>
+          ))}
+          {Array.from({ length: repeatCount }, (_, i) => (
+            <span key={`dup-${i}`} className={styles['marquee-text']}>
+              {marqueeText}
+            </span>
+          ))}
         </div>
       </div>
     </footer>

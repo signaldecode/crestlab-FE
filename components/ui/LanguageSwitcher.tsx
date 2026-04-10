@@ -6,8 +6,8 @@ import { useRouter, usePathname } from '@/i18n/navigation';
 import styles from '@/assets/styles/components/ui/LanguageSwitcher.module.scss';
 
 const LOCALES = [
-  { code: 'ko', label: 'KO', name: '한국어' },
   { code: 'en', label: 'EN', name: 'English' },
+  { code: 'ko', label: 'KO', name: '한국어' },
   { code: 'zh', label: 'ZH', name: '中文' },
   { code: 'ja', label: 'JA', name: '日本語' },
 ] as const;

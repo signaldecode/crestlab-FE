@@ -37,14 +37,6 @@
   gap: $spacing-md;
 }
 
-.movers__panel--gain {
-  border-top: 0.25rem solid $color-gain;
-}
-
-.movers__panel--loss {
-  border-top: 0.25rem solid $color-loss;
-}
-
 .movers__header {
   display: flex;
   align-items: center;
@@ -64,8 +56,8 @@
 }
 
 .movers__badge--gain {
-  background: $color-gain-bg;
-  color: $color-gain;
+  background: $color-loss-bg;
+  color: $color-highlight;
 }
 
 .movers__badge--loss {
@@ -100,6 +92,22 @@
   }
 }
 
+.movers__list-item--clickable {
+  cursor: pointer;
+  transition: background 0.15s;
+  border-radius: 0.25rem;
+  padding: $spacing-sm $spacing-xs;
+
+  &:hover {
+    background: $color-background-light;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-accent;
+    outline-offset: -2px;
+  }
+}
+
 .movers__symbol-wrap {
   display: inline-flex;
   align-items: center;
@@ -119,5 +127,5 @@
   font-family: $font-family-sans;
 }
 
-.movers__change--gain { color: $color-gain; }
+.movers__change--gain { color: $color-highlight; }
 .movers__change--loss { color: $color-loss; }
