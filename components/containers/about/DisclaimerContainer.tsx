@@ -12,16 +12,16 @@ interface DisclaimerContainerProps {
 export default function DisclaimerContainer({ messages }: DisclaimerContainerProps) {
   return (
     <section className={styles['disclaimer']} aria-labelledby="disclaimer-title">
-      <h1 id="disclaimer-title" className={styles['disclaimer__title']}>
+      <h2 id="disclaimer-title" className={styles['disclaimer__title']}>
         {messages.title}
-      </h1>
+      </h2>
       <div className={styles['disclaimer__content']}>
         <p>{messages.content}</p>
       </div>
       <div className={styles['disclaimer__registration']}>
-        <h2 className={styles['disclaimer__registration-title']}>
+        <h3 className={styles['disclaimer__registration-title']}>
           {messages.registrationTitle}
-        </h2>
+        </h3>
         <p>{messages.registrationNumber}</p>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import AboutContainer from '@/components/containers/about/AboutContainer';
+import AboutPageContainer from '@/components/containers/about/AboutPageContainer';
 
 export async function generateMetadata() {
   const t = await getTranslations('seo.about');
@@ -10,16 +10,29 @@ export async function generateMetadata() {
 }
 
 export default async function AboutPage() {
-  const t = await getTranslations('about');
+  const tAbout = await getTranslations('about');
+  const tDisclaimer = await getTranslations('disclaimer');
 
-  const msg = {
-    title: t('title'),
-    description: t('description'),
-    missionTitle: t('mission.title'),
-    missionDescription: t('mission.description'),
-    visionTitle: t('vision.title'),
-    visionDescription: t('vision.description'),
+  const messages = {
+    tabs: {
+      about: tAbout('tabLabel'),
+      disclaimer: tDisclaimer('tabLabel'),
+    },
+    about: {
+      title: tAbout('title'),
+      description: tAbout('description'),
+      missionTitle: tAbout('mission.title'),
+      missionDescription: tAbout('mission.description'),
+      visionTitle: tAbout('vision.title'),
+      visionDescription: tAbout('vision.description'),
+    },
+    disclaimer: {
+      title: tDisclaimer('title'),
+      content: tDisclaimer('content'),
+      registrationTitle: tDisclaimer('registrationTitle'),
+      registrationNumber: tDisclaimer('registrationNumber'),
+    },
   };
 
-  return <AboutContainer messages={msg} />;
+  return <AboutPageContainer messages={messages} />;
 }

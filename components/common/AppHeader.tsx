@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from '@/assets/styles/components/common/AppHeader.module.scss';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
@@ -11,7 +11,6 @@ import useUIStore from '@/stores/useUIStore';
 interface HeaderData {
   logo: string;
   nav: Record<string, string>;
-  marketsDropdown: Record<string, string>;
   language: string;
   cta: string;
   login: string;
@@ -25,12 +24,9 @@ interface AppHeaderProps {
 
 export default function AppHeader({ data }: AppHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [marketsOpen, setMarketsOpen] = useState(false);
-  const [mobileMarketsOpen, setMobileMarketsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { isLoggedIn, logout } = useAuthStore();
   const { openLoginModal } = useUIStore();
-  const dropdownRef = useRef<HTMLLIElement>(null);
   const pathname = usePathname();
   const isHome = pathname === '/';
 
@@ -39,21 +35,6 @@ export default function AppHeader({ data }: AppHeaderProps) {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setMarketsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const dropdownItems = Object.entries(data.marketsDropdown).map(([key, label]) => ({
-    label,
-    href: `/${key}`,
-  }));
 
   return (
     <header className={`${styles.header} ${isHome ? '' : styles['header--sticky']} ${scrolled ? styles['header--scrolled'] : ''}`}>
@@ -77,43 +58,6 @@ export default function AppHeader({ data }: AppHeaderProps) {
           <ul className={styles['nav-list']}>
             {Object.entries(data.nav).map(([key, label]) => {
               if (key === 'home') return null;
-
-              if (key === 'markets') {
-                return (
-                  <li
-                    key={key}
-                    className={styles['nav-item']}
-                    ref={dropdownRef}
-                  >
-                    <button
-                      type="button"
-                      className={`${styles['nav-link']} ${styles['nav-link--dropdown']}`}
-                      onClick={() => setMarketsOpen(!marketsOpen)}
-                      aria-expanded={marketsOpen}
-                      aria-haspopup="true"
-                    >
-                      {label}
-                      <span className={styles['dropdown-arrow']} aria-hidden="true" />
-                    </button>
-                    {marketsOpen && (
-                      <ul className={styles['dropdown-menu']}>
-                        {dropdownItems.map((item) => (
-                          <li key={item.href} className={styles['dropdown-item']}>
-                            <Link
-                              href={item.href}
-                              className={styles['dropdown-link']}
-                              onClick={() => setMarketsOpen(false)}
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              }
-
               return (
                 <li key={key} className={styles['nav-item']}>
                   <Link href={`/${key}`} className={styles['nav-link']}>
@@ -165,38 +109,6 @@ export default function AppHeader({ data }: AppHeaderProps) {
           <ul className={styles['mobile-list']}>
             {Object.entries(data.nav).map(([key, label]) => {
               if (key === 'home') return null;
-
-              if (key === 'markets') {
-                return (
-                  <li key={key} className={styles['mobile-item']}>
-                    <button
-                      type="button"
-                      className={`${styles['mobile-link']} ${styles['mobile-link--dropdown']}`}
-                      onClick={() => setMobileMarketsOpen(!mobileMarketsOpen)}
-                      aria-expanded={mobileMarketsOpen}
-                    >
-                      {label}
-                      <span className={`${styles['dropdown-arrow']} ${mobileMarketsOpen ? styles['dropdown-arrow--open'] : ''}`} aria-hidden="true" />
-                    </button>
-                    {mobileMarketsOpen && (
-                      <ul className={styles['mobile-sub-list']}>
-                        {dropdownItems.map((item) => (
-                          <li key={item.href} className={styles['mobile-sub-item']}>
-                            <Link
-                              href={item.href}
-                              className={styles['mobile-sub-link']}
-                              onClick={() => { setMobileOpen(false); setMobileMarketsOpen(false); }}
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                );
-              }
-
               return (
                 <li key={key} className={styles['mobile-item']}>
                   <Link

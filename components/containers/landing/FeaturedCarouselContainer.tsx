@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from '@/assets/styles/components/containers/landing/FeaturedCarouselContainer.module.scss';
 
@@ -105,30 +105,36 @@ interface FeaturedCarouselContainerProps {
 export default function FeaturedCarouselContainer({ messages }: FeaturedCarouselContainerProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const animRef = useRef<number>(0);
-  const speedRef = useRef(0.5);
+  const speedRef = useRef(0.4);
   const pausedRef = useRef(false);
+  const accRef = useRef(0);
 
   const loopItems = [...COINS, ...COINS];
-
-  const tick = useCallback(() => {
-    const el = trackRef.current;
-    if (el && !pausedRef.current) {
-      el.scrollLeft += speedRef.current;
-      const half = el.scrollWidth / 2;
-      if (el.scrollLeft >= half) {
-        el.scrollLeft -= half;
-      }
-    }
-    animRef.current = requestAnimationFrame(tick);
-  }, []);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (mq.matches) return;
 
+    const tick = () => {
+      const el = trackRef.current;
+      if (el && !pausedRef.current) {
+        accRef.current += speedRef.current;
+        if (accRef.current >= 1) {
+          const px = Math.floor(accRef.current);
+          accRef.current -= px;
+          el.scrollLeft += px;
+          const half = el.scrollWidth / 2;
+          if (el.scrollLeft >= half) {
+            el.scrollLeft -= half;
+          }
+        }
+      }
+      animRef.current = requestAnimationFrame(tick);
+    };
+
     animRef.current = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(animRef.current);
-  }, [tick]);
+  }, []);
 
   const handleNav = (dir: 'prev' | 'next') => {
     const el = trackRef.current;

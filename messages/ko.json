@@ -4,15 +4,11 @@
       "logo": "CrestLab",
       "nav": {
         "home": "홈",
+        "about": "회사소개",
         "stocks": "미국 증시",
         "crypto": "암호화폐",
-        "markets": "더보기"
-      },
-      "marketsDropdown": {
         "education": "교육자료",
-        "news": "뉴스",
-        "about": "회사소개",
-        "disclaimer": "면책 고지"
+        "news": "뉴스"
       },
       "language": "언어",
       "cta": "회원가입",
@@ -338,6 +334,7 @@
     }
   },
   "about": {
+    "tabLabel": "회사소개",
     "title": "About CrestLab",
     "description": "CrestLab은 AI 기반 글로벌 금융 정보 플랫폼입니다. 미국 주식과 암호화폐 시장의 실시간 데이터를 제공하며, 투자자에게 필요한 정보를 한 곳에서 확인할 수 있습니다.",
     "mission": {
@@ -350,6 +347,7 @@
     }
   },
   "disclaimer": {
+    "tabLabel": "면책 고지",
     "title": "면책 고지 (Disclaimer)",
     "content": "본 웹사이트에서 제공하는 정보는 투자 조언, 금융 자문 또는 기타 전문적인 조언으로 간주되지 않습니다. 본 사이트의 정보를 근거로 내린 투자 결정에 대한 책임은 전적으로 이용자에게 있습니다. 과거의 수익률이 미래의 수익률을 보장하지 않으며, 모든 투자에는 원금 손실의 위험이 있습니다.",
     "registrationTitle": "사업자 정보",

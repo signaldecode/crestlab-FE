@@ -4,15 +4,11 @@
       "logo": "CrestLab",
       "nav": {
         "home": "首页",
+        "about": "公司介绍",
         "stocks": "美股",
         "crypto": "加密货币",
-        "markets": "更多"
-      },
-      "marketsDropdown": {
         "education": "教育",
-        "news": "新闻",
-        "about": "关于",
-        "disclaimer": "免责声明"
+        "news": "新闻"
       },
       "language": "语言",
       "cta": "注册",
@@ -338,6 +334,7 @@
     }
   },
   "about": {
+    "tabLabel": "公司介绍",
     "title": "About CrestLab",
     "description": "CrestLab 是一个由 AI 驱动的全球金融信息平台，提供美股与加密货币市场的实时数据，将投资者所需的信息汇集于一处。",
     "mission": {
@@ -350,6 +347,7 @@
     }
   },
   "disclaimer": {
+    "tabLabel": "免责声明",
     "title": "免责声明 (Disclaimer)",
     "content": "本网站提供的信息不构成投资建议、金融顾问意见或其他专业建议。基于本网站信息所作出的任何投资决定，责任完全由用户本人承担。过往业绩不代表未来收益，所有投资均存在本金损失的风险。",
     "registrationTitle": "公司信息",

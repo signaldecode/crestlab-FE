@@ -4,15 +4,11 @@
       "logo": "CrestLab",
       "nav": {
         "home": "ホーム",
+        "about": "企業紹介",
         "stocks": "米国株",
         "crypto": "暗号資産",
-        "markets": "もっと見る"
-      },
-      "marketsDropdown": {
         "education": "教育",
-        "news": "ニュース",
-        "about": "会社紹介",
-        "disclaimer": "免責事項"
+        "news": "ニュース"
       },
       "language": "言語",
       "cta": "会員登録",
@@ -338,6 +334,7 @@
     }
   },
   "about": {
+    "tabLabel": "企業紹介",
     "title": "About CrestLab",
     "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。米国株と暗号資産市場のリアルタイムデータを提供し、投資家に必要な情報を一か所でご確認いただけます。",
     "mission": {
@@ -350,6 +347,7 @@
     }
   },
   "disclaimer": {
+    "tabLabel": "免責事項",
     "title": "免責事項 (Disclaimer)",
     "content": "本ウェブサイトで提供される情報は、投資助言、金融アドバイスその他の専門的助言とはみなされません。本サイトの情報に基づき行った投資判断の責任はすべて利用者に帰属します。過去のリターンは将来のリターンを保証するものではなく、すべての投資には元本損失のリスクがあります。",
     "registrationTitle": "事業者情報",

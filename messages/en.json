@@ -4,15 +4,11 @@
       "logo": "CrestLab",
       "nav": {
         "home": "Home",
+        "about": "Company",
         "stocks": "US Stocks",
         "crypto": "Crypto",
-        "markets": "More"
-      },
-      "marketsDropdown": {
         "education": "Education",
-        "news": "News",
-        "about": "About",
-        "disclaimer": "Disclaimer"
+        "news": "News"
       },
       "language": "Language",
       "cta": "Sign Up",
@@ -331,6 +327,7 @@
     "backToList": "Back to List"
   },
   "about": {
+    "tabLabel": "Company",
     "title": "About CrestLab",
     "description": "CrestLab is an AI-powered global financial information platform. We deliver real-time data on US equities and cryptocurrencies, putting everything investors need in one place.",
     "mission": {
@@ -343,6 +340,7 @@
     }
   },
   "disclaimer": {
+    "tabLabel": "Disclaimer",
     "title": "Disclaimer",
     "content": "The information provided on this website does not constitute investment, financial, or other professional advice. Any investment decisions made based on information from this site are solely the user's responsibility. Past performance does not guarantee future results, and all investments carry the risk of principal loss.",
     "registrationTitle": "Company Information",
