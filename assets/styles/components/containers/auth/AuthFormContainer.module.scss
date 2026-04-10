@@ -2,6 +2,7 @@
 @use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
 
 .auth {
   display: flex;
@@ -18,7 +19,7 @@
   background-color: $color-background;
   border-radius: 1rem;
   padding: $spacing-xl $spacing-lg;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: $shadow-sm;
 
   @include respond-to(sm) {
     padding: $spacing-2xl;

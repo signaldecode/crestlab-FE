@@ -1,0 +1,203 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+// ─────────────────────────────────────────────────────────────
+// Sticky scroll morph: image expands → overlay → cards appear
+// ─────────────────────────────────────────────────────────────
+
+.intersection {
+  position: relative;
+}
+
+.intersection__pinner {
+  position: relative;
+  height: 380vh;
+
+  @include respond-to(md) {
+    height: 500vh;
+  }
+}
+
+.intersection__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: $color-background;
+}
+
+// ── Intro: image on top, text below — vertically centered ──
+.intersection__intro {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xl;
+  z-index: 1;
+  will-change: opacity;
+  padding: 0 $container-padding;
+
+  @include respond-to(md) {
+    gap: $spacing-2xl;
+  }
+}
+
+// ── Image — expands via JS transform ──
+.intersection__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  flex-shrink: 0;
+  transform-origin: center center;
+  will-change: transform, opacity;
+
+  @include respond-to(md) {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  @include respond-to(lg) {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+// ── Text content below image ──
+.intersection__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-md;
+  max-width: 48rem;
+  will-change: opacity;
+}
+
+.intersection__eyebrow {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+}
+
+.intersection__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+  letter-spacing: $letter-spacing-tight;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.intersection__description {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  line-height: $line-height-normal;
+  margin: 0;
+  max-width: 40rem;
+
+  @include respond-to(md) {
+    font-size: $font-size-sm;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Overlay ──
+.intersection__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 2;
+  will-change: opacity;
+  background: url('/mainpage/intersection/card/Cardbackground.png') center / cover no-repeat;
+}
+
+// ── Cards layer ──
+.intersection__cards {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+
+  > * {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+  }
+
+  @include respond-to(md) {
+    justify-content: center;
+
+    > * {
+      flex: 0 0 auto;
+      min-height: 0;
+    }
+  }
+}
+
+// ── Reduced motion ──
+@media (prefers-reduced-motion: reduce) {
+  .intersection__pinner {
+    height: auto;
+  }
+
+  .intersection__stage {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  .intersection__intro {
+    position: static;
+    inset: auto;
+    min-height: 60vh;
+    padding: $spacing-3xl $container-padding;
+  }
+
+  .intersection__overlay {
+    display: none;
+  }
+
+  .intersection__cards {
+    position: static;
+    inset: auto;
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+}

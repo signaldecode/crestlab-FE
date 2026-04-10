@@ -4,11 +4,10 @@
     "nav": {
       "home": "首页",
       "about": "公司介绍",
-      "notices": "公告",
-      "news": "新闻",
-      "videos": "教育资料",
-      "contact": "联系我们"
+      "lectures": "课程上传",
+      "support": "客服支持"
     },
+    "language": "语言",
     "cta": "注册",
     "login": "登录"
   },

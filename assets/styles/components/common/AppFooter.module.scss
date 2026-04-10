@@ -20,7 +20,7 @@
   grid-template-columns: 1fr;
   gap: $spacing-xl;
   padding-bottom: $spacing-xl;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid $color-white-10;
 
   @include respond-to(md) {
     grid-template-columns: 2fr 2fr 1fr;
@@ -76,4 +76,41 @@
 .copyright-text {
   font-size: $font-size-xs;
   color: $color-text-muted;
+}
+
+// ── Section 2: Marquee ──
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 1px solid $color-white-10;
+  margin-top: $spacing-xl;
+  padding: $spacing-lg 0;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: $spacing-xl;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-text {
+  font-size: $font-size-7xl;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-on-dark;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-tight;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }

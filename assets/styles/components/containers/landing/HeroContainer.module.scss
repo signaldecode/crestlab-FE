@@ -2,105 +2,184 @@
 @use '../../../tokens/typography' as *;
 @use '../../../tokens/spacing' as *;
 @use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
 
+// ==========================================================
+// Hero — 텍스트 위, 에셋(좌카드 + 폰 + 우카드) 아래
+// ==========================================================
 .hero {
-  background-color: $color-background-accent;
-  padding: $spacing-4xl $spacing-lg;
-  text-align: center;
+  position: relative;
   overflow: hidden;
-
-  @include respond-to(md) {
-    padding: 7.5rem $spacing-lg;
-  }
 }
+
+.hero-bg { object-fit: cover; z-index: 0; }
 
 .inner {
+  position: relative;
+  z-index: 1;
   max-width: $container-max-width;
   margin: 0 auto;
-}
-
-.badge {
-  display: inline-block;
-  padding: $spacing-xs $spacing-md;
-  background-color: rgba($color-primary, 0.15);
-  color: $color-primary-dark;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-semibold;
-  border-radius: 2rem;
-  margin-bottom: $spacing-xl;
-}
-
-.title {
-  font-size: $font-size-4xl;
-  font-weight: $font-weight-extrabold;
-  color: $color-text-primary;
-  letter-spacing: $letter-spacing-tight;
-  line-height: $line-height-tight;
-  margin-bottom: $spacing-lg;
-
-  @include respond-to(md) {
-    font-size: $font-size-5xl;
-  }
-
-  @include respond-to(lg) {
-    font-size: $font-size-6xl;
-  }
-}
-
-.subtitle {
-  font-size: $font-size-base;
-  color: $color-text-secondary;
-  line-height: $line-height-relaxed;
-  margin-bottom: $spacing-2xl;
-
-  @include respond-to(md) {
-    font-size: $font-size-lg;
-  }
-}
-
-.cta {
+  padding: 6rem $spacing-lg $spacing-3xl;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $spacing-md;
-
-  @include respond-to(sm) {
-    flex-direction: row;
-    justify-content: center;
-  }
+  @include respond-to(md) { padding-top: 8rem; padding-bottom: 0; }
+  @include respond-to(lg) { padding-top: 11.625rem; }
 }
 
-.btn-primary {
-  display: inline-block;
-  padding: $spacing-md $spacing-2xl;
-  background-color: $color-primary;
+// 텍스트
+.text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-xl;
+  animation: fade-up 0.8s ease-out both;
+  @include respond-to(md) { gap: $spacing-xl; margin-bottom: $spacing-2xl; }
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
   color: $color-text-on-dark;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
-
-  &:hover {
-    background-color: $color-primary-dark;
-    transform: translateY(-0.125rem);
-  }
+  letter-spacing: -0.025em;
+  line-height: 1.27;
+  user-select: none;
+  @include respond-to(md) { font-size: $font-size-4xl; }
+  @include respond-to(lg) { font-size: 3.25rem; }
 }
 
-.btn-secondary {
-  display: inline-block;
-  padding: $spacing-md $spacing-2xl;
-  background-color: transparent;
-  color: $color-text-primary;
-  font-size: $font-size-lg;
-  font-weight: $font-weight-semibold;
-  border: 0.125rem solid $color-border;
-  border-radius: 3rem;
-  text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
+.subtitle {
+  font-size: $font-size-xs;
+  color: $color-white-80;
+  line-height: $line-height-normal;
+  user-select: none;
+  @include respond-to(md) { font-size: $font-size-base; }
+  @include respond-to(lg) { font-size: $font-size-xl; }
+}
 
-  &:hover {
-    border-color: $color-primary;
-    color: $color-primary;
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md $spacing-2xl;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  background-color: $color-background;
+  border: none;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  letter-spacing: -0.025em;
+  transition: background-color 0.3s, transform 0.3s;
+  @include respond-to(md) { font-size: $font-size-lg; padding: $spacing-lg $spacing-3xl; }
+  &:hover { background-color: $color-background-light; transform: translateY(-0.125rem); }
+}
+
+.background-text {
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  font-weight: $font-weight-bold;
+  color: $color-white-80;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  @include respond-to(md) { font-size: $font-size-heavy; }
+  @include respond-to(lg) { font-size: $font-size-heavy; }
+}
+
+// ==========================================================
+// Assets — 좌카드 + 중앙폰 + 우카드
+// ==========================================================
+.assets {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+// ── 중앙 폰 ──
+.phone {
+  position: relative;
+  z-index: 2;
+  animation: fade-up 0.8s ease-out 0.2s both;
+}
+
+.phone-img {
+  width: 14rem;
+  height: auto;
+  display: block;
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(sm) { width: 20rem; }
+  @include respond-to(md) { width: 26rem; }
+  @include respond-to(lg) { width: 30rem; }
+}
+
+// ── 좌측 카드 ──
+.asset-left {
+  display: none;
+  z-index: 1;
+  top: 25%;
+
+  @include respond-to(md) {
+    display: block;
+    position: absolute;
+    left: 5%;
+    bottom: $spacing-2xl;
+    animation: fade-up 0.8s ease-out 0.3s both, floating-left 4s ease-in-out infinite;
   }
+  @include respond-to(lg) { left: 7%; }
+}
+
+.asset-left-img {
+  width: 13rem;
+  height: auto;
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(lg) { width: 15rem; }
+}
+
+// ── 우측 카드 ──
+.asset-right {
+  display: none;
+  z-index: 3;
+
+  @include respond-to(md) {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -5%;
+    animation: fade-up 0.8s ease-out 0.4s both, floating-right 3.5s ease-in-out infinite;
+  }
+  @include respond-to(lg) { right: 5%; }
+}
+
+.asset-right-img {
+  width: 19rem;
+  height: auto;
+  border-radius: 0.75rem;
+  filter: drop-shadow($drop-shadow-md);
+  @include respond-to(lg) { width: 22rem; }
+}
+
+// ==========================================================
+// Keyframes
+// ==========================================================
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY($spacing-xl); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floating-left {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floating-right {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }

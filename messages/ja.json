@@ -4,63 +4,390 @@
       "logo": "CrestLab",
       "nav": {
         "home": "ホーム",
-        "about": "会社紹介",
-        "notices": "お知らせ",
-        "news": "ニュース",
-        "videos": "教育資料",
-        "contact": "お問い合わせ"
+        "about": "企業紹介",
+        "stocks": "米国株",
+        "crypto": "暗号資産",
+        "education": "教育",
+        "news": "ニュース"
       },
+      "language": "言語",
       "cta": "会員登録",
       "login": "ログイン",
       "mypage": "マイページ",
       "logout": "ログアウト"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
         "terms": "利用規約",
-        "privacy": "個人情報保護方針",
-        "disclaimer": "投資に関するご注意"
+        "privacy": "プライバシーポリシー",
+        "disclaimer": "免責事項"
       },
-      "disclaimer": "投資には元本損失のリスクがあり、過去の収益率が将来の収益率を保証するものではありません。"
+      "disclaimer": "本プラットフォームで提供されるコンテンツは情報提供のみを目的としており、金融・投資・法律上の助言には該当しません。過去の実績は将来の成果を保証するものではなく、すべての投資には元本損失のリスクが伴います。CrestLab Inc.は登録投資顧問ではありません。"
     },
     "skipToContent": "本文へスキップ"
   },
   "landing": {
     "hero": {
-      "badge": "データ基盤の投資ソリューション",
-      "title": "体系的な分析で\n資産の価値を最大化します",
-      "subtitle": "グローバル市場分析とリスク管理を専門とする投資会社\nCrestLabと共に安定的な資産成長をご体験ください。",
-      "primaryCta": "投資相談のお申し込み",
-      "secondaryCta": "投資哲学を見る",
-      "primaryCtaAriaLabel": "投資相談お申し込みページへ移動",
-      "secondaryCtaAriaLabel": "投資哲学セクションへ移動"
+      "title": "グローバル金融市場を\n一目で把握",
+      "subtitle": "米国株と暗号資産のリアルタイムデータ、AI分析、専門教育コンテンツを一か所で提供します。",
+      "cta": "始める",
+      "ctaAriaLabel": "CrestLabサービスを始める"
     },
-    "stats": {
-      "title": "信頼できる投資実績",
-      "subtitle": "数字が証明するCrestLabの競争力"
+    "ticker": {
+      "ariaLabel": "リアルタイム相場ティッカー"
     },
-    "features": {
-      "title": "なぜCrestLabなのか",
-      "subtitle": "差別化された投資プロセスをご確認ください"
+    "featured": {
+      "title": "今注目の銘柄",
+      "subtitle": "リアルタイムで更新されるグローバルなホット銘柄をご確認ください",
+      "changeLabel": "変動率",
+      "prevAriaLabel": "前の銘柄を表示",
+      "nextAriaLabel": "次の銘柄を表示"
     },
-    "philosophy": {
-      "title": "投資に費やす時間も、結局は価値",
-      "subtitle": "CrestLabが資産を管理している間\nより大切なことに集中してください。"
+    "marketTables": {
+      "stocksTitle": "米国株",
+      "cryptoTitle": "暗号資産",
+      "fetchedAtLabel": "{time}(米国時間) 基準データ",
+      "headers": {
+        "name": "銘柄名",
+        "price": "価格",
+        "change": "変動率"
+      }
     },
-    "testimonials": {
-      "title": "お客様の声"
+    "digitalShowcase": {
+      "title": "グローバル市場のトレンドを一目で",
+      "subtitle": "ビットコインからナスダックまで、リアルタイムのグローバル市場データをいつでもどこでも。",
+      "imageAlt": "CrestLab アプリのスクリーンショット — リアルタイム株式・暗号資産市場データ"
+    },
+    "featureCards": {
+      "title": "CrestLab が選ばれる理由",
+      "subtitle": "リアルタイムデータ、AI 分析、教育コンテンツを一か所で。",
+      "items": {
+        "01": {
+          "frontTitle": "リアルタイム市場データ",
+          "frontDescription": "米国株と暗号資産の価格を1分ごとに更新します。",
+          "backTitle": "24時間カバレッジ",
+          "backDescription": "S&P 500、NASDAQ、DOW、BTC、ETH など 4,000 以上の銘柄を信頼できるデータ提供元から直接配信します。",
+          "ariaLabel": "リアルタイム市場データ — フリップカード"
+        },
+        "02": {
+          "frontTitle": "AI による分析",
+          "frontDescription": "すべてのチャートでパターン検出とシグナルスコアリングを実施。",
+          "backTitle": "スマートインサイト",
+          "backDescription": "トレンド・モメンタム・ボラティリティモデルが重要なシグナルを見逃しません。",
+          "ariaLabel": "AI による分析 — フリップカード"
+        },
+        "03": {
+          "frontTitle": "暗号資産の市場心理",
+          "frontDescription": "BTC ドミナンスと恐怖・強欲指数を一目で。",
+          "backTitle": "マーケットムード",
+          "backDescription": "過去の心理の変化とドミナンスの流れを追い、文脈を踏まえたタイミングを掴みましょう。",
+          "ariaLabel": "暗号資産の市場心理 — フリップカード"
+        },
+        "04": {
+          "frontTitle": "投資家向け教育",
+          "frontDescription": "初心者向けの基礎からテクニカル分析まで。",
+          "backTitle": "取引しながら学ぶ",
+          "backDescription": "厳選された動画講座、用語集、ウォークスルーを4か国語で提供します。",
+          "ariaLabel": "投資家向け教育 — フリップカード"
+        }
+      }
+    },
+    "intersection": {
+      "eyebrow": "機関投資家グレード",
+      "title": "クリプトと株式の\n交差点",
+      "description": "伝統的な株式市場の実績ある安定性とデジタル資産の高い成長ポテンシャルをシームレスに統合し、現代の投資家のための強靭で先進的な投資エコシステムを構築します。",
+      "imageAlt": "暗号資産と株式の交差点ビジュアル"
+    },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "リアルタイムのマーケット鼓動",
+        "title": "グローバル・デジタル資産の動きを瞬時に捉える",
+        "description": "リアルタイム価格とボラティリティを即座にチェック。デジタル資産市場では一瞬一瞬がチャンスです。"
+      },
+      "rowChart": {
+        "eyebrow": "クロスアセット・シグナル",
+        "title": "ビットコインと米国市場のコアデータ分析",
+        "description": "現在のビットコイン・ドミナンスと主要な米国市場指数の投資魅力度を比較できます。"
+      },
+      "barLabels": {
+        "btcDominance": "ビットコイン・ドミナンス",
+        "sp500": "S&P 500 投資魅力度",
+        "btcAttractiveness": "ビットコイン投資魅力度"
+      },
+      "coinCardAriaLabel": "リアルタイム暗号資産の価格",
+      "barChartAriaLabel": "投資魅力度の比較"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "CrestLab が目指すもの",
+      "items": {
+        "01": {
+          "before": "金融リーダーのための",
+          "after": "業界スタンダード",
+          "icon": "pencil",
+          "iconAlt": "編集基準"
+        },
+        "02": {
+          "before": "他のどのプラットフォームよりも多くの",
+          "after": "金融機関が信頼",
+          "icon": "medal",
+          "iconAlt": "信頼のメダル"
+        },
+        "03": {
+          "before": "世界の主要銀行を",
+          "after": "支えています。今すぐ始めましょう。",
+          "icon": "bank",
+          "iconAlt": "主要銀行"
+        }
+      }
+    },
+    "rollingCounter": {
+      "title": "データ一つひとつから育つ、富のかたち",
+      "subtitle": "より賢い成長のためのデータドリブン・インサイト",
+      "description": "アルゴリズム分析が生み出した累積リターンをご覧ください。マーケットデータを、ユーザーが実感できる価値へと変えていきます。",
+      "valueAriaLabel": "累積リターン合計: {value}"
+    },
+    "newsPreview": {
+      "title": "グローバルマーケットニュース",
+      "subtitle": "世界の金融市場をリアルタイムで読み解く",
+      "viewMore": "もっと見る",
+      "prevAriaLabel": "前のニュース",
+      "nextAriaLabel": "次のニュース",
+      "sourceLabel": "出典"
     },
     "faq": {
-      "title": "よくあるご質問",
-      "subtitle": "ご不明な点をご確認ください"
-    },
-    "cta": {
-      "title": "資産の未来を一緒に設計しましょう",
-      "subtitle": "専門の投資相談を無料でお受けいただけます",
-      "button": "無料相談のお申し込み",
-      "buttonAriaLabel": "無料投資相談お申し込みページへ移動"
+      "title": "よくあるご質問"
     }
+  },
+  "stocks": {
+    "indices": {
+      "title": "主要指数",
+      "fetchedAtLabel": "{time}(米国時間) 基準データ"
+    },
+    "table": {
+      "title": "リアルタイム株価",
+      "description": "株式市場の構造と変動を体系的に分析します",
+      "filterAll": "すべて",
+      "columns": {
+        "symbol": "ティッカー",
+        "name": "銘柄名",
+        "price": "価格",
+        "change": "変動率",
+        "volume": "出来高",
+        "marketCap": "時価総額"
+      },
+      "sectors": {
+        "tech": "テクノロジー",
+        "energy": "エネルギー",
+        "finance": "金融",
+        "healthcare": "ヘルスケア",
+        "consumer": "消費財",
+        "industrial": "資本財"
+      }
+    },
+    "movers": {
+      "sectionTitle": "マーケット ムーバーズ",
+      "gainersTitle": "本日の上昇銘柄",
+      "losersTitle": "本日の下落銘柄",
+      "gainersBadge": "上昇 TOP",
+      "losersBadge": "下落 TOP"
+    },
+    "detail": {
+      "closeAriaLabel": "銘柄詳細を閉じる",
+      "chartView": {
+        "overview": "基本",
+        "advanced": "詳細",
+        "ariaLabel": "チャート表示"
+      }
+    }
+  },
+  "crypto": {
+    "globalStats": {
+      "sectionTitle": "グローバル暗号資産統計",
+      "totalMarketCap": "総時価総額",
+      "totalVolume24h": "24時間出来高",
+      "btcDominance": "BTCドミナンス",
+      "ethLabel": "ETH",
+      "change24hShort": "24h"
+    },
+    "dominance": {
+      "title": "ビットコインドミナンスチャート",
+      "subtitle": "グローバル暗号資産市場シェアの推移",
+      "btcLabel": "ビットコイン",
+      "ethLabel": "イーサリアム",
+      "othersLabel": "その他",
+      "asOf": "本日24:00時点",
+      "periods": {
+        "1w": "1週",
+        "1m": "1ヶ月",
+        "3m": "3ヶ月",
+        "1y": "1年",
+        "5y": "5年"
+      }
+    },
+    "fearGreed": {
+      "title": "ビットコイン恐怖・強欲指数",
+      "subtitle": "資産の価格と取引量に基づき、市場心理を恐怖と強欲の5段階に分類します。",
+      "asOf": "本日24:00時点",
+      "currentTitle": "現在の指数",
+      "currentDescription": "指数は市場参加者の心理的な抵抗・支持を受けています。出来高と流動性が高い市場では、短期的な価格変動の重要な分岐点を示します。",
+      "historyTitle": "期間別指数",
+      "historyLabels": {
+        "1d": "1日前",
+        "1w": "1週間前",
+        "1m": "1ヶ月前",
+        "3m": "3ヶ月前"
+      },
+      "labels": {
+        "extremeFear": "極度の恐怖",
+        "fear": "恐怖",
+        "neutral": "中立",
+        "greed": "強欲",
+        "extremeGreed": "極度の強欲"
+      },
+      "legendLabels": {
+        "0": "極度の恐怖",
+        "1": "恐怖",
+        "2": "中立",
+        "3": "強欲",
+        "4": "極度の強欲"
+      }
+    },
+    "coinList": {
+      "title": "暗号資産価格",
+      "description": "デジタル資産のリアルタイム価格、時価総額、24時間取引量",
+      "filterAll": "すべて",
+      "columns": {
+        "name": "コイン",
+        "price": "価格",
+        "change24h": "24h %",
+        "marketCap": "時価総額",
+        "volume": "24時間出来高"
+      },
+      "categories": {
+        "layer1": "レイヤー 1",
+        "defi": "DeFi",
+        "meme": "ミーム",
+        "ai": "AIトークン",
+        "exchange": "取引所",
+        "stablecoin": "ステーブルコイン"
+      }
+    },
+    "detail": {
+      "closeAriaLabel": "コイン詳細を閉じる",
+      "chartView": {
+        "overview": "基本",
+        "advanced": "詳細",
+        "ariaLabel": "チャート表示"
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
+    "videos": {
+      "title": "Educational Videos",
+      "filterAll": "All",
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
+    },
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
+    },
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
+    },
+    "backToList": "Back to List"
+  },
+  "news": {
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
+    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
+    "detail": {
+      "backToList": "ニュース一覧へ",
+      "publishedOn": "掲載日",
+      "by": "執筆",
+      "source": "出典",
+      "shareTitle": "この記事を共有",
+      "originalLink": "原文を見る",
+      "relatedTitle": "関連ニュース",
+      "notFoundTitle": "記事が見つかりません",
+      "breadcrumbHome": "ホーム",
+      "breadcrumbNews": "ニュース",
+      "disclaimer": "本記事は情報提供を目的としており、投資勧誘ではありません。"
+    }
+  },
+  "about": {
+    "tabLabel": "企業紹介",
+    "title": "About CrestLab",
+    "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。米国株と暗号資産市場のリアルタイムデータを提供し、投資家に必要な情報を一か所でご確認いただけます。",
+    "mission": {
+      "title": "Mission",
+      "description": "世界中の投資家に信頼できる金融データと分析ツールを提供し、賢明な投資判断を支援します。"
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "AIとビッグデータを活用したグローバル金融情報プラットフォームのリーダーを目指します。"
+    }
+  },
+  "disclaimer": {
+    "tabLabel": "免責事項",
+    "title": "免責事項 (Disclaimer)",
+    "content": "本ウェブサイトで提供される情報は、投資助言、金融アドバイスその他の専門的助言とはみなされません。本サイトの情報に基づき行った投資判断の責任はすべて利用者に帰属します。過去のリターンは将来のリターンを保証するものではなく、すべての投資には元本損失のリスクがあります。",
+    "registrationTitle": "事業者情報",
+    "registrationNumber": "事業者登録番号: 000-00-00000"
   },
   "auth": {
     "login": {
@@ -220,6 +547,32 @@
       "deleteVideo": "削除",
       "confirmDelete": "本当に削除しますか？",
       "cancel": "キャンセル"
+    }
+  },
+  "seo": {
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "米国株のリアルタイム価格、主要指数、セクター別銘柄情報をご確認ください。"
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "暗号資産のリアルタイム価格、BTCドミナンス、恐怖・強欲指数をご確認ください。"
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "投資の入門からテクニカル分析まで、体系的な教育コンテンツを提供します。"
+    },
+    "news": {
+      "title": "News | CrestLab",
+      "description": "グローバル金融市場の最新ニュースをリアルタイムでご確認ください。"
+    },
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLabはAIを活用したグローバル金融情報プラットフォームです。"
+    },
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "CrestLabサービスのご利用に関する免責事項および法的事項についてご案内します。"
     }
   }
 }

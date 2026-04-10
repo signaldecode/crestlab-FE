@@ -3,140 +3,261 @@
 @use '../../tokens/spacing' as *;
 @use '../../tokens/z-index' as *;
 @use '../../tokens/breakpoints' as *;
+@use '../../tokens/shadows' as *;
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: $z-index-sticky;
-  background-color: $color-background;
-  border-bottom: 1px solid $color-border;
+  padding: $spacing-md $spacing-lg;
+  transition: padding 0.35s ease;
+}
+
+.header--sticky {
+  position: sticky;
+}
+
+.header--scrolled {
+  padding: 0;
 }
 
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: $container-max-width;
+  gap: $spacing-xl;
+  max-width: 97.5rem;
   margin: 0 auto;
-  padding: $spacing-md $spacing-lg;
+  padding: $spacing-sm $spacing-lg;
+  background: $color-glass-light;
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
+  box-shadow: $shadow-md;
+  transition: max-width 0.35s ease, border-radius 0.35s ease, background 0.35s ease;
+
+  .header--scrolled & {
+    max-width: 100%;
+    border-radius: 0;
+    background: $color-glass-light-strong;
+    box-shadow: $shadow-md;
+    padding: $spacing-md $spacing-xl;
+  }
+
+  @include respond-to(md) {
+    padding: $spacing-sm $spacing-2xl;
+
+    .header--scrolled & {
+      padding: $spacing-md $spacing-2xl;
+    }
+  }
 }
 
 .logo {
-  font-size: $font-size-2xl;
-  font-weight: $font-weight-extrabold;
-  color: $color-secondary-dark;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
   text-decoration: none;
-  letter-spacing: $letter-spacing-tight;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
-// Desktop nav
-.nav-list {
+.logo-mark {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  @include respond-to(md) {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+.logo-wordmark {
+  font-family: $font-family-sans;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-extrabold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: 1;
+
+  @include respond-to(md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.logo-wordmark-accent {
+  color: $color-primary;
+}
+
+// 데스크톱/태블릿 네비 — md 이상에서만 보임
+.desktop-nav {
   display: none;
+
+  @include respond-to(md) {
+    display: block;
+    flex: 1;
+  }
+}
+
+.nav-list {
+  display: flex;
   list-style: none;
   gap: $spacing-xl;
-
-  @include respond-to(lg) {
-    display: flex;
-    align-items: center;
-  }
-}
-
-.nav-list--open {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 4.25rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $color-background;
-  padding: $spacing-xl $spacing-lg;
-  gap: $spacing-lg;
-  z-index: $z-index-modal;
-
-  @include respond-to(lg) {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-  }
+  align-items: center;
 }
 
 .nav-item {
   list-style: none;
-}
-
-.nav-item--mobile-only {
-  list-style: none;
-
-  @include respond-to(lg) {
-    display: none;
-  }
+  position: relative;
 }
 
 .nav-link {
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
   &:hover {
-    color: $color-primary;
+    color: $color-text-primary;
   }
 }
 
-// Desktop language switcher
-.desktop-lang {
-  display: none;
+.nav-link--dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
 
-  @include respond-to(lg) {
-    display: flex;
-    align-items: center;
+// 드롭다운 화살표
+.dropdown-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
+  border-top: 0.25rem solid currentColor;
+  transition: transform 0.2s;
+}
+
+.dropdown-arrow--open {
+  transform: rotate(180deg);
+}
+
+// 데스크톱 드롭다운 메뉴
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + $spacing-sm);
+  left: 50%;
+  transform: translateX(-50%);
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.5rem;
+  box-shadow: $shadow-lg;
+  padding: $spacing-sm 0;
+  min-width: 10rem;
+  list-style: none;
+  z-index: $z-index-modal;
+}
+
+.dropdown-item {
+  list-style: none;
+}
+
+.dropdown-link {
+  display: block;
+  padding: $spacing-sm $spacing-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+
+  &:hover {
+    background: $color-background-light;
+    color: $color-text-primary;
   }
 }
 
-// CTA buttons
-.actions {
-  display: none;
+// 우측 그룹: [auth] [언어] [햄버거]
+.right-group {
+  display: flex;
   align-items: center;
   gap: $spacing-sm;
+  margin-left: auto;
+  flex-shrink: 0;
+}
 
-  @include respond-to(lg) {
+// Auth 버튼 그룹 — 데스크톱에서만 보임
+.auth-buttons {
+  display: none;
+
+  @include respond-to(md) {
     display: flex;
+    align-items: center;
+    gap: $spacing-sm;
   }
 }
 
 .btn-login {
-  padding: $spacing-sm $spacing-md;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  color: $color-text-primary;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: background-color 0.2s;
+  color: $color-text-secondary;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 0.375rem;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 
   &:hover {
-    background-color: $color-background-alt;
+    color: $color-text-primary;
+    background: $color-background-light;
   }
 }
 
 .btn-cta {
-  display: inline-block;
-  padding: $spacing-sm $spacing-lg;
   font-size: $font-size-sm;
   font-weight: $font-weight-semibold;
   color: $color-text-on-dark;
-  background-color: $color-primary;
+  background: $color-primary;
+  border: none;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: 0.375rem;
   text-decoration: none;
-  border-radius: 2rem;
-  transition: background-color 0.2s;
+  white-space: nowrap;
+  transition: background 0.2s;
+
+  &:hover { background: $color-primary-dark; }
+}
+
+.btn-logout {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  background: none;
+  border: 0.0625rem solid $color-border;
+  cursor: pointer;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 0.375rem;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
 
   &:hover {
-    background-color: $color-primary-dark;
+    color: $color-text-primary;
+    border-color: $color-text-muted;
   }
 }
 
-// Hamburger
+// Hamburger — 모바일에서만 보임
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -146,8 +267,22 @@
   border: none;
   cursor: pointer;
 
-  @include respond-to(lg) {
+  @include respond-to(md) {
     display: none;
+  }
+}
+
+.hamburger--open {
+  .hamburger-bar:nth-child(1) {
+    transform: translateY(0.4375rem) rotate(45deg);
+  }
+
+  .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-bar:nth-child(3) {
+    transform: translateY(-0.4375rem) rotate(-45deg);
   }
 }
 
@@ -157,5 +292,87 @@
   height: 0.125rem;
   background-color: $color-text-primary;
   border-radius: 0.0625rem;
-  transition: transform 0.2s;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+// =============================================
+// 모바일 메뉴 — header 직접 자식 (backdrop-filter 밖)
+// =============================================
+// 드롭다운 형태 — 헤더 바로 아래, 콘텐츠 높이만큼만
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: $spacing-lg;
+  right: $spacing-lg;
+  background-color: $color-background;
+  border-radius: 0 0 0.75rem 0.75rem;
+  box-shadow: $shadow-lg;
+  z-index: $z-index-modal;
+  padding: $spacing-md $spacing-lg;
+
+  @include respond-to(md) {
+    display: none;
+  }
+}
+
+.mobile-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.mobile-item {
+  list-style: none;
+
+  & + & {
+    border-top: 1px solid $color-border-light;
+  }
+}
+
+.mobile-link {
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  text-decoration: none;
+  display: block;
+  padding: $spacing-md 0;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.mobile-link--dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// 모바일 서브메뉴 (Markets 하위)
+.mobile-sub-list {
+  list-style: none;
+  padding-left: $spacing-md;
+}
+
+.mobile-sub-item {
+  list-style: none;
+}
+
+.mobile-sub-link {
+  display: block;
+  padding: $spacing-sm 0;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary;
+  }
 }

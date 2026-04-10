@@ -1,0 +1,211 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/z-index' as *;
+
+// 스크롤바 숨기기 Mixin
+@mixin hide-scrollbar {
+  // IE 및 Edge (구버전)
+  -ms-overflow-style: none; 
+  // Firefox
+  scrollbar-width: none; 
+
+  // Chrome, Safari, Opera, Edge (신버전)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.stock-detail {
+  position: fixed;
+  inset: 0;
+  z-index: $z-index-modal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md;
+  @include hide-scrollbar;
+}
+
+.stock-detail__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.stock-detail__modal {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 50rem;
+  max-height: calc(100vh - #{$spacing-xl});
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 1.25rem;
+  padding: $spacing-xl $spacing-lg $spacing-lg;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+  @include hide-scrollbar;
+
+  @include respond-to(md) {
+    padding: $spacing-2xl;
+  }
+}
+
+.stock-detail__close {
+  position: absolute;
+  top: $spacing-md;
+  right: $spacing-md;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  color: $color-text-secondary;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $color-border-light;
+  }
+}
+
+.stock-detail__header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-lg;
+}
+
+.stock-detail__title-row {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.stock-detail__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: $color-text-accent;
+  color: #ffffff;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+
+  @include respond-to(md) {
+    width: 3rem;
+    height: 3rem;
+    font-size: $font-size-lg;
+  }
+}
+
+.stock-detail__symbol {
+  margin: 0;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.stock-detail__name {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+.stock-detail__chart-toggle {
+  display: inline-flex;
+  gap: $spacing-xs;
+  padding: $spacing-xs;
+  background-color: $color-border-light;
+  border-radius: 0.5rem;
+  margin-bottom: $spacing-md;
+}
+
+.stock-detail__chart-toggle-btn {
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  background: transparent;
+  border-radius: 0.25rem;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: #999999;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    color: $color-text-primary;
+  }
+
+  &--active {
+    background-color: #ffffff;
+    color: $color-text-primary;
+    box-shadow: 0 2px 2px rgba(35, 35, 35, 0.16);
+
+    &:hover {
+      color: $color-text-primary;
+    }
+  }
+}
+
+.stock-detail__chart {
+  width: 100%;
+  margin: $spacing-md 0 $spacing-xl;
+  height: 25rem;
+  position: relative;
+}
+
+.stock-detail__status {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.stock-detail__status--error {
+  color: $color-loss;
+}
+
+.stock-detail__tooltip {
+  background-color: #ffffff;
+  border: 1px solid $color-border;
+  border-radius: 0.5rem;
+  padding: $spacing-sm $spacing-md;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.stock-detail__tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+}
+
+.stock-detail__tooltip-label {
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+}
+
+

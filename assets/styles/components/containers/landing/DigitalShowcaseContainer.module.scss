@@ -1,0 +1,251 @@
+@use '@/assets/styles/tokens/colors' as *;
+@use '@/assets/styles/tokens/spacing' as *;
+@use '@/assets/styles/tokens/typography' as *;
+@use '@/assets/styles/tokens/breakpoints' as *;
+
+.digital-showcase {
+  position: relative;
+  width: 100%;
+  background: $color-background;
+  overflow: hidden;
+  padding: $spacing-3xl 0 0;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl 0 0;
+  }
+
+  @include respond-to(lg) {
+    padding: $spacing-5xl 0 0;
+  }
+
+  // Bottom-half gradient overlay
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(
+      180deg,
+      $color-gradient-digital-start 0%,
+      $color-gradient-digital-mid 55%,
+      $color-gradient-digital-end 100%
+    );
+    pointer-events: none;
+  }
+}
+
+.digital-showcase__inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// ── Header: fade-up on viewport entry ──
+.digital-showcase__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-2xl;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+
+  @include respond-to(md) {
+    margin-bottom: $spacing-3xl;
+  }
+}
+
+.digital-showcase__header--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.digital-showcase__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-sm;
+}
+
+.digital-showcase__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.digital-showcase__subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: $line-height-normal;
+  max-width: 36rem;
+  margin-bottom: $spacing-4xl;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ── Gallery ──
+.digital-showcase__gallery {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  @include respond-to(md) {
+    aspect-ratio: 16 / 8;
+  }
+
+  @include respond-to(lg) {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+// ── Device: base + animation ──
+.digital-showcase__device {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+// ── Phone: left — slides from left ──
+.digital-showcase__device--phone-left {
+  display: none;
+  z-index: 2;
+  top: 3%;
+  transform: translateX(-40px);
+  transition-delay: 0.3s;
+
+  @include respond-to(lg) {
+    display: block;
+    width: 20%;
+    left: 3%;
+  }
+}
+
+// ── Card: left-bottom — slides from bottom-left ──
+.digital-showcase__device--card-left {
+  display: none;
+  z-index: 3;
+  transform: translate(-30px, 30px);
+  transition-delay: 0.5s;
+
+  @include respond-to(lg) {
+    display: block;
+    width: 16%;
+    bottom: 12%;
+    left: 10%;
+  }
+}
+
+// ── Phone: center — slides up ──
+.digital-showcase__device--phone-center {
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(60px);
+  z-index: 4;
+  transition-delay: 0.1s;
+
+  @include respond-to(md) {
+    width: 90%;
+  }
+
+  @include respond-to(lg) {
+    width: 80%;
+  }
+}
+
+// ── Card: right-top — slides from right ──
+.digital-showcase__device--card-right {
+  display: none;
+  z-index: 3;
+  transform: translateX(40px);
+  transition-delay: 0.4s;
+
+  @include respond-to(lg) {
+    display: block;
+    width: 20%;
+    top: 4%;
+    right: 3%;
+  }
+}
+
+// ── Floating keyframes ──
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes float-center {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+// ── Revealed state ──
+.digital-showcase__device--in {
+  opacity: 1;
+
+  &.digital-showcase__device--phone-left {
+    transform: translateX(0);
+    animation: float-gentle 6s ease-in-out 0.8s infinite;
+  }
+
+  &.digital-showcase__device--card-left {
+    transform: translate(0, 0);
+    animation: float-medium 3.5s ease-in-out 1s infinite;
+  }
+
+  &.digital-showcase__device--phone-center {
+    transform: translateX(-50%) translateY(0);
+    animation: float-center 6s ease-in-out 0.5s infinite;
+  }
+
+  &.digital-showcase__device--card-right {
+    transform: translateX(0);
+    animation: float-fast 3s ease-in-out 0.6s infinite;
+  }
+}
+
+// Respect reduced-motion preference
+@media (prefers-reduced-motion: reduce) {
+  .digital-showcase__header,
+  .digital-showcase__device {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+
+  .digital-showcase__device--phone-center {
+    transform: translateX(-50%);
+  }
+}

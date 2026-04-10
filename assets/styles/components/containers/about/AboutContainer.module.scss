@@ -1,0 +1,57 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.about {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding;
+}
+
+.about__title {
+  font-size: $font-size-3xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-lg;
+
+  @include respond-to(md) { font-size: $font-size-4xl; }
+}
+
+.about__description {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  line-height: $line-height-relaxed;
+  max-width: 48rem;
+  margin-bottom: $spacing-3xl;
+
+  @include respond-to(md) { font-size: $font-size-lg; }
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+
+  @include respond-to(md) { grid-template-columns: repeat(2, 1fr); }
+}
+
+.about__card {
+  background: $color-background-alt;
+  border-radius: 0.75rem;
+  padding: $spacing-xl;
+
+  p {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    line-height: $line-height-relaxed;
+  }
+}
+
+.about__card-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}

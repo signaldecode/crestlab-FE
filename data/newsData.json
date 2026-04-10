@@ -1,10 +1,106 @@
 {
   "items": [
-    { "id": 1, "title": "글로벌 시장 분석: 2026년 2분기 전망", "source": "한국경제", "date": "2026-03-28", "summary": "미국 연준의 금리 정책 변화와 글로벌 경제 회복세에 따른 2분기 시장 전망을 분석합니다.", "thumbnail": "/images/news/placeholder-1.jpg", "url": "#" },
-    { "id": 2, "title": "AI 기반 투자 솔루션의 성장과 미래", "source": "매일경제", "date": "2026-03-25", "summary": "인공지능을 활용한 투자 솔루션이 기관 투자자들 사이에서 빠르게 확산되고 있습니다.", "thumbnail": "/images/news/placeholder-2.jpg", "url": "#" },
-    { "id": 3, "title": "ESG 투자 트렌드 2026", "source": "조선일보", "date": "2026-03-22", "summary": "환경·사회·지배구조 투자가 새로운 국면을 맞이하고 있습니다.", "thumbnail": "/images/news/placeholder-3.jpg", "url": "#" },
-    { "id": 4, "title": "미국 기술주 실적 시즌 프리뷰", "source": "서울경제", "date": "2026-03-18", "summary": "1분기 실적 발표를 앞둔 미국 주요 기술 기업들의 실적 전망을 살펴봅니다.", "thumbnail": "/images/news/placeholder-4.jpg", "url": "#" },
-    { "id": 5, "title": "국내 채권 시장 동향 분석", "source": "한국경제", "date": "2026-03-15", "summary": "금리 인하 기대감에 따른 국내 채권 시장의 움직임을 분석합니다.", "thumbnail": "/images/news/placeholder-5.jpg", "url": "#" },
-    { "id": 6, "title": "동남아 신흥시장 투자 가이드", "source": "매일경제", "date": "2026-03-10", "summary": "높은 성장 잠재력을 가진 동남아시아 시장에 대한 투자 전략을 소개합니다.", "thumbnail": "/images/news/placeholder-6.jpg", "url": "#" }
+    {
+      "id": "1",
+      "slug": "sp500-new-all-time-high-tech-rally",
+      "title": "S&P 500 Hits New All-Time High Amid Tech Rally",
+      "summary": "The S&P 500 reached record levels as technology stocks led the broader market higher.",
+      "content": [
+        "The S&P 500 closed at a fresh all-time high on Friday, propelled by a broad-based rally in mega-cap technology stocks. The benchmark index has now posted gains in five of the past six sessions.",
+        "Semiconductor names tied to artificial intelligence infrastructure and cloud-services providers led the advance, as investors continued to reward companies delivering above-consensus earnings and raised guidance.",
+        "Strategists cautioned that profit-taking is likely after such a sharp run, but maintained that the medium-term trend remains constructive given resilient corporate fundamentals."
+      ],
+      "source": "CNBC",
+      "author": "Market Desk",
+      "url": "#",
+      "category": "stocks",
+      "publishedAt": "2026-04-05T14:30:00Z",
+      "thumbnail": "/images/news/placeholder-stocks.svg"
+    },
+    {
+      "id": "2",
+      "slug": "bitcoin-surges-past-68k-institutional-demand",
+      "title": "Bitcoin Surges Past $68K on Institutional Demand",
+      "summary": "Bitcoin prices climbed as major institutional investors increased their crypto allocations.",
+      "content": [
+        "Bitcoin pushed above $68,000 on Friday as sustained inflows into spot ETFs and growing balance-sheet allocations from institutional investors lifted the largest cryptocurrency to multi-week highs.",
+        "Asset managers and macro hedge funds reportedly increased their digital-asset exposure, citing improving regulatory clarity and portfolio diversification benefits.",
+        "On-chain data showed long-term holders continuing to absorb supply, a dynamic analysts say has historically preceded extended uptrends."
+      ],
+      "source": "CoinDesk",
+      "author": "Crypto Desk",
+      "url": "#",
+      "category": "crypto",
+      "publishedAt": "2026-04-04T09:15:00Z",
+      "thumbnail": "/images/news/placeholder-crypto.svg"
+    },
+    {
+      "id": "3",
+      "slug": "fed-signals-potential-rate-cut-q3-2026",
+      "title": "Fed Signals Potential Rate Cut in Q3 2026",
+      "summary": "Federal Reserve officials hinted at possible rate reductions as inflation continues to moderate.",
+      "content": [
+        "Several Federal Reserve officials signaled this week that the central bank could begin cutting interest rates as early as the third quarter of 2026, citing continued moderation in core inflation and a cooling labor market.",
+        "Recent CPI and payroll prints came in line with consensus, giving policymakers room to pivot away from the restrictive stance maintained over the past year.",
+        "Bond markets have already priced in roughly two cuts before year-end, with the 10-year Treasury yield retreating from recent highs."
+      ],
+      "source": "Bloomberg",
+      "author": "Macro Team",
+      "url": "#",
+      "category": "macro",
+      "publishedAt": "2026-04-03T16:45:00Z",
+      "thumbnail": "/images/news/placeholder-macro.svg"
+    },
+    {
+      "id": "4",
+      "slug": "nvidia-record-revenue-ai-chip-demand",
+      "title": "NVIDIA Reports Record Revenue Driven by AI Chip Demand",
+      "summary": "NVIDIA exceeded analyst expectations with record quarterly revenue fueled by data center growth.",
+      "content": [
+        "NVIDIA reported record quarterly revenue, comfortably beating Wall Street estimates as data-center sales of its AI accelerators continued to outpace supply.",
+        "Both top- and bottom-line figures topped consensus, and the company guided next-quarter revenue meaningfully above analyst expectations.",
+        "Management said volume shipments of its next-generation GPUs are ramping on schedule, supporting continued earnings momentum into the second half of the year."
+      ],
+      "source": "CNBC",
+      "author": "Tech Desk",
+      "url": "#",
+      "category": "stocks",
+      "publishedAt": "2026-04-02T11:00:00Z",
+      "thumbnail": "/images/news/placeholder-stocks.svg"
+    },
+    {
+      "id": "5",
+      "slug": "ethereum-layer2-tvl-50b",
+      "title": "Ethereum Layer 2 Ecosystem Reaches $50B TVL",
+      "summary": "The total value locked in Ethereum L2 solutions has surpassed $50 billion for the first time.",
+      "content": [
+        "Total value locked across Ethereum Layer 2 networks crossed the $50 billion milestone for the first time, underscoring the rapid scaling of the broader Ethereum ecosystem.",
+        "Activity on Arbitrum, Optimism and Base continues to expand, with DeFi protocols and consumer applications driving sustained user growth.",
+        "Cheaper fees and faster confirmation times are accelerating onboarding while easing congestion on Ethereum mainnet."
+      ],
+      "source": "CoinDesk",
+      "author": "DeFi Desk",
+      "url": "#",
+      "category": "crypto",
+      "publishedAt": "2026-04-01T08:30:00Z",
+      "thumbnail": "/images/news/placeholder-crypto.svg"
+    },
+    {
+      "id": "6",
+      "slug": "global-gdp-growth-forecast-revised-upward",
+      "title": "Global GDP Growth Forecast Revised Upward",
+      "summary": "The IMF has raised its global growth projection for 2026, citing resilient consumer spending.",
+      "content": [
+        "The International Monetary Fund raised its 2026 global GDP growth forecast, citing resilient consumer spending across both advanced and emerging economies.",
+        "Service-sector activity remains the primary engine of growth, while goods demand has stabilized after last year's slowdown.",
+        "The IMF flagged geopolitical tensions and elevated debt levels in several regions as the most prominent downside risks to its outlook."
+      ],
+      "source": "Bloomberg",
+      "author": "Macro Team",
+      "url": "#",
+      "category": "macro",
+      "publishedAt": "2026-03-30T13:20:00Z",
+      "thumbnail": "/images/news/placeholder-macro.svg"
+    }
   ]
 }

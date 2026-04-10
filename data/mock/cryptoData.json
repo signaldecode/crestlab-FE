@@ -1,0 +1,39 @@
+{
+  "globalStats": {
+    "totalMarketCap": 2710000000000,
+    "totalMarketCapChange24h": -1.4,
+    "totalVolume24h": 89400000000,
+    "totalVolume24hChangePct": 8.2,
+    "btcDominance": 62.4,
+    "ethDominance": 9.1
+  },
+  "coins": [
+    { "id": "bitcoin", "symbol": "BTC", "name": "Bitcoin", "price": 83210.00, "change24h": -2.10, "marketCap": 1640000000000, "volume24h": 38200000000, "image": "/images/coins/btc.svg", "category": "layer1" },
+    { "id": "ethereum", "symbol": "ETH", "name": "Ethereum", "price": 1892.00, "change24h": 0.30, "marketCap": 228000000000, "volume24h": 12100000000, "image": "/images/coins/eth.svg", "category": "layer1" },
+    { "id": "solana", "symbol": "SOL", "name": "Solana", "price": 134.50, "change24h": 5.10, "marketCap": 65000000000, "volume24h": 4800000000, "image": "/images/coins/sol.svg", "category": "layer1" },
+    { "id": "binancecoin", "symbol": "BNB", "name": "BNB Chain", "price": 601.20, "change24h": -0.60, "marketCap": 87000000000, "volume24h": 1900000000, "image": "/images/coins/bnb.svg", "category": "exchange" },
+    { "id": "cardano", "symbol": "ADA", "name": "Cardano", "price": 0.4521, "change24h": 1.87, "marketCap": 15900000000, "volume24h": 456000000, "image": "/images/coins/ada.svg", "category": "layer1" },
+    { "id": "avalanche", "symbol": "AVAX", "name": "Avalanche", "price": 38.42, "change24h": 3.21, "marketCap": 14800000000, "volume24h": 521000000, "image": "/images/coins/avax.svg", "category": "layer1" },
+    { "id": "uniswap", "symbol": "UNI", "name": "Uniswap", "price": 8.94, "change24h": -1.45, "marketCap": 5400000000, "volume24h": 134000000, "image": "/images/coins/uni.svg", "category": "defi" },
+    { "id": "aave", "symbol": "AAVE", "name": "Aave", "price": 142.31, "change24h": 2.18, "marketCap": 2100000000, "volume24h": 89000000, "image": "/images/coins/aave.svg", "category": "defi" },
+    { "id": "curve", "symbol": "CRV", "name": "Curve DAO", "price": 0.612, "change24h": -3.42, "marketCap": 760000000, "volume24h": 42000000, "image": "/images/coins/crv.svg", "category": "defi" },
+    { "id": "dogecoin", "symbol": "DOGE", "name": "Dogecoin", "price": 0.184, "change24h": 4.62, "marketCap": 26800000000, "volume24h": 980000000, "image": "/images/coins/doge.svg", "category": "meme" },
+    { "id": "shiba-inu", "symbol": "SHIB", "name": "Shiba Inu", "price": 0.0000284, "change24h": 6.18, "marketCap": 16700000000, "volume24h": 542000000, "image": "/images/coins/shib.svg", "category": "meme" },
+    { "id": "pepe", "symbol": "PEPE", "name": "Pepe", "price": 0.0000091, "change24h": -2.84, "marketCap": 3800000000, "volume24h": 412000000, "image": "/images/coins/pepe.svg", "category": "meme" },
+    { "id": "fetch-ai", "symbol": "FET", "name": "Fetch.ai", "price": 1.42, "change24h": 7.91, "marketCap": 3600000000, "volume24h": 218000000, "image": "/images/coins/fet.svg", "category": "ai" },
+    { "id": "render", "symbol": "RNDR", "name": "Render", "price": 7.84, "change24h": 4.12, "marketCap": 4100000000, "volume24h": 156000000, "image": "/images/coins/rndr.svg", "category": "ai" },
+    { "id": "tether", "symbol": "USDT", "name": "Tether", "price": 1.0001, "change24h": 0.01, "marketCap": 110000000000, "volume24h": 48000000000, "image": "/images/coins/usdt.svg", "category": "stablecoin" },
+    { "id": "usd-coin", "symbol": "USDC", "name": "USD Coin", "price": 0.9998, "change24h": -0.02, "marketCap": 32000000000, "volume24h": 6200000000, "image": "/images/coins/usdc.svg", "category": "stablecoin" }
+  ],
+  "fearGreed": {
+    "value": 64,
+    "label": "Greed",
+    "timestamp": "2026-04-06T00:00:00Z",
+    "history": {
+      "1d": { "value": 32, "label": "Fear" },
+      "1w": { "value": 38, "label": "Fear" },
+      "1m": { "value": 58, "label": "Greed" },
+      "3m": { "value": 76, "label": "Extreme Greed" }
+    }
+  }
+}

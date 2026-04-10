@@ -1,0 +1,161 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.dominance-chart {
+  flex: 1;
+  min-width: 0;
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.75rem;
+  padding: $spacing-xl;
+
+  @include respond-to(md) {
+    padding: $spacing-2xl;
+  }
+}
+
+// ── Header ──
+.dominance-chart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: $spacing-xl;
+}
+
+.dominance-chart__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+
+  @include respond-to(md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.dominance-chart__subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+}
+
+.dominance-chart__as-of {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: $spacing-md;
+
+  &::before {
+    content: '⏱';
+    margin-right: $spacing-xs;
+  }
+}
+
+// ── Chart body (border wrapper) ──
+.dominance-chart__body {
+  border: 0.0625rem solid $color-border-light;
+  border-radius: 0.5rem;
+  padding: $spacing-lg;
+
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+}
+
+// ── Controls: legend + period tabs ──
+.dominance-chart__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+  margin-bottom: $spacing-lg;
+}
+
+.dominance-chart__legend {
+  display: flex;
+  gap: $spacing-lg;
+}
+
+.dominance-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.dominance-chart__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dominance-chart__dot--btc {
+  background: #ff9500;
+}
+
+.dominance-chart__dot--eth {
+  background: $color-primary;
+}
+
+.dominance-chart__dot--others {
+  background: #b0b0b0;
+}
+
+// ── Period tabs ──
+.dominance-chart__periods {
+  display: flex;
+  gap: 0;
+  border: 0.0625rem solid $color-border;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.dominance-chart__period {
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  background: $color-background;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+
+  @include respond-to(md) {
+    padding: $spacing-sm $spacing-lg;
+    font-size: $font-size-sm;
+  }
+
+  &:hover {
+    background: $color-background-light;
+  }
+
+  & + & {
+    border-left: 0.0625rem solid $color-border;
+  }
+}
+
+.dominance-chart__period--active {
+  background: $color-primary;
+  color: $color-text-on-dark;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+}
+
+// ── Chart wrapper ──
+.dominance-chart__chart {
+  width: 100%;
+  min-height: 15rem;
+
+  @include respond-to(md) {
+    min-height: 20rem;
+  }
+}

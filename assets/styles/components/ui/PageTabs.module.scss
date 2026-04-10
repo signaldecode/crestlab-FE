@@ -1,0 +1,48 @@
+@use '../../tokens/colors' as *;
+@use '../../tokens/typography' as *;
+@use '../../tokens/spacing' as *;
+@use '../../tokens/breakpoints' as *;
+
+.page-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 0.0625rem solid $color-border;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+  overflow-x: auto;
+  scrollbar-width: none; // Firefox
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari
+  }
+}
+
+.page-tabs__tab {
+  padding: $spacing-md $spacing-lg;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-muted;
+  background: none;
+  border: none;
+  border-bottom: 0.125rem solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -0.0625rem;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+    padding: $spacing-md $spacing-xl;
+  }
+
+  &:hover {
+    color: $color-text-primary;
+  }
+}
+
+.page-tabs__tab--active {
+  color: $color-primary;
+  border-bottom-color: $color-primary;
+  font-weight: $font-weight-semibold;
+}

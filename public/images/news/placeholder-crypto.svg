@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Crypto placeholder">
+  <defs>
+    <radialGradient id="bg-crypto" cx="0.7" cy="0.3" r="0.9">
+      <stop offset="0%" stop-color="#7c2d12" />
+      <stop offset="60%" stop-color="#1c1917" />
+      <stop offset="100%" stop-color="#0c0a09" />
+    </radialGradient>
+    <radialGradient id="coin-crypto" cx="0.4" cy="0.35" r="0.7">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="60%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </radialGradient>
+  </defs>
+  <rect width="320" height="180" fill="url(#bg-crypto)" />
+  <g opacity="0.18" fill="#ffffff">
+    <circle cx="40" cy="40" r="1.2" />
+    <circle cx="80" cy="20" r="1" />
+    <circle cx="140" cy="50" r="1.4" />
+    <circle cx="260" cy="30" r="1" />
+    <circle cx="290" cy="80" r="1.2" />
+    <circle cx="20" cy="120" r="1" />
+    <circle cx="60" cy="160" r="1.4" />
+    <circle cx="200" cy="150" r="1" />
+    <circle cx="280" cy="140" r="1.2" />
+  </g>
+  <g transform="translate(220 90)">
+    <circle r="55" fill="url(#coin-crypto)" stroke="#fbbf24" stroke-width="2" />
+    <text
+      x="0"
+      y="20"
+      font-family="system-ui, sans-serif"
+      font-size="68"
+      font-weight="700"
+      text-anchor="middle"
+      fill="#7c2d12"
+    >₿</text>
+  </g>
+  <text x="20" y="32" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="rgba(255,255,255,0.75)" letter-spacing="1.5">CRYPTO</text>
+</svg>

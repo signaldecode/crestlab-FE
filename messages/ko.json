@@ -5,62 +5,389 @@
       "nav": {
         "home": "홈",
         "about": "회사소개",
-        "notices": "공지사항",
-        "news": "뉴스",
-        "videos": "교육자료",
-        "board": "게시판"
+        "stocks": "미국 증시",
+        "crypto": "암호화폐",
+        "education": "교육자료",
+        "news": "뉴스"
       },
+      "language": "언어",
       "cta": "회원가입",
       "login": "로그인",
       "mypage": "마이페이지",
       "logout": "로그아웃"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
         "terms": "이용약관",
         "privacy": "개인정보처리방침",
-        "disclaimer": "투자 유의사항"
+        "disclaimer": "면책 고지"
       },
-      "disclaimer": "투자에는 원금 손실의 위험이 있으며, 과거의 수익률이 미래의 수익률을 보장하지 않습니다."
+      "disclaimer": "본 플랫폼에서 제공하는 콘텐츠는 정보 제공 목적이며, 금융·투자·법률 자문에 해당하지 않습니다. 과거 수익률은 미래 성과를 보장하지 않으며, 모든 투자에는 원금 손실의 위험이 수반됩니다. CrestLab Inc.는 등록된 투자 자문사가 아닙니다."
     },
     "skipToContent": "본문으로 건너뛰기"
   },
   "landing": {
     "hero": {
-      "badge": "데이터 기반 투자 솔루션",
-      "title": "체계적 분석으로\n자산의 가치를 극대화합니다",
-      "subtitle": "글로벌 시장 분석과 리스크 관리 전문 투자회사\nCrestLab과 함께 안정적인 자산 성장을 경험하세요.",
-      "primaryCta": "투자 상담 신청",
-      "secondaryCta": "투자 철학 보기",
-      "primaryCtaAriaLabel": "투자 상담 신청 페이지로 이동",
-      "secondaryCtaAriaLabel": "투자 철학 섹션으로 이동"
+      "title": "글로벌 금융 시장을\n한 눈에 파악하세요",
+      "subtitle": "미국 주식과 암호화폐의 실시간 데이터, AI 기반 분석, 전문 교육 콘텐츠를 한 곳에서 제공합니다.",
+      "cta": "시작하기",
+      "ctaAriaLabel": "CrestLab 서비스 시작하기"
     },
-    "stats": {
-      "title": "신뢰할 수 있는 투자 성과",
-      "subtitle": "숫자가 증명하는 CrestLab의 경쟁력"
+    "ticker": {
+      "ariaLabel": "실시간 시세 티커"
     },
-    "features": {
-      "title": "왜 CrestLab인가",
-      "subtitle": "차별화된 투자 프로세스를 확인하세요"
+    "featured": {
+      "title": "지금 주목해야 할 종목",
+      "subtitle": "실시간으로 업데이트되는 글로벌 핫 종목을 확인하세요",
+      "changeLabel": "변동률",
+      "prevAriaLabel": "이전 종목 보기",
+      "nextAriaLabel": "다음 종목 보기"
     },
-    "philosophy": {
-      "title": "투자에 쓰는 시간도 결국엔 가치",
-      "subtitle": "CrestLab이 자산을 관리하는 동안\n더 중요한 일에 집중하세요."
+    "marketTables": {
+      "stocksTitle": "US Stocks",
+      "cryptoTitle": "Crypto",
+      "fetchedAtLabel": "{time}(미국시간) 기준 데이터",
+      "headers": {
+        "name": "종목명",
+        "price": "현재가",
+        "change": "등락률"
+      }
     },
-    "testimonials": {
-      "title": "고객이 직접 전하는 이야기"
+    "digitalShowcase": {
+      "title": "글로벌 시장 동향을 한눈에",
+      "subtitle": "비트코인부터 나스닥까지, 실시간 글로벌 시장 데이터를 언제 어디서나 확인하세요.",
+      "imageAlt": "CrestLab 앱 스크린샷 — 실시간 주식 및 암호화폐 시장 데이터"
+    },
+    "featureCards": {
+      "title": "CrestLab을 선택하는 이유",
+      "subtitle": "실시간 데이터, AI 분석, 교육 콘텐츠를 한 곳에서 제공합니다.",
+      "items": {
+        "01": {
+          "frontTitle": "실시간 시장 데이터",
+          "frontDescription": "미국 주식과 암호화폐 가격을 1분 단위로 갱신합니다.",
+          "backTitle": "24시간 커버리지",
+          "backDescription": "S&P 500, NASDAQ, DOW, BTC, ETH 등 4,000개 이상 종목을 신뢰할 수 있는 데이터 공급자로부터 직접 제공받습니다.",
+          "ariaLabel": "실시간 시장 데이터 — 플립 카드"
+        },
+        "02": {
+          "frontTitle": "AI 기반 분석",
+          "frontDescription": "모든 차트에 패턴 감지와 시그널 스코어링을 적용합니다.",
+          "backTitle": "스마트 인사이트",
+          "backDescription": "추세, 모멘텀, 변동성 모델이 중요한 신호를 놓치지 않도록 도와줍니다.",
+          "ariaLabel": "AI 기반 분석 — 플립 카드"
+        },
+        "03": {
+          "frontTitle": "암호화폐 심리 지표",
+          "frontDescription": "BTC 도미넌스와 공포/탐욕 지수를 한눈에 확인하세요.",
+          "backTitle": "시장 분위기",
+          "backDescription": "과거 심리 변화와 도미넌스 흐름을 추적해 더 나은 매매 타이밍을 잡으세요.",
+          "ariaLabel": "암호화폐 심리 지표 — 플립 카드"
+        },
+        "04": {
+          "frontTitle": "투자자 교육",
+          "frontDescription": "입문 기초부터 기술적 분석 전략까지.",
+          "backTitle": "투자하며 배우기",
+          "backDescription": "엄선된 영상 강의, 용어집, 따라하기 가이드를 4개 언어로 제공합니다.",
+          "ariaLabel": "투자자 교육 — 플립 카드"
+        }
+      }
+    },
+    "intersection": {
+      "eyebrow": "기관 투자 등급",
+      "title": "크립토와 주식의\n교차점",
+      "description": "전통 주식 시장의 검증된 안정성과 디지털 자산의 높은 성장 잠재력을 융합하여, 현대 투자자를 위한 견고하고 미래지향적인 투자 생태계를 구축합니다.",
+      "imageAlt": "암호화폐와 주식 교차점 비주얼"
+    },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "실시간 마켓 펄스",
+        "title": "글로벌 디지털 자산의 흐름을 한눈에",
+        "description": "실시간 가격과 변동성을 즉시 확인하세요. 디지털 자산 시장에서는 1초가 곧 기회입니다."
+      },
+      "rowChart": {
+        "eyebrow": "크로스에셋 시그널",
+        "title": "비트코인과 미국 시장 핵심 데이터 분석",
+        "description": "현재 비트코인 도미넌스와 주요 미국 시장 지수의 투자 매력도를 한눈에 비교해 보세요."
+      },
+      "barLabels": {
+        "btcDominance": "비트코인 도미넌스",
+        "sp500": "S&P 500 투자 매력도",
+        "btcAttractiveness": "비트코인 투자 매력도"
+      },
+      "coinCardAriaLabel": "실시간 암호화폐 시세",
+      "barChartAriaLabel": "투자 매력도 비교"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "CrestLab이 추구하는 가치",
+      "items": {
+        "01": {
+          "before": "금융 리더를 위한",
+          "after": "업계 표준",
+          "icon": "pencil",
+          "iconAlt": "편집 기준"
+        },
+        "02": {
+          "before": "어떤 플랫폼보다 더 많은",
+          "after": "금융 기관이 신뢰하는",
+          "icon": "medal",
+          "iconAlt": "신뢰 메달"
+        },
+        "03": {
+          "before": "세계 주요 은행을",
+          "after": "지원합니다. 지금 시작하세요.",
+          "icon": "bank",
+          "iconAlt": "주요 은행"
+        }
+      }
+    },
+    "rollingCounter": {
+      "title": "데이터 한 점에서 시작되는 성장의 순간",
+      "subtitle": "더 똑똑한 성장을 위한 데이터 기반 인사이트",
+      "description": "알고리즘 인사이트가 만들어낸 누적 수익을 확인하세요. 시장 데이터를 사용자가 체감할 수 있는 가치로 바꿔드립니다.",
+      "valueAriaLabel": "총 누적 수익: {value}"
+    },
+    "newsPreview": {
+      "title": "글로벌 마켓 뉴스",
+      "subtitle": "전 세계 금융 시장의 실시간 인사이트",
+      "viewMore": "더 보기",
+      "prevAriaLabel": "이전 뉴스",
+      "nextAriaLabel": "다음 뉴스",
+      "sourceLabel": "출처"
     },
     "faq": {
-      "title": "자주 묻는 질문",
-      "subtitle": "궁금한 점을 확인하세요"
-    },
-    "cta": {
-      "title": "자산의 미래를 함께 설계하세요",
-      "subtitle": "전문 투자 상담을 무료로 받아보세요",
-      "button": "무료 상담 신청",
-      "buttonAriaLabel": "무료 투자 상담 신청 페이지로 이동"
+      "title": "자주 묻는 질문"
     }
+  },
+  "stocks": {
+    "indices": {
+      "title": "주요 지수",
+      "fetchedAtLabel": "{time}(미국시간) 기준 데이터"
+    },
+    "table": {
+      "title": "실시간 주식 가격",
+      "description": "주식 시장의 구조와 변동을 체계적으로 분석합니다",
+      "filterAll": "전체",
+      "columns": {
+        "symbol": "티커",
+        "name": "종목명",
+        "price": "현재가",
+        "change": "변동률",
+        "volume": "거래량",
+        "marketCap": "시가총액"
+      },
+      "sectors": {
+        "tech": "기술",
+        "energy": "에너지",
+        "finance": "금융",
+        "healthcare": "헬스케어",
+        "consumer": "소비재",
+        "industrial": "산업"
+      }
+    },
+    "movers": {
+      "sectionTitle": "마켓 무버스",
+      "gainersTitle": "오늘의 상승 종목",
+      "losersTitle": "오늘의 하락 종목",
+      "gainersBadge": "상승 TOP",
+      "losersBadge": "하락 TOP"
+    },
+    "detail": {
+      "closeAriaLabel": "종목 상세 닫기",
+      "chartView": {
+        "overview": "기본",
+        "advanced": "고급",
+        "ariaLabel": "차트 보기"
+      }
+    }
+  },
+  "crypto": {
+    "globalStats": {
+      "sectionTitle": "글로벌 암호화폐 통계",
+      "totalMarketCap": "전체 시가총액",
+      "totalVolume24h": "24시간 거래량",
+      "btcDominance": "BTC 도미넌스",
+      "ethLabel": "ETH",
+      "change24hShort": "24시간"
+    },
+    "dominance": {
+      "title": "비트코인 도미넌스 차트",
+      "subtitle": "글로벌 암호화폐 시장 점유율 추이",
+      "btcLabel": "비트코인",
+      "ethLabel": "이더리움",
+      "othersLabel": "기타",
+      "asOf": "오늘 24:00기준",
+      "periods": {
+        "1w": "1주",
+        "1m": "1개월",
+        "3m": "3개월",
+        "1y": "1년",
+        "5y": "5년"
+      }
+    },
+    "fearGreed": {
+      "title": "비트코인 공포/탐욕 지수",
+      "subtitle": "자산의 가격과 거래량을 바탕으로, 자산에 대한 시장 심리를 공포와 탐욕의 5단계로 구분합니다.",
+      "asOf": "오늘 24:00기준",
+      "currentTitle": "현재 지수",
+      "currentDescription": "지수가 참여자들의 심리적인 저항, 지지를 받고 있습니다. 거래량과 유동성이 많은 시장이라면, 단기간 주가 움직임의 중요 결정 구간임을 알립니다.",
+      "historyTitle": "기간별 지수",
+      "historyLabels": {
+        "1d": "1일 전",
+        "1w": "1주 전",
+        "1m": "1개월 전",
+        "3m": "3개월 전"
+      },
+      "labels": {
+        "extremeFear": "극단적 공포",
+        "fear": "공포",
+        "neutral": "중립",
+        "greed": "탐욕",
+        "extremeGreed": "극단적 탐욕"
+      },
+      "legendLabels": {
+        "0": "극단적 공포",
+        "1": "공포",
+        "2": "중립",
+        "3": "탐욕",
+        "4": "극단적 탐욕"
+      }
+    },
+    "coinList": {
+      "title": "암호화폐 시세",
+      "description": "디지털 자산의 실시간 가격, 시가총액, 24시간 거래량을 확인하세요",
+      "filterAll": "전체",
+      "columns": {
+        "name": "코인",
+        "price": "현재가",
+        "change24h": "24h %",
+        "marketCap": "시가총액",
+        "volume": "24시간 거래량"
+      },
+      "categories": {
+        "layer1": "레이어 1",
+        "defi": "디파이",
+        "meme": "밈코인",
+        "ai": "AI 토큰",
+        "exchange": "거래소",
+        "stablecoin": "스테이블코인"
+      }
+    },
+    "detail": {
+      "closeAriaLabel": "코인 상세 닫기",
+      "chartView": {
+        "overview": "기본",
+        "advanced": "고급",
+        "ariaLabel": "차트 보기"
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
+    "videos": {
+      "title": "Educational Videos",
+      "filterAll": "All",
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
+    },
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
+    },
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
+    },
+    "backToList": "Back to List"
+  },
+  "news": {
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
+    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
+    "detail": {
+      "backToList": "뉴스 목록으로",
+      "publishedOn": "게재일",
+      "by": "작성",
+      "source": "출처",
+      "shareTitle": "이 기사 공유",
+      "originalLink": "원문 보기",
+      "relatedTitle": "관련 뉴스",
+      "notFoundTitle": "기사를 찾을 수 없습니다",
+      "breadcrumbHome": "홈",
+      "breadcrumbNews": "뉴스",
+      "disclaimer": "본 기사는 정보 제공 목적이며 투자 권유가 아닙니다."
+    }
+  },
+  "about": {
+    "tabLabel": "회사소개",
+    "title": "About CrestLab",
+    "description": "CrestLab은 AI 기반 글로벌 금융 정보 플랫폼입니다. 미국 주식과 암호화폐 시장의 실시간 데이터를 제공하며, 투자자에게 필요한 정보를 한 곳에서 확인할 수 있습니다.",
+    "mission": {
+      "title": "Mission",
+      "description": "전 세계 투자자에게 신뢰할 수 있는 금융 데이터와 분석 도구를 제공하여 현명한 투자 결정을 지원합니다."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "AI와 빅데이터를 활용한 글로벌 금융 정보 플랫폼의 선두주자가 되겠습니다."
+    }
+  },
+  "disclaimer": {
+    "tabLabel": "면책 고지",
+    "title": "면책 고지 (Disclaimer)",
+    "content": "본 웹사이트에서 제공하는 정보는 투자 조언, 금융 자문 또는 기타 전문적인 조언으로 간주되지 않습니다. 본 사이트의 정보를 근거로 내린 투자 결정에 대한 책임은 전적으로 이용자에게 있습니다. 과거의 수익률이 미래의 수익률을 보장하지 않으며, 모든 투자에는 원금 손실의 위험이 있습니다.",
+    "registrationTitle": "사업자 정보",
+    "registrationNumber": "사업자등록번호: 000-00-00000"
   },
   "auth": {
     "login": {
@@ -84,7 +411,7 @@
     },
     "register": {
       "title": "회원가입",
-      "subtitle": "CrestLab의 투자 교육을 무료로 시작하세요",
+      "subtitle": "CrestLab에서 글로벌 금융 정보를 확인하세요",
       "name": "이름",
       "namePlaceholder": "홍길동",
       "userId": "아이디",
@@ -187,154 +514,30 @@
       "closeAriaLabel": "로그인 창 닫기"
     }
   },
-  "board": {
-    "notices": {
-      "title": "공지사항",
-      "subtitle": "CrestLab의 최신 소식을 확인하세요",
-      "readMore": "자세히 보기",
-      "noItems": "등록된 공지사항이 없습니다.",
-      "backToList": "목록으로"
+  "seo": {
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "미국 주식 실시간 가격, 주요 지수, 섹터별 종목 정보를 확인하세요."
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "암호화폐 실시간 시세, BTC 도미넌스, 공포/탐욕 지수를 확인하세요."
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "투자 입문부터 기술적 분석까지, 체계적인 교육 콘텐츠를 제공합니다."
     },
     "news": {
-      "title": "뉴스",
-      "subtitle": "투자 관련 최신 뉴스를 확인하세요",
-      "source": "출처",
-      "readOriginal": "원문 보기",
-      "readOriginalAriaLabel": "원문 기사로 이동 (새 창)",
-      "noItems": "등록된 뉴스가 없습니다."
+      "title": "News | CrestLab",
+      "description": "글로벌 금융 시장의 최신 뉴스를 실시간으로 확인하세요."
     },
-    "videos": {
-      "title": "투자 교육 영상",
-      "subtitle": "CrestLab의 투자 교육 콘텐츠를 시청하세요",
-      "loginRequired": "영상 시청은 로그인이 필요합니다.",
-      "loginCta": "로그인하기",
-      "noItems": "등록된 영상이 없습니다.",
-      "backToList": "목록으로"
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLab은 AI 기반 글로벌 금융 정보 플랫폼입니다."
     },
-    "community": {
-      "title": "게시판",
-      "subtitle": "자유롭게 의견을 나누는 공간입니다",
-      "write": "글쓰기",
-      "noItems": "등록된 게시글이 없습니다.",
-      "backToList": "목록으로",
-      "author": "작성자",
-      "date": "작성일",
-      "views": "조회수",
-      "loginRequired": "글쓰기는 로그인이 필요합니다.",
-      "loginCta": "로그인하기",
-      "deleteConfirm": "정말 삭제하시겠습니까?",
-      "edit": "수정",
-      "delete": "삭제",
-      "writeForm": {
-        "title": "글쓰기",
-        "subtitle": "게시판에 새 글을 작성합니다",
-        "postTitle": "제목",
-        "postTitlePlaceholder": "제목을 입력하세요",
-        "content": "내용",
-        "contentPlaceholder": "내용을 입력하세요",
-        "submit": "등록",
-        "submitAriaLabel": "게시글 등록 제출",
-        "backToList": "목록으로",
-        "errors": {
-          "titleRequired": "제목을 입력해주세요",
-          "contentRequired": "내용을 입력해주세요"
-        }
-      }
-    },
-    "admin": {
-      "writeNotice": "공지 작성",
-      "editNotice": "수정",
-      "deleteNotice": "삭제",
-      "noticeWriteForm": {
-        "title": "공지 작성",
-        "subtitle": "새로운 공지사항을 등록합니다",
-        "noticeTitle": "제목",
-        "noticeTitlePlaceholder": "공지사항 제목을 입력하세요",
-        "content": "내용",
-        "contentPlaceholder": "공지사항 내용을 입력하세요",
-        "submit": "등록",
-        "submitAriaLabel": "공지사항 등록 제출",
-        "backToList": "목록으로",
-        "errors": {
-          "titleRequired": "제목을 입력해주세요",
-          "contentRequired": "내용을 입력해주세요"
-        }
-      },
-      "uploadVideo": "영상 업로드",
-      "editVideo": "수정",
-      "deleteVideo": "삭제",
-      "writeNews": "뉴스 게시",
-      "editNews": "수정",
-      "deleteNews": "삭제",
-      "newsUploadForm": {
-        "title": "뉴스 게시",
-        "subtitle": "투자 관련 뉴스를 등록합니다",
-        "modeUrl": "URL 스크랩",
-        "modeManual": "직접 작성",
-        "url": "기사 URL",
-        "urlPlaceholder": "https://example.com/article",
-        "scrapeButton": "기사 가져오기",
-        "scraping": "가져오는 중...",
-        "scrapeSuccess": "기사를 성공적으로 가져왔습니다",
-        "newsTitle": "제목",
-        "newsTitlePlaceholder": "뉴스 제목을 입력하세요",
-        "content": "본문",
-        "contentPlaceholder": "뉴스 본문을 입력하세요",
-        "source": "출처",
-        "sourcePlaceholder": "출처를 입력하세요 (예: 한국경제)",
-        "sourceUrl": "원문 링크",
-        "sourceUrlPlaceholder": "https://example.com/article",
-        "thumbnail": "썸네일 이미지",
-        "thumbnailHint": "JPG, PNG 형식 지원 (선택사항)",
-        "selectFile": "파일 선택",
-        "changeFile": "파일 변경",
-        "noFileSelected": "선택된 파일이 없습니다",
-        "submit": "게시",
-        "submitAriaLabel": "뉴스 게시 제출",
-        "backToList": "목록으로",
-        "errors": {
-          "urlRequired": "기사 URL을 입력해주세요",
-          "urlInvalid": "올바른 URL 형식이 아닙니다",
-          "scrapeFailed": "기사를 가져오지 못했습니다. URL을 확인해주세요",
-          "titleRequired": "제목을 입력해주세요",
-          "contentRequired": "본문을 입력해주세요",
-          "sourceRequired": "출처를 입력해주세요"
-        }
-      },
-      "confirmDelete": "정말 삭제하시겠습니까?",
-      "cancel": "취소",
-      "uploadForm": {
-        "title": "영상 업로드",
-        "subtitle": "새로운 투자 교육 영상을 등록합니다",
-        "videoTitle": "영상 제목",
-        "videoTitlePlaceholder": "영상 제목을 입력하세요",
-        "description": "영상 설명",
-        "descriptionPlaceholder": "영상에 대한 설명을 입력하세요",
-        "category": "카테고리",
-        "categoryPlaceholder": "카테고리를 선택하세요",
-        "categories": {
-          "market": "시장 분석",
-          "strategy": "투자 전략",
-          "beginner": "입문",
-          "advanced": "심화"
-        },
-        "videoFile": "영상 파일",
-        "videoFileHint": "MP4, WebM 형식 지원",
-        "thumbnail": "썸네일 이미지",
-        "thumbnailHint": "JPG, PNG 형식 지원 (선택사항)",
-        "selectFile": "파일 선택",
-        "changeFile": "파일 변경",
-        "noFileSelected": "선택된 파일이 없습니다",
-        "submit": "업로드",
-        "submitAriaLabel": "영상 업로드 제출",
-        "backToList": "목록으로",
-        "errors": {
-          "titleRequired": "영상 제목을 입력해주세요",
-          "descriptionRequired": "영상 설명을 입력해주세요",
-          "categoryRequired": "카테고리를 선택해주세요",
-          "videoFileRequired": "영상 파일을 선택해주세요"
-        }
-      }
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "CrestLab 서비스 이용에 관한 면책 고지 및 법적 사항을 안내합니다."
     }
   }
 }

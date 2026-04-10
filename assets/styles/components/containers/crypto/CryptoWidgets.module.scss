@@ -1,0 +1,17 @@
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.widgets {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-2xl $container-padding $spacing-md;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $spacing-lg;
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "videos": [
+    {
+      "slug": "beginner-lesson-1",
+      "title": "How To Read Stock Charts For Beginners",
+      "description": "Simple explanation on how to read a stock chart for beginners. If you have any questions feel free to ask them in the comments.",
+      "youtubeId": "J-ntsk7Dsd0",
+      "category": "beginner",
+      "thumbnail": "https://i.ytimg.com/vi/J-ntsk7Dsd0/maxresdefault.jpg",
+      "duration": "10:53",
+      "views": 788313,
+      "publishedAt": "2021-12-14"
+    },
+    {
+      "slug": "beginner-lesson-2",
+      "title": "What is Technical Analysis? Candlesticks, Trendlines, Patterns Explained",
+      "description": "Technical Analysis is the study of price action and the movement of the market among many different assets and timeframes. In this video, we explain how to read candlesticks, how to see trendlines, an",
+      "youtubeId": "4c5WKOB3U5c",
+      "category": "beginner",
+      "thumbnail": "https://i.ytimg.com/vi/4c5WKOB3U5c/maxresdefault.jpg",
+      "duration": "17:25",
+      "views": 153583,
+      "publishedAt": "2021-12-31"
+    },
+    {
+      "slug": "beginner-lesson-3",
+      "title": "🛑 STOP Trading Until You Learn VOLUME ANALYSIS...",
+      "description": "Unlock the secrets of volume trading in our concise volume analysis guide. This tutorial is your gateway to mastering trading strategies across various markets, be it day trading, forex trading, or sw",
+      "youtubeId": "hWM2Gw36FlU",
+      "category": "beginner",
+      "thumbnail": "https://i.ytimg.com/vi/hWM2Gw36FlU/maxresdefault.jpg",
+      "duration": "10:42",
+      "views": 273617,
+      "publishedAt": "2023-10-11"
+    },
+    {
+      "slug": "beginner-lesson-4",
+      "title": "Stock Trading: Moving Averages",
+      "description": "Learn how to use a simple moving average to confirm established trends, along with the pros and cons of applying it to different time frames.",
+      "youtubeId": "IvvUbh-cnX4",
+      "category": "beginner",
+      "thumbnail": "https://i.ytimg.com/vi/IvvUbh-cnX4/maxresdefault.jpg",
+      "duration": "04:42",
+      "views": 280745,
+      "publishedAt": "2023-11-04"
+    },
+    {
+      "slug": "intermediate-lesson-1",
+      "title": "Fibonacci Retracement explained in under 5 minutes",
+      "description": "Earn Money Daily from our Trade Ideas while you learn How to Trade",
+      "youtubeId": "nYKpik-o8zI",
+      "category": "intermediate",
+      "thumbnail": "https://i.ytimg.com/vi/nYKpik-o8zI/maxresdefault.jpg",
+      "duration": "03:49",
+      "views": 1560282,
+      "publishedAt": "2022-08-17"
+    },
+    {
+      "slug": "intermediate-lesson-2",
+      "title": "The ONLY Elliot Wave Trading Guide You NEED For 2026",
+      "description": "The complete guide to Elliott Wave Trading for beginners and advanced traders. In this video you'll learn what is Elliott Wave theory, why Elliott Wave works, how to spot Elliott Waves, when to use El",
+      "youtubeId": "tWTxqfWhU5k",
+      "category": "intermediate",
+      "thumbnail": "https://i.ytimg.com/vi/tWTxqfWhU5k/maxresdefault.jpg",
+      "duration": "05:14",
+      "views": 368286,
+      "publishedAt": "2024-03-07"
+    },
+    {
+      "slug": "intermediate-lesson-3",
+      "title": "The ULTIMATE Beginner's Guide to HARMONIC PATTERNS",
+      "description": "This is a video where I talk about harmonic patterns for beginners.",
+      "youtubeId": "ir3XB3CGdYU",
+      "category": "intermediate",
+      "thumbnail": "https://i.ytimg.com/vi/ir3XB3CGdYU/maxresdefault.jpg",
+      "duration": "23:22",
+      "views": 251993,
+      "publishedAt": "2022-05-04"
+    },
+    {
+      "slug": "intermediate-lesson-4",
+      "title": "ICT Setup Part 1- Market Structure",
+      "description": "How to analyze the market structure as an ICT trader? In this video, we will teach you how to read the chart like a professional trader. We will explain the basic and advanced ICT concepts about how t",
+      "youtubeId": "JsysIKw06pc",
+      "category": "intermediate",
+      "thumbnail": "https://i.ytimg.com/vi/JsysIKw06pc/maxresdefault.jpg",
+      "duration": "09:12",
+      "views": 845406,
+      "publishedAt": "2023-02-24"
+    }
+  ]
+}

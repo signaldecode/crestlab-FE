@@ -1,0 +1,20 @@
+// ==============================================
+// Design Tokens — Shadows
+// ==============================================
+
+@use 'colors' as *;
+
+// Elevation
+$shadow-sm: 0 0.0625rem 0.1875rem $color-black-06;
+$shadow-md: 0 0.25rem 0.75rem $color-black-08;
+$shadow-lg: 0.5rem 0.5rem 0.75rem -0.0625rem rgba(35, 48, 59, 0.16);
+$shadow-xl: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.14);
+
+// Drop shadow (for filter: drop-shadow)
+$drop-shadow-md: 0 1rem 2rem $color-black-15;
+
+// Glow (accent)
+$shadow-glow-sm: 0 0 1.5rem rgba($color-primary, 0.15);
+$shadow-glow-md: 0 0 2.5rem rgba($color-primary, 0.25);
+
+// Overlay 색상 → _colors.scss에서 관리

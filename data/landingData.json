@@ -1,96 +1,29 @@
 {
-  "stats": {
-    "items": [
-      {
-        "value": "1.2",
-        "unit": "조원",
-        "label": "총 운용자산 규모",
-        "description": "고객 신뢰를 기반으로 꾸준히 성장하는 운용 자산"
-      },
-      {
-        "value": "12.8",
-        "unit": "%",
-        "label": "연평균 수익률",
-        "description": "최근 5년간 안정적인 수익률 달성"
-      },
-      {
-        "value": "3,200",
-        "unit": "+",
-        "label": "투자 고객 수",
-        "description": "개인 및 기관 투자자가 선택한 파트너"
-      }
-    ]
+  "hero": {
+    "backgroundImage": "/mainpage/hero/section1.0.jpg",
+    "phoneImage": "/mainpage/hero/heroPhone.png",
+    "leftCardImage": "/mainpage/hero/heroleft.svg",
+    "rightCardImage": "/mainpage/hero/heroright.svg"
   },
-  "features": {
-    "items": [
-      {
-        "title": "데이터 기반 분석",
-        "description": "AI와 빅데이터를 활용한 글로벌 시장 분석으로 투자 기회를 포착합니다.",
-        "icon": "chart"
-      },
-      {
-        "title": "리스크 관리 시스템",
-        "description": "다층적 리스크 모니터링으로 시장 변동성에 체계적으로 대응합니다.",
-        "icon": "shield"
-      },
-      {
-        "title": "맞춤형 포트폴리오",
-        "description": "고객의 투자 성향과 목표에 최적화된 포트폴리오를 설계합니다.",
-        "icon": "portfolio"
-      },
-      {
-        "title": "투명한 운용 보고",
-        "description": "실시간 대시보드와 정기 보고서로 투자 현황을 투명하게 공개합니다.",
-        "icon": "report"
-      }
-    ]
-  },
-  "philosophy": {
-    "stats": [
-      { "label": "평균 의사결정 시간", "value": "48시간", "note": "개인 투자자 평균" },
-      { "label": "CrestLab 분석 시간", "value": "0.3초", "note": "AI 기반 실시간 분석" }
-    ]
-  },
-  "testimonials": {
-    "items": [
-      {
-        "quote": "체계적인 리스크 관리 덕분에 변동성이 큰 시장에서도 안정적인 수익을 올릴 수 있었습니다.",
-        "author": "김**",
-        "role": "개인 투자자",
-        "highlight": "변동성이 큰 시장에서도 안정적인 수익"
-      },
-      {
-        "quote": "정기 보고서의 퀄리티가 매우 높습니다. 제 자산이 어떻게 운용되고 있는지 한눈에 파악됩니다.",
-        "author": "박**",
-        "role": "기업 대표",
-        "highlight": "자산이 어떻게 운용되고 있는지 한눈에"
-      },
-      {
-        "quote": "10년 넘게 여러 투자사를 경험했지만, CrestLab만큼 투명하고 신뢰가 가는 곳은 처음입니다.",
-        "author": "이**",
-        "role": "자산가",
-        "highlight": "투명하고 신뢰가 가는 곳은 처음"
-      }
-    ]
-  },
+  "ticker": [
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 },
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 },
+    { "symbol": "SPX", "name": "S&P 500", "price": 5248.32, "change": 42.15, "changePercent": 0.81 },
+    { "symbol": "IXIC", "name": "NASDAQ", "price": 16428.82, "change": -51.23, "changePercent": -0.31 },
+    { "symbol": "BTC", "name": "Bitcoin", "price": 68542.30, "change": 1523.40, "changePercent": 2.27 },
+    { "symbol": "ETH", "name": "Ethereum", "price": 3521.18, "change": -43.82, "changePercent": -1.23 }
+  ],
   "faq": {
     "items": [
-      {
-        "question": "최소 투자 금액은 얼마인가요?",
-        "answer": "일반 투자 상품의 경우 최소 1,000만원부터 시작할 수 있으며, 프리미엄 자문 서비스는 1억원 이상의 자산을 보유한 고객을 대상으로 합니다."
-      },
-      {
-        "question": "수수료 체계는 어떻게 되나요?",
-        "answer": "CrestLab은 투명한 수수료 정책을 운영합니다. 운용보수와 성과보수로 구성되며, 상세한 수수료 구조는 상담을 통해 안내드립니다."
-      },
-      {
-        "question": "투자 성과를 어떻게 확인할 수 있나요?",
-        "answer": "실시간 대시보드를 통해 언제든지 투자 현황을 확인할 수 있으며, 월간/분기 투자 보고서를 정기적으로 제공합니다."
-      },
-      {
-        "question": "해외 투자도 가능한가요?",
-        "answer": "네, 미국·유럽·아시아 등 글로벌 시장에 분산 투자를 진행하고 있으며, 환위험 관리 전략도 함께 운용합니다."
-      }
+      { "question": "faq.q1", "answer": "faq.a1" },
+      { "question": "faq.q2", "answer": "faq.a2" },
+      { "question": "faq.q3", "answer": "faq.a3" }
     ]
   }
 }

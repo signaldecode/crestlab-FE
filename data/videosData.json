@@ -1,8 +1,0 @@
-{
-  "items": [
-    { "slug": "value-investing-basics", "title": "가치 투자의 기초", "description": "워렌 버핏의 투자 철학을 바탕으로 가치 투자의 핵심 원칙을 배웁니다.", "duration": "32:15", "thumbnail": "/images/videos/placeholder-1.jpg", "category": "기초" },
-    { "slug": "portfolio-strategy", "title": "포트폴리오 분산 전략", "description": "리스크를 최소화하면서 안정적인 수익을 달성하는 포트폴리오 구성법을 알아봅니다.", "duration": "45:30", "thumbnail": "/images/videos/placeholder-2.jpg", "category": "전략" },
-    { "slug": "market-analysis-tools", "title": "시장 분석 도구 활용법", "description": "데이터 기반 시장 분석에 활용되는 주요 도구와 지표를 소개합니다.", "duration": "28:45", "thumbnail": "/images/videos/placeholder-3.jpg", "category": "분석" },
-    { "slug": "global-macro-investing", "title": "글로벌 매크로 투자 입문", "description": "거시경제 흐름을 읽고 글로벌 자산 배분에 활용하는 방법을 학습합니다.", "duration": "51:20", "thumbnail": "/images/videos/placeholder-4.jpg", "category": "고급" }
-  ]
-}

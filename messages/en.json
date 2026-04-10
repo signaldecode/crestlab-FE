@@ -4,63 +4,348 @@
       "logo": "CrestLab",
       "nav": {
         "home": "Home",
-        "about": "About Us",
-        "notices": "Notices",
-        "news": "News",
-        "videos": "Resources",
-        "contact": "Contact"
+        "about": "Company",
+        "stocks": "US Stocks",
+        "crypto": "Crypto",
+        "education": "Education",
+        "news": "News"
       },
+      "language": "Language",
       "cta": "Sign Up",
       "login": "Log In",
       "mypage": "My Page",
       "logout": "Log Out"
     },
     "footer": {
-      "copyright": "© 2026 CrestLab Investment. All rights reserved.",
+      "copyright": "© 2026 CrestLab Inc. All rights reserved.",
       "links": {
         "terms": "Terms of Service",
         "privacy": "Privacy Policy",
-        "disclaimer": "Investment Disclaimer"
+        "disclaimer": "Disclaimer"
       },
-      "disclaimer": "Investing involves risk of loss of principal, and past performance does not guarantee future results."
+      "disclaimer": "The content provided on this platform is for informational purposes only and does not constitute financial, investment, or legal advice. Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal. CrestLab Inc. is not a registered investment advisor."
     },
     "skipToContent": "Skip to content"
   },
   "landing": {
     "hero": {
-      "badge": "Data-Driven Investment Solutions",
-      "title": "Maximize your assets\nthrough systematic analysis",
-      "subtitle": "A professional investment firm specializing in global market analysis and risk management.\nExperience stable asset growth with CrestLab.",
-      "primaryCta": "Request a Consultation",
-      "secondaryCta": "Our Investment Philosophy",
-      "primaryCtaAriaLabel": "Go to investment consultation request page",
-      "secondaryCtaAriaLabel": "Go to investment philosophy section"
+      "title": "Global financial markets\nat a glance",
+      "subtitle": "Real-time data on US stocks and crypto, AI-powered analytics, and expert education content — all in one place.",
+      "cta": "Get Started",
+      "ctaAriaLabel": "Get started with CrestLab"
     },
-    "stats": {
-      "title": "Proven Investment Performance",
-      "subtitle": "The numbers speak for CrestLab's competitive edge"
+    "ticker": {
+      "ariaLabel": "Live market ticker"
     },
-    "features": {
-      "title": "Why CrestLab",
-      "subtitle": "Discover our differentiated investment process"
+    "featured": {
+      "title": "Bitcoin-Based Digital Asset Framework",
+      "subtitle": "A systematic analysis of the structure and characteristics of diverse digital assets formed around Bitcoin.",
+      "changeLabel": "Change",
+      "prevAriaLabel": "View previous coin",
+      "nextAriaLabel": "View next coin"
     },
-    "philosophy": {
-      "title": "Your time invested matters just as much",
-      "subtitle": "While CrestLab manages your assets,\nfocus on what matters most to you."
+    "marketTables": {
+      "stocksTitle": "US Stocks",
+      "cryptoTitle": "Crypto",
+      "fetchedAtLabel": "Data as of {time} (ET)",
+      "headers": {
+        "name": "Name",
+        "price": "Price",
+        "change": "Change"
+      }
     },
-    "testimonials": {
-      "title": "What Our Clients Say"
+    "digitalShowcase": {
+      "title": "Market Pulse at a Glance",
+      "subtitle": "Track real-time global market data—from Bitcoin to Nasdaq—anytime, anywhere.",
+      "imageAlt": "CrestLab app screenshots showing real-time stock and crypto market data"
+    },
+    "featureCards": {
+      "title": "Market Intelligence Framework",
+      "subtitle": "A structured approach to understanding market behavior, asset relationships, and data-driven decision making.",
+      "items": {
+        "01": {
+          "frontTitle": "Market Structure",
+          "frontDescription": "Understanding the core foundations of the Bitcoin market.",
+          "ariaLabel": "Market structure — flip card"
+        },
+        "02": {
+          "frontTitle": "Volatility Flow",
+          "frontDescription": "Tracking global asset movements and market dynamics.",
+          "ariaLabel": "Volatility flow — flip card"
+        },
+        "03": {
+          "frontTitle": "Correlation",
+          "frontDescription": "Analyzing relationships between BTC and Nasdaq.",
+          "ariaLabel": "Correlation — flip card"
+        },
+        "04": {
+          "frontTitle": "Data Decisions",
+          "frontDescription": "Identifying optimal timing through data insights.",
+          "ariaLabel": "Data decisions — flip card"
+        }
+      }
+    },
+    "intersection": {
+      "eyebrow": "INSTITUTIONAL-GRADE",
+      "title": "THE INTERSECTION\nOF CRYPTO AND EQUITY",
+      "description": "We seamlessly integrate the time-tested stability of traditional equity markets with the high-growth potential of digital assets to build a resilient, forward-thinking investment ecosystem for the modern era.",
+      "imageAlt": "Crypto and equity intersection visual"
+    },
+    "dataPreview": {
+      "rowCoins": {
+        "eyebrow": "Live market pulse",
+        "title": "Capture the Pulse of Global Digital Assets",
+        "description": "Stay ahead with real-time price updates and instant volatility tracking. Every second counts in the digital asset market."
+      },
+      "rowChart": {
+        "eyebrow": "Cross-asset signal",
+        "title": "Bitcoin & U.S. Market Core Data Analysis",
+        "description": "Compare Current Bitcoin Dominance with the investment attractiveness of key U.S. market indices."
+      },
+      "barLabels": {
+        "btcDominance": "BTC Dominance",
+        "sp500": "S&P 500 Score",
+        "btcAttractiveness": "BTC Attractiveness"
+      },
+      "coinCardAriaLabel": "Live crypto prices",
+      "barChartAriaLabel": "Comparative attractiveness scores"
+    },
+    "rotatingHeadline": {
+      "ariaLabel": "What CrestLab stands for",
+      "items": {
+        "01": {
+          "before": "The Industry Standard",
+          "after": "for Financial Leaders",
+          "icon": "pencil",
+          "iconAlt": "Editorial standard"
+        },
+        "02": {
+          "before": "Trusted by More Financial",
+          "after": "Institutions Than Any Other",
+          "icon": "medal",
+          "iconAlt": "Trust medal"
+        },
+        "03": {
+          "before": "Powering the World's",
+          "after": "Leading Banks. Why Wait?",
+          "icon": "bank",
+          "iconAlt": "Leading bank"
+        }
+      }
+    },
+    "rollingCounter": {
+      "title": "Growing Fortunes, One Data Point at a Time",
+      "subtitle": "Data-driven insights for smarter growth",
+      "description": "See the total accumulated returns generated by our algorithmic insights. We turn market data into measurable wealth for our users.",
+      "valueAriaLabel": "Total accumulated returns: {value}"
+    },
+    "newsPreview": {
+      "title": "Global Market News",
+      "subtitle": "Real-time insights across global financial markets.",
+      "viewMore": "View more",
+      "prevAriaLabel": "Previous news",
+      "nextAriaLabel": "Next news",
+      "sourceLabel": "Source"
     },
     "faq": {
-      "title": "Frequently Asked Questions",
-      "subtitle": "Find answers to common questions"
-    },
-    "cta": {
-      "title": "Let's design the future of your assets together",
-      "subtitle": "Get a free professional investment consultation",
-      "button": "Request Free Consultation",
-      "buttonAriaLabel": "Go to free investment consultation request page"
+      "title": "Frequently Asked Questions"
     }
+  },
+  "stocks": {
+    "indices": {
+      "title": "Major Indices",
+      "fetchedAtLabel": "Data as of {time} (ET)"
+    },
+    "table": {
+      "title": "Live Stock Prices",
+      "description": "A systematic analysis of the structure and changes in the stock market",
+      "filterAll": "All",
+      "columns": {
+        "symbol": "Symbol",
+        "name": "Name",
+        "price": "Price",
+        "change": "Change",
+        "volume": "Volume",
+        "marketCap": "Market Cap"
+      },
+      "sectors": {
+        "tech": "Technology",
+        "energy": "Energy",
+        "finance": "Financials",
+        "healthcare": "Healthcare",
+        "consumer": "Consumer",
+        "industrial": "Industrials"
+      }
+    },
+    "movers": {
+      "sectionTitle": "Market Movers",
+      "gainersTitle": "Today's Best Performers",
+      "losersTitle": "Today's Worst Performers",
+      "gainersBadge": "Top Gainers",
+      "losersBadge": "Top Losers"
+    },
+    "detail": {
+      "closeAriaLabel": "Close stock detail",
+      "chartView": {
+        "overview": "Basic",
+        "advanced": "Advanced",
+        "ariaLabel": "Chart view"
+      }
+    }
+  },
+  "crypto": {
+    "globalStats": {
+      "sectionTitle": "Global Crypto Stats",
+      "totalMarketCap": "Total Market Cap",
+      "totalVolume24h": "24h Volume",
+      "btcDominance": "BTC Dominance",
+      "ethLabel": "ETH",
+      "change24hShort": "24h"
+    },
+    "dominance": {
+      "title": "Bitcoin Dominance Chart",
+      "subtitle": "Global crypto market share trend",
+      "btcLabel": "Bitcoin",
+      "ethLabel": "Ethereum",
+      "othersLabel": "Others",
+      "asOf": "As of today 24:00",
+      "periods": {
+        "1w": "1W",
+        "1m": "1M",
+        "3m": "3M",
+        "1y": "1Y",
+        "5y": "5Y"
+      }
+    },
+    "fearGreed": {
+      "title": "Bitcoin Fear & Greed Index",
+      "subtitle": "Based on price and volume, market sentiment is classified into five stages from fear to greed.",
+      "asOf": "As of today 24:00",
+      "currentTitle": "Current Index",
+      "currentDescription": "The index is meeting psychological resistance and support from market participants. In a market with high volume and liquidity, this signals a critical zone for short-term price action.",
+      "historyTitle": "Historical Index",
+      "historyLabels": {
+        "1d": "1 day ago",
+        "1w": "1 week ago",
+        "1m": "1 month ago",
+        "3m": "3 months ago"
+      },
+      "labels": {
+        "extremeFear": "Extreme Fear",
+        "fear": "Fear",
+        "neutral": "Neutral",
+        "greed": "Greed",
+        "extremeGreed": "Extreme Greed"
+      },
+      "legendLabels": {
+        "0": "Extreme Fear",
+        "1": "Fear",
+        "2": "Neutral",
+        "3": "Greed",
+        "4": "Extreme Greed"
+      }
+    },
+    "coinList": {
+      "title": "Cryptocurrency Prices",
+      "description": "Real-time prices, market cap, and 24h trading volume across digital assets",
+      "filterAll": "All",
+      "columns": {
+        "name": "Coin",
+        "price": "Price",
+        "change24h": "24h %",
+        "marketCap": "Market Cap",
+        "volume": "Volume 24h"
+      },
+      "categories": {
+        "layer1": "Layer 1",
+        "defi": "DeFi",
+        "meme": "Meme",
+        "ai": "AI Tokens",
+        "exchange": "Exchange",
+        "stablecoin": "Stablecoins"
+      }
+    },
+    "detail": {
+      "closeAriaLabel": "Close coin detail",
+      "chartView": {
+        "overview": "Basic",
+        "advanced": "Advanced",
+        "ariaLabel": "Chart view"
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "Learn the fundamentals of investing through curated video lessons.",
+    "videos": {
+      "title": "Educational Videos",
+      "filterAll": "All",
+      "filterAriaLabel": "Filter videos by category",
+      "categories": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "technicalAnalysis": "Technical Analysis",
+        "cryptoBasics": "Crypto Basics",
+        "marketStrategy": "Market Strategy"
+      },
+      "viewsLabel": "{count} views",
+      "playAriaLabel": "Play {title}",
+      "thumbnailAlt": "{title} thumbnail",
+      "empty": "No videos in this category yet."
+    },
+    "detail": {
+      "relatedTitle": "Related Videos",
+      "categoryLabel": "Category",
+      "disclaimer": "The content in this video is for educational purposes only and does not constitute investment advice. All investment decisions are the viewer's own responsibility.",
+      "playerTitleAlt": "{title} video player"
+    },
+    "admin": {
+      "openButton": "Upload Video",
+      "openButtonAriaLabel": "Open upload dialog",
+      "closeAriaLabel": "Close upload dialog",
+      "title": "Upload a YouTube Video",
+      "subtitle": "Admin only — paste a YouTube link to publish a new lesson.",
+      "urlLabel": "YouTube URL",
+      "urlPlaceholder": "https://www.youtube.com/watch?v=...",
+      "videoTitleLabel": "Title",
+      "videoTitlePlaceholder": "Lesson title",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short summary of the lesson",
+      "categoryLabel": "Category",
+      "submit": "Publish Video",
+      "cancel": "Cancel",
+      "submitting": "Publishing...",
+      "successMessage": "Video published successfully.",
+      "fetching": "Fetching video info...",
+      "fetched": "Video info loaded.",
+      "fetchError": "Could not fetch video info — please fill in manually.",
+      "errors": {
+        "invalidUrl": "Please enter a valid YouTube URL.",
+        "titleRequired": "Please enter a title.",
+        "categoryRequired": "Please select a category."
+      }
+    },
+    "backToList": "Back to List"
+  },
+  "about": {
+    "tabLabel": "Company",
+    "title": "About CrestLab",
+    "description": "CrestLab is an AI-powered global financial information platform. We deliver real-time data on US equities and cryptocurrencies, putting everything investors need in one place.",
+    "mission": {
+      "title": "Mission",
+      "description": "Empowering investors worldwide with reliable financial data and analytics tools to support informed investment decisions."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "To become the global leader in AI- and data-driven financial information platforms."
+    }
+  },
+  "disclaimer": {
+    "tabLabel": "Disclaimer",
+    "title": "Disclaimer",
+    "content": "The information provided on this website does not constitute investment, financial, or other professional advice. Any investment decisions made based on information from this site are solely the user's responsibility. Past performance does not guarantee future results, and all investments carry the risk of principal loss.",
+    "registrationTitle": "Company Information",
+    "registrationNumber": "Business Registration No.: 000-00-00000"
   },
   "auth": {
     "login": {
@@ -220,6 +505,66 @@
       "deleteVideo": "Delete",
       "confirmDelete": "Are you sure you want to delete?",
       "cancel": "Cancel"
+    }
+  },
+  "news": {
+    "title": "Latest Market News",
+    "subtitle": "Curated headlines from CNBC, Reuters, and CoinDesk — refreshed every 15 minutes.",
+    "filterAll": "All",
+    "filterAriaLabel": "Filter news by category",
+    "categories": {
+      "stocks": "Stocks",
+      "crypto": "Crypto",
+      "macro": "Macro"
+    },
+    "search": {
+      "label": "Search news",
+      "placeholder": "Search headlines, sources, or keywords",
+      "ariaLabel": "Search news",
+      "clear": "Clear search",
+      "noResults": "No articles match your search."
+    },
+    "empty": "No news in this category yet.",
+    "loadMore": "Load more articles",
+    "autoUpdate": "Auto-updates every 15 minutes",
+    "detail": {
+      "backToList": "Back to News",
+      "publishedOn": "Published",
+      "by": "By",
+      "source": "Source",
+      "shareTitle": "Share this article",
+      "originalLink": "View Original",
+      "relatedTitle": "Related News",
+      "notFoundTitle": "Article Not Found",
+      "breadcrumbHome": "Home",
+      "breadcrumbNews": "News",
+      "disclaimer": "This article is for informational purposes only and does not constitute investment advice."
+    }
+  },
+  "seo": {
+    "stocks": {
+      "title": "US Stocks | CrestLab",
+      "description": "Live US stock prices, major indices, and sector-by-sector ticker information."
+    },
+    "crypto": {
+      "title": "Crypto | CrestLab",
+      "description": "Live cryptocurrency prices, BTC dominance, and the Fear & Greed Index."
+    },
+    "education": {
+      "title": "Education | CrestLab",
+      "description": "From investing fundamentals to technical analysis — structured education content for investors."
+    },
+    "news": {
+      "title": "News | CrestLab",
+      "description": "Stay up to date with the latest news from global financial markets."
+    },
+    "about": {
+      "title": "About | CrestLab",
+      "description": "CrestLab is an AI-powered global financial information platform."
+    },
+    "disclaimer": {
+      "title": "Disclaimer | CrestLab",
+      "description": "Legal notices and disclaimers regarding the use of CrestLab services."
     }
   }
 }

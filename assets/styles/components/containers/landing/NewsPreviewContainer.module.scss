@@ -1,0 +1,291 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+@use '../../../tokens/shadows' as *;
+
+.news-preview {
+  background: #ffffff;
+}
+
+.news-preview__inner {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-3xl $container-padding;
+
+  @include respond-to(md) {
+    padding: $spacing-4xl $container-padding;
+  }
+}
+
+.news-preview__header {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-2xl;
+
+  @include respond-to(md) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $spacing-2xl;
+  }
+}
+
+.news-preview__heading {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.news-preview__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-background-dark;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-3xl;
+  }
+
+  @include respond-to(lg) {
+    font-size: $font-size-4xl;
+  }
+}
+
+.news-preview__subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  margin: 0;
+
+  @include respond-to(md) {
+    font-size: $font-size-base;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Carousel nav buttons
+// ─────────────────────────────────────────────────────────────
+.news-preview__nav {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  align-self: flex-end;
+}
+
+.news-preview__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  cursor: pointer;
+  color: $color-text-primary;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border-color: rgba(15, 23, 42, 0.3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-primary;
+    outline-offset: 2px;
+  }
+}
+
+.news-preview__nav-btn--filled {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+
+  &:hover {
+    background: #000000;
+    border-color: #000000;
+  }
+}
+
+.news-preview__nav-arrow--prev,
+.news-preview__nav-arrow--next {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+}
+
+.news-preview__nav-arrow--prev {
+  transform: rotate(-135deg);
+  margin-left: 0.2rem;
+}
+
+.news-preview__nav-arrow--next {
+  transform: rotate(45deg);
+  margin-right: 0.2rem;
+}
+
+// ─────────────────────────────────────────────────────────────
+// Carousel track — native horizontal scroll with snap.
+// Mobile: 1 card per view. sm: ~2. md+: 3.
+// ─────────────────────────────────────────────────────────────
+.news-preview__track {
+  display: flex;
+  gap: $spacing-md;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: $spacing-md;
+  // Hide scrollbar but keep scroll
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include respond-to(md) {
+    gap: $spacing-lg;
+  }
+}
+
+.news-preview__card {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  }
+
+  @include respond-to(sm) {
+    flex: 0 0 calc((100% - #{$spacing-md}) / 2);
+  }
+
+  @include respond-to(md) {
+    flex: 0 0 calc((100% - 2 * #{$spacing-lg}) / 3);
+  }
+}
+
+.news-preview__link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+
+  &:focus-visible {
+    outline: 2px solid $color-text-primary;
+    outline-offset: -2px;
+  }
+}
+
+.news-preview__body {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding: $spacing-lg $spacing-lg $spacing-md;
+  flex: 1;
+}
+
+.news-preview__meta-top {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+}
+
+.news-preview__category {
+  color: #2563eb;
+  text-transform: capitalize;
+}
+
+.news-preview__source {
+  color: $color-text-muted;
+
+  &::before {
+    content: '·';
+    margin-right: $spacing-xs;
+    color: $color-text-muted;
+  }
+}
+
+.news-preview__card-title {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.news-preview__date {
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+  margin-top: auto;
+}
+
+.news-preview__thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #1f2937, #0f172a);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Footer "View more" button
+// ─────────────────────────────────────────────────────────────
+.news-preview__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: $spacing-2xl;
+}
+
+.news-preview__view-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-2xl;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 0.5rem;
+  background: #ffffff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  min-height: 2.75rem;
+
+  &:hover {
+    background: $color-background-light;
+    border-color: rgba(15, 23, 42, 0.3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-primary;
+    outline-offset: 2px;
+  }
+}

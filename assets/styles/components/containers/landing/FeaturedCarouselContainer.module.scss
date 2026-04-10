@@ -1,0 +1,280 @@
+@use '../../../tokens/colors' as *;
+@use '../../../tokens/typography' as *;
+@use '../../../tokens/spacing' as *;
+@use '../../../tokens/breakpoints' as *;
+
+.featured-carousel {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: $spacing-4xl $container-padding;
+}
+
+// ── Header ──
+.featured-carousel__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-md;
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+}
+
+.featured-carousel__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.featured-carousel__title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-tight;
+  margin: 0;
+
+  @include respond-to(md) { font-size: $font-size-3xl; }
+  @include respond-to(lg) { font-size: 2.625rem; }
+}
+
+.featured-carousel__subtitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-snug;
+  margin: 0;
+  max-width: 36rem;
+
+  @include respond-to(md) { font-size: $font-size-base; }
+}
+
+// ── Viewport + fade edges ──
+.featured-carousel__viewport {
+  position: relative;
+}
+
+.featured-carousel__fade-left,
+.featured-carousel__fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: $spacing-3xl;
+  z-index: 2;
+  pointer-events: none;
+
+  @include respond-to(md) { width: $spacing-4xl; }
+}
+
+.featured-carousel__fade-left {
+  left: 0;
+  background: linear-gradient(to right, $color-background, transparent);
+}
+
+.featured-carousel__fade-right {
+  right: 0;
+  background: linear-gradient(to left, $color-background, transparent);
+}
+
+// ── Track (seamless marquee) ──
+.featured-carousel__track {
+  display: flex;
+  gap: $spacing-lg;
+  overflow-x: hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+// ── Card — Figma: 316×316, padding 32, border-radius 16, bg #F6F7FB ──
+.featured-carousel__card {
+  flex-shrink: 0;
+  width: 15rem;
+  height: 15rem;
+  background: $color-background-light;
+  border-radius: 1rem;
+  padding: $spacing-xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+  transition: transform 0.2s;
+
+  &:hover { transform: translateY(-0.25rem); }
+
+  @include respond-to(md) {
+    width: 17.75rem;
+    height: 17.75rem;
+    padding: $spacing-2xl;
+  }
+
+  @include respond-to(lg) {
+    width: 19.75rem;
+    height: 19.75rem;
+    padding: $spacing-xl;
+  }
+}
+
+// ── Card top: icon + name/cap ──
+.featured-carousel__card-top {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.featured-carousel__card-icon {
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @include respond-to(md) { width: 3.5rem; height: 3.5rem; }
+  @include respond-to(lg) { width: 4rem; height: 4rem; }
+}
+
+.featured-carousel__card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+// Figma: Pretendard Medium 24px, #222222, letter-spacing -2.5%
+.featured-carousel__card-name {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  letter-spacing: $letter-spacing-tight;
+  line-height: 1.42;
+
+  @include respond-to(md) { font-size: $font-size-xl; }
+  @include respond-to(lg) { font-size: $font-size-2xl; }
+}
+
+// Figma: Pretendard Regular 16px, #767676, letter-spacing -2.5%
+.featured-carousel__card-cap {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  letter-spacing: $letter-spacing-tight;
+  line-height: $line-height-normal;
+
+  @include respond-to(md) { font-size: $font-size-sm; }
+  @include respond-to(lg) { font-size: $font-size-base; }
+}
+
+// ── Card bottom: change label + value + triangle ──
+.featured-carousel__card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: $spacing-sm;
+  width: 100%;
+}
+
+.featured-carousel__card-change-group {
+  display: flex;
+  align-items: flex-end;
+  gap: $spacing-sm;
+}
+
+// Figma: Regular 14px, #767676
+.featured-carousel__card-label {
+  font-size: $font-size-xs;
+  font-weight: $font-weight-regular;
+  color: $color-text-muted;
+  letter-spacing: $letter-spacing-tight;
+  line-height: 1.43;
+}
+
+// Figma: Bold 34px, letter-spacing -2.5%, line-height 1
+.featured-carousel__card-change {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  letter-spacing: $letter-spacing-tight;
+  line-height: 1;
+
+  @include respond-to(md) { font-size: $font-size-2xl; }
+  @include respond-to(lg) { font-size: 2.125rem; }
+}
+
+.featured-carousel__card-change--up {
+  color: $color-highlight;
+}
+
+.featured-carousel__card-change--down {
+  color: $color-loss;
+}
+
+// Figma: triangle 20×14, same color as change value
+.featured-carousel__card-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid transparent;
+  flex-shrink: 0;
+  margin-bottom: 0.25rem;
+}
+
+.featured-carousel__card-arrow--up {
+  border-bottom: 0.875rem solid $color-highlight;
+}
+
+.featured-carousel__card-arrow--down {
+  border-top: 0.875rem solid $color-loss;
+}
+
+// ── Nav buttons ──
+.featured-carousel__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  margin-top: $spacing-xl;
+}
+
+.featured-carousel__nav-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  background: $color-background;
+  border: 0.0625rem solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+
+  &:hover { background: $color-background-light; }
+}
+
+.featured-carousel__nav-btn--filled {
+  background: $color-text-muted;
+  border-color: $color-text-muted;
+
+  &:hover { background: $color-text-secondary; }
+}
+
+.featured-carousel__nav-arrow--prev,
+.featured-carousel__nav-arrow--next {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 0.125rem solid $color-text-secondary;
+  border-right: 0.125rem solid $color-text-secondary;
+}
+
+.featured-carousel__nav-arrow--prev {
+  transform: rotate(-135deg);
+  margin-left: 0.15rem;
+}
+
+.featured-carousel__nav-arrow--next {
+  transform: rotate(45deg);
+  margin-right: 0.15rem;
+  border-color: $color-text-on-dark;
+}
