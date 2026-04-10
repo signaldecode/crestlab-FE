@@ -8,7 +8,7 @@ import type { CoinCategory, CoinItem } from '@/types/finance';
 interface CoinListContainerProps {
   messages: {
     title: string;
-    description: string;
+    description?: string;
     filterAll: string;
     columns: {
       name: string;
@@ -61,9 +61,11 @@ export default function CoinListContainer({ messages, data, onSelect }: CoinList
           <h2 id="coin-list-title" className={styles['coin-list__title']}>
             {messages.title}
           </h2>
-          <p className={styles['coin-list__description']}>
-            {messages.description}
-          </p>
+          {messages.description && (
+            <p className={styles['coin-list__description']}>
+              {messages.description}
+            </p>
+          )}
         </div>
 
         <div className={styles['coin-list__filters']} role="tablist">
